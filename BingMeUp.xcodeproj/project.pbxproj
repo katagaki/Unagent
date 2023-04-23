@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41A3E9629F4D6A00001F08C /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E41A3E9529F4D6A00001F08C /* rules.json */; };
+		E41A3E9A29F4D6CE0001F08C /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E41A3E9929F4D6CE0001F08C /* rules.json */; };
 		E4B1B2E729F4C51D00827556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2E629F4C51D00827556 /* AppDelegate.swift */; };
 		E4B1B2E929F4C51D00827556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2E829F4C51D00827556 /* SceneDelegate.swift */; };
 		E4B1B2EC29F4C51D00827556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2EA29F4C51D00827556 /* LaunchScreen.storyboard */; };
@@ -33,8 +35,6 @@
 		E4C0ABDD29F4C93F006219ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD629F4C93E006219ED /* README.md */; };
 		E4C0ABE029F4C93F006219ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD829F4C93E006219ED /* LICENSE */; };
 		E4C0ABE129F4C93F006219ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD829F4C93E006219ED /* LICENSE */; };
-		E4C0ABE229F4C93F006219ED /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD929F4C93F006219ED /* rules.json */; };
-		E4C0ABE329F4C93F006219ED /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD929F4C93F006219ED /* rules.json */; };
 		E4C0ABE429F4C93F006219ED /* 128.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABDA29F4C93F006219ED /* 128.png */; };
 		E4C0ABE529F4C93F006219ED /* 128.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABDA29F4C93F006219ED /* 128.png */; };
 		E4C0ABE629F4C93F006219ED /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABDB29F4C93F006219ED /* manifest.json */; };
@@ -84,6 +84,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E41A3E9529F4D6A00001F08C /* rules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rules.json; path = Resources/ios/rules.json; sourceTree = "<group>"; };
+		E41A3E9929F4D6CE0001F08C /* rules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rules.json; path = Resources/macos/rules.json; sourceTree = "<group>"; };
 		E4B1B2D729F4C51C00827556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
 		E4B1B2D829F4C51C00827556 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		E4B1B2D929F4C51C00827556 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
@@ -109,7 +111,6 @@
 		E4B1B31229F4C51D00827556 /* Bing Chat Unblocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bing Chat Unblocker.entitlements"; sourceTree = "<group>"; };
 		E4C0ABD629F4C93E006219ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Resources/README.md; sourceTree = "<group>"; };
 		E4C0ABD829F4C93E006219ED /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = Resources/LICENSE; sourceTree = "<group>"; };
-		E4C0ABD929F4C93F006219ED /* rules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rules.json; path = Resources/rules.json; sourceTree = "<group>"; };
 		E4C0ABDA29F4C93F006219ED /* 128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 128.png; path = Resources/128.png; sourceTree = "<group>"; };
 		E4C0ABDB29F4C93F006219ED /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,7 +248,8 @@
 				E4C0ABD829F4C93E006219ED /* LICENSE */,
 				E4C0ABDB29F4C93F006219ED /* manifest.json */,
 				E4C0ABD629F4C93E006219ED /* README.md */,
-				E4C0ABD929F4C93F006219ED /* rules.json */,
+				E41A3E9929F4D6CE0001F08C /* rules.json */,
+				E41A3E9529F4D6A00001F08C /* rules.json */,
 			);
 			name = Resources;
 			path = "Shared (Extension)";
@@ -408,8 +410,8 @@
 				E4C0ABE629F4C93F006219ED /* manifest.json in Resources */,
 				E4C0ABDC29F4C93F006219ED /* README.md in Resources */,
 				E4C0ABE429F4C93F006219ED /* 128.png in Resources */,
+				E41A3E9629F4D6A00001F08C /* rules.json in Resources */,
 				E4C0ABE029F4C93F006219ED /* LICENSE in Resources */,
-				E4C0ABE229F4C93F006219ED /* rules.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,9 +421,9 @@
 			files = (
 				E4C0ABE729F4C93F006219ED /* manifest.json in Resources */,
 				E4C0ABDD29F4C93F006219ED /* README.md in Resources */,
+				E41A3E9A29F4D6CE0001F08C /* rules.json in Resources */,
 				E4C0ABE529F4C93F006219ED /* 128.png in Resources */,
 				E4C0ABE129F4C93F006219ED /* LICENSE in Resources */,
-				E4C0ABE329F4C93F006219ED /* rules.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,7 +772,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Bing Chat Unblocker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -802,7 +804,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Bing Chat Unblocker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -837,7 +839,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Bing Chat Unblocker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -874,7 +876,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Bing Chat Unblocker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
