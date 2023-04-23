@@ -1,11 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "Bing Chat Unblocker",
+    "name": "BingMeUp",
     "version": "0.1",
     "icons": {
       "128": "128.png"
     },
-    "description": "Unblocking Bing AI Chat by spoofing the user agent",
+    "description": "Unblock Bing Chat by forcing Safari to use Microsoft Edge's user agent.",
     "permissions": [
       "declarativeNetRequestWithHostAccess"
     ],

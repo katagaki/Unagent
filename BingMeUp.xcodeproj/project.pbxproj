@@ -13,8 +13,8 @@
 		E4B1B2EF29F4C51D00827556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2ED29F4C51D00827556 /* Main.storyboard */; };
 		E4B1B2F829F4C51D00827556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2F729F4C51D00827556 /* AppDelegate.swift */; };
 		E4B1B2FB29F4C51D00827556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2F929F4C51D00827556 /* Main.storyboard */; };
-		E4B1B30329F4C51D00827556 /* Bing Chat Unblocker Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30229F4C51D00827556 /* Bing Chat Unblocker Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E4B1B30D29F4C51D00827556 /* Bing Chat Unblocker Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30C29F4C51D00827556 /* Bing Chat Unblocker Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4B1B30329F4C51D00827556 /* BingMeUp Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30229F4C51D00827556 /* BingMeUp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4B1B30D29F4C51D00827556 /* BingMeUp Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30C29F4C51D00827556 /* BingMeUp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E4B1B31329F4C51D00827556 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2D629F4C51C00827556 /* Main.html */; };
 		E4B1B31429F4C51D00827556 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2D629F4C51C00827556 /* Main.html */; };
 		E4B1B31529F4C51D00827556 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2D829F4C51C00827556 /* Icon.png */; };
@@ -31,8 +31,6 @@
 		E4B1B32029F4C51D00827556 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2DE29F4C51D00827556 /* SafariWebExtensionHandler.swift */; };
 		E4C0ABDC29F4C93F006219ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD629F4C93E006219ED /* README.md */; };
 		E4C0ABDD29F4C93F006219ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD629F4C93E006219ED /* README.md */; };
-		E4C0ABDE29F4C93F006219ED /* 128.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD729F4C93E006219ED /* 128.svg */; };
-		E4C0ABDF29F4C93F006219ED /* 128.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD729F4C93E006219ED /* 128.svg */; };
 		E4C0ABE029F4C93F006219ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD829F4C93E006219ED /* LICENSE */; };
 		E4C0ABE129F4C93F006219ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD829F4C93E006219ED /* LICENSE */; };
 		E4C0ABE229F4C93F006219ED /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD929F4C93F006219ED /* rules.json */; };
@@ -67,7 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E4B1B30329F4C51D00827556 /* Bing Chat Unblocker Extension.appex in Embed Foundation Extensions */,
+				E4B1B30329F4C51D00827556 /* BingMeUp Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E4B1B30D29F4C51D00827556 /* Bing Chat Unblocker Extension.appex in Embed Foundation Extensions */,
+				E4B1B30D29F4C51D00827556 /* BingMeUp Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,24 +91,23 @@
 		E4B1B2DB29F4C51C00827556 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E4B1B2DC29F4C51D00827556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4B1B2DE29F4C51D00827556 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		E4B1B2E329F4C51D00827556 /* Bing Chat Unblocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bing Chat Unblocker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B1B2E329F4C51D00827556 /* BingMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B2E629F4C51D00827556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4B1B2E829F4C51D00827556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E4B1B2EB29F4C51D00827556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4B1B2EE29F4C51D00827556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4B1B2F029F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4B1B2F529F4C51D00827556 /* Bing Chat Unblocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bing Chat Unblocker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B1B2F529F4C51D00827556 /* BingMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B2F729F4C51D00827556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4B1B2FA29F4C51D00827556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4B1B2FC29F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B1B2FD29F4C51D00827556 /* Bing Chat Unblocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bing Chat Unblocker.entitlements"; sourceTree = "<group>"; };
-		E4B1B30229F4C51D00827556 /* Bing Chat Unblocker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bing Chat Unblocker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B1B30229F4C51D00827556 /* BingMeUp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BingMeUp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B30729F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4B1B30C29F4C51D00827556 /* Bing Chat Unblocker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bing Chat Unblocker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B1B30C29F4C51D00827556 /* BingMeUp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BingMeUp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B31129F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B1B31229F4C51D00827556 /* Bing Chat Unblocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bing Chat Unblocker.entitlements"; sourceTree = "<group>"; };
 		E4C0ABD629F4C93E006219ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Resources/README.md; sourceTree = "<group>"; };
-		E4C0ABD729F4C93E006219ED /* 128.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 128.svg; path = Resources/128.svg; sourceTree = "<group>"; };
 		E4C0ABD829F4C93E006219ED /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = Resources/LICENSE; sourceTree = "<group>"; };
 		E4C0ABD929F4C93F006219ED /* rules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rules.json; path = Resources/rules.json; sourceTree = "<group>"; };
 		E4C0ABDA29F4C93F006219ED /* 128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 128.png; path = Resources/128.png; sourceTree = "<group>"; };
@@ -195,10 +192,10 @@
 		E4B1B2E429F4C51D00827556 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4B1B2E329F4C51D00827556 /* Bing Chat Unblocker.app */,
-				E4B1B2F529F4C51D00827556 /* Bing Chat Unblocker.app */,
-				E4B1B30229F4C51D00827556 /* Bing Chat Unblocker Extension.appex */,
-				E4B1B30C29F4C51D00827556 /* Bing Chat Unblocker Extension.appex */,
+				E4B1B2E329F4C51D00827556 /* BingMeUp.app */,
+				E4B1B2F529F4C51D00827556 /* BingMeUp.app */,
+				E4B1B30229F4C51D00827556 /* BingMeUp Extension.appex */,
+				E4B1B30C29F4C51D00827556 /* BingMeUp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				E4C0ABDA29F4C93F006219ED /* 128.png */,
-				E4C0ABD729F4C93E006219ED /* 128.svg */,
 				E4C0ABD829F4C93E006219ED /* LICENSE */,
 				E4C0ABDB29F4C93F006219ED /* manifest.json */,
 				E4C0ABD629F4C93E006219ED /* README.md */,
@@ -260,9 +256,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B1B2E229F4C51D00827556 /* Bing Chat Unblocker (iOS) */ = {
+		E4B1B2E229F4C51D00827556 /* BingMeUp (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B1B32729F4C51D00827556 /* Build configuration list for PBXNativeTarget "Bing Chat Unblocker (iOS)" */;
+			buildConfigurationList = E4B1B32729F4C51D00827556 /* Build configuration list for PBXNativeTarget "BingMeUp (iOS)" */;
 			buildPhases = (
 				E4B1B2DF29F4C51D00827556 /* Sources */,
 				E4B1B2E029F4C51D00827556 /* Frameworks */,
@@ -274,14 +270,14 @@
 			dependencies = (
 				E4B1B30529F4C51D00827556 /* PBXTargetDependency */,
 			);
-			name = "Bing Chat Unblocker (iOS)";
+			name = "BingMeUp (iOS)";
 			productName = "Bing Chat Unblocker (iOS)";
-			productReference = E4B1B2E329F4C51D00827556 /* Bing Chat Unblocker.app */;
+			productReference = E4B1B2E329F4C51D00827556 /* BingMeUp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4B1B2F429F4C51D00827556 /* Bing Chat Unblocker (macOS) */ = {
+		E4B1B2F429F4C51D00827556 /* BingMeUp (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B1B32E29F4C51D00827556 /* Build configuration list for PBXNativeTarget "Bing Chat Unblocker (macOS)" */;
+			buildConfigurationList = E4B1B32E29F4C51D00827556 /* Build configuration list for PBXNativeTarget "BingMeUp (macOS)" */;
 			buildPhases = (
 				E4B1B2F129F4C51D00827556 /* Sources */,
 				E4B1B2F229F4C51D00827556 /* Frameworks */,
@@ -293,14 +289,14 @@
 			dependencies = (
 				E4B1B30F29F4C51D00827556 /* PBXTargetDependency */,
 			);
-			name = "Bing Chat Unblocker (macOS)";
+			name = "BingMeUp (macOS)";
 			productName = "Bing Chat Unblocker (macOS)";
-			productReference = E4B1B2F529F4C51D00827556 /* Bing Chat Unblocker.app */;
+			productReference = E4B1B2F529F4C51D00827556 /* BingMeUp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4B1B30129F4C51D00827556 /* Bing Chat Unblocker Extension (iOS) */ = {
+		E4B1B30129F4C51D00827556 /* BingMeUp Extension (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B1B32329F4C51D00827556 /* Build configuration list for PBXNativeTarget "Bing Chat Unblocker Extension (iOS)" */;
+			buildConfigurationList = E4B1B32329F4C51D00827556 /* Build configuration list for PBXNativeTarget "BingMeUp Extension (iOS)" */;
 			buildPhases = (
 				E4B1B2FE29F4C51D00827556 /* Sources */,
 				E4B1B2FF29F4C51D00827556 /* Frameworks */,
@@ -310,14 +306,14 @@
 			);
 			dependencies = (
 			);
-			name = "Bing Chat Unblocker Extension (iOS)";
+			name = "BingMeUp Extension (iOS)";
 			productName = "Bing Chat Unblocker Extension (iOS)";
-			productReference = E4B1B30229F4C51D00827556 /* Bing Chat Unblocker Extension.appex */;
+			productReference = E4B1B30229F4C51D00827556 /* BingMeUp Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		E4B1B30B29F4C51D00827556 /* Bing Chat Unblocker Extension (macOS) */ = {
+		E4B1B30B29F4C51D00827556 /* BingMeUp Extension (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B1B32A29F4C51D00827556 /* Build configuration list for PBXNativeTarget "Bing Chat Unblocker Extension (macOS)" */;
+			buildConfigurationList = E4B1B32A29F4C51D00827556 /* Build configuration list for PBXNativeTarget "BingMeUp Extension (macOS)" */;
 			buildPhases = (
 				E4B1B30829F4C51D00827556 /* Sources */,
 				E4B1B30929F4C51D00827556 /* Frameworks */,
@@ -327,9 +323,9 @@
 			);
 			dependencies = (
 			);
-			name = "Bing Chat Unblocker Extension (macOS)";
+			name = "BingMeUp Extension (macOS)";
 			productName = "Bing Chat Unblocker Extension (macOS)";
-			productReference = E4B1B30C29F4C51D00827556 /* Bing Chat Unblocker Extension.appex */;
+			productReference = E4B1B30C29F4C51D00827556 /* BingMeUp Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -356,7 +352,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E4B1B2D329F4C51C00827556 /* Build configuration list for PBXProject "Bing Chat Unblocker" */;
+			buildConfigurationList = E4B1B2D329F4C51C00827556 /* Build configuration list for PBXProject "BingMeUp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -369,10 +365,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E4B1B2E229F4C51D00827556 /* Bing Chat Unblocker (iOS) */,
-				E4B1B2F429F4C51D00827556 /* Bing Chat Unblocker (macOS) */,
-				E4B1B30129F4C51D00827556 /* Bing Chat Unblocker Extension (iOS) */,
-				E4B1B30B29F4C51D00827556 /* Bing Chat Unblocker Extension (macOS) */,
+				E4B1B2E229F4C51D00827556 /* BingMeUp (iOS) */,
+				E4B1B2F429F4C51D00827556 /* BingMeUp (macOS) */,
+				E4B1B30129F4C51D00827556 /* BingMeUp Extension (iOS) */,
+				E4B1B30B29F4C51D00827556 /* BingMeUp Extension (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -409,7 +405,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C0ABDE29F4C93F006219ED /* 128.svg in Resources */,
 				E4C0ABE629F4C93F006219ED /* manifest.json in Resources */,
 				E4C0ABDC29F4C93F006219ED /* README.md in Resources */,
 				E4C0ABE429F4C93F006219ED /* 128.png in Resources */,
@@ -422,7 +417,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C0ABDF29F4C93F006219ED /* 128.svg in Resources */,
 				E4C0ABE729F4C93F006219ED /* manifest.json in Resources */,
 				E4C0ABDD29F4C93F006219ED /* README.md in Resources */,
 				E4C0ABE529F4C93F006219ED /* 128.png in Resources */,
@@ -474,12 +468,12 @@
 /* Begin PBXTargetDependency section */
 		E4B1B30529F4C51D00827556 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4B1B30129F4C51D00827556 /* Bing Chat Unblocker Extension (iOS) */;
+			target = E4B1B30129F4C51D00827556 /* BingMeUp Extension (iOS) */;
 			targetProxy = E4B1B30429F4C51D00827556 /* PBXContainerItemProxy */;
 		};
 		E4B1B30F29F4C51D00827556 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4B1B30B29F4C51D00827556 /* Bing Chat Unblocker Extension (macOS) */;
+			target = E4B1B30B29F4C51D00827556 /* BingMeUp Extension (macOS) */;
 			targetProxy = E4B1B30E29F4C51D00827556 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -634,6 +628,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Bing Chat Unblocker Extension";
@@ -649,8 +644,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Bing-Chat-Unblocker.Extension";
-				PRODUCT_NAME = "Bing Chat Unblocker Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong.Extension;
+				PRODUCT_NAME = "BingMeUp Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -664,6 +659,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Bing Chat Unblocker Extension";
@@ -679,8 +675,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Bing-Chat-Unblocker.Extension";
-				PRODUCT_NAME = "Bing Chat Unblocker Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong.Extension;
+				PRODUCT_NAME = "BingMeUp Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -698,9 +694,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Bing Chat Unblocker";
+				INFOPLIST_KEY_CFBundleDisplayName = BingMeUp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -718,8 +715,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Bing-Chat-Unblocker";
-				PRODUCT_NAME = "Bing Chat Unblocker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong;
+				PRODUCT_NAME = BingMeUp;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -735,9 +732,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Bing Chat Unblocker";
+				INFOPLIST_KEY_CFBundleDisplayName = BingMeUp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -755,8 +753,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Bing-Chat-Unblocker";
-				PRODUCT_NAME = "Bing Chat Unblocker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong;
+				PRODUCT_NAME = BingMeUp;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -787,8 +785,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Bing-Chat-Unblocker.Extension";
-				PRODUCT_NAME = "Bing Chat Unblocker Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong.Extension;
+				PRODUCT_NAME = "BingMeUp Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -818,8 +816,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Bing-Chat-Unblocker.Extension";
-				PRODUCT_NAME = "Bing Chat Unblocker Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong.Extension;
+				PRODUCT_NAME = "BingMeUp Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -854,8 +852,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Bing-Chat-Unblocker";
-				PRODUCT_NAME = "Bing Chat Unblocker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong;
+				PRODUCT_NAME = BingMeUp;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -889,8 +887,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Bing-Chat-Unblocker";
-				PRODUCT_NAME = "Bing Chat Unblocker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong;
+				PRODUCT_NAME = BingMeUp;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -900,7 +898,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B1B2D329F4C51C00827556 /* Build configuration list for PBXProject "Bing Chat Unblocker" */ = {
+		E4B1B2D329F4C51C00827556 /* Build configuration list for PBXProject "BingMeUp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B1B32129F4C51D00827556 /* Debug */,
@@ -909,7 +907,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B1B32329F4C51D00827556 /* Build configuration list for PBXNativeTarget "Bing Chat Unblocker Extension (iOS)" */ = {
+		E4B1B32329F4C51D00827556 /* Build configuration list for PBXNativeTarget "BingMeUp Extension (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B1B32429F4C51D00827556 /* Debug */,
@@ -918,7 +916,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B1B32729F4C51D00827556 /* Build configuration list for PBXNativeTarget "Bing Chat Unblocker (iOS)" */ = {
+		E4B1B32729F4C51D00827556 /* Build configuration list for PBXNativeTarget "BingMeUp (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B1B32829F4C51D00827556 /* Debug */,
@@ -927,7 +925,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B1B32A29F4C51D00827556 /* Build configuration list for PBXNativeTarget "Bing Chat Unblocker Extension (macOS)" */ = {
+		E4B1B32A29F4C51D00827556 /* Build configuration list for PBXNativeTarget "BingMeUp Extension (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B1B32B29F4C51D00827556 /* Debug */,
@@ -936,7 +934,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B1B32E29F4C51D00827556 /* Build configuration list for PBXNativeTarget "Bing Chat Unblocker (macOS)" */ = {
+		E4B1B32E29F4C51D00827556 /* Build configuration list for PBXNativeTarget "BingMeUp (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B1B32F29F4C51D00827556 /* Debug */,
