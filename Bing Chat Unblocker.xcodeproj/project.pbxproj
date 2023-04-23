@@ -29,18 +29,18 @@
 		E4B1B31E29F4C51D00827556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2DC29F4C51D00827556 /* Assets.xcassets */; };
 		E4B1B31F29F4C51D00827556 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2DE29F4C51D00827556 /* SafariWebExtensionHandler.swift */; };
 		E4B1B32029F4C51D00827556 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2DE29F4C51D00827556 /* SafariWebExtensionHandler.swift */; };
-		E4B1B33929F4C51D00827556 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33229F4C51D00827556 /* LICENSE */; };
-		E4B1B33A29F4C51D00827556 /* 128.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33329F4C51D00827556 /* 128.svg */; };
-		E4B1B33B29F4C51D00827556 /* 128.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33429F4C51D00827556 /* 128.png */; };
-		E4B1B33C29F4C51D00827556 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33529F4C51D00827556 /* README.md */; };
-		E4B1B33D29F4C51D00827556 /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33629F4C51D00827556 /* rules.json */; };
-		E4B1B33E29F4C51D00827556 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33729F4C51D00827556 /* manifest.json */; };
-		E4B1B34029F4C51D00827556 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33229F4C51D00827556 /* LICENSE */; };
-		E4B1B34129F4C51D00827556 /* 128.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33329F4C51D00827556 /* 128.svg */; };
-		E4B1B34229F4C51D00827556 /* 128.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33429F4C51D00827556 /* 128.png */; };
-		E4B1B34329F4C51D00827556 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33529F4C51D00827556 /* README.md */; };
-		E4B1B34429F4C51D00827556 /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33629F4C51D00827556 /* rules.json */; };
-		E4B1B34529F4C51D00827556 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B33729F4C51D00827556 /* manifest.json */; };
+		E4C0ABDC29F4C93F006219ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD629F4C93E006219ED /* README.md */; };
+		E4C0ABDD29F4C93F006219ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD629F4C93E006219ED /* README.md */; };
+		E4C0ABDE29F4C93F006219ED /* 128.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD729F4C93E006219ED /* 128.svg */; };
+		E4C0ABDF29F4C93F006219ED /* 128.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD729F4C93E006219ED /* 128.svg */; };
+		E4C0ABE029F4C93F006219ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD829F4C93E006219ED /* LICENSE */; };
+		E4C0ABE129F4C93F006219ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD829F4C93E006219ED /* LICENSE */; };
+		E4C0ABE229F4C93F006219ED /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD929F4C93F006219ED /* rules.json */; };
+		E4C0ABE329F4C93F006219ED /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD929F4C93F006219ED /* rules.json */; };
+		E4C0ABE429F4C93F006219ED /* 128.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABDA29F4C93F006219ED /* 128.png */; };
+		E4C0ABE529F4C93F006219ED /* 128.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABDA29F4C93F006219ED /* 128.png */; };
+		E4C0ABE629F4C93F006219ED /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABDB29F4C93F006219ED /* manifest.json */; };
+		E4C0ABE729F4C93F006219ED /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABDB29F4C93F006219ED /* manifest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,12 +109,12 @@
 		E4B1B30C29F4C51D00827556 /* Bing Chat Unblocker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bing Chat Unblocker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B31129F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B1B31229F4C51D00827556 /* Bing Chat Unblocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bing Chat Unblocker.entitlements"; sourceTree = "<group>"; };
-		E4B1B33229F4C51D00827556 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
-		E4B1B33329F4C51D00827556 /* 128.svg */ = {isa = PBXFileReference; lastKnownFileType = text; name = 128.svg; path = ../../128.svg; sourceTree = "<group>"; };
-		E4B1B33429F4C51D00827556 /* 128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 128.png; path = ../../128.png; sourceTree = "<group>"; };
-		E4B1B33529F4C51D00827556 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
-		E4B1B33629F4C51D00827556 /* rules.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = rules.json; path = ../../rules.json; sourceTree = "<group>"; };
-		E4B1B33729F4C51D00827556 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../manifest.json; sourceTree = "<group>"; };
+		E4C0ABD629F4C93E006219ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Resources/README.md; sourceTree = "<group>"; };
+		E4C0ABD729F4C93E006219ED /* 128.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 128.svg; path = Resources/128.svg; sourceTree = "<group>"; };
+		E4C0ABD829F4C93E006219ED /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = Resources/LICENSE; sourceTree = "<group>"; };
+		E4C0ABD929F4C93F006219ED /* rules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rules.json; path = Resources/rules.json; sourceTree = "<group>"; };
+		E4C0ABDA29F4C93F006219ED /* 128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 128.png; path = Resources/128.png; sourceTree = "<group>"; };
+		E4C0ABDB29F4C93F006219ED /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,12 +246,12 @@
 		E4B1B33129F4C51D00827556 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E4B1B33229F4C51D00827556 /* LICENSE */,
-				E4B1B33329F4C51D00827556 /* 128.svg */,
-				E4B1B33429F4C51D00827556 /* 128.png */,
-				E4B1B33529F4C51D00827556 /* README.md */,
-				E4B1B33629F4C51D00827556 /* rules.json */,
-				E4B1B33729F4C51D00827556 /* manifest.json */,
+				E4C0ABDA29F4C93F006219ED /* 128.png */,
+				E4C0ABD729F4C93E006219ED /* 128.svg */,
+				E4C0ABD829F4C93E006219ED /* LICENSE */,
+				E4C0ABDB29F4C93F006219ED /* manifest.json */,
+				E4C0ABD629F4C93E006219ED /* README.md */,
+				E4C0ABD929F4C93F006219ED /* rules.json */,
 			);
 			name = Resources;
 			path = "Shared (Extension)";
@@ -409,12 +409,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4B1B34229F4C51D00827556 /* 128.png in Resources */,
-				E4B1B34129F4C51D00827556 /* 128.svg in Resources */,
-				E4B1B34429F4C51D00827556 /* rules.json in Resources */,
-				E4B1B34329F4C51D00827556 /* README.md in Resources */,
-				E4B1B34529F4C51D00827556 /* manifest.json in Resources */,
-				E4B1B34029F4C51D00827556 /* LICENSE in Resources */,
+				E4C0ABDE29F4C93F006219ED /* 128.svg in Resources */,
+				E4C0ABE629F4C93F006219ED /* manifest.json in Resources */,
+				E4C0ABDC29F4C93F006219ED /* README.md in Resources */,
+				E4C0ABE429F4C93F006219ED /* 128.png in Resources */,
+				E4C0ABE029F4C93F006219ED /* LICENSE in Resources */,
+				E4C0ABE229F4C93F006219ED /* rules.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,12 +422,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4B1B33B29F4C51D00827556 /* 128.png in Resources */,
-				E4B1B33A29F4C51D00827556 /* 128.svg in Resources */,
-				E4B1B33D29F4C51D00827556 /* rules.json in Resources */,
-				E4B1B33C29F4C51D00827556 /* README.md in Resources */,
-				E4B1B33E29F4C51D00827556 /* manifest.json in Resources */,
-				E4B1B33929F4C51D00827556 /* LICENSE in Resources */,
+				E4C0ABDF29F4C93F006219ED /* 128.svg in Resources */,
+				E4C0ABE729F4C93F006219ED /* manifest.json in Resources */,
+				E4C0ABDD29F4C93F006219ED /* README.md in Resources */,
+				E4C0ABE529F4C93F006219ED /* 128.png in Resources */,
+				E4C0ABE129F4C93F006219ED /* LICENSE in Resources */,
+				E4C0ABE329F4C93F006219ED /* rules.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

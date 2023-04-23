@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Bing Chat Unblocker",
+    "version": "0.1",
+    "icons": {
+      "128": "128.png"
+    },
+    "description": "Unblocking Bing AI Chat by spoofing the user agent",
+    "permissions": [
+      "declarativeNetRequestWithHostAccess"
+    ],
+    "host_permissions": [
+      "*://*.bing.com/*",
+      "*://*.whatismybrowser.com/*"
+    ],
+    "declarative_net_request": {
+      "rule_resources": [
+        {
+          "id": "ruleset_1",
+          "enabled": true,
+          "path": "rules.json"
+        }
+      ]
+    }
+}
