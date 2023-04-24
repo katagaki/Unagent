@@ -15,8 +15,8 @@
 		E4B1B2EF29F4C51D00827556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2ED29F4C51D00827556 /* Main.storyboard */; };
 		E4B1B2F829F4C51D00827556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2F729F4C51D00827556 /* AppDelegate.swift */; };
 		E4B1B2FB29F4C51D00827556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2F929F4C51D00827556 /* Main.storyboard */; };
-		E4B1B30329F4C51D00827556 /* BingMeUp Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30229F4C51D00827556 /* BingMeUp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E4B1B30D29F4C51D00827556 /* BingMeUp Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30C29F4C51D00827556 /* BingMeUp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4B1B30329F4C51D00827556 /* Unagent Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30229F4C51D00827556 /* Unagent Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4B1B30D29F4C51D00827556 /* Unagent Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30C29F4C51D00827556 /* Unagent Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E4B1B31329F4C51D00827556 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2D629F4C51C00827556 /* Main.html */; };
 		E4B1B31429F4C51D00827556 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2D629F4C51C00827556 /* Main.html */; };
 		E4B1B31529F4C51D00827556 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2D829F4C51C00827556 /* Icon.png */; };
@@ -65,7 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E4B1B30329F4C51D00827556 /* BingMeUp Extension.appex in Embed Foundation Extensions */,
+				E4B1B30329F4C51D00827556 /* Unagent Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,7 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E4B1B30D29F4C51D00827556 /* BingMeUp Extension.appex in Embed Foundation Extensions */,
+				E4B1B30D29F4C51D00827556 /* Unagent Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,20 +93,20 @@
 		E4B1B2DB29F4C51C00827556 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E4B1B2DC29F4C51D00827556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4B1B2DE29F4C51D00827556 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		E4B1B2E329F4C51D00827556 /* BingMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B1B2E329F4C51D00827556 /* Unagent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unagent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B2E629F4C51D00827556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4B1B2E829F4C51D00827556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E4B1B2EB29F4C51D00827556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4B1B2EE29F4C51D00827556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4B1B2F029F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4B1B2F529F4C51D00827556 /* BingMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B1B2F529F4C51D00827556 /* Unagent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unagent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B2F729F4C51D00827556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4B1B2FA29F4C51D00827556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4B1B2FC29F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B1B2FD29F4C51D00827556 /* Bing Chat Unblocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bing Chat Unblocker.entitlements"; sourceTree = "<group>"; };
-		E4B1B30229F4C51D00827556 /* BingMeUp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BingMeUp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B1B30229F4C51D00827556 /* Unagent Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Unagent Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B30729F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4B1B30C29F4C51D00827556 /* BingMeUp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BingMeUp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B1B30C29F4C51D00827556 /* Unagent Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Unagent Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B31129F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B1B31229F4C51D00827556 /* Bing Chat Unblocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bing Chat Unblocker.entitlements"; sourceTree = "<group>"; };
 		E4C0ABD629F4C93E006219ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Resources/README.md; sourceTree = "<group>"; };
@@ -193,10 +193,10 @@
 		E4B1B2E429F4C51D00827556 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4B1B2E329F4C51D00827556 /* BingMeUp.app */,
-				E4B1B2F529F4C51D00827556 /* BingMeUp.app */,
-				E4B1B30229F4C51D00827556 /* BingMeUp Extension.appex */,
-				E4B1B30C29F4C51D00827556 /* BingMeUp Extension.appex */,
+				E4B1B2E329F4C51D00827556 /* Unagent.app */,
+				E4B1B2F529F4C51D00827556 /* Unagent.app */,
+				E4B1B30229F4C51D00827556 /* Unagent Extension.appex */,
+				E4B1B30C29F4C51D00827556 /* Unagent Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 			);
 			name = "BingMeUp (iOS)";
 			productName = "Bing Chat Unblocker (iOS)";
-			productReference = E4B1B2E329F4C51D00827556 /* BingMeUp.app */;
+			productReference = E4B1B2E329F4C51D00827556 /* Unagent.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E4B1B2F429F4C51D00827556 /* BingMeUp (macOS) */ = {
@@ -293,7 +293,7 @@
 			);
 			name = "BingMeUp (macOS)";
 			productName = "Bing Chat Unblocker (macOS)";
-			productReference = E4B1B2F529F4C51D00827556 /* BingMeUp.app */;
+			productReference = E4B1B2F529F4C51D00827556 /* Unagent.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E4B1B30129F4C51D00827556 /* BingMeUp Extension (iOS) */ = {
@@ -310,7 +310,7 @@
 			);
 			name = "BingMeUp Extension (iOS)";
 			productName = "Bing Chat Unblocker Extension (iOS)";
-			productReference = E4B1B30229F4C51D00827556 /* BingMeUp Extension.appex */;
+			productReference = E4B1B30229F4C51D00827556 /* Unagent Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		E4B1B30B29F4C51D00827556 /* BingMeUp Extension (macOS) */ = {
@@ -327,7 +327,7 @@
 			);
 			name = "BingMeUp Extension (macOS)";
 			productName = "Bing Chat Unblocker Extension (macOS)";
-			productReference = E4B1B30C29F4C51D00827556 /* BingMeUp Extension.appex */;
+			productReference = E4B1B30C29F4C51D00827556 /* Unagent Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -647,7 +647,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong.Extension;
-				PRODUCT_NAME = "BingMeUp Extension";
+				PRODUCT_NAME = "Unagent Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -678,7 +678,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong.Extension;
-				PRODUCT_NAME = "BingMeUp Extension";
+				PRODUCT_NAME = "Unagent Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -719,7 +719,7 @@
 					WebKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong;
-				PRODUCT_NAME = BingMeUp;
+				PRODUCT_NAME = Unagent;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -758,7 +758,7 @@
 					WebKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong;
-				PRODUCT_NAME = BingMeUp;
+				PRODUCT_NAME = Unagent;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -772,7 +772,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Bing Chat Unblocker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -791,7 +791,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong.Extension;
-				PRODUCT_NAME = "BingMeUp Extension";
+				PRODUCT_NAME = "Unagent Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -804,7 +804,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Bing Chat Unblocker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -823,7 +823,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong.Extension;
-				PRODUCT_NAME = "BingMeUp Extension";
+				PRODUCT_NAME = "Unagent Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -839,7 +839,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Bing Chat Unblocker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -861,7 +861,7 @@
 					WebKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong;
-				PRODUCT_NAME = BingMeUp;
+				PRODUCT_NAME = Unagent;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -876,7 +876,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Bing Chat Unblocker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -898,7 +898,7 @@
 					WebKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.BingBong;
-				PRODUCT_NAME = BingMeUp;
+				PRODUCT_NAME = Unagent;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
