@@ -1,4 +1,4 @@
-# BingMeUp
+# BingMeUp (Unagent)
 A Safari extension to modify the user agent per website.
 
 Currently working on Bing to bypass the Microsoft Edge user agent check.
