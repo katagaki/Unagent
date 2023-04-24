@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "BingMeUp",
+    "name": "Unagent",
     "version": "0.1",
     "icons": {
       "128": "128.png"
