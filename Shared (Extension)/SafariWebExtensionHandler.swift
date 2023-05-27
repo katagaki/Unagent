@@ -16,7 +16,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
     func beginRequest(with context: NSExtensionContext) {
         let response = NSExtensionItem()
-        if let currentUserAgent = defaults.string(forKey: "SelectedUserAgentRule") {
+        if let currentUserAgent = defaults.string(forKey: "UserAgent") {
             response.userInfo = [
                 SFExtensionMessageKey: ["userAgent": currentUserAgent]
             ]

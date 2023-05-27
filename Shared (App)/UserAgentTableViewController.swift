@@ -10,10 +10,10 @@ import UIKit
 
 let defaults: UserDefaults = UserDefaults(suiteName: "group.com.tsubuzaki.BingBong")!
 
-class UserAgentTableViewController: UITableViewController {
+class UserAgentTableViewController: UITableViewController, UITextViewDelegate {
     
     // TODO: Use plist for data
-    var data: [UserAgent] = [UserAgent(name: "Safari (iOS)",
+    var data: [UserAgent] = [UserAgent(name: "Default (Don't Change)",
                                        imageName: "Safari",
                                        userAgent: "Don'tChange"),
                              UserAgent(name: "Safari 16.5 (macOS)",
@@ -46,55 +46,84 @@ class UserAgentTableViewController: UITableViewController {
                              UserAgent(name: "Empty User Agent",
                                        imageName: "Empty",
                                        userAgent: "")]
-    var selectedUserAgent: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let selectedUserAgent = defaults.string(forKey: "SelectedUserAgentRule") {
-            self.selectedUserAgent = selectedUserAgent
-            tableView.reloadData()
-        } else {
-            selectedUserAgent = data[0].userAgent
+        if defaults.string(forKey: "UserAgent") == nil {
+            defaults.set(data[0].userAgent, forKey: "UserAgent")
         }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        switch section {
+        case 0: return 1
+        case 1: return data.count
+        default: return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Built-in User Agents"
+        switch section {
+        case 0: return "Current User Agent"
+        case 1: return "Presets"
+        default: return ""
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if let selectedUserAgent = defaults.string(forKey: "SelectedUserAgentRule") {
-            if selectedUserAgent != "Don'tChange" {
-                return "After you change your user agent, Safari may refresh when you return to it.\n\nCurrent User Agent: \(selectedUserAgent)"
-            }
+        switch section {
+        case 0:
+            return "After you change your user agent, Safari may refresh automatically when you return to it."
+        default: return ""
         }
-        return "After you change your user agent, Safari may refresh when you return to it."
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.imageView!.image = UIImage(named: data[indexPath.row].imageName)
-        cell.textLabel!.text = data[indexPath.row].name
-        if data[indexPath.row].userAgent == selectedUserAgent {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CustomUserAgentInputCell")!
+            let textView = cell.contentView.subviews[0] as! UITextView
+            textView.textContainer.lineFragmentPadding = 20.0
+            textView.text = ""
+            if let currentUserAgent = defaults.string(forKey: "UserAgent") {
+                if currentUserAgent != "Don'tChange" {
+                    textView.text = currentUserAgent
+                }
+            }
+            textView.delegate = self
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BuiltInUserAgentCell")!
+            cell.imageView!.image = UIImage(named: data[indexPath.row].imageName)
+            cell.textLabel!.text = data[indexPath.row].name
+            if data[indexPath.row].userAgent == defaults.string(forKey: "UserAgent") {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
+            return cell
+        default:
+            return UITableViewCell()
         }
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedUserAgent = data[indexPath.row].userAgent
-        defaults.set(selectedUserAgent, forKey: "SelectedUserAgentRule")
-        tableView.reloadData()
+        switch indexPath.section {
+        case 1:
+            defaults.set(data[indexPath.row].userAgent, forKey: "UserAgent")
+            tableView.reloadData()
+        default: break
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        defaults.set(textView.text, forKey: "UserAgent")
+        tableView.reloadSections(IndexSet(integer: 1), with: .none)
     }
     
 }
