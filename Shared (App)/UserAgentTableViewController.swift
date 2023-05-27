@@ -71,6 +71,11 @@ class UserAgentTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if let selectedUserAgent = defaults.string(forKey: "SelectedUserAgentRule") {
+            if selectedUserAgent != "Don'tChange" {
+                return "After you change your user agent, Safari may refresh when you return to it.\n\nCurrent User Agent: \(selectedUserAgent)"
+            }
+        }
         return "After you change your user agent, Safari may refresh when you return to it."
     }
     
