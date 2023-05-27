@@ -17,7 +17,7 @@ class UserAgentTableViewController: UITableViewController {
                                        imageName: "",
                                        userAgent: "Don'tChange"),
                              UserAgent(name: "Microsoft Edge (iOS)",
-                                       imageName: "Edge",
+                                       imageName: "Edgeium",
                                        userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 EdgiOS/113.0.1774.50 Mobile/15E148 Safari/605.1.15"),
                              UserAgent(name: "Microsoft Edge (macOS)",
                                        imageName: "Edgeium",
