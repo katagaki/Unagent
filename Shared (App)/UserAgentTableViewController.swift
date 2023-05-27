@@ -13,27 +13,30 @@ let defaults: UserDefaults = UserDefaults(suiteName: "group.com.tsubuzaki.BingBo
 class UserAgentTableViewController: UITableViewController {
     
     // TODO: Use plist for data
-    var data: [UserAgent] = [UserAgent(name: "Default (Don't Change)",
-                                       imageName: "",
+    var data: [UserAgent] = [UserAgent(name: "Safari (iOS)",
+                                       imageName: "Safari",
                                        userAgent: "Don'tChange"),
-                             UserAgent(name: "Microsoft Edge (iOS)",
+                             UserAgent(name: "Safari 16.5 (macOS)",
+                                       imageName: "Safari",
+                                       userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15"),
+                             UserAgent(name: "Microsoft Edge 113 (iOS)",
                                        imageName: "Edgeium",
                                        userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 EdgiOS/113.0.1774.50 Mobile/15E148 Safari/605.1.15"),
-                             UserAgent(name: "Microsoft Edge (macOS)",
+                             UserAgent(name: "Microsoft Edge 113 (macOS)",
                                        imageName: "Edgeium",
-                                       userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57"),
-                             UserAgent(name: "Microsoft Edge (EdgeHTML)",
+                                       userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57"),
+                             UserAgent(name: "Microsoft Edge 18 (EdgeHTML)",
                                        imageName: "EdgeHTML",
                                        userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763"),
-                             UserAgent(name: "Google Chrome (iOS)",
+                             UserAgent(name: "Google Chrome 113 (iOS)",
                                        imageName: "Chrome",
-                                       userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/113.0.5672.121 Mobile/15E148 Safari/604.1"),
-                             UserAgent(name: "Google Chrome (macOS)",
+                                       userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/113.0.5672.121 Mobile/15E148 Safari/605.1.15"),
+                             UserAgent(name: "Google Chrome 113 (macOS)",
                                        imageName: "Chrome",
-                                       userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"),
-                             UserAgent(name: "Google App (iOS)",
+                                       userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"),
+                             UserAgent(name: "Google App 164 (iOS)",
                                        imageName: "Google",
-                                       userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/164.0.378717864 Mobile/15E148 Safari/604.1"),
+                                       userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/164.0.378717864 Mobile/15E148 Safari/605.1.15"),
                              UserAgent(name: "Internet Explorer 6",
                                        imageName: "IE",
                                        userAgent: "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)"),
@@ -56,47 +59,31 @@ class UserAgentTableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return data.count
-        } else {
-            return 0
-        }
+        return data.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Built-in User Agents"
-        } else {
-            return ""
-        }
+        return "Built-in User Agents"
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if section == 1 {
-            return "After you change your user agent, Safari may refresh when you return to it."
-        } else {
-            return ""
-        }
+        return "After you change your user agent, Safari may refresh when you return to it."
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-            cell.imageView!.image = UIImage(named: data[indexPath.row].imageName)
-            cell.textLabel!.text = data[indexPath.row].name
-            if data[indexPath.row].userAgent == selectedUserAgent {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
-            }
-            return cell
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        cell.imageView!.image = UIImage(named: data[indexPath.row].imageName)
+        cell.textLabel!.text = data[indexPath.row].name
+        if data[indexPath.row].userAgent == selectedUserAgent {
+            cell.accessoryType = .checkmark
         } else {
-            return UITableViewCell()
+            cell.accessoryType = .none
         }
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
