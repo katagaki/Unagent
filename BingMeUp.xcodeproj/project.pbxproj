@@ -253,8 +253,8 @@
 			children = (
 				E43AEB6D2A21B2BD0057ED0E /* background.js */,
 				E43AEB782A21BF970057ED0E /* content.js */,
-				E4C0ABDA29F4C93F006219ED /* 128.png */,
 				E4C0ABDB29F4C93F006219ED /* manifest.json */,
+				E4C0ABDA29F4C93F006219ED /* 128.png */,
 				E4C0ABD829F4C93E006219ED /* LICENSE */,
 			);
 			name = Resources;

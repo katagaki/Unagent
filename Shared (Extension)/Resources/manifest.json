@@ -16,7 +16,8 @@
     "description": "Modify the user agent reported to any website",
     "permissions": [
       "declarativeNetRequestWithHostAccess",
-      "nativeMessaging"
+      "nativeMessaging",
+      "storage"
     ],
     "host_permissions": [
       "*://*/*"

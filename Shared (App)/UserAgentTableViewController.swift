@@ -65,7 +65,7 @@ class UserAgentTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 1 {
-            return "You may need to refresh Safari a few times for the changes to take effect."
+            return "After you change your user agent, Safari may refresh when you return to it."
         } else {
             return ""
         }
