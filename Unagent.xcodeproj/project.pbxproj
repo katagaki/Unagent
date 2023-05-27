@@ -106,9 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				E43AEB932A2202980057ED0E /* LICENSE */,
-				E43AEB942A2202980057ED0E /* background.js */,
 				E43AEB952A2202980057ED0E /* 128.png */,
 				E43AEB962A2202980057ED0E /* manifest.json */,
+				E43AEB942A2202980057ED0E /* background.js */,
 				E43AEB972A2202980057ED0E /* content.js */,
 			);
 			path = Resources;
@@ -118,8 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				E43AEB9E2A2202A40057ED0E /* Icon.png */,
-				E43AEB9F2A2202A40057ED0E /* Script.js */,
 				E43AEBA02A2202A40057ED0E /* Main.html */,
+				E43AEB9F2A2202A40057ED0E /* Script.js */,
 				E43AEBA12A2202A40057ED0E /* Style.css */,
 			);
 			path = Resources;
