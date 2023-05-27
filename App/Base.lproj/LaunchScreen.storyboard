@@ -60,9 +60,13 @@
             <point key="canvasLocation" x="-705" y="683"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="AccentColor"/>
     <resources>
         <image name="checklist" catalog="system" width="128" height="107"/>
         <image name="doc.badge.gearshape.fill" catalog="system" width="120" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
