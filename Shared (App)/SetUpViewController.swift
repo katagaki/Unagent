@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SetUpViewController.swift
 //  Shared (App)
 //
 //  Created by 堅書 on 2023/04/23.
@@ -18,7 +18,7 @@ typealias PlatformViewController = NSViewController
 
 let extensionBundleIdentifier = "com.tsubuzaki.BingBong.Extension"
 
-class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMessageHandler {
+class SetUpViewController: PlatformViewController, WKNavigationDelegate, WKScriptMessageHandler {
 
     @IBOutlet var webView: WKWebView!
 

@@ -5,21 +5,23 @@
     "icons": {
       "128": "128.png"
     },
-    "description": "Unblock Bing Chat by forcing Safari to use Microsoft Edge's user agent.",
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [{
+        "js": ["content.js"],
+        "matches": ["<all_urls>"]
+    }],
+    "description": "Modify the user agent reported to any website",
     "permissions": [
-      "declarativeNetRequestWithHostAccess"
+      "declarativeNetRequestWithHostAccess",
+      "nativeMessaging"
     ],
     "host_permissions": [
-      "*://*.bing.com/*",
-      "*://*.whatismybrowser.com/*"
+      "*://*/*"
     ],
     "declarative_net_request": {
-      "rule_resources": [
-        {
-          "id": "ruleset_1",
-          "enabled": true,
-          "path": "rules.json"
-        }
-      ]
+      "rule_resources": []
     }
 }

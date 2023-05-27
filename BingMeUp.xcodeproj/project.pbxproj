@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E41A3E9629F4D6A00001F08C /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E41A3E9529F4D6A00001F08C /* rules.json */; };
-		E41A3E9A29F4D6CE0001F08C /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = E41A3E9929F4D6CE0001F08C /* rules.json */; };
+		E43AEB6E2A21B2BD0057ED0E /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = E43AEB6D2A21B2BD0057ED0E /* background.js */; };
+		E43AEB6F2A21B2BD0057ED0E /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = E43AEB6D2A21B2BD0057ED0E /* background.js */; };
+		E43AEB742A21B4630057ED0E /* UserAgentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AEB702A21B45D0057ED0E /* UserAgentTableViewController.swift */; };
+		E43AEB752A21B4640057ED0E /* UserAgentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AEB702A21B45D0057ED0E /* UserAgentTableViewController.swift */; };
+		E43AEB792A21BF970057ED0E /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = E43AEB782A21BF970057ED0E /* content.js */; };
+		E43AEB7A2A21BF970057ED0E /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = E43AEB782A21BF970057ED0E /* content.js */; };
 		E4B1B2E729F4C51D00827556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2E629F4C51D00827556 /* AppDelegate.swift */; };
 		E4B1B2E929F4C51D00827556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2E829F4C51D00827556 /* SceneDelegate.swift */; };
 		E4B1B2EC29F4C51D00827556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2EA29F4C51D00827556 /* LaunchScreen.storyboard */; };
@@ -25,14 +29,12 @@
 		E4B1B31829F4C51D00827556 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2D929F4C51C00827556 /* Style.css */; };
 		E4B1B31929F4C51D00827556 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2DA29F4C51C00827556 /* Script.js */; };
 		E4B1B31A29F4C51D00827556 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2DA29F4C51C00827556 /* Script.js */; };
-		E4B1B31B29F4C51D00827556 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2DB29F4C51C00827556 /* ViewController.swift */; };
-		E4B1B31C29F4C51D00827556 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2DB29F4C51C00827556 /* ViewController.swift */; };
+		E4B1B31B29F4C51D00827556 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2DB29F4C51C00827556 /* SetUpViewController.swift */; };
+		E4B1B31C29F4C51D00827556 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2DB29F4C51C00827556 /* SetUpViewController.swift */; };
 		E4B1B31D29F4C51D00827556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2DC29F4C51D00827556 /* Assets.xcassets */; };
 		E4B1B31E29F4C51D00827556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2DC29F4C51D00827556 /* Assets.xcassets */; };
 		E4B1B31F29F4C51D00827556 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2DE29F4C51D00827556 /* SafariWebExtensionHandler.swift */; };
 		E4B1B32029F4C51D00827556 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2DE29F4C51D00827556 /* SafariWebExtensionHandler.swift */; };
-		E4C0ABDC29F4C93F006219ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD629F4C93E006219ED /* README.md */; };
-		E4C0ABDD29F4C93F006219ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD629F4C93E006219ED /* README.md */; };
 		E4C0ABE029F4C93F006219ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD829F4C93E006219ED /* LICENSE */; };
 		E4C0ABE129F4C93F006219ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABD829F4C93E006219ED /* LICENSE */; };
 		E4C0ABE429F4C93F006219ED /* 128.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C0ABDA29F4C93F006219ED /* 128.png */; };
@@ -84,13 +86,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E41A3E9529F4D6A00001F08C /* rules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rules.json; path = Resources/ios/rules.json; sourceTree = "<group>"; };
-		E41A3E9929F4D6CE0001F08C /* rules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rules.json; path = Resources/macos/rules.json; sourceTree = "<group>"; };
+		E43AEB6D2A21B2BD0057ED0E /* background.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = background.js; path = Resources/background.js; sourceTree = "<group>"; };
+		E43AEB702A21B45D0057ED0E /* UserAgentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgentTableViewController.swift; sourceTree = "<group>"; };
+		E43AEB762A21B83F0057ED0E /* BingMeUp (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BingMeUp (iOS).entitlements"; sourceTree = "<group>"; };
+		E43AEB772A21B8730057ED0E /* BingMeUp Extension (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BingMeUp Extension (iOS).entitlements"; sourceTree = "<group>"; };
+		E43AEB782A21BF970057ED0E /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
 		E4B1B2D729F4C51C00827556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
 		E4B1B2D829F4C51C00827556 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		E4B1B2D929F4C51C00827556 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
 		E4B1B2DA29F4C51C00827556 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		E4B1B2DB29F4C51C00827556 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E4B1B2DB29F4C51C00827556 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		E4B1B2DC29F4C51D00827556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4B1B2DE29F4C51D00827556 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
 		E4B1B2E329F4C51D00827556 /* Unagent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unagent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +114,6 @@
 		E4B1B30C29F4C51D00827556 /* Unagent Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Unagent Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B31129F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B1B31229F4C51D00827556 /* Bing Chat Unblocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bing Chat Unblocker.entitlements"; sourceTree = "<group>"; };
-		E4C0ABD629F4C93E006219ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Resources/README.md; sourceTree = "<group>"; };
 		E4C0ABD829F4C93E006219ED /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = Resources/LICENSE; sourceTree = "<group>"; };
 		E4C0ABDA29F4C93F006219ED /* 128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 128.png; path = Resources/128.png; sourceTree = "<group>"; };
 		E4C0ABDB29F4C93F006219ED /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		E4B1B2CF29F4C51C00827556 = {
 			isa = PBXGroup;
 			children = (
+				E43AEB772A21B8730057ED0E /* BingMeUp Extension (iOS).entitlements */,
+				E43AEB762A21B83F0057ED0E /* BingMeUp (iOS).entitlements */,
 				E4B1B2D429F4C51C00827556 /* Shared (App) */,
 				E4B1B2DD29F4C51D00827556 /* Shared (Extension) */,
 				E4B1B2E529F4C51D00827556 /* iOS (App) */,
@@ -163,7 +169,8 @@
 		E4B1B2D429F4C51C00827556 /* Shared (App) */ = {
 			isa = PBXGroup;
 			children = (
-				E4B1B2DB29F4C51C00827556 /* ViewController.swift */,
+				E4B1B2DB29F4C51C00827556 /* SetUpViewController.swift */,
+				E43AEB702A21B45D0057ED0E /* UserAgentTableViewController.swift */,
 				E4B1B2DC29F4C51D00827556 /* Assets.xcassets */,
 				E4B1B2D529F4C51C00827556 /* Resources */,
 			);
@@ -244,12 +251,11 @@
 		E4B1B33129F4C51D00827556 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E43AEB6D2A21B2BD0057ED0E /* background.js */,
+				E43AEB782A21BF970057ED0E /* content.js */,
 				E4C0ABDA29F4C93F006219ED /* 128.png */,
-				E4C0ABD829F4C93E006219ED /* LICENSE */,
 				E4C0ABDB29F4C93F006219ED /* manifest.json */,
-				E4C0ABD629F4C93E006219ED /* README.md */,
-				E41A3E9929F4D6CE0001F08C /* rules.json */,
-				E41A3E9529F4D6A00001F08C /* rules.json */,
+				E4C0ABD829F4C93E006219ED /* LICENSE */,
 			);
 			name = Resources;
 			path = "Shared (Extension)";
@@ -408,10 +414,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C0ABE629F4C93F006219ED /* manifest.json in Resources */,
-				E4C0ABDC29F4C93F006219ED /* README.md in Resources */,
 				E4C0ABE429F4C93F006219ED /* 128.png in Resources */,
-				E41A3E9629F4D6A00001F08C /* rules.json in Resources */,
 				E4C0ABE029F4C93F006219ED /* LICENSE in Resources */,
+				E43AEB6E2A21B2BD0057ED0E /* background.js in Resources */,
+				E43AEB792A21BF970057ED0E /* content.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,10 +426,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C0ABE729F4C93F006219ED /* manifest.json in Resources */,
-				E4C0ABDD29F4C93F006219ED /* README.md in Resources */,
-				E41A3E9A29F4D6CE0001F08C /* rules.json in Resources */,
 				E4C0ABE529F4C93F006219ED /* 128.png in Resources */,
 				E4C0ABE129F4C93F006219ED /* LICENSE in Resources */,
+				E43AEB6F2A21B2BD0057ED0E /* background.js in Resources */,
+				E43AEB7A2A21BF970057ED0E /* content.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,8 +440,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4B1B31B29F4C51D00827556 /* ViewController.swift in Sources */,
+				E4B1B31B29F4C51D00827556 /* SetUpViewController.swift in Sources */,
 				E4B1B2E729F4C51D00827556 /* AppDelegate.swift in Sources */,
+				E43AEB752A21B4640057ED0E /* UserAgentTableViewController.swift in Sources */,
 				E4B1B2E929F4C51D00827556 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +451,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4B1B31C29F4C51D00827556 /* ViewController.swift in Sources */,
+				E43AEB742A21B4630057ED0E /* UserAgentTableViewController.swift in Sources */,
+				E4B1B31C29F4C51D00827556 /* SetUpViewController.swift in Sources */,
 				E4B1B2F829F4C51D00827556 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,8 +636,9 @@
 		E4B1B32429F4C51D00827556 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BingMeUp Extension (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
@@ -659,8 +668,9 @@
 		E4B1B32529F4C51D00827556 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BingMeUp Extension (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
@@ -694,8 +704,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BingMeUp (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (App)/Info.plist";
@@ -735,8 +746,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BingMeUp (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (App)/Info.plist";

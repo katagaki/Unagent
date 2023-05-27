@@ -3,7 +3,7 @@
     {
       "color" : {
         "platform" : "universal",
-        "reference" : "systemBlueColor"
+        "reference" : "systemCyanColor"
       },
       "idiom" : "universal"
     }

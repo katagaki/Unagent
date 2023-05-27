@@ -12,11 +12,15 @@ let SFExtensionMessageKey = "message"
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
+    let defaults: UserDefaults = UserDefaults(suiteName: "group.com.tsubuzaki.BingBong")!
+
     func beginRequest(with context: NSExtensionContext) {
-        let item = context.inputItems[0] as! NSExtensionItem
-        let message = item.userInfo?[SFExtensionMessageKey]
         let response = NSExtensionItem()
-        response.userInfo = [ SFExtensionMessageKey: [ "Response to": message ] ]
+        if let currentUserAgent = defaults.string(forKey: "SelectedUserAgentRule") {
+            response.userInfo = [
+                SFExtensionMessageKey: ["userAgent": currentUserAgent]
+            ]
+        }
         context.completeRequest(returningItems: [response], completionHandler: nil)
     }
 
