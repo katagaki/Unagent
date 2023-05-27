@@ -126,6 +126,14 @@ class UserAgentTableViewController: UITableViewController, UITextViewDelegate {
         tableView.reloadSections(IndexSet(integer: 1), with: .none)
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
 }
 
 struct UserAgent: Codable {
