@@ -114,10 +114,9 @@ class UserAgentTableViewController: UITableViewController, UITextViewDelegate {
             let textView = cell.contentView.subviews[0] as! UITextView
             textView.textContainer.lineFragmentPadding = 20.0
             textView.text = ""
-            if let currentUserAgent = defaults.string(forKey: "UserAgent") {
-                if currentUserAgent != "Don'tChange" {
-                    textView.text = currentUserAgent
-                }
+            if let currentUserAgent = defaults.string(forKey: "UserAgent"),
+               currentUserAgent != "Don'tChange" {
+                textView.text = currentUserAgent
             }
             textView.delegate = self
             return cell

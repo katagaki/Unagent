@@ -8,8 +8,6 @@
 import SafariServices
 import os.log
 
-let SFExtensionMessageKey = "message"
-
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
     let defaults: UserDefaults = UserDefaults(suiteName: "group.com.tsubuzaki.BingBong")!
@@ -18,7 +16,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         let response = NSExtensionItem()
         if let currentUserAgent = defaults.string(forKey: "UserAgent") {
             response.userInfo = [
-                SFExtensionMessageKey: ["userAgent": currentUserAgent]
+                "message": ["userAgent": currentUserAgent]
             ]
         }
         context.completeRequest(returningItems: [response], completionHandler: nil)

@@ -20,7 +20,7 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 function setUserAgent(userAgent) {
     if (userAgent != "Don'tChange") {
-        var rule = {
+        let rule = {
             id: 1,
             priority: 1,
             condition: {
@@ -51,7 +51,6 @@ function setUserAgent(userAgent) {
         console.log("New user agent set in localStorage.");
     });
     reloadTab();
-    return;
 }
 
 function reloadTab() {
