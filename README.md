@@ -1,4 +1,4 @@
-# Unagent (BingMeUp)
+# Unagent
 A Safari extension to modify the user agent per website.
 
 ## Why I built this
@@ -12,9 +12,7 @@ Some tweaks have been made to the user agent to ensure compatibility with Safari
 
 ### What works
 - Basic user agent selection
-
-### What's planned
-- Site-specific settings
+- Per site settings
 - Custom user agents
 
 ## Building
