@@ -14,11 +14,14 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
     func beginRequest(with context: NSExtensionContext) {
         let response = NSExtensionItem()
+        var responseContent: [String:String] = [:]
         if let currentUserAgent = defaults.string(forKey: "UserAgent") {
-            response.userInfo = [
-                "message": ["userAgent": currentUserAgent]
-            ]
+            responseContent.updateValue(currentUserAgent, forKey: "userAgent")
         }
+        if let siteSettings = defaults.string(forKey: "SiteSettings") {
+            responseContent.updateValue(siteSettings.replacingOccurrences(of: "\\", with: ""), forKey: "siteSettings")
+        }
+        response.userInfo = ["message": responseContent]
         context.completeRequest(returningItems: [response], completionHandler: nil)
     }
 

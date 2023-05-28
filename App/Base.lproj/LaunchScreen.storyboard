@@ -21,11 +21,12 @@
                     <connections>
                         <segue destination="bLq-4X-g7S" kind="relationship" relationship="viewControllers" id="r7f-b8-zan"/>
                         <segue destination="bF8-Em-dEd" kind="relationship" relationship="viewControllers" id="Mge-a0-AnK"/>
+                        <segue destination="mqg-vy-Odg" kind="relationship" relationship="viewControllers" id="2L5-Ht-NA8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTv-0y-een" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1492" y="345"/>
+            <point key="canvasLocation" x="-1494" y="682"/>
         </scene>
         <!-- -->
         <scene sceneID="H77-C1-YUt">
@@ -53,19 +54,36 @@
                         <viewLayoutGuide key="safeArea" id="JuA-MU-ypY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title=" " image="doc.badge.gearshape.fill" catalog="system" id="C4M-tu-26H"/>
+                    <tabBarItem key="tabBarItem" title=" " image="globe" catalog="system" id="C4M-tu-26H"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNJ-VU-KoR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-705" y="683"/>
         </scene>
+        <!-- -->
+        <scene sceneID="xVK-4M-Lfb">
+            <objects>
+                <viewController id="mqg-vy-Odg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kUv-Ys-Aj7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fGK-J1-bmq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title=" " image="gear" catalog="system" id="0N8-LX-TSw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VN8-VJ-qtR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-706" y="1338"/>
+        </scene>
     </scenes>
     <color key="tintColor" name="AccentColor"/>
     <resources>
         <image name="checklist" catalog="system" width="128" height="107"/>
-        <image name="doc.badge.gearshape.fill" catalog="system" width="120" height="128"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="globe" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

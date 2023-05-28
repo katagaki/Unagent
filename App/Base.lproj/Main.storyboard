@@ -20,12 +20,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="gN8-qy-mah"/>
-                        <segue destination="t5M-yI-wqX" kind="relationship" relationship="viewControllers" id="a5M-Pi-u3H"/>
+                        <segue destination="SyS-g2-CIs" kind="relationship" relationship="viewControllers" id="3QG-5c-r8Z"/>
+                        <segue destination="6WX-N4-NhI" kind="relationship" relationship="viewControllers" id="9Ln-GW-HlH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiF-RN-tVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1542" y="684"/>
+            <point key="canvasLocation" x="-1535" y="684"/>
         </scene>
         <!--Set Up-->
         <scene sceneID="tne-QT-ifu">
@@ -56,103 +57,35 @@
             </objects>
             <point key="canvasLocation" x="-704" y="25"/>
         </scene>
-        <!--User Agents-->
-        <scene sceneID="oZx-q3-X9W">
+        <!--Settings-->
+        <scene sceneID="Uvw-Pp-Ly4">
             <objects>
-                <tableViewController id="EqK-ID-A4V" customClass="UserAgentTableViewController" customModule="Unagent" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8Gg-5d-aYt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomUserAgentInputCell" id="xaj-PD-cbx">
-                                <rect key="frame" x="20" y="38" width="374" height="100.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xaj-PD-cbx" id="vll-1D-RnF">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="100.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egQ-JT-iM7">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="100.5"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="YfG-2s-KiR"/>
-                                            </constraints>
-                                            <string key="text">Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Mobile/15E148 Safari/604.1</string>
-                                            <color key="textColor" systemColor="labelColor"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                        </textView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="egQ-JT-iM7" secondAttribute="trailing" id="Yp5-sI-A4f"/>
-                                        <constraint firstItem="egQ-JT-iM7" firstAttribute="leading" secondItem="vll-1D-RnF" secondAttribute="leading" id="agL-iw-bO1"/>
-                                        <constraint firstItem="egQ-JT-iM7" firstAttribute="top" secondItem="vll-1D-RnF" secondAttribute="top" id="kpw-w5-9Jx"/>
-                                        <constraint firstAttribute="bottom" secondItem="egQ-JT-iM7" secondAttribute="bottom" id="q3n-MT-MTh"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BuiltInUserAgentCell" textLabel="oVM-h3-Qog" imageView="vwN-eJ-aGS" style="IBUITableViewCellStyleDefault" id="bCW-78-mni">
-                                <rect key="frame" x="20" y="138.5" width="374" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bCW-78-mni" id="ewn-zj-FAH">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="User Agent Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="oVM-h3-Qog">
-                                            <rect key="frame" x="67" y="0.0" width="287" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Empty" id="vwN-eJ-aGS">
-                                            <rect key="frame" x="20" y="5.5" width="32" height="32"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="EqK-ID-A4V" id="TSC-ZW-iQL"/>
-                            <outlet property="delegate" destination="EqK-ID-A4V" id="QGK-ft-3g9"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="User Agents" id="hdW-mc-ohk"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dzY-o6-6ec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <hostingController id="6WX-N4-NhI" customClass="GlobalSettingsViewHostingController" customModule="Unagent" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="3Nd-bS-TQq"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FAs-14-TUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4" y="684"/>
+            <point key="canvasLocation" x="-704" y="1344"/>
         </scene>
-        <!--User Agents-->
-        <scene sceneID="8X4-6o-MER">
+        <!--Site Settings-->
+        <scene sceneID="g90-BF-pyY">
             <objects>
-                <navigationController id="t5M-yI-wqX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User Agents" image="doc.badge.gearshape.fill" catalog="system" id="UJK-2k-wX8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="QaI-Mn-S28">
-                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="EqK-ID-A4V" kind="relationship" relationship="rootViewController" id="VJb-Of-Cu7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WaM-LZ-WnH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <hostingController id="SyS-g2-CIs" customClass="SiteSettingsViewHostingController" customModule="Unagent" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Site Settings" image="globe" catalog="system" id="Tmz-yg-e1W"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XR3-cw-uJF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-704" y="684"/>
         </scene>
     </scenes>
     <color key="tintColor" name="AccentColor"/>
     <resources>
-        <image name="Empty" width="32" height="32"/>
         <image name="checklist" catalog="system" width="128" height="107"/>
-        <image name="doc.badge.gearshape.fill" catalog="system" width="120" height="128"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="globe" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
