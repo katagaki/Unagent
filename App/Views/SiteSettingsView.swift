@@ -20,7 +20,7 @@ struct SiteSettingsView: View {
     @State var newSiteSettingWillBeCreated: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(siteSettings, id: \.domain) { siteSetting in
                 HStack(spacing: 8.0) {
                     Image(systemName: "globe")

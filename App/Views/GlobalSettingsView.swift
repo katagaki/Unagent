@@ -16,7 +16,7 @@ struct GlobalSettingsView: View {
     @State var currentUserAgent: String = ""
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section {
                     TextEditor(text: $currentUserAgent)
