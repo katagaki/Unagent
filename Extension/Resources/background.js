@@ -39,7 +39,7 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
             let currentSiteSettings = results.siteSettings;
             if (currentSiteSettings != null) {
                 console.log("currentSiteSettings exists in localStorage.");
-                if (JSON.parse(currentSiteSettings) != JSON.parse(response["siteSettings"])) {
+                if (currentSiteSettings != JSON.parse(response["siteSettings"])) {
                     setSiteSettings(JSON.parse(response["siteSettings"]));
                     hasConfigBeenUpdated = true;
                 }
@@ -107,33 +107,33 @@ function setSiteSettings(siteSettings) {
                 });
             }
         });
-    });
-    // Create new rules per site setting
-    for (const siteSetting of siteSettings) {
-        let rule = {
-            id: ruleId,
-            priority: ruleId + 1,
-            condition: {
-                urlFilter: "||" + siteSetting.domain,
-                resourceTypes: ["main_frame"]
-            },
-            action: {
-                type: "modifyHeaders",
-                requestHeaders: [
-                    {
-                        header: "User-Agent",
-                        operation: "set",
-                        value: siteSetting.userAgent
-                    }
-                ]
-            }
-        };
-        browser.declarativeNetRequest.updateDynamicRules({
-            addRules: [rule]
+        // Create new rules per site setting
+        for (const siteSetting of siteSettings) {
+            let rule = {
+                id: ruleId,
+                priority: ruleId + 1,
+                condition: {
+                    urlFilter: "||" + siteSetting.domain,
+                    resourceTypes: ["main_frame"]
+                },
+                action: {
+                    type: "modifyHeaders",
+                    requestHeaders: [
+                        {
+                            header: "User-Agent",
+                            operation: "set",
+                            value: siteSetting.userAgent
+                        }
+                    ]
+                }
+            };
+            browser.declarativeNetRequest.updateDynamicRules({
+                addRules: [rule]
+            });
+            ruleId += 1;
+        }
+        browser.storage.local.set({siteSettings: siteSettings}, () => {
+            console.log("New site settings set in localStorage.");
         });
-        ruleId += 1;
-    }
-    browser.storage.local.set({siteSettings: siteSettings}, () => {
-        console.log("New site settings set in localStorage.");
     });
 }
