@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GlobalSettingsView: View {
     
-    let defaults: UserDefaults = UserDefaults(suiteName: "group.com.tsubuzaki.BingBong")!
+    let defaults: UserDefaults = UserDefaults(suiteName: "group.\(Bundle.main.bundleIdentifier!)")!
     
     @State var presets: [Preset] = []
     @State var willSaveUserAgentToMemory: Bool = false

@@ -16,7 +16,7 @@ import SafariServices
 typealias PlatformViewController = NSViewController
 #endif
 
-let extensionBundleIdentifier = "com.tsubuzaki.BingBong.Extension"
+let extensionBundleIdentifier = "\(Bundle.main.bundleIdentifier!).Extension"
 
 class SetUpViewController: PlatformViewController, WKNavigationDelegate, WKScriptMessageHandler {
 

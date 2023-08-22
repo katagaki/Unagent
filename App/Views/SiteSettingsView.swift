@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SiteSettingsView: View {
     
-    let defaults: UserDefaults = UserDefaults(suiteName: "group.com.tsubuzaki.BingBong")!
+    let defaults: UserDefaults = UserDefaults(suiteName: "group.\(Bundle.main.bundleIdentifier!)")!
     
     @State var siteSettings: [SiteSetting] = []
     @State var willSaveSiteSettingsToMemory: Bool = false

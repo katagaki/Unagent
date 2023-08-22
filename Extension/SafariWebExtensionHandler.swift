@@ -10,7 +10,9 @@ import os.log
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
-    let defaults: UserDefaults = UserDefaults(suiteName: "group.com.tsubuzaki.BingBong")!
+    let defaults: UserDefaults = UserDefaults(suiteName: "group.\(Bundle.main.bundleIdentifier!.replacingOccurrences(of: ".Extension", with: ""))")!
+    // HACK: This will break if the extension bundle ID does not follow the format
+    //       <bundleID>.Extension
 
     func beginRequest(with context: NSExtensionContext) {
         let response = NSExtensionItem()
