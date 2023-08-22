@@ -2,7 +2,7 @@
 //  SiteSettingsNewView.swift
 //  Unagent
 //
-//  Created by シンジャスティン on 2023/05/28.
+//  Created by 堅書 on 2023/05/28.
 //
 
 import SwiftUI
