@@ -2,10 +2,16 @@
 //  SiteSettingsView.swift
 //  Unagent
 //
-//  Created by 堅書 on 2023/05/28.
+//  Created by シンジャスティン on 2023/05/28.
 //
 
 import SwiftUI
+
+class SiteSettingsViewController: UIHostingController<SiteSettingsView> {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder, rootView: SiteSettingsView())
+    }
+}
 
 struct SiteSettingsView: View {
     
@@ -22,14 +28,8 @@ struct SiteSettingsView: View {
     var body: some View {
         NavigationStack {
             List(siteSettings, id: \.domain) { siteSetting in
-                HStack(spacing: 8.0) {
-                    Image(systemName: "globe")
-                    VStack(alignment: .leading, spacing: 2.0) {
-                        Text(siteSetting.domain)
-                        Text(siteSetting.userAgent)
-                            .font(.caption)
-                    }
-                }
+                SiteSettingRow(title: siteSetting.domain,
+                               subtitle: siteSetting.userAgent)
                 .swipeActions {
                     Button("Delete") {
                         siteSettings.removeAll(where: {$0.domain == siteSetting.domain})

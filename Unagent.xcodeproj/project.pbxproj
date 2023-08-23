@@ -18,13 +18,16 @@
 		E43AEBA72A2202B00057ED0E /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = E43AEBA02A2202A40057ED0E /* Main.html */; };
 		E43AEBA82A2202B00057ED0E /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = E43AEBA12A2202A40057ED0E /* Style.css */; };
 		E43AEBA92A2202B00057ED0E /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = E43AEB9F2A2202A40057ED0E /* Script.js */; };
+		E477E7362A9612C000517B72 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7352A9612C000517B72 /* MoreView.swift */; };
+		E477E7382A96131C00517B72 /* ListSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7372A96131C00517B72 /* ListSectionHeader.swift */; };
+		E477E73A2A96132200517B72 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7392A96132200517B72 /* ListRow.swift */; };
+		E477E73D2A96157000517B72 /* SiteSettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E73C2A96157000517B72 /* SiteSettingRow.swift */; };
+		E477E73F2A96168300517B72 /* FaviconFinder in Frameworks */ = {isa = PBXBuildFile; productRef = E477E73E2A96168300517B72 /* FaviconFinder */; };
 		E484DD822A23531B00C4E32E /* GlobalSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD812A23531B00C4E32E /* GlobalSettingsView.swift */; };
-		E484DD842A23554600C4E32E /* GlobalSettingsViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD832A23554600C4E32E /* GlobalSettingsViewHostingController.swift */; };
 		E484DD872A235A2900C4E32E /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD862A235A2900C4E32E /* Preset.swift */; };
 		E484DD892A235AA300C4E32E /* SiteSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD882A235AA300C4E32E /* SiteSetting.swift */; };
 		E484DD8B2A235C5A00C4E32E /* Presets.json in Resources */ = {isa = PBXBuildFile; fileRef = E484DD8A2A235C5A00C4E32E /* Presets.json */; };
 		E484DD8D2A235EC200C4E32E /* SiteSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD8C2A235EC200C4E32E /* SiteSettingsView.swift */; };
-		E484DD8F2A23617A00C4E32E /* SiteSettingsViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD8E2A23617A00C4E32E /* SiteSettingsViewHostingController.swift */; };
 		E484DD912A2362AE00C4E32E /* SiteSettingsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD902A2362AE00C4E32E /* SiteSettingsNewView.swift */; };
 		E4B1B2E729F4C51D00827556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2E629F4C51D00827556 /* AppDelegate.swift */; };
 		E4B1B2E929F4C51D00827556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1B2E829F4C51D00827556 /* SceneDelegate.swift */; };
@@ -71,13 +74,15 @@
 		E43AEB9F2A2202A40057ED0E /* Script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
 		E43AEBA02A2202A40057ED0E /* Main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Main.html; sourceTree = "<group>"; };
 		E43AEBA12A2202A40057ED0E /* Style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		E477E7352A9612C000517B72 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		E477E7372A96131C00517B72 /* ListSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionHeader.swift; sourceTree = "<group>"; };
+		E477E7392A96132200517B72 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
+		E477E73C2A96157000517B72 /* SiteSettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSettingRow.swift; sourceTree = "<group>"; };
 		E484DD812A23531B00C4E32E /* GlobalSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSettingsView.swift; sourceTree = "<group>"; };
-		E484DD832A23554600C4E32E /* GlobalSettingsViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSettingsViewHostingController.swift; sourceTree = "<group>"; };
 		E484DD862A235A2900C4E32E /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
 		E484DD882A235AA300C4E32E /* SiteSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSetting.swift; sourceTree = "<group>"; };
 		E484DD8A2A235C5A00C4E32E /* Presets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Presets.json; sourceTree = "<group>"; };
 		E484DD8C2A235EC200C4E32E /* SiteSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSettingsView.swift; sourceTree = "<group>"; };
-		E484DD8E2A23617A00C4E32E /* SiteSettingsViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSettingsViewHostingController.swift; sourceTree = "<group>"; };
 		E484DD902A2362AE00C4E32E /* SiteSettingsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSettingsNewView.swift; sourceTree = "<group>"; };
 		E4B1B2DB29F4C51C00827556 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		E4B1B2DC29F4C51D00827556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E477E73F2A96168300517B72 /* FaviconFinder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,9 +150,11 @@
 			children = (
 				E484DD8C2A235EC200C4E32E /* SiteSettingsView.swift */,
 				E484DD902A2362AE00C4E32E /* SiteSettingsNewView.swift */,
-				E484DD8E2A23617A00C4E32E /* SiteSettingsViewHostingController.swift */,
+				E477E73C2A96157000517B72 /* SiteSettingRow.swift */,
 				E484DD812A23531B00C4E32E /* GlobalSettingsView.swift */,
-				E484DD832A23554600C4E32E /* GlobalSettingsViewHostingController.swift */,
+				E477E7352A9612C000517B72 /* MoreView.swift */,
+				E477E7372A96131C00517B72 /* ListSectionHeader.swift */,
+				E477E7392A96132200517B72 /* ListRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,8 +201,8 @@
 				E4B1B2E629F4C51D00827556 /* AppDelegate.swift */,
 				E4B1B2E829F4C51D00827556 /* SceneDelegate.swift */,
 				E4B1B2DB29F4C51C00827556 /* SetUpViewController.swift */,
-				E4B1B2EA29F4C51D00827556 /* LaunchScreen.storyboard */,
 				E4B1B2ED29F4C51D00827556 /* Main.storyboard */,
+				E4B1B2EA29F4C51D00827556 /* LaunchScreen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -227,6 +235,9 @@
 				E43AEB902A2202730057ED0E /* PBXTargetDependency */,
 			);
 			name = Unagent;
+			packageProductDependencies = (
+				E477E73E2A96168300517B72 /* FaviconFinder */,
+			);
 			productName = "Bing Chat Unblocker (iOS)";
 			productReference = E4B1B2E329F4C51D00827556 /* Unagent.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +287,9 @@
 				Base,
 			);
 			mainGroup = E4B1B2CF29F4C51C00827556;
+			packageReferences = (
+				E477E73B2A9614F500517B72 /* XCRemoteSwiftPackageReference "FaviconFinder" */,
+			);
 			productRefGroup = E4B1B2E429F4C51D00827556 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -323,14 +337,16 @@
 			files = (
 				E484DD822A23531B00C4E32E /* GlobalSettingsView.swift in Sources */,
 				E484DD912A2362AE00C4E32E /* SiteSettingsNewView.swift in Sources */,
+				E477E7382A96131C00517B72 /* ListSectionHeader.swift in Sources */,
 				E4B1B31B29F4C51D00827556 /* SetUpViewController.swift in Sources */,
 				E484DD8D2A235EC200C4E32E /* SiteSettingsView.swift in Sources */,
-				E484DD842A23554600C4E32E /* GlobalSettingsViewHostingController.swift in Sources */,
 				E4B1B2E729F4C51D00827556 /* AppDelegate.swift in Sources */,
 				E484DD872A235A2900C4E32E /* Preset.swift in Sources */,
 				E484DD892A235AA300C4E32E /* SiteSetting.swift in Sources */,
+				E477E73A2A96132200517B72 /* ListRow.swift in Sources */,
 				E4B1B2E929F4C51D00827556 /* SceneDelegate.swift in Sources */,
-				E484DD8F2A23617A00C4E32E /* SiteSettingsViewHostingController.swift in Sources */,
+				E477E73D2A96157000517B72 /* SiteSettingRow.swift in Sources */,
+				E477E7362A9612C000517B72 /* MoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +683,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E477E73B2A9614F500517B72 /* XCRemoteSwiftPackageReference "FaviconFinder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/will-lumley/FaviconFinder.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E477E73E2A96168300517B72 /* FaviconFinder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E477E73B2A9614F500517B72 /* XCRemoteSwiftPackageReference "FaviconFinder" */;
+			productName = FaviconFinder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4B1B2D029F4C51C00827556 /* Project object */;
 }

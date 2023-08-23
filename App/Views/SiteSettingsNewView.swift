@@ -2,7 +2,7 @@
 //  SiteSettingsNewView.swift
 //  Unagent
 //
-//  Created by 堅書 on 2023/05/28.
+//  Created by シンジャスティン on 2023/05/28.
 //
 
 import SwiftUI
@@ -35,7 +35,8 @@ struct SiteSettingsNewView: View {
                         .frame(height: 150)
                         .scrollIndicators(.never)
                 } header: {
-                    Text("User Agent")
+                    ListSectionHeader(text: "User Agent")
+                        .font(.body)
                 } footer: {
                     Text("This user agent will only apply to pages in the domain specified.")
                 }
@@ -58,6 +59,7 @@ struct SiteSettingsNewView: View {
                     } label: {
                         Text("Add")
                     }
+                    .disabled(domain == "" || userAgent == "")
                 }
             }
         }

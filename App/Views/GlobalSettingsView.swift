@@ -2,10 +2,16 @@
 //  GlobalSettingsView.swift
 //  Unagent
 //
-//  Created by 堅書 on 2023/05/28.
+//  Created by シンジャスティン on 2023/05/28.
 //
 
 import SwiftUI
+
+class GlobalSettingsViewController: UIHostingController<GlobalSettingsView> {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder, rootView: GlobalSettingsView())
+    }
+}
 
 struct GlobalSettingsView: View {
     
@@ -24,11 +30,21 @@ struct GlobalSettingsView: View {
                         .frame(height: 150)
                         .scrollIndicators(.never)
                 } header: {
-                    Text("Global User Agent")
+                    HStack(alignment: .center) {
+                        ListSectionHeader(text: "Global User Agent")
+                            .font(.body)
+                        Spacer()
+                        Button {
+                            UIPasteboard.general.string = currentUserAgent
+                        } label: {
+                            Text("Copy")
+                        }
+                        .textCase(.none)
+                    }
                 } footer: {
                     Text("Setting a site-specific user agent will override the global user agent.")
                 }
-                Section("Presets") {
+                Section {
                     ForEach(presets, id: \.name) { preset in
                         HStack(spacing: 8.0) {
                             Image(preset.imageName)
@@ -45,9 +61,12 @@ struct GlobalSettingsView: View {
                             currentUserAgent = preset.userAgent
                         }
                     }
+                } header: {
+                    ListSectionHeader(text: "Presets")
+                        .font(.body)
                 }
             }
-            .navigationTitle("Settings")
+            .navigationTitle("Global Settings")
             .onAppear {
                 if let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
                    let data = try? Data(contentsOf: url) {

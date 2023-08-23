@@ -2,7 +2,7 @@
 //  SiteSetting.swift
 //  Unagent
 //
-//  Created by 堅書 on 2023/05/28.
+//  Created by シンジャスティン on 2023/05/28.
 //
 
 struct SiteSetting: Codable {
