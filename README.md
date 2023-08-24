@@ -1,6 +1,8 @@
 # Unagent
 A Safari extension to modify the user agent per website.
 
+**Download: [App Store](https://apps.apple.com/app/id6448220941)**
+
 ## Why I built this
 There isn't currently any user agent changer per website on the App Store, and using a separate browser/app on iOS to do web searches was troublesome. 
 
