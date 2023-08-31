@@ -43,7 +43,7 @@ struct SiteSettingsView: View {
                 SiteSettingsNewView(domain: $newSiteSettingDomain,
                                     userAgent: $newSiteSettingUserAgent,
                                     willCreateSiteSetting: $newSiteSettingWillBeCreated)
-                .presentationDetents([.medium])
+                .presentationDetents([.large, .medium])
             })
             .onAppear {
                 let decoder = JSONDecoder()
