@@ -1,8 +1,7 @@
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let currentSchemaVersion = 2;
-    var hasConfigBeenUpdated = false;
-    browser.storage.local.get("schemaVersion", (results) => {
-        let storedSchemaVersion = results.schemaVersion;
+    browser.storage.local.get(["schemaVersion", "userAgent", "siteSettings"], (localStorage) => {
+        let storedSchemaVersion = localStorage.schemaVersion;
         if (storedSchemaVersion == null || storedSchemaVersion < currentSchemaVersion) {
             browser.declarativeNetRequest.getDynamicRules((rules) => {
                 rules.forEach((rule) => {
@@ -11,52 +10,67 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
                     });
                 });
             });
-            browser.storage.local.set({schemaVersion: currentSchemaVersion}, () => {
-                console.log("Schema was reset in localStorage.");
-            });
-        } else {
-            console.log("No schema update necessary.");
+            browser.storage.local.set({schemaVersion: currentSchemaVersion});
         }
-    });
-    browser.runtime.sendNativeMessage({}, function(response) {
-        // Check and set global user agent
-        browser.storage.local.get("userAgent", (results) => {
-            let currentUserAgent = results.userAgent;
+        browser.runtime.sendNativeMessage({}, function(response) {
+            var hasConfigBeenUpdated = false;
+            // Check and set global user agent
+            let currentUserAgent = localStorage.userAgent;
             if (currentUserAgent != null) {
-                console.log("currentUserAgent exists in localStorage.");
-                if (currentUserAgent != response["userAgent"]) {
+                if ("userAgent" in response) {
+                    if (currentUserAgent != response["userAgent"]) {
+                        setUserAgent(response["userAgent"]);
+                        hasConfigBeenUpdated = true;
+                    }
+                }
+            } else {
+                if ("userAgent" in response) {
                     setUserAgent(response["userAgent"]);
                     hasConfigBeenUpdated = true;
                 }
-            } else {
-                console.log("currentUserAgent does not exist in localStorage.");
-                setUserAgent(response["userAgent"]);
-                hasConfigBeenUpdated = true;
             }
-        });
-        // Check and set site settings
-        browser.storage.local.get("siteSettings", (results) => {
-            let currentSiteSettings = results.siteSettings;
+            // Check and set site settings
+            let currentSiteSettings = localStorage.siteSettings;
             if (currentSiteSettings != null) {
-                console.log("currentSiteSettings exists in localStorage.");
-                if (currentSiteSettings != JSON.parse(response["siteSettings"])) {
+                if ("siteSettings" in response) {
+                    var siteSettingsFromNativeApp = JSON.parse(response["siteSettings"]);
+                    var siteSettingsRequiresUpdate = false;
+                    // Check for new site settings
+                    currentSiteSettings.forEach((currentSiteSetting) => {
+                        if (!containsSiteSetting(currentSiteSetting, siteSettingsFromNativeApp)) {
+                            siteSettingsRequiresUpdate = true;
+                        }
+                    });
+                    // Check for deleted site settings
+                    siteSettingsFromNativeApp.forEach((siteSettingFromNativeApp) => {
+                        if (!containsSiteSetting(siteSettingFromNativeApp, currentSiteSettings)) {
+                            siteSettingsRequiresUpdate = true;
+                        }
+                    });
+                    // Update the entire site settings object if anything requires an update
+                    if (siteSettingsRequiresUpdate) {
+                        if (currentSiteSettings != JSON.parse(response["siteSettings"])) {
+                            setSiteSettings(JSON.parse(response["siteSettings"]));
+                            hasConfigBeenUpdated = true;
+                        }
+                    }
+                }
+            } else {
+                if ("siteSettings" in response) {
                     setSiteSettings(JSON.parse(response["siteSettings"]));
                     hasConfigBeenUpdated = true;
                 }
-            } else {
-                console.log("currentSiteSettings does not exist in localStorage.");
-                setSiteSettings(JSON.parse(response["siteSettings"]));
-                hasConfigBeenUpdated = true;
+            }
+            // Reload tab if config was updated
+            if (hasConfigBeenUpdated) {
+                browser.tabs.getCurrent((tab) => {
+                    setTimeout(() => {
+                        browser.tabs.reload(tab.id);
+                    }, 500);
+                });
             }
         });
     });
-    // Reload tab if config was updated
-    if (hasConfigBeenUpdated) {
-        browser.tabs.query({active: true, currentWindow: true}, (tabs) => {
-            console.log("Reloading tab.");
-            browser.tabs.reload(tabs[0].id);
-        });
-    }
     return true;
 });
 
@@ -91,9 +105,7 @@ function setUserAgent(userAgent) {
             removeRuleIds: [9999]
         });
     }
-    browser.storage.local.set({userAgent: userAgent}, () => {
-        console.log("New user agent set in localStorage.");
-    });
+    browser.storage.local.set({userAgent: userAgent});
 }
 
 function setSiteSettings(siteSettings) {
@@ -132,8 +144,17 @@ function setSiteSettings(siteSettings) {
             });
             ruleId += 1;
         }
-        browser.storage.local.set({siteSettings: siteSettings}, () => {
-            console.log("New site settings set in localStorage.");
-        });
+        browser.storage.local.set({siteSettings: siteSettings});
     });
+}
+
+function containsSiteSetting(obj, list) {
+    var i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i].domain == obj.domain &&
+            list[i].userAgent == obj.userAgent) {
+            return true;
+        }
+    }
+    return false;
 }
