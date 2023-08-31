@@ -7,7 +7,7 @@
   {
     "name": "Safari 16.5 (iOS)",
     "imageName": "Safari",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Mobile/15E148 Safari/604.1"
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Mobile/15E148 Safari/604.1"
   },
   {
     "name": "Safari 16.5 (macOS)",
@@ -15,39 +15,39 @@
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15"
   },
   {
-    "name": "Microsoft Edge 113 (iOS)",
+    "name": "Microsoft Edge 116 (iOS)",
     "imageName": "Edgeium",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 EdgiOS/113.0.1774.50 Mobile/15E148 Safari/604.1"
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 EdgiOS/116.1938.64 Mobile/15E148 Safari/605.1.15"
   },
   {
-    "name": "Microsoft Edge 113 (macOS)",
+    "name": "Microsoft Edge 116 (macOS)",
     "imageName": "Edgeium",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57"
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.62"
   },
   {
-    "name": "Microsoft Edge 113 (Android)",
+    "name": "Microsoft Edge 116 (Android)",
     "imageName": "Edgeium",
-    "userAgent": "Mozilla/5.0 (Linux; Android 13.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.162 Mobile Safari/537.36 EdgA/113.0.1774.50"
+    "userAgent": "Mozilla/5.0 (Linux; Android 13.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.163 Mobile Safari/537.36 EdgA/116.0.1938.58"
   },
   {
-    "name": "Google Chrome 113 (iOS)",
+    "name": "Google Chrome 116 (iOS)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/113.0.5672.121 Mobile/15E148 Safari/604.1"
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/116.0.5845.146 Mobile/15E148 Safari/604.1"
   },
   {
-    "name": "Google Chrome 113 (macOS)",
+    "name": "Google Chrome 116 (macOS)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
   },
   {
-    "name": "Google Chrome 113 (Android)",
+    "name": "Google Chrome 116 (Android)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (Linux; Android 13.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.162 Mobile Safari/537.36"
+    "userAgent": "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.163 Mobile Safari/537.36"
   },
   {
-    "name": "Google App 265 (iOS)",
+    "name": "Google App 279 (iOS)",
     "imageName": "Google",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/265.0.533000180 Mobile/15E148 Safari/604.1"
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/279.1.560156937 Mobile/15E148 Safari/604.1"
   },
   {
     "name": "Googlebot",
@@ -61,17 +61,17 @@
   },
   {
     "name": "Playstation 5",
-    "imageName": "Playstation5",
+    "imageName": "SonyPlaystation5",
     "userAgent": "Mozilla/5.0 (PlayStation 5 5.71) AppleWebKit/601.2 (KHTML, like Gecko)"
   },
   {
     "name": "Playstation 4",
-    "imageName": "Playstation",
+    "imageName": "SonyPlaystation",
     "userAgent": "Mozilla/5.0 (PlayStation 4 2.57) AppleWebKit/537.73 (KHTML, like ED32B)"
   },
   {
     "name": "Playstation Portable",
-    "imageName": "Playstation",
+    "imageName": "SonyPlaystation",
     "userAgent": "Mozilla/5.0 (PSP (PlayStation Portable); 2.00)"
   },
   {
