@@ -18,6 +18,8 @@
 		E43AEBA72A2202B00057ED0E /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = E43AEBA02A2202A40057ED0E /* Main.html */; };
 		E43AEBA82A2202B00057ED0E /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = E43AEBA12A2202A40057ED0E /* Style.css */; };
 		E43AEBA92A2202B00057ED0E /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = E43AEB9F2A2202A40057ED0E /* Script.js */; };
+		E44DC8AD2AA04A0D00AA8A6B /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DC8AC2AA04A0D00AA8A6B /* LicensesView.swift */; };
+		E44DC8AF2AA04A2500AA8A6B /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DC8AE2AA04A2500AA8A6B /* License.swift */; };
 		E477E7362A9612C000517B72 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7352A9612C000517B72 /* MoreView.swift */; };
 		E477E7382A96131C00517B72 /* ListSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7372A96131C00517B72 /* ListSectionHeader.swift */; };
 		E477E73A2A96132200517B72 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7392A96132200517B72 /* ListRow.swift */; };
@@ -74,6 +76,8 @@
 		E43AEB9F2A2202A40057ED0E /* Script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
 		E43AEBA02A2202A40057ED0E /* Main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Main.html; sourceTree = "<group>"; };
 		E43AEBA12A2202A40057ED0E /* Style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		E44DC8AC2AA04A0D00AA8A6B /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
+		E44DC8AE2AA04A2500AA8A6B /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
 		E477E7352A9612C000517B72 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		E477E7372A96131C00517B72 /* ListSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionHeader.swift; sourceTree = "<group>"; };
 		E477E7392A96132200517B72 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				E477E7352A9612C000517B72 /* MoreView.swift */,
 				E477E7372A96131C00517B72 /* ListSectionHeader.swift */,
 				E477E7392A96132200517B72 /* ListRow.swift */,
+				E44DC8AC2AA04A0D00AA8A6B /* LicensesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			children = (
 				E484DD862A235A2900C4E32E /* Preset.swift */,
 				E484DD882A235AA300C4E32E /* SiteSetting.swift */,
+				E44DC8AE2AA04A2500AA8A6B /* License.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -339,8 +345,10 @@
 				E484DD912A2362AE00C4E32E /* SiteSettingsNewView.swift in Sources */,
 				E477E7382A96131C00517B72 /* ListSectionHeader.swift in Sources */,
 				E4B1B31B29F4C51D00827556 /* SetUpViewController.swift in Sources */,
+				E44DC8AD2AA04A0D00AA8A6B /* LicensesView.swift in Sources */,
 				E484DD8D2A235EC200C4E32E /* SiteSettingsView.swift in Sources */,
 				E4B1B2E729F4C51D00827556 /* AppDelegate.swift in Sources */,
+				E44DC8AF2AA04A2500AA8A6B /* License.swift in Sources */,
 				E484DD872A235A2900C4E32E /* Preset.swift in Sources */,
 				E484DD892A235AA300C4E32E /* SiteSetting.swift in Sources */,
 				E477E73A2A96132200517B72 /* ListRow.swift in Sources */,

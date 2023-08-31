@@ -55,6 +55,14 @@ struct MoreView: View {
                     ListSectionHeader(text: "Help & Support")
                         .font(.body)
                 }
+                Section {
+                    NavigationLink {
+                        LicensesView()
+                    } label: {
+                        ListRow(image: "ListIcon.Attributions",
+                                title: "Attributions")
+                    }
+                }
             }
             .listStyle(.insetGrouped)
             .navigationTitle("More")
