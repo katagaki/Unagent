@@ -1,4 +1,5 @@
 {
+  "originHash" : "426140295ce0aa2d903c9a8933cce4ba9ca37ee2d808a0a2a551e273b5d84892",
   "pins" : [
     {
       "identity" : "faviconfinder",
@@ -19,5 +20,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
