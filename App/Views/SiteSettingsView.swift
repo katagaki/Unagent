@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-class SiteSettingsViewController: UIHostingController<SiteSettingsView> {
-    required init?(coder: NSCoder) {
-        super.init(coder: coder, rootView: SiteSettingsView())
-    }
-}
-
 struct SiteSettingsView: View {
     
     let defaults: UserDefaults = UserDefaults(suiteName: "group.\(Bundle.main.bundleIdentifier!)")!

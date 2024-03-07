@@ -5,67 +5,67 @@
 //  Created by シンジャスティン on 2023/08/23.
 //
 
+import Komponents
 import SwiftUI
 
-class MoreViewController: UIHostingController<MoreView> {
-    required init?(coder: NSCoder) {
-        super.init(coder: coder, rootView: MoreView())
-    }
-}
-
 struct MoreView: View {
+    
+    @State var viewPath: [ViewPath] = []
+
     var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    Link(destination: URL(string: "https://x.com/katagaki_")!) {
-                        HStack {
-                            ListRow(image: "ListIcon.Twitter",
-                                    title: "Post on X",
-                                    subtitle: "@katagaki_",
-                                    includeSpacer: true)
-                            Image(systemName: "safari")
-                                .opacity(0.5)
-                        }
-                        .foregroundColor(.primary)
-                    }
-                    Link(destination: URL(string: "mailto:ktgk.public@icloud.com")!) {
-                        HStack {
-                            ListRow(image: "ListIcon.Email",
-                                    title: "Email Me",
-                                    subtitle: "ktgk.public@icloud.com",
-                                    includeSpacer: true)
-                            Image(systemName: "arrow.up.forward.app")
-                                .opacity(0.5)
-                        }
-                        .foregroundColor(.primary)
-                    }
-                    Link(destination: URL(string: "https://github.com/katagaki/Unagent")!) {
-                        HStack {
-                            ListRow(image: "ListIcon.GitHub",
-                                    title: "Read Source Code",
-                                    subtitle: "katagaki/Unagent",
-                                    includeSpacer: true)
-                            Image(systemName: "safari")
-                                .opacity(0.5)
-                        }
-                        .foregroundColor(.primary)
-                    }
-                } header: {
-                    ListSectionHeader(text: "Help & Support")
-                        .font(.body)
-                }
-                Section {
-                    NavigationLink {
-                        LicensesView()
-                    } label: {
-                        ListRow(image: "ListIcon.Attributions",
-                                title: "Attributions")
-                    }
+        NavigationStack(path: $viewPath) {
+            MoreList(repoName: "katagaki/Unagent", viewPath: ViewPath.moreAttributions) { }
+            .navigationDestination(for: ViewPath.self) { viewPath in
+                switch viewPath {
+                    case .moreAttributions: LicensesView(licenses: [
+                        License(libraryName: "FaviconFinder", text:
+"""
+Copyright (c) 2022 William Lumley <will@lumley.io>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+"""),
+                        License(libraryName: "SwiftSoup", text:
+"""
+MIT License
+
+Copyright (c) 2016 Nabil Chatbi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+""")])
                 }
             }
-            .listStyle(.insetGrouped)
-            .navigationTitle("More")
         }
     }
 }

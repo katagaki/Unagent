@@ -5,13 +5,8 @@
 //  Created by シンジャスティン on 2023/05/28.
 //
 
+import Komponents
 import SwiftUI
-
-class GlobalSettingsViewController: UIHostingController<GlobalSettingsView> {
-    required init?(coder: NSCoder) {
-        super.init(coder: coder, rootView: GlobalSettingsView())
-    }
-}
 
 struct GlobalSettingsView: View {
     
