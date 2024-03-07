@@ -5,49 +5,49 @@
     "userAgent": ""
   },
   {
-    "name": "Safari 16.5 (iOS)",
+    "name": "Safari 17.4 (iOS)",
     "imageName": "Safari",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Mobile/15E148 Safari/604.1"
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Mobile/15E148 Safari/604.1"
   },
   {
-    "name": "Safari 16.5 (macOS)",
+    "name": "Safari 17.3.1 (macOS)",
     "imageName": "Safari",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15"
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Safari/605.1.15"
   },
   {
-    "name": "Microsoft Edge 116 (iOS)",
+    "name": "Microsoft Edge 122 (iOS)",
     "imageName": "Edgeium",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 EdgiOS/116.1938.64 Mobile/15E148 Safari/605.1.15"
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 EdgiOS/122.2365.71 Mobile/15E148 Safari/605.1.15"
   },
   {
-    "name": "Microsoft Edge 116 (macOS)",
+    "name": "Microsoft Edge 122 (macOS)",
     "imageName": "Edgeium",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.62"
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.2365.66"
   },
   {
-    "name": "Microsoft Edge 116 (Android)",
+    "name": "Microsoft Edge 122 (Android)",
     "imageName": "Edgeium",
-    "userAgent": "Mozilla/5.0 (Linux; Android 13.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.163 Mobile Safari/537.36 EdgA/116.0.1938.58"
+    "userAgent": "Mozilla/5.0 (Linux; Android 13.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.105 Mobile Safari/537.36 EdgA/122.0.2365.56"
   },
   {
-    "name": "Google Chrome 116 (iOS)",
+    "name": "Google Chrome 122 (iOS)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/116.0.5845.146 Mobile/15E148 Safari/604.1"
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/122.0.6261.89 Mobile/15E148 Safari/604.1"
   },
   {
-    "name": "Google Chrome 116 (macOS)",
+    "name": "Google Chrome 122 (macOS)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
   },
   {
-    "name": "Google Chrome 116 (Android)",
+    "name": "Google Chrome 122 (Android)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.163 Mobile Safari/537.36"
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.105 Mobile Safari/537.36"
   },
   {
-    "name": "Google App 279 (iOS)",
+    "name": "Google App 283 (iOS)",
     "imageName": "Google",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/279.1.560156937 Mobile/15E148 Safari/604.1"
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/283.0.567502095 Mobile/15E148 Safari/604.1"
   },
   {
     "name": "Googlebot",
