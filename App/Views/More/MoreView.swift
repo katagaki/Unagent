@@ -11,10 +11,26 @@ import SwiftUI
 struct MoreView: View {
     
     @State var viewPath: [ViewPath] = []
+    @AppStorage(wrappedValue: false, "HideSetUpTab") var hideSetUpTab: Bool
 
     var body: some View {
         NavigationStack(path: $viewPath) {
-            MoreList(repoName: "katagaki/Unagent", viewPath: ViewPath.moreAttributions) { }
+            MoreList(repoName: "katagaki/Unagent", viewPath: ViewPath.moreAttributions) {
+                if hideSetUpTab {
+                    Section {
+                        Button {
+                            withAnimation {
+                                hideSetUpTab = false
+                            }
+                        } label: {
+                            Text("More.ShowSetUpTab")
+                        }
+                    } header: {
+                        ListSectionHeader(text: "More.General")
+                            .font(.body)
+                    }
+                }
+            }
             .navigationDestination(for: ViewPath.self) { viewPath in
                 switch viewPath {
                     case .moreAttributions: LicensesView(licenses: [
