@@ -17,6 +17,154 @@
         }
       }
     },
+    "SetUp.OpenSafari" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Safari"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Safari」アプリに移動"
+          }
+        }
+      }
+    },
+    "SetUp.OpenSettings" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「設定」アプリに移動"
+          }
+        }
+      }
+    },
+    "SetUp.Step1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Open the Safari app.\n2. From the menu bar, select 'Safari' > 'Preferences...'.\n3. Select the Extensions tab.\n4. Select 'Unagent'.\n5. Turn Unagent on by checking it."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Open the Settings app.\n2. Scroll down and tap 'Safari.'\n3. Tap 'Extensions'.\n4. Tap 'Unagent'.\n5. Toggle Unagent on for the profiles you wish to use Unagent in."
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "① 「Safari」アプリを開きます。\n② メニューバーから「Safari」＞「設定…」の順に選択します。\n③ 拡張機能タブを選択します。\n④ 「Unagent」を選択します。\n⑤ Unagentをチェックして有効化します。"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "① 「設定」アプリを開きます。\n② 下にスクロールし、「Safari」をタッチします。\n③ 「拡張機能」をタッチします。\n④ 「Unagent」をタッチします。\n⑤ Unagentを有効化するプロフィールをオンにします。"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "SetUp.Step1.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn Unagent On"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagentを有効化"
+          }
+        }
+      }
+    },
+    "SetUp.Step2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Open the Safari app.\n2. Select the Unagent icon on the toolbar.\n3. Select 'Always Allow on Every Website...'.\n4. Select 'Always Allow on Every Website'."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Open the Safari app.\n2. Tap the 'Aa' icon to the left of the address bar.\n3. Tap 'Unagent'.\n4. Tap 'Always Allow...'.\n5. Tap 'Always Allow on Every Website'."
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "① 「Safari」アプリを開きます。\n② ツールバーからUnagentのアイコンを選択します。\n③ 「すべてのWebサイトで常に許可…」を選択します。\n④ 「すべてのWebサイトで常に許可」を選択します。"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "① 「Safari」アプリを開きます。\n② アドレスバーの左側の「あぁ」ボタンをタッチします。\n③ 「Unagent」をタッチします。\n④ 「常に許可…」をタッチします。\n⑤ 「すべてのWebサイトで常に許可」をタッチします。"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "SetUp.Step2.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Give Unagent Access"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagentに権限を付与"
+          }
+        }
+      }
+    },
     "Shared.Add" : {
       "localizations" : {
         "en" : {
@@ -45,23 +193,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "キャンセル"
-          }
-        }
-      }
-    },
-    "Shared.Copy" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copy"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "コピー"
           }
         }
       }
