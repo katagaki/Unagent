@@ -21,18 +21,26 @@ struct SiteSettingsView: View {
     
     var body: some View {
         NavigationStack {
-            List(siteSettings, id: \.domain) { siteSetting in
-                SiteSettingRow(title: siteSetting.domain,
-                               subtitle: siteSetting.userAgent)
-                .swipeActions {
-                    Button("Delete") {
-                        siteSettings.removeAll(where: {$0.domain == siteSetting.domain})
-                        saveToMemory()
+            Group {
+                if siteSettings.isEmpty {
+                    if #available(iOS 17.0, *) {
+                        ContentUnavailableView("SiteSettings.EmptyText.Title", systemImage: "plus.square.on.square", description: Text("SiteSettings.EmptyText.Text"))
                     }
-                    .tint(.red)
+                } else {
+                    List(siteSettings, id: \.domain) { siteSetting in
+                        SiteSettingRow(title: siteSetting.domain,
+                                       subtitle: siteSetting.userAgent)
+                        .swipeActions {
+                            Button("Shared.Delete") {
+                                siteSettings.removeAll(where: {$0.domain == siteSetting.domain})
+                                saveToMemory()
+                            }
+                            .tint(.red)
+                        }
+                    }
                 }
             }
-            .navigationTitle("Site Settings")
+            .navigationTitle("ViewTitle.SiteSettings")
             .sheet(isPresented: $isShowingNewSiteSettingView, content: {
                 SiteSettingsNewView(domain: $newSiteSettingDomain,
                                     userAgent: $newSiteSettingUserAgent,

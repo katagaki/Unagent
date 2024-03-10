@@ -21,25 +21,38 @@ struct SiteSettingsNewView: View {
             List {
                 Section {
                     TextField(text: $domain) {
-                        Text("Domain Name")
+                        Text("Shared.DomainName")
                     }
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
                 } footer: {
-                    Text(verbatim: "e.g. www.example.com")
+                    Text(verbatim: NSLocalizedString("SiteSettings.DomainName.Example", comment: ""))
                 }
                 Section {
                     TextEditor(text: $userAgent)
                         .autocorrectionDisabled()
                         .autocapitalization(.none)
-                        .font(.monospaced(.body)())
-                        .frame(height: 150)
+                        .font(.monospaced(.custom("", size: 14.0, relativeTo: .body))())
+                        .frame(height: 120)
                         .scrollIndicators(.never)
                 } header: {
-                    ListSectionHeader(text: "User Agent")
-                        .font(.body)
+                    HStack(alignment: .center) {
+                        ListSectionHeader(text: "Shared.UserAgent")
+                            .font(.body)
+                        Spacer()
+                        if UIPasteboard.general.hasStrings {
+                            Button {
+                                if let pasteboardString = UIPasteboard.general.string {
+                                    userAgent = pasteboardString
+                                }
+                            } label: {
+                                Text("Shared.Paste")
+                            }
+                            .textCase(.none)
+                        }
+                    }
                 } footer: {
-                    Text("This user agent will only apply to pages in the domain specified.")
+                    Text("SiteSettings.DomainName.Footer")
                 }
                 PresetsSection {
                     return userAgent
@@ -47,7 +60,7 @@ struct SiteSettingsNewView: View {
                     userAgent = selectedUserAgent
                 }
             }
-            .navigationTitle("New Site Setting")
+            .navigationTitle("ViewTitle.SiteSettings.New")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -55,7 +68,7 @@ struct SiteSettingsNewView: View {
                         willCreateSiteSetting = false
                         dismiss()
                     } label: {
-                        Text("Cancel")
+                        Text("Shared.Cancel")
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -63,7 +76,7 @@ struct SiteSettingsNewView: View {
                         willCreateSiteSetting = true
                         dismiss()
                     } label: {
-                        Text("Add")
+                        Text("Shared.Add")
                     }
                     .disabled(domain == "" || userAgent == "")
                 }

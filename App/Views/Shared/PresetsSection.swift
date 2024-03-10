@@ -47,7 +47,7 @@ struct PresetsSection: View {
                 .buttonStyle(.plain)
             }
         } header: {
-            ListSectionHeader(text: "Presets")
+            ListSectionHeader(text: "Shared.Presets")
                 .font(.body)
         }
     }

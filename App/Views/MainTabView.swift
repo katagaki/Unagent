@@ -12,19 +12,19 @@ struct MainTabView: View {
         TabView {
             SetUpView()
                 .tabItem {
-                    Label("Set Up", systemImage: "checklist")
+                    Label("Tab.SetUp", systemImage: "checklist")
                 }
             GlobalSettingsView()
                 .tabItem {
-                    Label("Global Settings", systemImage: "gear")
+                    Label("Tab.GlobalSettings", systemImage: "gear")
                 }
             SiteSettingsView()
                 .tabItem {
-                    Label("Site Settings", systemImage: "globe")
+                    Label("Tab.SiteSettings", systemImage: "globe")
                 }
             MoreView()
                 .tabItem {
-                    Label("More", systemImage: "ellipsis")
+                    Label("Tab.More", systemImage: "ellipsis")
                 }
         }
     }
