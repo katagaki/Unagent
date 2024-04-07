@@ -34,6 +34,14 @@ struct MoreView: View {
             .navigationDestination(for: ViewPath.self) { viewPath in
                 switch viewPath {
                     case .moreAttributions: LicensesView(licenses: [
+                        License(libraryName: "Translations", text:
+"""
+Translations in this app were kindly provided by the below contributors:
+
+- Portugese (Brazil): Gabriel Garcia
+
+Thank you to every contributor who has contributed to the project!
+"""),
                         License(libraryName: "FaviconFinder", text:
 """
 Copyright (c) 2022 William Lumley <will@lumley.io>

@@ -314,6 +314,7 @@
 				en,
 				Base,
 				ja,
+				"pt-BR",
 			);
 			mainGroup = E4B1B2CF29F4C51C00827556;
 			packageReferences = (

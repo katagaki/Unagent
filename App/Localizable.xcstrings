@@ -14,6 +14,12 @@
             "state" : "translated",
             "value" : "このユーザーエージェントはすべてのWebサイトに適用されますが、Webサイトのユーザーエージェントが優先されます。"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse agente de usuário será utilizado em todos os sites, exceto se o site tenha outro agente configurado."
+          }
         }
       }
     },
@@ -31,6 +37,12 @@
             "state" : "translated",
             "value" : "一般"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geral"
+          }
         }
       }
     },
@@ -46,6 +58,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「セットアップ」タブを再表示"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar a aba de início"
           }
         }
       }
@@ -63,6 +81,12 @@
             "state" : "translated",
             "value" : "「セットアップ」タブを非表示"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocultar a aba de início"
+          }
         }
       }
     },
@@ -79,6 +103,12 @@
             "state" : "translated",
             "value" : "「Safari」アプリに移動"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir o Safari"
+          }
         }
       }
     },
@@ -94,6 +124,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "「設定」アプリに移動"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir os Ajustes"
           }
         }
       }
@@ -136,6 +172,24 @@
               }
             }
           }
+        },
+        "pt-BR" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Abra o Safari.\r\n2. Na barra de menus, selecione 'Safari' > ‘Preferências...'.\r\n3. Selecione a aba 'Extensões'.\r\n4. Selecione ‘Unagent'.\r\n5. Ative a opção 'Unagent'."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Abra os Ajustes.\r\n2. Role para baixo e clique em 'Safari'.\r\n3. Clique em 'Extensões'.\r\n4. Clique em 'Unagent'.\r\n5. Ative o Unagent para os perfis onde você deseja usar o Unagent."
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -152,6 +206,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unagentを有効化"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ativar o Unagent"
           }
         }
       }
@@ -194,6 +254,24 @@
               }
             }
           }
+        },
+        "pt-BR" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Abra o Safari.\r\n2. Selecione o ícone do Unagent na barra de ferramentas.\r\n3. Selecione 'Sempre permitir em qualquer Website…'.\r\n4. Selecione 'Sempre permitir em qualquer Website…'."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Abra o Safari.\r\n2. Clique no ícone 'Aa' no canto esquerdo da barra de navegação.\r\n3. Clique em 'Unagent'.\r\n4. Clique em 'Sempre permitir...'.\r\n5. Clique em 'Sempre permitir em qualquer Website'."
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -211,6 +289,12 @@
             "state" : "translated",
             "value" : "Unagentに権限を付与"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dar permissões ao Unagent"
+          }
         }
       }
     },
@@ -226,6 +310,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "追加"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar"
           }
         }
       }
@@ -243,6 +333,12 @@
             "state" : "translated",
             "value" : "キャンセル"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
         }
       }
     },
@@ -258,6 +354,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "削除"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deletar"
           }
         }
       }
@@ -275,6 +377,34 @@
             "state" : "translated",
             "value" : "ドメイン名"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domínio"
+          }
+        }
+      }
+    },
+    "Shared.Edit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編集"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
+          }
         }
       }
     },
@@ -290,6 +420,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ペースト"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colar"
           }
         }
       }
@@ -308,6 +444,12 @@
             "state" : "translated",
             "value" : "プリセット"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presets"
+          }
         }
       }
     },
@@ -325,6 +467,12 @@
             "state" : "translated",
             "value" : "ユーザーエージェント"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de Usuário"
+          }
         }
       }
     },
@@ -340,6 +488,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "例：www.example.co.jp"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exemplo: www.example.com"
           }
         }
       }
@@ -357,6 +511,12 @@
             "state" : "translated",
             "value" : "このユーザーエージェントは、指定したドメインのページのみ適用されます。"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse agente de usuário será apenas aplicado à páginas deste domínio específico."
+          }
         }
       }
     },
@@ -372,6 +532,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Webサイト専用のユーザーエージェントを追加するには、ツールバーの「＋」アイコンをタッチしてください。"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione um agente de usuário para um site específico clicando no botão '+'. "
           }
         }
       }
@@ -389,6 +555,12 @@
             "state" : "translated",
             "value" : "設定なし"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem agente de usuário"
+          }
         }
       }
     },
@@ -404,6 +576,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "グローバル"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global"
           }
         }
       }
@@ -421,6 +599,12 @@
             "state" : "translated",
             "value" : "その他"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais"
+          }
         }
       }
     },
@@ -436,6 +620,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "セットアップ"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Início"
           }
         }
       }
@@ -453,6 +643,12 @@
             "state" : "translated",
             "value" : "Webサイト"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por site"
+          }
         }
       }
     },
@@ -468,6 +664,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "グローバル設定"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário global"
           }
         }
       }
@@ -485,6 +687,12 @@
             "state" : "translated",
             "value" : "Unagentを準備する"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurar o Unagent"
+          }
         }
       }
     },
@@ -501,6 +709,12 @@
             "state" : "translated",
             "value" : "Webサイトごと設定"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário por site"
+          }
         }
       }
     },
@@ -516,6 +730,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新規設定"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova configuração para um site"
           }
         }
       }
