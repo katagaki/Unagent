@@ -18,7 +18,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Esse agente de usuário será utilizado em todos os sites, exceto se o site tenha outro agente configurado."
+            "value" : "Esse agente de usuário será utilizado em todos os sites, exceto se o site tiver outro agente configurado."
           }
         }
       }
