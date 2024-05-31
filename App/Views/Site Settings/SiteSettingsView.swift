@@ -106,10 +106,8 @@ struct SiteSettingsView: View {
             .scrollDismissesKeyboard(.immediately)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button {
+                    Button("Shared.Add", systemImage: "plus") {
                         isShowingNewSiteSettingView = true
-                    } label: {
-                        Image(systemName: "plus")
                     }
                 }
             }

@@ -18,12 +18,10 @@ struct MoreView: View {
             MoreList(repoName: "katagaki/Unagent", viewPath: ViewPath.moreAttributions) {
                 if hideSetUpTab {
                     Section {
-                        Button {
+                        Button("More.ShowSetUpTab") {
                             withAnimation {
                                 hideSetUpTab = false
                             }
-                        } label: {
-                            Text("More.ShowSetUpTab")
                         }
                     } header: {
                         ListSectionHeader(text: "More.General")

@@ -32,6 +32,7 @@
 		E484DD912A2362AE00C4E32E /* SiteSettingEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD902A2362AE00C4E32E /* SiteSettingEditor.swift */; };
 		E4B1B31D29F4C51D00827556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2DC29F4C51D00827556 /* Assets.xcassets */; };
 		E4BC32872C09581A006A0F7A /* EditorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC32862C09581A006A0F7A /* EditorMode.swift */; };
+		E4BC32892C096584006A0F7A /* UserAgentEditorSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC32882C096584006A0F7A /* UserAgentEditorSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		E4B1B30729F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BC32852C0952E6006A0F7A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		E4BC32862C09581A006A0F7A /* EditorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorMode.swift; sourceTree = "<group>"; };
+		E4BC32882C096584006A0F7A /* UserAgentEditorSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgentEditorSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0E592D2B9AA3FA0011D19D /* PresetsSection.swift */,
+				E4BC32882C096584006A0F7A /* UserAgentEditorSection.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				E484DD822A23531B00C4E32E /* GlobalSettingsView.swift in Sources */,
 				E4BC32872C09581A006A0F7A /* EditorMode.swift in Sources */,
 				E484DD912A2362AE00C4E32E /* SiteSettingEditor.swift in Sources */,
+				E4BC32892C096584006A0F7A /* UserAgentEditorSection.swift in Sources */,
 				E435DA4B2B9A79BF003B3396 /* ViewPath.swift in Sources */,
 				E435DA482B9A77A5003B3396 /* MainTabView.swift in Sources */,
 				E435DA462B9A7787003B3396 /* App.swift in Sources */,

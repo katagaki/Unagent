@@ -32,32 +32,8 @@ struct SiteSettingEditor: View {
                 } footer: {
                     Text(verbatim: NSLocalizedString("SiteSettings.DomainName.Example", comment: ""))
                 }
-                Section {
-                    TextEditor(text: $userAgent)
-                        .autocorrectionDisabled()
-                        .autocapitalization(.none)
-                        .font(.monospaced(.custom("", size: 14.0, relativeTo: .body))())
-                        .frame(height: 120)
-                        .scrollIndicators(.never)
-                } header: {
-                    HStack(alignment: .center) {
-                        ListSectionHeader(text: "Shared.UserAgent")
-                            .font(.body)
-                        Spacer()
-                        if UIPasteboard.general.hasStrings {
-                            Button {
-                                if let pasteboardString = UIPasteboard.general.string {
-                                    userAgent = pasteboardString
-                                }
-                            } label: {
-                                Text("Shared.Paste")
-                            }
-                            .textCase(.none)
-                        }
-                    }
-                } footer: {
-                    Text("SiteSettings.DomainName.Footer")
-                }
+                UserAgentEditorSection(footerText: "SiteSettings.DomainName.Footer",
+                                       userAgent: $userAgent)
                 PresetsSection {
                     return userAgent
                 } onSelect: { selectedUserAgent in
@@ -68,11 +44,9 @@ struct SiteSettingEditor: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
+                    Button("Shared.Cancel") {
                         shouldSave = false
                         dismiss()
-                    } label: {
-                        Text("Shared.Cancel")
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {

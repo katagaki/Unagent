@@ -1,6 +1,22 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "GlobalSettings.GlobalUserAgent.Footer" : {
       "localizations" : {
         "en" : {
@@ -419,7 +435,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ペースト"
+            "value" : "貼り付け"
           }
         },
         "pt-BR" : {
