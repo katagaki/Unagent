@@ -1,5 +1,5 @@
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    let currentSchemaVersion = 2;
+    let currentSchemaVersion = 3;
     browser.storage.local.get(["schemaVersion", "userAgent", "siteSettings"], (localStorage) => {
         let storedSchemaVersion = localStorage.schemaVersion;
         if (storedSchemaVersion == null || storedSchemaVersion < currentSchemaVersion) {
