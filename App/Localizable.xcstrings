@@ -453,6 +453,28 @@
         }
       }
     },
+    "Shared.Save" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
+          }
+        }
+      }
+    },
     "Shared.UserAgent" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -714,6 +736,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agente de usuário por site"
+          }
+        }
+      }
+    },
+    "ViewTitle.SiteSettings.Edit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Site Setting"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定を編集"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar configuração para um site"
           }
         }
       }

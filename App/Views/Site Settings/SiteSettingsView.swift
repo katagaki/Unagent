@@ -13,11 +13,16 @@ struct SiteSettingsView: View {
     
     @State var siteSettings: [SiteSetting] = []
     @State var willSaveSiteSettingsToMemory: Bool = false
-    @State var isShowingNewSiteSettingView: Bool = false
     
+    @State var isShowingNewSiteSettingView: Bool = false
     @State var newSiteSettingDomain: String = ""
     @State var newSiteSettingUserAgent: String = ""
-    @State var newSiteSettingWillBeCreated: Bool = false
+    @State var newSiteSettingShouldSave: Bool = false
+    
+    @State var isShowingEditSiteSettingView: Bool = false
+    @State var editingSiteSettingDomain: String = ""
+    @State var editingSiteSettingUserAgent: String = ""
+    @State var editingSiteSettingShouldSave: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -36,15 +41,29 @@ struct SiteSettingsView: View {
                                 saveToMemory()
                             }
                             .tint(.red)
+                            Button("Shared.Edit") {
+                                editingSiteSettingDomain = siteSetting.domain
+                                editingSiteSettingUserAgent = siteSetting.userAgent
+                                isShowingEditSiteSettingView = true
+                            }
+                            .tint(.blue)
                         }
                     }
                 }
             }
             .navigationTitle("ViewTitle.SiteSettings")
             .sheet(isPresented: $isShowingNewSiteSettingView, content: {
-                SiteSettingsNewView(domain: $newSiteSettingDomain,
-                                    userAgent: $newSiteSettingUserAgent,
-                                    willCreateSiteSetting: $newSiteSettingWillBeCreated)
+                SiteSettingEditor(mode: .new,
+                                  domain: $newSiteSettingDomain,
+                                  userAgent: $newSiteSettingUserAgent,
+                                  shouldSave: $newSiteSettingShouldSave)
+                .presentationDetents([.large, .medium])
+            })
+            .sheet(isPresented: $isShowingEditSiteSettingView, content: {
+                SiteSettingEditor(mode: .edit,
+                                  domain: $editingSiteSettingDomain,
+                                  userAgent: $editingSiteSettingUserAgent,
+                                  shouldSave: $editingSiteSettingShouldSave)
                 .presentationDetents([.large, .medium])
             })
             .onAppear {
@@ -61,13 +80,27 @@ struct SiteSettingsView: View {
                 willSaveSiteSettingsToMemory = true
             }
             .onChange(of: isShowingNewSiteSettingView, perform: { newValue in
-                if !newValue && newSiteSettingWillBeCreated {
+                if !newValue && newSiteSettingShouldSave {
                     siteSettings.append(SiteSetting(domain: newSiteSettingDomain,
                                                     userAgent: newSiteSettingUserAgent))
                     newSiteSettingDomain = ""
                     newSiteSettingUserAgent = ""
-                    newSiteSettingWillBeCreated = false
+                    newSiteSettingShouldSave = false
                     saveToMemory()
+                }
+            })
+            .onChange(of: isShowingEditSiteSettingView, perform: { newValue in
+                if !newValue && editingSiteSettingShouldSave {
+                    if let indexOfEditingSiteSetting = siteSettings.firstIndex(where: {$0.domain == editingSiteSettingDomain}) {
+                        siteSettings[indexOfEditingSiteSetting] = SiteSetting(
+                            domain: editingSiteSettingDomain,
+                            userAgent: editingSiteSettingUserAgent
+                        )
+                        editingSiteSettingDomain = ""
+                        editingSiteSettingUserAgent = ""
+                        editingSiteSettingShouldSave = false
+                        saveToMemory()
+                    }
                 }
             })
             .scrollDismissesKeyboard(.immediately)

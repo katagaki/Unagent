@@ -1,5 +1,5 @@
 //
-//  SiteSettingsNewView.swift
+//  SiteSettingEditor.swift
 //  Unagent
 //
 //  Created by シンジャスティン on 2023/05/28.
@@ -8,13 +8,15 @@
 import Komponents
 import SwiftUI
 
-struct SiteSettingsNewView: View {
+struct SiteSettingEditor: View {
     
     @Environment(\.dismiss) var dismiss
 
+    @State var mode: EditorMode
+
     @Binding var domain: String
     @Binding var userAgent: String
-    @Binding var willCreateSiteSetting: Bool
+    @Binding var shouldSave: Bool
     
     var body: some View {
         NavigationView {
@@ -25,6 +27,8 @@ struct SiteSettingsNewView: View {
                     }
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
+                    .disabled(mode == .edit)
+                    .foregroundStyle(mode == .edit ? Color.secondary : Color.primary)
                 } footer: {
                     Text(verbatim: NSLocalizedString("SiteSettings.DomainName.Example", comment: ""))
                 }
@@ -60,12 +64,12 @@ struct SiteSettingsNewView: View {
                     userAgent = selectedUserAgent
                 }
             }
-            .navigationTitle("ViewTitle.SiteSettings.New")
+            .navigationTitle(mode == .new ? "ViewTitle.SiteSettings.New" : "ViewTitle.SiteSettings.Edit")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        willCreateSiteSetting = false
+                        shouldSave = false
                         dismiss()
                     } label: {
                         Text("Shared.Cancel")
@@ -73,10 +77,15 @@ struct SiteSettingsNewView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        willCreateSiteSetting = true
+                        shouldSave = true
                         dismiss()
                     } label: {
-                        Text("Shared.Add")
+                        switch mode {
+                        case .new:
+                            Text("Shared.Add")
+                        case .edit:
+                            Text("Shared.Save")
+                        }
                     }
                     .disabled(domain == "" || userAgent == "")
                 }

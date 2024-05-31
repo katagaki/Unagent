@@ -29,8 +29,9 @@
 		E484DD892A235AA300C4E32E /* SiteSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD882A235AA300C4E32E /* SiteSetting.swift */; };
 		E484DD8B2A235C5A00C4E32E /* Presets.json in Resources */ = {isa = PBXBuildFile; fileRef = E484DD8A2A235C5A00C4E32E /* Presets.json */; };
 		E484DD8D2A235EC200C4E32E /* SiteSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD8C2A235EC200C4E32E /* SiteSettingsView.swift */; };
-		E484DD912A2362AE00C4E32E /* SiteSettingsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD902A2362AE00C4E32E /* SiteSettingsNewView.swift */; };
+		E484DD912A2362AE00C4E32E /* SiteSettingEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484DD902A2362AE00C4E32E /* SiteSettingEditor.swift */; };
 		E4B1B31D29F4C51D00827556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B1B2DC29F4C51D00827556 /* Assets.xcassets */; };
+		E4BC32872C09581A006A0F7A /* EditorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC32862C09581A006A0F7A /* EditorMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,12 +80,14 @@
 		E484DD882A235AA300C4E32E /* SiteSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSetting.swift; sourceTree = "<group>"; };
 		E484DD8A2A235C5A00C4E32E /* Presets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Presets.json; sourceTree = "<group>"; };
 		E484DD8C2A235EC200C4E32E /* SiteSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSettingsView.swift; sourceTree = "<group>"; };
-		E484DD902A2362AE00C4E32E /* SiteSettingsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSettingsNewView.swift; sourceTree = "<group>"; };
+		E484DD902A2362AE00C4E32E /* SiteSettingEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSettingEditor.swift; sourceTree = "<group>"; };
 		E4B1B2DC29F4C51D00827556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4B1B2E329F4C51D00827556 /* Unagent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unagent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B2F029F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B1B30229F4C51D00827556 /* Unagent Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Unagent Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B1B30729F4C51D00827556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4BC32852C0952E6006A0F7A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E4BC32862C09581A006A0F7A /* EditorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				E484DD8C2A235EC200C4E32E /* SiteSettingsView.swift */,
-				E484DD902A2362AE00C4E32E /* SiteSettingsNewView.swift */,
+				E484DD902A2362AE00C4E32E /* SiteSettingEditor.swift */,
 				E477E73C2A96157000517B72 /* SiteSettingRow.swift */,
 			);
 			path = "Site Settings";
@@ -153,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E435DA4A2B9A79BF003B3396 /* ViewPath.swift */,
+				E4BC32862C09581A006A0F7A /* EditorMode.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -224,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B1B2F029F4C51D00827556 /* Info.plist */,
+				E4BC32852C0952E6006A0F7A /* PrivacyInfo.xcprivacy */,
 				E4B1B2DC29F4C51D00827556 /* Assets.xcassets */,
 				E484DD8A2A235C5A00C4E32E /* Presets.json */,
 				E435DA4F2B9D62A7003B3396 /* Localizable.xcstrings */,
@@ -362,7 +367,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E484DD822A23531B00C4E32E /* GlobalSettingsView.swift in Sources */,
-				E484DD912A2362AE00C4E32E /* SiteSettingsNewView.swift in Sources */,
+				E4BC32872C09581A006A0F7A /* EditorMode.swift in Sources */,
+				E484DD912A2362AE00C4E32E /* SiteSettingEditor.swift in Sources */,
 				E435DA4B2B9A79BF003B3396 /* ViewPath.swift in Sources */,
 				E435DA482B9A77A5003B3396 /* MainTabView.swift in Sources */,
 				E435DA462B9A7787003B3396 /* App.swift in Sources */,
@@ -532,7 +538,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -567,7 +573,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -606,7 +612,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -647,7 +653,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
