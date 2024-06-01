@@ -119,6 +119,8 @@ struct SiteSettingsView: View {
         if let jsonData = try? encoder.encode(siteSettings),
            let jsonString = String(data: jsonData, encoding: .utf8) {
             defaults.set(jsonString, forKey: "SiteSettings")
+            defaults.set(true, forKey: "ShouldExtensionUpdate")
+            defaults.synchronize()
         }
     }
 }

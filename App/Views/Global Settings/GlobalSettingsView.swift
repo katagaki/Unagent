@@ -34,6 +34,8 @@ struct GlobalSettingsView: View {
             .onChange(of: userAgent) { newValue in
                 if willSaveUserAgentToMemory {
                     defaults.set(newValue, forKey: "UserAgent")
+                    defaults.set(true, forKey: "ShouldExtensionUpdate")
+                    defaults.synchronize()
                 }
             }
             .scrollDismissesKeyboard(.immediately)

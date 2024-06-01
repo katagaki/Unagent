@@ -1,78 +1,100 @@
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    let currentSchemaVersion = 3;
+    let currentSchemaVersion = 4;
+    // Check whether schema version has increased
     browser.storage.local.get(["schemaVersion", "userAgent", "siteSettings"], (localStorage) => {
         let storedSchemaVersion = localStorage.schemaVersion;
         if (storedSchemaVersion == null || storedSchemaVersion < currentSchemaVersion) {
-            browser.declarativeNetRequest.getDynamicRules((rules) => {
-                rules.forEach((rule) => {
-                    browser.declarativeNetRequest.updateDynamicRules({
-                    removeRuleIds: [rule.id],
-                    });
-                });
-            });
-            browser.storage.local.set({schemaVersion: currentSchemaVersion});
+            console.log("Resetting all settings after schema version updated");
+            resetAllSettings(currentSchemaVersion);
         }
-        browser.runtime.sendNativeMessage({}, function(response) {
-            var hasConfigBeenUpdated = false;
-            // Check and set global user agent
-            let currentUserAgent = localStorage.userAgent;
-            if (currentUserAgent != null) {
-                if ("userAgent" in response) {
-                    if (currentUserAgent != response["userAgent"]) {
-                        setUserAgent(response["userAgent"]);
-                        hasConfigBeenUpdated = true;
-                    }
-                }
+        // Ask native app whether extension should update
+        console.log("Extension asking native app whether it should update");
+        browser.runtime.sendNativeMessage({function: "shouldExtensionUpdate"}, function (response) {
+            if (response["shouldExtensionUpdate"] === true) {
+                console.log("Extension updating settings from app");
+                updateSettings();
+                // Tell native app extension was updated
+                console.log("Extension telling native app settings were updated");
+                browser.runtime.sendNativeMessage({function: "hasExtensionUpdated"}, null)
             } else {
-                if ("userAgent" in response) {
-                    setUserAgent(response["userAgent"]);
-                    hasConfigBeenUpdated = true;
-                }
-            }
-            // Check and set site settings
-            let currentSiteSettings = localStorage.siteSettings;
-            if (currentSiteSettings != null) {
-                if ("siteSettings" in response) {
-                    var siteSettingsFromNativeApp = JSON.parse(response["siteSettings"]);
-                    var siteSettingsRequiresUpdate = false;
-                    // Check for new site settings
-                    currentSiteSettings.forEach((currentSiteSetting) => {
-                        if (!containsSiteSetting(currentSiteSetting, siteSettingsFromNativeApp)) {
-                            siteSettingsRequiresUpdate = true;
-                        }
-                    });
-                    // Check for deleted site settings
-                    siteSettingsFromNativeApp.forEach((siteSettingFromNativeApp) => {
-                        if (!containsSiteSetting(siteSettingFromNativeApp, currentSiteSettings)) {
-                            siteSettingsRequiresUpdate = true;
-                        }
-                    });
-                    // Update the entire site settings object if anything requires an update
-                    if (siteSettingsRequiresUpdate) {
-                        if (currentSiteSettings != JSON.parse(response["siteSettings"])) {
-                            setSiteSettings(JSON.parse(response["siteSettings"]));
-                            hasConfigBeenUpdated = true;
-                        }
-                    }
-                }
-            } else {
-                if ("siteSettings" in response) {
-                    setSiteSettings(JSON.parse(response["siteSettings"]));
-                    hasConfigBeenUpdated = true;
-                }
-            }
-            // Reload tab if config was updated
-            if (hasConfigBeenUpdated) {
-                browser.tabs.getCurrent((tab) => {
-                    setTimeout(() => {
-                        browser.tabs.reload(tab.id);
-                    }, 500);
-                });
+                console.log("Extension will not update settings from app")
             }
         });
     });
     return true;
 });
+
+function resetAllSettings(currentSchemaVersion) {
+    browser.declarativeNetRequest.getDynamicRules((rules) => {
+        rules.forEach((rule) => {
+            browser.declarativeNetRequest.updateDynamicRules({
+                removeRuleIds: [rule.id],
+            });
+        });
+    });
+    browser.storage.local.set({schemaVersion: currentSchemaVersion});
+}
+
+function updateSettings() {
+    browser.runtime.sendNativeMessage({function: "getSettings"}, function (response) {
+        var hasConfigBeenUpdated = false;
+        // Check and set global user agent
+        let currentUserAgent = localStorage.userAgent;
+        if (currentUserAgent != null) {
+            if ("userAgent" in response) {
+                if (currentUserAgent != response["userAgent"]) {
+                    setUserAgent(response["userAgent"]);
+                    hasConfigBeenUpdated = true;
+                }
+            }
+        } else {
+            if ("userAgent" in response) {
+                setUserAgent(response["userAgent"]);
+                hasConfigBeenUpdated = true;
+            }
+        }
+        // Check and set site settings
+        let currentSiteSettings = localStorage.siteSettings;
+        if (currentSiteSettings != null) {
+            if ("siteSettings" in response) {
+                var siteSettingsFromNativeApp = JSON.parse(response["siteSettings"]);
+                var siteSettingsRequiresUpdate = false;
+                // Check for new site settings
+                currentSiteSettings.forEach((currentSiteSetting) => {
+                    if (!containsSiteSetting(currentSiteSetting, siteSettingsFromNativeApp)) {
+                        siteSettingsRequiresUpdate = true;
+                    }
+                });
+                // Check for deleted site settings
+                siteSettingsFromNativeApp.forEach((siteSettingFromNativeApp) => {
+                    if (!containsSiteSetting(siteSettingFromNativeApp, currentSiteSettings)) {
+                        siteSettingsRequiresUpdate = true;
+                    }
+                });
+                // Update the entire site settings object if anything requires an update
+                if (siteSettingsRequiresUpdate) {
+                    if (currentSiteSettings != JSON.parse(response["siteSettings"])) {
+                        setSiteSettings(JSON.parse(response["siteSettings"]));
+                        hasConfigBeenUpdated = true;
+                    }
+                }
+            }
+        } else {
+            if ("siteSettings" in response) {
+                setSiteSettings(JSON.parse(response["siteSettings"]));
+                hasConfigBeenUpdated = true;
+            }
+        }
+        // Reload tab if config was updated
+        if (hasConfigBeenUpdated) {
+            browser.tabs.getCurrent((tab) => {
+                setTimeout(() => {
+                    browser.tabs.reload(tab.id);
+                }, 500);
+            });
+        }
+    });
+}
 
 function setUserAgent(userAgent) {
     if (userAgent != "") {
@@ -82,11 +104,11 @@ function setUserAgent(userAgent) {
             priority: 1,
             condition: {
                 urlFilter: "*",
-            resourceTypes: [
-                                    "main_frame", "sub_frame", "stylesheet", "script", "image",
-                                    "object", "xmlhttprequest", "ping", "csp_report", "media",
-                                    "websocket", "other"
-                                ]
+                resourceTypes: [
+                    "main_frame", "sub_frame", "stylesheet", "script", "image",
+                    "object", "xmlhttprequest", "ping", "csp_report", "media",
+                    "websocket", "other"
+                ]
             },
             action: {
                 type: "modifyHeaders",
@@ -119,7 +141,7 @@ function setSiteSettings(siteSettings) {
         rules.forEach((rule) => {
             if (rule.id != 9999) {
                 browser.declarativeNetRequest.updateDynamicRules({
-                removeRuleIds: [rule.id],
+                    removeRuleIds: [rule.id],
                 });
             }
         });
@@ -130,11 +152,11 @@ function setSiteSettings(siteSettings) {
                 priority: ruleId + 1,
                 condition: {
                     urlFilter: "||" + siteSetting.domain,
-                resourceTypes: [
-                                    "main_frame", "sub_frame", "stylesheet", "script", "image",
-                                    "object", "xmlhttprequest", "ping", "csp_report", "media",
-                                    "websocket", "other"
-                                ]
+                    resourceTypes: [
+                        "main_frame", "sub_frame", "stylesheet", "script", "image",
+                        "object", "xmlhttprequest", "ping", "csp_report", "media",
+                        "websocket", "other"
+                    ]
                 },
                 action: {
                     type: "modifyHeaders",
