@@ -209,6 +209,29 @@
         }
       }
     },
+    "SetUp.Step1.iOS18+" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Open the Settings app.\n2. Scroll down and tap 'Apps'.\n3. Find and tap 'Safari'.\n4. Tap 'Extensions'.\n5. Tap 'Unagent'.\n6. Toggle Unagent on for the profiles you wish to use Unagent in."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "① 「設定」アプリを開きます。\n② 下にスクロールし、「アプリ」をタッチします。\n③ 「Safari」を探してタッチします。\n④ 「拡張機能」をタッチします。\n⑤ 「Unagent」をタッチします。\n⑥ Unagentを有効化するプロフィールをオンにします。"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Abra os Ajustes.\r\n2. Role para baixo e clique em 'Apps'.\n3. Role para baixo e clique em 'Safari'.\r\n4. Clique em 'Extensões'.\r\n5. Clique em 'Unagent'.\r\n6. Ative o Unagent para os perfis onde você deseja usar o Unagent."
+          }
+        }
+      }
+    },
     "SetUp.Step1.Title" : {
       "extractionState" : "manual",
       "localizations" : {

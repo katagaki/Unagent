@@ -16,7 +16,13 @@ struct SetUpView: View {
         NavigationStack {
             List {
                 Section {
-                    Text("SetUp.Step1")
+                    Group {
+                        if #available(iOS 18.0, *) {
+                            Text("SetUp.Step1.iOS18+")
+                        } else {
+                            Text("SetUp.Step1")
+                        }
+                    }
                     .lineSpacing(4.0)
                     #if targetEnvironment(macCatalyst)
                     Link(destination: URL(string: "https://www.example.com")!, label: {
