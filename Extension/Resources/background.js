@@ -1,5 +1,5 @@
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    let currentSchemaVersion = 4;
+    let currentSchemaVersion = 5;
     // Check whether schema version has increased
     browser.storage.local.get(["schemaVersion", "userAgent", "siteSettings"], (localStorage) => {
         let storedSchemaVersion = localStorage.schemaVersion;
