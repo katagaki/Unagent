@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Unagent.005 1.png",
+      "filename" : "Unagent.005.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +13,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Unagent.006 1.png",
+      "filename" : "Unagent.006.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
