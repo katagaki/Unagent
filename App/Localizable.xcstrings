@@ -542,19 +542,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Example: www.example.com"
+            "value" : "Enter the domain name without any ‘http’ at the front, or slashes at the back.\nExample: www.example.com"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "例：www.example.co.jp"
+            "value" : "「http」やスラッシュー記号なしのドメイン名を入力してください。\n例：www.example.co.jp"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exemplo: www.example.com"
+            "value" : "Digite o nome do domínio sem ‘http’ no início e sem barras no final.\nExemplo: www.example.com"
           }
         }
       }
