@@ -106,8 +106,7 @@ function setUserAgent(userAgent) {
                 urlFilter: "*",
                 resourceTypes: [
                     "main_frame", "sub_frame", "stylesheet", "script", "image",
-                    "object", "xmlhttprequest", "ping", "csp_report", "media",
-                    "websocket", "other"
+                    "font", "xmlhttprequest", "ping", "media", "websocket", "other"
                 ]
             },
             action: {
@@ -154,8 +153,7 @@ function setSiteSettings(siteSettings) {
                     urlFilter: "||" + siteSetting.domain,
                     resourceTypes: [
                         "main_frame", "sub_frame", "stylesheet", "script", "image",
-                        "object", "xmlhttprequest", "ping", "csp_report", "media",
-                        "websocket", "other"
+                        "font", "xmlhttprequest", "ping", "media", "websocket", "other"
                     ]
                 },
                 action: {
