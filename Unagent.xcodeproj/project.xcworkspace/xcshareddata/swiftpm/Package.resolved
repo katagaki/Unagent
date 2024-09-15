@@ -16,7 +16,7 @@
       "location" : "https://github.com/katagaki/Komponents",
       "state" : {
         "branch" : "main",
-        "revision" : "a3f43f2cf3aceca8a83925dfcc0cb9dd00667f86"
+        "revision" : "cb0a6a60bc091627c11e6eca511279414fd1d45e"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scinfu/SwiftSoup.git",
       "state" : {
-        "revision" : "028487d4a8a291b2fe1b4392b5425b6172056148",
-        "version" : "2.7.2"
+        "revision" : "3c2c7e1e72b8abd96eafbae80323c5c1e5317437",
+        "version" : "2.7.5"
       }
     }
   ],
