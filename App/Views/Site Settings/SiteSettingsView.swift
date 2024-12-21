@@ -30,6 +30,13 @@ struct SiteSettingsView: View {
                 if siteSettings.isEmpty {
                     if #available(iOS 17.0, *) {
                         ContentUnavailableView("SiteSettings.EmptyText.Title", systemImage: "plus.square.on.square", description: Text("SiteSettings.EmptyText.Text"))
+                    } else {
+                        Text("SiteSettings.EmptyText.Text")
+                            .foregroundStyle(.secondary)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .multilineTextAlignment(.center)
+                            .padding()
                     }
                 } else {
                     List(siteSettings, id: \.domain) { siteSetting in
