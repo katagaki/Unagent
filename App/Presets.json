@@ -8,7 +8,7 @@
   {
     "name": "Safari 18 (iOS)",
     "imageName": "Safari",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1",
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios"
   },
   {
@@ -18,45 +18,45 @@
     "source": ""
   },
   {
-    "name": "Microsoft Edge 128 (iOS)",
+    "name": "Microsoft Edge 131 (iOS)",
     "imageName": "Edgeium",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 EdgiOS/128.2739.72 Mobile/15E148 Safari/605.1.15",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 EdgiOS/131.2903.92 Mobile/15E148 Safari/605.1.15",
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge"
   },
   {
-    "name": "Microsoft Edge 128 (macOS)",
+    "name": "Microsoft Edge 131 (macOS)",
     "imageName": "Edgeium",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.2739.79",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.2903.86",
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge"
   },
   {
-    "name": "Microsoft Edge 128 (Android)",
+    "name": "Microsoft Edge 131 (Android)",
     "imageName": "Edgeium",
-    "userAgent": "Mozilla/5.0 (Linux; Android 13.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.127 Mobile Safari/537.36 EdgA/127.0.2651.111",
+    "userAgent": "Mozilla/5.0 (Linux; Android 13.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.200 Mobile Safari/537.36 EdgA/131.0.2903.87",
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge"
   },
   {
-    "name": "Google Chrome 129 (iOS)",
+    "name": "Google Chrome 131 (iOS)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/129.0.6668.46 Mobile/15E148 Safari/604.1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/131.0.6778.154 Mobile/15E148 Safari/604.1",
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios"
   },
   {
-    "name": "Google Chrome 128 (macOS)",
+    "name": "Google Chrome 131 (macOS)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome"
   },
   {
-    "name": "Google Chrome 128 (Android)",
+    "name": "Google Chrome 131 (Android)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.127 Mobile Safari/537.36",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.200 Mobile Safari/537.36",
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome"
   },
   {
     "name": "Google App 333 (iOS)",
     "imageName": "Google",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/333.0.671582647 Mobile/15E148 Safari/604.1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/346.1.704810410 Mobile/15E148 Safari/604.1",
     "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/google-search-app/"
   },
   {
@@ -66,10 +66,58 @@
     "source": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
   },
   {
+    "name": "Google-Extended",
+    "imageName": "Google",
+    "userAgent": "Mozilla/5.0 (compatible; Google-Extended/1.0)",
+    "source": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+  },
+  {
     "name": "Bingbot",
     "imageName": "Bing",
     "userAgent": "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)",
     "source": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0"
+  },
+  {
+    "name": "OpenAI SearchBot",
+    "imageName": "OpenAI",
+    "userAgent": "Mozilla/5.0 (compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)",
+    "source": "https://platform.openai.com/docs/bots"
+  },
+  {
+    "name": "ChatGPT User",
+    "imageName": "OpenAI",
+    "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
+    "source": "https://platform.openai.com/docs/bots"
+  },
+  {
+    "name": "OpenAI GPTBot",
+    "imageName": "OpenAI",
+    "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot",
+    "source": "https://platform.openai.com/docs/bots"
+  },
+  {
+    "name": "ClaudeBot",
+    "imageName": "Claude",
+    "userAgent": "Mozilla/5.0 (compatible; ClaudeBot/1.0)",
+    "source": "https://darkvisitors.com/agents/claudebot"
+  },
+  {
+    "name": "Applebot (iOS)",
+    "imageName": "Apple",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+    "source": "https://support.apple.com/en-us/119829"
+  },
+  {
+    "name": "Applebot (macOS)",
+    "imageName": "Apple",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15(KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+    "source": "https://support.apple.com/en-us/119829"
+  },
+  {
+    "name": "Applebot-Extended",
+    "imageName": "Apple",
+    "userAgent": "Mozilla/5.0 (compatible; Applebot-Extended/1.0)",
+    "source": "https://support.apple.com/en-us/119829"
   },
   {
     "name": "Playstation 5",
