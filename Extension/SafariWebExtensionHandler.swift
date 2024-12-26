@@ -55,6 +55,11 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 debugPrint("Extension just told native app it was updated")
                 defaults.set(false, forKey: "ShouldExtensionUpdate")
 
+            case "forceExtensionReset":
+                debugPrint("Extension was just told to reset all rules")
+                defaults.removeObject(forKey: "UserAgent")
+                defaults.removeObject(forKey: "SiteSettings")
+
             default: break
             }
         }

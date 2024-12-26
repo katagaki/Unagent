@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4D0E592E2B9AA3FA0011D19D /* PresetsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E592D2B9AA3FA0011D19D /* PresetsSection.swift */; };
+		E400981C2D1DB40E00BC1EDB /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = E400981A2D1DB40E00BC1EDB /* popup.html */; };
+		E400981D2D1DB40E00BC1EDB /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = E400981B2D1DB40E00BC1EDB /* popup.js */; };
+		E400981F2D1DB42200BC1EDB /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = E400981E2D1DB42200BC1EDB /* popup.css */; };
 		E435DA442B9A76FC003B3396 /* Komponents in Frameworks */ = {isa = PBXBuildFile; productRef = E435DA432B9A76FC003B3396 /* Komponents */; };
 		E435DA462B9A7787003B3396 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435DA452B9A7787003B3396 /* App.swift */; };
 		E435DA482B9A77A5003B3396 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435DA472B9A77A5003B3396 /* MainTabView.swift */; };
@@ -61,6 +64,9 @@
 
 /* Begin PBXFileReference section */
 		4D0E592D2B9AA3FA0011D19D /* PresetsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsSection.swift; sourceTree = "<group>"; };
+		E400981A2D1DB40E00BC1EDB /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		E400981B2D1DB40E00BC1EDB /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		E400981E2D1DB42200BC1EDB /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
 		E435DA452B9A7787003B3396 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		E435DA472B9A77A5003B3396 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E435DA4A2B9A79BF003B3396 /* ViewPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPath.swift; sourceTree = "<group>"; };
@@ -174,6 +180,9 @@
 		E43AEB922A2202980057ED0E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E400981E2D1DB42200BC1EDB /* popup.css */,
+				E400981A2D1DB40E00BC1EDB /* popup.html */,
+				E400981B2D1DB40E00BC1EDB /* popup.js */,
 				E43AEB932A2202980057ED0E /* LICENSE */,
 				E43AEB952A2202980057ED0E /* 128.png */,
 				E43AEB962A2202980057ED0E /* manifest.json */,
@@ -356,6 +365,9 @@
 			files = (
 				E43AEB9B2A2202980057ED0E /* manifest.json in Resources */,
 				E43AEB9A2A2202980057ED0E /* 128.png in Resources */,
+				E400981C2D1DB40E00BC1EDB /* popup.html in Resources */,
+				E400981D2D1DB40E00BC1EDB /* popup.js in Resources */,
+				E400981F2D1DB42200BC1EDB /* popup.css in Resources */,
 				E43AEB992A2202980057ED0E /* background.js in Resources */,
 				E43AEB982A2202980057ED0E /* LICENSE in Resources */,
 				E43AEB9C2A2202980057ED0E /* content.js in Resources */,
@@ -542,7 +554,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -577,7 +589,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -616,7 +628,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -657,7 +669,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,

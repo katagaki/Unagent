@@ -1,28 +1,39 @@
 {
     "manifest_version": 3,
     "name": "Unagent",
-    "version": "0.1",
+    "version": "1.6",
     "icons": {
-      "128": "128.png"
+        "128": "128.png"
     },
     "background": {
-      "scripts": ["background.js"],
-      "persistent": false
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
     },
-    "content_scripts": [{
-        "js": ["content.js"],
-        "matches": ["<all_urls>"]
-    }],
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
     "description": "Modify the user agent reported to any website",
     "permissions": [
-      "declarativeNetRequestWithHostAccess",
-      "nativeMessaging",
-      "storage"
+        "declarativeNetRequestWithHostAccess",
+        "nativeMessaging",
+        "storage"
     ],
     "host_permissions": [
-      "*://*/*"
+        "*://*/*"
     ],
     "declarative_net_request": {
-      "rule_resources": []
+        "rule_resources": []
     }
 }
