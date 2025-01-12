@@ -18,7 +18,7 @@
 		E435DA4E2B9A7B38003B3396 /* SetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435DA4D2B9A7B38003B3396 /* SetUpView.swift */; };
 		E435DA502B9D62A7003B3396 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E435DA4F2B9D62A7003B3396 /* Localizable.xcstrings */; };
 		E43AEB872A22012E0057ED0E /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AEB862A22012E0057ED0E /* SafariWebExtensionHandler.swift */; };
-		E43AEB8E2A2202730057ED0E /* Unagent Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30229F4C51D00827556 /* Unagent Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E43AEB8E2A2202730057ED0E /* Unagent Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4B1B30229F4C51D00827556 /* Unagent Extension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E43AEB982A2202980057ED0E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E43AEB932A2202980057ED0E /* LICENSE */; };
 		E43AEB992A2202980057ED0E /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = E43AEB942A2202980057ED0E /* background.js */; };
 		E43AEB9A2A2202980057ED0E /* 128.png in Resources */ = {isa = PBXBuildFile; fileRef = E43AEB952A2202980057ED0E /* 128.png */; };
@@ -411,6 +411,7 @@
 /* Begin PBXTargetDependency section */
 		E43AEB902A2202730057ED0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = E4B1B30129F4C51D00827556 /* Unagent Extension */;
 			targetProxy = E43AEB8F2A2202730057ED0E /* PBXContainerItemProxy */;
 		};
@@ -554,7 +555,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -589,7 +590,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -628,7 +629,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -639,8 +640,8 @@
 				PRODUCT_NAME = Unagent;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -669,7 +670,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -680,8 +681,8 @@
 				PRODUCT_NAME = Unagent;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

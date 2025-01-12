@@ -5,11 +5,15 @@
 //  Created by シン・ジャスティン on 2024/03/08.
 //
 
+import StoreKit
 import SwiftUI
 
 struct MainTabView: View {
 
+    @Environment(\.requestReview) var requestReview
     @AppStorage(wrappedValue: false, "HideSetUpTab") var hideSetUpTab: Bool
+    @AppStorage(wrappedValue: false, "ReviewPrompted", store: .standard) var hasReviewBeenPrompted: Bool
+    @AppStorage(wrappedValue: 0, "LaunchCount", store: .standard) var launchCount: Int
 
     var body: some View {
         TabView {
@@ -44,6 +48,13 @@ struct MainTabView: View {
                     .tabItem {
                         Label("Tab.More", systemImage: "ellipsis")
                     }
+            }
+        }
+        .task {
+            launchCount += 1
+            if launchCount > 2 && !hasReviewBeenPrompted {
+                requestReview()
+                hasReviewBeenPrompted = true
             }
         }
     }

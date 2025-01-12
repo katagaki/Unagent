@@ -36,9 +36,9 @@
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge"
   },
   {
-    "name": "Google Chrome 131 (iOS)",
+    "name": "Google Chrome 132 (iOS)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/131.0.6778.154 Mobile/15E148 Safari/604.1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/132.0.6834.78 Mobile/15E148 Safari/604.1",
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios"
   },
   {
@@ -48,13 +48,13 @@
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome"
   },
   {
-    "name": "Google Chrome 131 (Android)",
+    "name": "Google Chrome 132 (Android)",
     "imageName": "Chrome",
-    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.200 Mobile Safari/537.36",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.6834.78 Mobile Safari/537.36",
     "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome"
   },
   {
-    "name": "Google App 333 (iOS)",
+    "name": "Google App 346 (iOS)",
     "imageName": "Google",
     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/346.1.704810410 Mobile/15E148 Safari/604.1",
     "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/google-search-app/"

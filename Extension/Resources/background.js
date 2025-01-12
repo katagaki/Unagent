@@ -1,3 +1,8 @@
+const supportedResourceTypes = [
+    "main_frame", "sub_frame", "stylesheet", "script", "image",
+    "font", "xmlhttprequest", "ping", "media", "websocket", "other"
+];
+
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let currentSchemaVersion = 5;
     // Check whether schema version has increased
@@ -104,10 +109,7 @@ function setUserAgent(userAgent) {
             priority: 1,
             condition: {
                 urlFilter: "*",
-                resourceTypes: [
-                    "main_frame", "sub_frame", "stylesheet", "script", "image",
-                    "font", "xmlhttprequest", "ping", "media", "websocket", "other"
-                ]
+                resourceTypes: supportedResourceTypes
             },
             action: {
                 type: "modifyHeaders",
@@ -151,10 +153,7 @@ function setSiteSettings(siteSettings) {
                 priority: ruleId + 1,
                 condition: {
                     urlFilter: "||" + siteSetting.domain,
-                    resourceTypes: [
-                        "main_frame", "sub_frame", "stylesheet", "script", "image",
-                        "font", "xmlhttprequest", "ping", "media", "websocket", "other"
-                    ]
+                    resourceTypes: supportedResourceTypes
                 },
                 action: {
                     type: "modifyHeaders",
