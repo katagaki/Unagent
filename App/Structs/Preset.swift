@@ -9,5 +9,6 @@ struct Preset: Codable {
     var name: String
     var imageName: String
     var userAgent: String
-    var source: String
+    var source: String?
+    var sources: [String]?
 }
