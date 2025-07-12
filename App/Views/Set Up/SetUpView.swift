@@ -10,8 +10,6 @@ import SwiftUI
 
 struct SetUpView: View {
 
-    @AppStorage(wrappedValue: false, "HideSetUpTab") var hideSetUpTab: Bool
-
     var body: some View {
         NavigationStack {
             List {
@@ -46,16 +44,6 @@ struct SetUpView: View {
                 } header: {
                     ListSectionHeader(text: "SetUp.Step2.Title")
                         .font(.body)
-                }
-                Section {
-                    Button {
-                        withAnimation {
-                            hideSetUpTab = true
-                        }
-                    } label: {
-                        Text("SetUp.Hide")
-                            .foregroundStyle(.red)
-                    }
                 }
             }
             .navigationTitle("ViewTitle.SetUp")

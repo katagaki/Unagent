@@ -44,7 +44,7 @@ struct SiteSettingEditor: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Shared.Cancel") {
+                    Button("Shared.Cancel", role: .cancel) {
                         shouldSave = false
                         dismiss()
                     }
