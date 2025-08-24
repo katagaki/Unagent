@@ -19,11 +19,8 @@ struct MainTabView: View {
             Tab("Tab.SetUp", systemImage: "checklist") {
                 SetUpView()
             }
-            Tab("Tab.GlobalSettings", systemImage: "gear") {
-                GlobalSettingsView()
-            }
-            Tab("Tab.SiteSettings", systemImage: "globe") {
-                SiteSettingsView()
+            Tab("Tab.UserAgents", systemImage: "globe") {
+                UserAgentsView()
             }
             Tab("Tab.More", systemImage: "ellipsis") {
                 MoreView()

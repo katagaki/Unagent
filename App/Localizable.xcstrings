@@ -427,7 +427,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Presets"
+            "value" : "Predefinições"
           }
         }
       }
@@ -450,6 +450,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salvar"
+          }
+        }
+      }
+    },
+    "Shared.SelectPreset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Preset"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセットを選択"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione Predefinição"
           }
         }
       }
@@ -565,28 +587,6 @@
         }
       }
     },
-    "Tab.GlobalSettings" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Global"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "グローバル"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Global"
-          }
-        }
-      }
-    },
     "Tab.More" : {
       "localizations" : {
         "en" : {
@@ -631,29 +631,29 @@
         }
       }
     },
-    "Tab.SiteSettings" : {
+    "Tab.UserAgents" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Per-Site"
+            "value" : "User Agents"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Webサイト"
+            "value" : "ユーザーエージェント"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Por site"
+            "value" : "Agente de usuário"
           }
         }
       }
     },
-    "ViewTitle.GlobalSettings" : {
+    "UserAgent.Global" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -671,6 +671,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agente de usuário global"
+          }
+        }
+      }
+    },
+    "UserAgent.PerSite" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per Site User Agents"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Webサイトごと設定"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário por site"
           }
         }
       }
@@ -693,28 +715,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Configurar o Unagent"
-          }
-        }
-      }
-    },
-    "ViewTitle.SiteSettings" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Per-Site User Agents"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Webサイトごと設定"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Agente de usuário por site"
           }
         }
       }
@@ -759,6 +759,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nova configuração para um site"
+          }
+        }
+      }
+    },
+    "ViewTitle.UserAgents" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザーエージェント"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário"
           }
         }
       }
