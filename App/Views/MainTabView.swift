@@ -16,11 +16,11 @@ struct MainTabView: View {
 
     var body: some View {
         TabView {
-            Tab("Tab.SetUp", systemImage: "checklist") {
-                SetUpView()
-            }
             Tab("Tab.UserAgents", systemImage: "globe") {
                 UserAgentsView()
+            }
+            Tab("Tab.SetUp", systemImage: "checklist") {
+                SetUpView()
             }
             Tab("Tab.More", systemImage: "ellipsis") {
                 MoreView()
