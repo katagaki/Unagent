@@ -30,7 +30,19 @@ struct PresetsSection: View {
         Section {
             ForEach(presets, id: \.name) { preset in
                 Button {
-                    onSelect(preset.userAgent)
+                    var userAgent: String = preset.userAgent
+                    let os = ProcessInfo().operatingSystemVersion
+                    let replaceTokens: [String: String] = [
+                        "%OS_MAJOR%": String(os.majorVersion),
+                        "%OS_MINOR%": String(os.minorVersion),
+                        "%OS_PATCH%": String(os.patchVersion)
+                    ]
+                    for (token, replacement) in replaceTokens {
+                        if userAgent.contains(token) {
+                            userAgent = userAgent.replacingOccurrences(of: token, with: replacement)
+                        }
+                    }
+                    onSelect(userAgent)
                 } label: {
                     HStack(spacing: 8.0) {
                         Image(preset.imageName)

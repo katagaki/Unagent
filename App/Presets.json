@@ -6,78 +6,78 @@
         "source": ""
     },
     {
-        "name": "Safari 18 (iOS)",
+        "name": "Safari (iOS)",
         "imageName": "Safari",
-        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/605.1.15",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%.0 Mobile/15E148 Safari/604.1",
         "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios"
     },
     {
-        "name": "Safari 18 (iPadOS)",
+        "name": "Safari (iPadOS)",
         "imageName": "Safari",
-        "userAgent": "Mozilla/5.0 (iPad; CPU OS 18_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/605.1.15",
+        "userAgent": "Mozilla/5.0 (iPad; CPU OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%.0 Mobile/15E148 Safari/604.1",
         "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios"
     },
     {
-        "name": "Safari 18 (macOS)",
+        "name": "Safari (macOS)",
         "imageName": "Safari",
-        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%.0 Safari/605.1.15",
         "source": ""
     },
     {
-        "name": "Microsoft Edge 136 (iOS)",
+        "name": "Microsoft Edge 140 (iOS)",
         "imageName": "Edgeium",
-        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) EdgiOS/136.0.3240.91 Version/18.0 Mobile/15E148 Safari/604.1",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) EdgiOS/140.0.3485.52 Version/18.0 Mobile/15E148 Safari/604.1",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge",
             "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-mobile-stable-channel"
         ]
     },
     {
-        "name": "Microsoft Edge 137 (macOS)",
+        "name": "Microsoft Edge 140 (macOS)",
         "imageName": "Edgeium",
-        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/137.0.3296.52",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.3485.66",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge",
             "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel"
         ]
     },
     {
-        "name": "Microsoft Edge 136 (Android)",
+        "name": "Microsoft Edge 140 (Android)",
         "imageName": "Edgeium",
-        "userAgent": "Mozilla/5.0 (Linux; Android 13.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.7103.127 Mobile Safari/537.36 EdgA/136.0.3240.91",
+        "userAgent": "Mozilla/5.0 (Linux; Android 15.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.52 Mobile Safari/537.36 EdgA/139.0.3405.125",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge",
             "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-mobile-stable-channel"
         ]
     },
     {
-        "name": "Google Chrome 137 (iOS)",
+        "name": "Google Chrome 140 (iOS)",
         "imageName": "Chrome",
-        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/137.0.7151.51 Mobile/15E148 Safari/604.1",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/140.0.7339.122 Mobile/15E148 Safari/604.1",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios",
             "https://chromereleases.googleblog.com/search/label/Stable%20updates"
         ]
     },
     {
-        "name": "Google Chrome 136 (macOS)",
+        "name": "Google Chrome 140 (macOS)",
         "imageName": "Chrome",
-        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
         "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome"
     },
     {
-        "name": "Google Chrome 136 (Android)",
+        "name": "Google Chrome 140 (Android)",
         "imageName": "Chrome",
-        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome",
             "https://chromereleases.googleblog.com/search/label/Stable%20updates"
         ]
     },
     {
-        "name": "Google App 370 (iOS)",
+        "name": "Google App 385 (iOS)",
         "imageName": "Google",
-        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/370.0.762543316 Mobile/15E148 Safari/604.1",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/385.0.802777482 Mobile/15E148 Safari/604.1",
         "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/google-search-app/"
     },
     {
@@ -125,13 +125,13 @@
     {
         "name": "Applebot (iOS)",
         "imageName": "Apple",
-        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Mobile/15E148 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%_0 Mobile/15E148 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
         "source": "https://support.apple.com/en-us/119829"
     },
     {
         "name": "Applebot (macOS)",
         "imageName": "Apple",
-        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15(KHTML, like Gecko) Version/18.3 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15(KHTML, like Gecko) Version/%OS_MAJOR%_0 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
         "source": "https://support.apple.com/en-us/119829"
     },
     {
