@@ -4,7 +4,7 @@ const supportedResourceTypes = [
 ];
 
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    let currentSchemaVersion = 5;
+    let currentSchemaVersion = 6;
     // Check whether schema version has increased
     browser.storage.local.get(["schemaVersion", "userAgent", "siteSettings"], (localStorage) => {
         let storedSchemaVersion = localStorage.schemaVersion;

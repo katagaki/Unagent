@@ -384,13 +384,13 @@
 				INFOPLIST_FILE = Extension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Unagent Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.7.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -420,13 +420,13 @@
 				INFOPLIST_FILE = Extension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Unagent Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.7.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -466,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.7.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -508,7 +508,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.7.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
