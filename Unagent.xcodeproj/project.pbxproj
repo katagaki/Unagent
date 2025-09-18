@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B35EC792E7BDBF800015120 /* Unagent Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7B35EC322E7BDBAC00015120 /* Unagent Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E435DA442B9A76FC003B3396 /* Komponents in Frameworks */ = {isa = PBXBuildFile; productRef = E435DA432B9A76FC003B3396 /* Komponents */; };
 		E477E73F2A96168300517B72 /* FaviconFinder in Frameworks */ = {isa = PBXBuildFile; productRef = E477E73E2A96168300517B72 /* FaviconFinder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7B35EC7A2E7BDBF800015120 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B1B2D029F4C51C00827556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B1B30129F4C51D00827556;
+			remoteInfo = "Unagent Extension";
+		};
 		E43AEB8F2A2202730057ED0E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4B1B2D029F4C51C00827556 /* Project object */;
@@ -28,6 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				7B35EC792E7BDBF800015120 /* Unagent Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,10 +44,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B35EC312E7BDBAC00015120 /* Unagent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unagent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B35EC322E7BDBAC00015120 /* Unagent Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Unagent Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43AEB762A21B83F0057ED0E /* BingMeUp (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BingMeUp (iOS).entitlements"; sourceTree = "<group>"; };
 		E43AEB772A21B8730057ED0E /* BingMeUp Extension (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BingMeUp Extension (iOS).entitlements"; sourceTree = "<group>"; };
-		E4B1B2E329F4C51D00827556 /* Unagent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Unagent.app; path = "/Users/katagaki/Developer/Unagent/build/Debug-iphoneos/Unagent.app"; sourceTree = "<absolute>"; };
-		E4B1B30229F4C51D00827556 /* Unagent Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "Unagent Extension.appex"; path = "/Users/katagaki/Developer/Unagent/build/Debug-iphoneos/Unagent Extension.appex"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -98,6 +107,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B35EC782E7BDBF800015120 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E4B1B2CF29F4C51C00827556 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +121,9 @@
 				E43AEB762A21B83F0057ED0E /* BingMeUp (iOS).entitlements */,
 				E43AEB772A21B8730057ED0E /* BingMeUp Extension (iOS).entitlements */,
 				E45DF2A92E21E6000010814B /* Extension */,
+				7B35EC312E7BDBAC00015120 /* Unagent.app */,
+				7B35EC322E7BDBAC00015120 /* Unagent Extension.appex */,
+				7B35EC782E7BDBF800015120 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +143,7 @@
 			);
 			dependencies = (
 				E43AEB902A2202730057ED0E /* PBXTargetDependency */,
+				7B35EC7B2E7BDBF800015120 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E45DF2D02E21E60F0010814B /* App */,
@@ -134,7 +154,7 @@
 				E435DA432B9A76FC003B3396 /* Komponents */,
 			);
 			productName = "Bing Chat Unblocker (iOS)";
-			productReference = E4B1B2E329F4C51D00827556 /* Unagent.app */;
+			productReference = 7B35EC312E7BDBAC00015120 /* Unagent.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E4B1B30129F4C51D00827556 /* Unagent Extension */ = {
@@ -154,7 +174,7 @@
 			);
 			name = "Unagent Extension";
 			productName = "Bing Chat Unblocker Extension (iOS)";
-			productReference = E4B1B30229F4C51D00827556 /* Unagent Extension.appex */;
+			productReference = 7B35EC322E7BDBAC00015120 /* Unagent Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -237,6 +257,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7B35EC7B2E7BDBF800015120 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4B1B30129F4C51D00827556 /* Unagent Extension */;
+			targetProxy = 7B35EC7A2E7BDBF800015120 /* PBXContainerItemProxy */;
+		};
 		E43AEB902A2202730057ED0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -399,7 +424,8 @@
 				PRODUCT_NAME = "Unagent Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -435,7 +461,8 @@
 				PRODUCT_NAME = "Unagent Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
