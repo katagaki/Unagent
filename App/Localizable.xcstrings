@@ -765,6 +765,12 @@
     },
     "ViewTitle.UserAgents" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User Agents"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
