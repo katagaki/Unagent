@@ -93,13 +93,15 @@ struct UserAgentsView: View {
                         }
                     } else {
                         ForEach(perSiteSettings, id: \.domain) { siteSetting in
-                            SiteSettingRow(
-                                title: siteSetting.domain,
-                                subtitle: siteSetting.userAgent
-                            )
-                            .onTapGesture {
+                            Button {
                                 startEditingPerSiteSetting(siteSetting)
+                            } label: {
+                                SiteSettingRow(
+                                    title: siteSetting.domain,
+                                    subtitle: siteSetting.userAgent
+                                )
                             }
+                            .buttonStyle(.plain)
                             .swipeActions {
                                 Button("Shared.Delete") {
                                     deletePerSiteSetting(siteSetting)
