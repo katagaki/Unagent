@@ -101,7 +101,6 @@ struct UserAgentsView: View {
                                     subtitle: siteSetting.userAgent
                                 )
                             }
-                            .buttonStyle(.plain)
                             .swipeActions {
                                 Button("Shared.Delete") {
                                     deletePerSiteSetting(siteSetting)

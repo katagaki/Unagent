@@ -55,10 +55,12 @@ struct SiteSettingRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
                     .font(.body)
+                    .foregroundStyle(.primary)
                 Text(subtitle)
                     .font(.caption)
-                    .foregroundColor(.secondary)
+                    .foregroundStyle(.secondary)
             }
+            .tint(.primary)
         }
     }
 }
