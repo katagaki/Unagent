@@ -97,6 +97,9 @@ struct UserAgentsView: View {
                                 title: siteSetting.domain,
                                 subtitle: siteSetting.userAgent
                             )
+                            .onTapGesture {
+                                startEditingPerSiteSetting(siteSetting)
+                            }
                             .swipeActions {
                                 Button("Shared.Delete") {
                                     deletePerSiteSetting(siteSetting)
