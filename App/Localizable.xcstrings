@@ -1,215 +1,181 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "Default": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Default"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Default" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "デフォルト"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルト"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Padrão"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padrão"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "默认"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "默认"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "預設"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設"
           }
         }
       }
     },
-    "GlobalSettings.GlobalUserAgent.Footer": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This user agent will be used on all websites, except when a per-site user agent is set."
+    "GlobalSettings.GlobalUserAgent.Footer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This user agent will be used on all websites, except when a per-site user agent is set."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "このユーザーエージェントはすべてのWebサイトに適用されます。"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このユーザーエージェントはすべてのWebサイトに適用されます。"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Esse agente de usuário será utilizado em todos os sites, exceto se o site tiver outro agente configurado."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse agente de usuário será utilizado em todos os sites, exceto se o site tiver outro agente configurado."
           }
         }
       }
     },
-    "GlobalSettings.GlobalViewport.Footer": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The selected display size will be applied to all websites."
+    "More.General" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "選択された表示サイズはすべてのWebサイトに適用されます。"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一般"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "O tamanho de exibição selecionado será aplicado a todos os sites."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所选显示尺寸将应用于所有网站。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所選顯示尺寸將套用於所有網站。"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geral"
           }
         }
       }
     },
-    "More.General": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
+    "SetUp.OpenSafari" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Safari"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "一般"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Safari」アプリに移動"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geral"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir o Safari"
           }
         }
       }
     },
-    "SetUp.OpenSafari": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Safari"
+    "SetUp.OpenSettings" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "「Safari」アプリに移動"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「設定」アプリに移動"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abrir o Safari"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir os Ajustes"
           }
         }
       }
     },
-    "SetUp.OpenSettings": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Settings"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "「設定」アプリに移動"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abrir os Ajustes"
-          }
-        }
-      }
-    },
-    "SetUp.Step1": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "variations": {
-            "device": {
-              "mac": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1. Open the Safari app.\n2. From the menu bar, select 'Safari' > 'Preferences...'.\n3. Select the Extensions tab.\n4. Select 'Unagent'.\n5. Turn Unagent on by checking it."
+    "SetUp.Step1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Open the Safari app.\n2. From the menu bar, select 'Safari' > 'Preferences...'.\n3. Select the Extensions tab.\n4. Select 'Unagent'.\n5. Turn Unagent on by checking it."
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1. Open the Settings app.\n2. Scroll down and tap 'Safari.'\n3. Tap 'Extensions'.\n4. Tap 'Unagent'.\n5. Toggle Unagent on for the profiles you wish to use Unagent in."
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Open the Settings app.\n2. Scroll down and tap 'Safari.'\n3. Tap 'Extensions'.\n4. Tap 'Unagent'.\n5. Toggle Unagent on for the profiles you wish to use Unagent in."
                 }
               }
             }
           }
         },
-        "ja": {
-          "variations": {
-            "device": {
-              "mac": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "① 「Safari」アプリを開きます。\n② メニューバーから「Safari」＞「設定…」の順に選択します。\n③ 拡張機能タブを選択します。\n④ 「Unagent」を選択します。\n⑤ Unagentをチェックして有効化します。"
+        "ja" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "① 「Safari」アプリを開きます。\n② メニューバーから「Safari」＞「設定…」の順に選択します。\n③ 拡張機能タブを選択します。\n④ 「Unagent」を選択します。\n⑤ Unagentをチェックして有効化します。"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "① 「設定」アプリを開きます。\n② 下にスクロールし、「Safari」をタッチします。\n③ 「拡張機能」をタッチします。\n④ 「Unagent」をタッチします。\n⑤ Unagentを有効化するプロフィールをオンにします。"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "① 「設定」アプリを開きます。\n② 下にスクロールし、「Safari」をタッチします。\n③ 「拡張機能」をタッチします。\n④ 「Unagent」をタッチします。\n⑤ Unagentを有効化するプロフィールをオンにします。"
                 }
               }
             }
           }
         },
-        "pt-BR": {
-          "variations": {
-            "device": {
-              "mac": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1. Abra o Safari.\r\n2. Na barra de menus, selecione 'Safari' > ‘Preferências...'.\r\n3. Selecione a aba 'Extensões'.\r\n4. Selecione ‘Unagent'.\r\n5. Ative a opção 'Unagent'."
+        "pt-BR" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Abra o Safari.\r\n2. Na barra de menus, selecione 'Safari' > ‘Preferências...'.\r\n3. Selecione a aba 'Extensões'.\r\n4. Selecione ‘Unagent'.\r\n5. Ative a opção 'Unagent'."
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1. Abra os Ajustes.\r\n2. Role para baixo e clique em 'Safari'.\r\n3. Clique em 'Extensões'.\r\n4. Clique em 'Unagent'.\r\n5. Ative o Unagent para os perfis onde você deseja usar o Unagent."
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Abra os Ajustes.\r\n2. Role para baixo e clique em 'Safari'.\r\n3. Clique em 'Extensões'.\r\n4. Clique em 'Unagent'.\r\n5. Ative o Unagent para os perfis onde você deseja usar o Unagent."
                 }
               }
             }
@@ -217,104 +183,104 @@
         }
       }
     },
-    "SetUp.Step1.iOS18+": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1. Open the Settings app.\n2. Scroll down and tap 'Apps'.\n3. Find and tap 'Safari'.\n4. Tap 'Extensions'.\n5. Tap 'Unagent'.\n6. Toggle Unagent on for the profiles you wish to use Unagent in."
+    "SetUp.Step1.iOS18+" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Open the Settings app.\n2. Scroll down and tap 'Apps'.\n3. Find and tap 'Safari'.\n4. Tap 'Extensions'.\n5. Tap 'Unagent'.\n6. Toggle Unagent on for the profiles you wish to use Unagent in."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "① 「設定」アプリを開きます。\n② 下にスクロールし、「アプリ」をタッチします。\n③ 「Safari」を探してタッチします。\n④ 「拡張機能」をタッチします。\n⑤ 「Unagent」をタッチします。\n⑥ Unagentを有効化するプロフィールをオンにします。"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "① 「設定」アプリを開きます。\n② 下にスクロールし、「アプリ」をタッチします。\n③ 「Safari」を探してタッチします。\n④ 「拡張機能」をタッチします。\n⑤ 「Unagent」をタッチします。\n⑥ Unagentを有効化するプロフィールをオンにします。"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1. Abra os Ajustes.\r\n2. Role para baixo e clique em 'Apps'.\n3. Role para baixo e clique em 'Safari'.\r\n4. Clique em 'Extensões'.\r\n5. Clique em 'Unagent'.\r\n6. Ative o Unagent para os perfis onde você deseja usar o Unagent."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Abra os Ajustes.\r\n2. Role para baixo e clique em 'Apps'.\n3. Role para baixo e clique em 'Safari'.\r\n4. Clique em 'Extensões'.\r\n5. Clique em 'Unagent'.\r\n6. Ative o Unagent para os perfis onde você deseja usar o Unagent."
           }
         }
       }
     },
-    "SetUp.Step1.Title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Turn Unagent On"
+    "SetUp.Step1.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn Unagent On"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unagentを有効化"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagentを有効化"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ativar o Unagent"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ativar o Unagent"
           }
         }
       }
     },
-    "SetUp.Step2": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "variations": {
-            "device": {
-              "mac": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1. Open the Safari app.\n2. Select the Unagent icon on the toolbar.\n3. Select 'Always Allow on Every Website...'.\n4. Select 'Always Allow on Every Website'."
+    "SetUp.Step2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Open the Safari app.\n2. Select the Unagent icon on the toolbar.\n3. Select 'Always Allow on Every Website...'.\n4. Select 'Always Allow on Every Website'."
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1. Open the Safari app.\n2. Tap the 'Aa' icon to the left of the address bar.\n3. Tap 'Unagent'.\n4. Tap 'Always Allow...'.\n5. Tap 'Always Allow on Every Website'."
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Open the Safari app.\n2. Tap the 'Aa' icon to the left of the address bar.\n3. Tap 'Unagent'.\n4. Tap 'Always Allow...'.\n5. Tap 'Always Allow on Every Website'."
                 }
               }
             }
           }
         },
-        "ja": {
-          "variations": {
-            "device": {
-              "mac": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "① 「Safari」アプリを開きます。\n② ツールバーからUnagentのアイコンを選択します。\n③ 「すべてのWebサイトで常に許可…」を選択します。\n④ 「すべてのWebサイトで常に許可」を選択します。"
+        "ja" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "① 「Safari」アプリを開きます。\n② ツールバーからUnagentのアイコンを選択します。\n③ 「すべてのWebサイトで常に許可…」を選択します。\n④ 「すべてのWebサイトで常に許可」を選択します。"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "① 「Safari」アプリを開きます。\n② アドレスバーの左側の「あぁ」ボタンをタッチします。\n③ 「Unagent」をタッチします。\n④ 「常に許可…」をタッチします。\n⑤ 「すべてのWebサイトで常に許可」をタッチします。"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "① 「Safari」アプリを開きます。\n② アドレスバーの左側の「あぁ」ボタンをタッチします。\n③ 「Unagent」をタッチします。\n④ 「常に許可…」をタッチします。\n⑤ 「すべてのWebサイトで常に許可」をタッチします。"
                 }
               }
             }
           }
         },
-        "pt-BR": {
-          "variations": {
-            "device": {
-              "mac": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1. Abra o Safari.\r\n2. Selecione o ícone do Unagent na barra de ferramentas.\r\n3. Selecione 'Sempre permitir em qualquer Website…'.\r\n4. Selecione 'Sempre permitir em qualquer Website…'."
+        "pt-BR" : {
+          "variations" : {
+            "device" : {
+              "mac" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Abra o Safari.\r\n2. Selecione o ícone do Unagent na barra de ferramentas.\r\n3. Selecione 'Sempre permitir em qualquer Website…'.\r\n4. Selecione 'Sempre permitir em qualquer Website…'."
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "1. Abra o Safari.\r\n2. Clique no ícone 'Aa' no canto esquerdo da barra de navegação.\r\n3. Clique em 'Unagent'.\r\n4. Clique em 'Sempre permitir...'.\r\n5. Clique em 'Sempre permitir em qualquer Website'."
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1. Abra o Safari.\r\n2. Clique no ícone 'Aa' no canto esquerdo da barra de navegação.\r\n3. Clique em 'Unagent'.\r\n4. Clique em 'Sempre permitir...'.\r\n5. Clique em 'Sempre permitir em qualquer Website'."
                 }
               }
             }
@@ -322,744 +288,728 @@
         }
       }
     },
-    "SetUp.Step2.Title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Give Unagent Access"
+    "SetUp.Step2.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Give Unagent Access"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unagentに権限を付与"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagentに権限を付与"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dar permissões ao Unagent"
-          }
-        }
-      }
-    },
-    "Shared.Add": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "追加"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicionar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dar permissões ao Unagent"
           }
         }
       }
     },
-    "Shared.Cancel": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
+    "Shared.Add" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "キャンセル"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancelar"
-          }
-        }
-      }
-    },
-    "Shared.Delete": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "削除"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deletar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar"
           }
         }
       }
     },
-    "Shared.DomainName": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Domain Name"
+    "Shared.Cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ドメイン名"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Domínio"
-          }
-        }
-      }
-    },
-    "Shared.Edit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Edit"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "編集"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Editar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         }
       }
     },
-    "Shared.Paste": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Paste"
+    "Shared.Delete" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "貼り付け"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Colar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deletar"
           }
         }
       }
     },
-    "Shared.Presets": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Presets"
+    "Shared.DomainName" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domain Name"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "プリセット"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ドメイン名"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predefinições"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domínio"
           }
         }
       }
     },
-    "Shared.Save": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save"
+    "Shared.Edit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "保存"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編集"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Salvar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
           }
         }
       }
     },
-    "Shared.SelectPreset": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Select Preset"
+    "Shared.Paste" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paste"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "プリセットを選択"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貼り付け"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Selecione Predefinição"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colar"
           }
         }
       }
     },
-    "Shared.UserAgent": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "User Agent"
+    "Shared.Presets" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presets"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ユーザーエージェント"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセット"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de Usuário"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinições"
           }
         }
       }
     },
-    "SiteSettings.DomainName.Example": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enter the domain name without any ‘http’ at the front, or slashes at the back.\nExample: www.example.com"
+    "Shared.Save" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "「http」やスラッシュー記号なしのドメイン名を入力してください。\n例：www.example.co.jp"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Digite o nome do domínio sem ‘http’ no início e sem barras no final.\nExemplo: www.example.com"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
           }
         }
       }
     },
-    "SiteSettings.DomainName.Footer": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This user agent will only apply to pages in the domain specified."
+    "Shared.SelectPreset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Preset"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "このユーザーエージェントは指定したドメインのページのみ適用されます。"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセットを選択"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Esse agente de usuário será apenas aplicado à páginas deste domínio específico."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione Predefinição"
           }
         }
       }
     },
-    "SiteSettings.EmptyText.Text": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add a user agent for a specific website by tapping the '+' icon on the toolbar."
+    "Shared.Settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Webサイト専用のユーザーエージェントを追加するには、ツールバーの「＋」アイコンをタッチしてください。"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicione um agente de usuário para um site específico clicando no botão '+'. "
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
           }
         }
       }
     },
-    "SiteSettings.EmptyText.Title": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No User Agents"
+    "Shared.UserAgent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User Agent"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定なし"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザーエージェント"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sem agente de usuário"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de Usuário"
           }
         }
       }
     },
-    "SiteSettings.Viewport.Footer": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The selected display size will only be applied to pages in the domain specified."
+    "SiteSettings.DomainName.Example" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the domain name without any ‘http’ at the front, or slashes at the back.\nExample: www.example.com"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "選択された表示サイズは指定したドメインのページのみ適用されます。"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「http」やスラッシュー記号なしのドメイン名を入力してください。\n例：www.example.co.jp"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "O tamanho de exibição selecionado será aplicado apenas às páginas do domínio especificado."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所选显示尺寸仅应用于指定域中的页面。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所選顯示尺寸僅套用於指定網域中的頁面。"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digite o nome do domínio sem ‘http’ no início e sem barras no final.\nExemplo: www.example.com"
           }
         }
       }
     },
-    "Tab.More": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "More"
+    "SiteSettings.DomainName.Footer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This user agent will only apply to pages in the domain specified."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "その他"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このユーザーエージェントは指定したドメインのページのみ適用されます。"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mais"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse agente de usuário será apenas aplicado à páginas deste domínio específico."
           }
         }
       }
     },
-    "Tab.SetUp": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Set Up"
+    "SiteSettings.EmptyText.Text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add a user agent for a specific website by tapping the '+' icon on the toolbar."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "セットアップ"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Webサイト専用のユーザーエージェントを追加するには、ツールバーの「＋」アイコンをタッチしてください。"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Início"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione um agente de usuário para um site específico clicando no botão '+'. "
           }
         }
       }
     },
-    "Tab.UserAgents": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "User Agents"
+    "SiteSettings.EmptyText.Title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No User Agents"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ユーザーエージェント"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定なし"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de usuário"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem agente de usuário"
           }
         }
       }
     },
-    "UserAgent.Global": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Global User Agent"
+    "SiteSettings.Viewport.Footer" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The selected display size will only be applied to pages in the domain specified."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "グローバル設定"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択された表示サイズは指定したドメインのページのみ適用されます。"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de usuário global"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O tamanho de exibição selecionado será aplicado apenas às páginas do domínio especificado."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所选显示尺寸仅应用于指定域中的页面。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所選顯示尺寸僅套用於指定網域中的頁面。"
           }
         }
       }
     },
-    "UserAgent.PerSite": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Per Site User Agents"
+    "Tab.More" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Webサイトごと設定"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de usuário por site"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais"
           }
         }
       }
     },
-    "Viewport": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Viewport"
+    "Tab.SetUp" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Up"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "表示サイズ"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "セットアップ"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tamanho de exibição"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "显示尺寸"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "顯示尺寸"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Início"
           }
         }
       }
     },
-    "Viewport.Desktop": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desktop"
+    "Tab.UserAgents" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User Agents"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "デスクトップ"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザーエージェント"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desktop"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "桌面"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "桌面"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário"
           }
         }
       }
     },
-    "Viewport.Global": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Global Display Size"
+    "UserAgent.Global" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global User Agent"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "グローバル表示サイズ"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グローバル設定"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tamanho de exibição global"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全局显示尺寸"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全域顯示尺寸"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário global"
           }
         }
       }
     },
-    "Viewport.Mobile": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mobile"
+    "UserAgent.PerSite" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per Site User Agents"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "モバイル"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Webサイトごと設定"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Celular"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "手机"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "手機"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário por site"
           }
         }
       }
     },
-    "ViewTitle.SetUp": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Set Up Unagent"
+    "Viewport" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viewport"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unagentを準備する"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示サイズ"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurar o Unagent"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamanho de exibição"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示尺寸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示尺寸"
           }
         }
       }
     },
-    "ViewTitle.SiteSettings.Edit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Edit Site Setting"
+    "Viewport.Desktop" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desktop"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定を編集"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デスクトップ"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Editar configuração para um site"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desktop"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "桌面"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "桌面"
           }
         }
       }
     },
-    "ViewTitle.SiteSettings.New": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "New Site Setting"
+    "Viewport.Mobile" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mobile"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新規設定"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モバイル"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nova configuração para um site"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Celular"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手机"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手機"
           }
         }
       }
     },
-    "ViewTitle.UserAgents": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "User Agents"
+    "Viewport.Tablet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablet"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ユーザーエージェント"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タブレット"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de usuário"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablet"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平板"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平板"
           }
         }
       }
     },
-    "Viewport.Tablet": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tablet"
+    "ViewTitle.SetUp" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Up Unagent"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "タブレット"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagentを準備する"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tablet"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "平板"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "平板"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurar o Unagent"
           }
         }
-      },
-      "extractionState": "manual"
+      }
+    },
+    "ViewTitle.SiteSettings.Edit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Site Setting"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定を編集"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar configuração para um site"
+          }
+        }
+      }
+    },
+    "ViewTitle.SiteSettings.New" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Site Setting"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規設定"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova configuração para um site"
+          }
+        }
+      }
+    },
+    "ViewTitle.UserAgents" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User Agents"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザーエージェント"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário"
+          }
+        }
+      }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

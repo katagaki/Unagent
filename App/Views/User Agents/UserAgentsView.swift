@@ -62,6 +62,18 @@ struct UserAgentsView: View {
                         )
                         .frame(height: 80)
                         .scrollIndicators(.never)
+                    Picker("Viewport", selection: Binding(
+                        get: { globalViewport ?? .none },
+                        set: { newValue in
+                            globalViewportString = newValue.rawValue
+                            synchronizeDefaults()
+                        }
+                    )) {
+                        Text("Default").tag(Viewport.none)
+                        ForEach(Viewport.allCases.filter { $0 != .none }, id: \.self) { viewportOption in
+                            Text(viewportOption.displayName).tag(viewportOption)
+                        }
+                    }
                     Menu {
                         PresetsSection {
                             return globalUserAgent
@@ -86,24 +98,6 @@ struct UserAgentsView: View {
                     }
                 } footer: {
                     Text("GlobalSettings.GlobalUserAgent.Footer")
-                }
-                Section {
-                    Picker("Viewport", selection: Binding(
-                        get: { globalViewport ?? .none },
-                        set: { newValue in
-                            globalViewportString = newValue.rawValue
-                            synchronizeDefaults()
-                        }
-                    )) {
-                        Text("Default").tag(Viewport.none)
-                        ForEach(Viewport.allCases.filter { $0 != .none }, id: \.self) { viewportOption in
-                            Text(viewportOption.displayName).tag(viewportOption)
-                        }
-                    }
-                } header: {
-                    Text("Viewport.Global")
-                } footer: {
-                    Text("GlobalSettings.GlobalViewport.Footer")
                 }
                 Section {
                     if perSiteSettings.isEmpty {
