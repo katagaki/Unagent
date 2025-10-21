@@ -42,8 +42,7 @@ struct GlobalSettingsView: View {
                         synchronizeDefaults()
                     }
                 ),
-                headerText: "Shared.UserAgent",
-                footerText: "GlobalSettings.GlobalUserAgent.Footer"
+                headerText: "Shared.UserAgent"
             )
             
             ViewportPickerSection(
@@ -54,8 +53,7 @@ struct GlobalSettingsView: View {
                         synchronizeDefaults()
                     }
                 ),
-                headerText: "Viewport",
-                footerText: "GlobalSettings.GlobalViewport.Footer"
+                headerText: "Viewport"
             )
         }
         .navigationTitle("ViewTitle.GlobalSettings")

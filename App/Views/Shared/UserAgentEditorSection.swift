@@ -36,7 +36,7 @@ struct UserAgentEditorSection: View {
             }
         } header: {
             HStack(alignment: .center) {
-                Text(NSLocalizedString(headerText, comment: ""))
+                Text(headerText)
                 Spacer()
                 if showPasteButton && UIPasteboard.general.hasStrings {
                     Button("Shared.Paste") {
@@ -48,7 +48,7 @@ struct UserAgentEditorSection: View {
                 }
             }
         } footer: {
-            Text(.aboutUserAgent)
+            Text("About.UserAgent")
         }
     }
 }

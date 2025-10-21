@@ -36,9 +36,9 @@ struct ViewportPickerSection: View {
                 }
             }
         } header: {
-            Text(NSLocalizedString(headerText, comment: ""))
+            Text(headerText)
         } footer: {
-            Text(.aboutViewport)
+            Text("About.Viewport")
         }
     }
 }
