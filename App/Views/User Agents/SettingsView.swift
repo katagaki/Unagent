@@ -23,24 +23,13 @@ struct SettingsView: View {
         ) else { return [] }
         return siteSettings
     }
-    
-    var globalViewport: Viewport? {
-        get {
-            if globalViewportString.isEmpty {
-                return nil
-            }
-            return Viewport(rawValue: globalViewportString)
-        }
-        set {
-            globalViewportString = newValue?.rawValue ?? ""
-        }
-    }
 
     @State var isShowingNewSiteSettingView: Bool = false
     @State var newSiteSettingDomain: String = ""
     @State var newSiteSettingUserAgent: String = ""
     @State var newSiteSettingViewport: Viewport? = nil
     @State var newSiteSettingShouldSave: Bool = false
+    @State var showDuplicateDomainError: Bool = false
 
     @State var isShowingEditSiteSettingView: Bool = false
     @State var editingSiteSettingDomain: String = ""
@@ -51,28 +40,20 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             List {
-                UserAgentEditorSection(
-                    userAgent: $globalUserAgent,
-                    viewport: Binding(
-                        get: { globalViewportString.isEmpty ? nil : Viewport(rawValue: globalViewportString) },
-                        set: { newValue in
-                            globalViewportString = newValue?.rawValue ?? ""
-                            synchronizeDefaults()
+                Section {
+                    NavigationLink {
+                        GlobalSettingsView(
+                            globalUserAgent: $globalUserAgent,
+                            globalViewportString: $globalViewportString,
+                            synchronizeDefaults: synchronizeDefaults
+                        )
+                    } label: {
+                        HStack {
+                            Label("ViewTitle.GlobalSettings", systemImage: "globe")
+                            Spacer()
                         }
-                    ),
-                    headerText: "UserAgent.Global"
-                )
-                
-                ViewportPickerSection(
-                    viewport: Binding(
-                        get: { globalViewportString.isEmpty ? nil : Viewport(rawValue: globalViewportString) },
-                        set: { newValue in
-                            globalViewportString = newValue?.rawValue ?? ""
-                            synchronizeDefaults()
-                        }
-                    ),
-                    headerText: "Viewport.Global"
-                )
+                    }
+                }
                 
                 Section {
                     if perSiteSettings.isEmpty {
@@ -143,6 +124,11 @@ struct SettingsView: View {
                                   shouldSave: $editingSiteSettingShouldSave)
                 .presentationDetents([.large, .medium])
             }
+            .alert("Error.DuplicateDomain.Title", isPresented: $showDuplicateDomainError) {
+                Button("Shared.OK", role: .cancel) { }
+            } message: {
+                Text("Error.DuplicateDomain.Message")
+            }
         }
     }
 
@@ -155,7 +141,8 @@ struct SettingsView: View {
         if !isShowingNewSiteSettingView && newSiteSettingShouldSave {
             // Check if a setting for this domain already exists
             if perSiteSettings.contains(where: { $0.domain == newSiteSettingDomain }) {
-                // Domain already exists, don't add duplicate
+                // Domain already exists, show error
+                showDuplicateDomainError = true
                 newSiteSettingDomain = ""
                 newSiteSettingUserAgent = ""
                 newSiteSettingViewport = nil
