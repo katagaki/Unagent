@@ -17,7 +17,7 @@
         "imageName": "Safari",
         "userAgent": "Mozilla/5.0 (iPad; CPU OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%.0 Mobile/15E148 Safari/604.1",
         "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios",
-        "viewport": "Mobile"
+        "viewport": "Tablet"
     },
     {
         "name": "Safari (macOS)",

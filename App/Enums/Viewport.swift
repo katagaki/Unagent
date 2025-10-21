@@ -9,6 +9,7 @@ import Foundation
 
 enum Viewport: String, Codable, CaseIterable {
     case desktop = "Desktop"
+    case tablet = "Tablet"
     case mobile = "Mobile"
     case none = ""
     

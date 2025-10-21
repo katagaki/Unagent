@@ -36,6 +36,22 @@ struct SiteSettingEditor: View {
                 UserAgentEditorSection(footerText: "SiteSettings.DomainName.Footer",
                                        userAgent: $userAgent)
                 Section {
+                    Menu {
+                        PresetsSection {
+                            return userAgent
+                        } onSelect: { selectedUserAgent in
+                            userAgent = selectedUserAgent
+                        } onSelectWithViewport: { selectedUserAgent, selectedViewport in
+                            userAgent = selectedUserAgent
+                            viewport = selectedViewport
+                        }
+                    } label: {
+                        Text("Shared.SelectPreset")
+                    }
+                } footer: {
+                    Text("SiteSettings.DomainName.Footer")
+                }
+                Section {
                     Picker("Viewport", selection: $viewport) {
                         Text("Default").tag(Viewport?.none)
                         ForEach(Viewport.allCases.filter { $0 != .none }, id: \.self) { viewportOption in
@@ -46,14 +62,6 @@ struct SiteSettingEditor: View {
                     Text("Viewport")
                 } footer: {
                     Text("SiteSettings.Viewport.Footer")
-                }
-                PresetsSection {
-                    return userAgent
-                } onSelect: { selectedUserAgent in
-                    userAgent = selectedUserAgent
-                } onSelectWithViewport: { selectedUserAgent, selectedViewport in
-                    userAgent = selectedUserAgent
-                    viewport = selectedViewport
                 }
             }
             .navigationTitle(mode == .new ? "ViewTitle.SiteSettings.New" : "ViewTitle.SiteSettings.Edit")

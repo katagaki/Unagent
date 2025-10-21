@@ -31,6 +31,8 @@ function applyViewport(viewport) {
     
     if (viewport === 'Desktop') {
         viewportMeta.content = 'width=1200, initial-scale=1.0';
+    } else if (viewport === 'Tablet') {
+        viewportMeta.content = 'width=820, initial-scale=1.0';
     } else if (viewport === 'Mobile') {
         viewportMeta.content = 'width=390, initial-scale=1.0';
     }
