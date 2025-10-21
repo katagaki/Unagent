@@ -33,9 +33,13 @@ struct SiteSettingEditor: View {
                 } footer: {
                     Text(verbatim: NSLocalizedString("SiteSettings.DomainName.Example", comment: ""))
                 }
-                UserAgentEditorSection(footerText: "SiteSettings.DomainName.Footer",
-                                       userAgent: $userAgent)
                 Section {
+                    TextEditor(text: $userAgent)
+                        .autocorrectionDisabled()
+                        .autocapitalization(.none)
+                        .font(.monospaced(.custom("", size: 14.0, relativeTo: .body))())
+                        .frame(height: 120)
+                        .scrollIndicators(.never)
                     Menu {
                         PresetsSection {
                             return userAgent
@@ -47,6 +51,20 @@ struct SiteSettingEditor: View {
                         }
                     } label: {
                         Text("Shared.SelectPreset")
+                    }
+                } header: {
+                    HStack(alignment: .center) {
+                        ListSectionHeader(text: "Shared.UserAgent")
+                            .font(.body)
+                        Spacer()
+                        if UIPasteboard.general.hasStrings {
+                            Button("Shared.Paste") {
+                                if let pasteboardString = UIPasteboard.general.string {
+                                    userAgent = pasteboardString
+                                }
+                            }
+                            .textCase(.none)
+                        }
                     }
                 } footer: {
                     Text("SiteSettings.DomainName.Footer")
