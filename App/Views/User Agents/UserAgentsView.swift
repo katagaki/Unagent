@@ -11,6 +11,7 @@ import SwiftUI
 struct UserAgentsView: View {
 
     @AppStorage(wrappedValue: "", "UserAgent", store: defaults) var globalUserAgent: String
+    @AppStorage(wrappedValue: "", "GlobalViewport", store: defaults) var globalViewportString: String
     @AppStorage(wrappedValue: "", "SiteSettings", store: defaults) var perSiteUserAgentData: String
 
     let decoder = JSONDecoder()
@@ -23,15 +24,26 @@ struct UserAgentsView: View {
         ) else { return [] }
         return siteSettings
     }
+    
+    var globalViewport: Viewport? {
+        get {
+            if globalViewportString.isEmpty {
+                return nil
+            }
+            return Viewport(rawValue: globalViewportString)
+        }
+    }
 
     @State var isShowingNewSiteSettingView: Bool = false
     @State var newSiteSettingDomain: String = ""
     @State var newSiteSettingUserAgent: String = ""
+    @State var newSiteSettingViewport: Viewport? = nil
     @State var newSiteSettingShouldSave: Bool = false
 
     @State var isShowingEditSiteSettingView: Bool = false
     @State var editingSiteSettingDomain: String = ""
     @State var editingSiteSettingUserAgent: String = ""
+    @State var editingSiteSettingViewport: Viewport? = nil
     @State var editingSiteSettingShouldSave: Bool = false
 
     var body: some View {
@@ -74,6 +86,24 @@ struct UserAgentsView: View {
                     }
                 } footer: {
                     Text("GlobalSettings.GlobalUserAgent.Footer")
+                }
+                Section {
+                    Picker("Viewport", selection: Binding(
+                        get: { globalViewport ?? .none },
+                        set: { newValue in
+                            globalViewportString = newValue.rawValue
+                            synchronizeDefaults()
+                        }
+                    )) {
+                        Text("Default").tag(Viewport.none)
+                        ForEach(Viewport.allCases.filter { $0 != .none }, id: \.self) { viewportOption in
+                            Text(viewportOption.displayName).tag(viewportOption)
+                        }
+                    }
+                } header: {
+                    Text("Viewport.Global")
+                } footer: {
+                    Text("GlobalSettings.GlobalViewport.Footer")
                 }
                 Section {
                     if perSiteSettings.isEmpty {
@@ -132,6 +162,7 @@ struct UserAgentsView: View {
                 SiteSettingEditor(mode: .new,
                                   domain: $newSiteSettingDomain,
                                   userAgent: $newSiteSettingUserAgent,
+                                  viewport: $newSiteSettingViewport,
                                   shouldSave: $newSiteSettingShouldSave)
                 .presentationDetents([.large, .medium])
             }
@@ -139,6 +170,7 @@ struct UserAgentsView: View {
                 SiteSettingEditor(mode: .edit,
                                   domain: $editingSiteSettingDomain,
                                   userAgent: $editingSiteSettingUserAgent,
+                                  viewport: $editingSiteSettingViewport,
                                   shouldSave: $editingSiteSettingShouldSave)
                 .presentationDetents([.large, .medium])
             }
@@ -157,13 +189,15 @@ struct UserAgentsView: View {
             newSiteSettings.append(
                 SiteSetting(
                     domain: newSiteSettingDomain,
-                    userAgent: newSiteSettingUserAgent
+                    userAgent: newSiteSettingUserAgent,
+                    viewport: newSiteSettingViewport
                 )
             )
             updatePerSiteSettings(newSiteSettings)
 
             newSiteSettingDomain = ""
             newSiteSettingUserAgent = ""
+            newSiteSettingViewport = nil
             newSiteSettingShouldSave = false
         }
     }
@@ -178,11 +212,18 @@ struct UserAgentsView: View {
 
                 newSiteSettings[indexOfEditingSiteSetting] = SiteSetting(
                     domain: editingSiteSettingDomain,
-                    userAgent: editingSiteSettingUserAgent
+                    userAgent: editingSiteSettingUserAgent,
+                    viewport: editingSiteSettingViewport
                 )
                 updatePerSiteSettings(newSiteSettings)
 
                 editingSiteSettingDomain = ""
+                editingSiteSettingUserAgent = ""
+                editingSiteSettingViewport = nil
+                editingSiteSettingShouldSave = false
+            }
+        }
+    }
                 editingSiteSettingUserAgent = ""
                 editingSiteSettingShouldSave = false
             }
@@ -200,6 +241,7 @@ struct UserAgentsView: View {
     func startEditingPerSiteSetting(_ siteSetting: SiteSetting) {
         editingSiteSettingDomain = siteSetting.domain
         editingSiteSettingUserAgent = siteSetting.userAgent
+        editingSiteSettingViewport = siteSetting.viewport
         isShowingEditSiteSettingView = true
     }
 

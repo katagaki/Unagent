@@ -13,8 +13,9 @@ struct PresetsSection: View {
     var presets: [Preset]
     var currentUserAgent: () -> String
     var onSelect: (String) -> ()
+    var onSelectWithViewport: ((String, Viewport?) -> ())?
 
-    init(currentUserAgent: @escaping () -> String, onSelect: @escaping (String) -> Void) {
+    init(currentUserAgent: @escaping () -> String, onSelect: @escaping (String) -> Void, onSelectWithViewport: ((String, Viewport?) -> ())? = nil) {
         if let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
            let data = try? Data(contentsOf: url),
            let presets = try? JSONDecoder().decode([Preset].self, from: data) {
@@ -24,6 +25,7 @@ struct PresetsSection: View {
         }
         self.currentUserAgent = currentUserAgent
         self.onSelect = onSelect
+        self.onSelectWithViewport = onSelectWithViewport
     }
     
     var body: some View {
@@ -42,7 +44,11 @@ struct PresetsSection: View {
                             userAgent = userAgent.replacingOccurrences(of: token, with: replacement)
                         }
                     }
-                    onSelect(userAgent)
+                    if let onSelectWithViewport = onSelectWithViewport {
+                        onSelectWithViewport(userAgent, preset.viewport)
+                    } else {
+                        onSelect(userAgent)
+                    }
                 } label: {
                     HStack(spacing: 8.0) {
                         Image(preset.imageName)

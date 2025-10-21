@@ -4,7 +4,7 @@ const supportedResourceTypes = [
 ];
 
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    let currentSchemaVersion = 6;
+    let currentSchemaVersion = 7;
     // Check whether schema version has increased
     browser.storage.local.get(["schemaVersion", "userAgent", "siteSettings"], (localStorage) => {
         let storedSchemaVersion = localStorage.schemaVersion;
@@ -55,6 +55,21 @@ function updateSettings() {
         } else {
             if ("userAgent" in response) {
                 setUserAgent(response["userAgent"]);
+                hasConfigBeenUpdated = true;
+            }
+        }
+        // Check and set global viewport
+        let currentGlobalViewport = localStorage.globalViewport;
+        if (currentGlobalViewport != null) {
+            if ("globalViewport" in response) {
+                if (currentGlobalViewport != response["globalViewport"]) {
+                    setGlobalViewport(response["globalViewport"]);
+                    hasConfigBeenUpdated = true;
+                }
+            }
+        } else {
+            if ("globalViewport" in response) {
+                setGlobalViewport(response["globalViewport"]);
                 hasConfigBeenUpdated = true;
             }
         }
@@ -135,6 +150,10 @@ function setUserAgent(userAgent) {
     browser.storage.local.set({userAgent: userAgent});
 }
 
+function setGlobalViewport(viewport) {
+    browser.storage.local.set({globalViewport: viewport});
+}
+
 function setSiteSettings(siteSettings) {
     var ruleId = 1;
     // Remove all rules except 9999
@@ -169,9 +188,30 @@ function setSiteSettings(siteSettings) {
             browser.declarativeNetRequest.updateDynamicRules({
                 addRules: [rule]
             });
+            
+            // Set viewport if specified
+            if (siteSetting.viewport) {
+                setViewportForDomain(siteSetting.domain, siteSetting.viewport);
+            }
+            
             ruleId += 1;
         }
         browser.storage.local.set({siteSettings: siteSettings});
+    });
+}
+
+function setViewportForDomain(domain, viewport) {
+    // Inject a content script to change the viewport meta tag
+    // This will be handled by the content script when it detects the domain
+    let viewportSettings = {
+        domain: domain,
+        viewport: viewport
+    };
+    
+    browser.storage.local.get(["viewportSettings"], (result) => {
+        let allViewportSettings = result.viewportSettings || {};
+        allViewportSettings[domain] = viewport;
+        browser.storage.local.set({viewportSettings: allViewportSettings});
     });
 }
 
@@ -179,7 +219,8 @@ function containsSiteSetting(obj, list) {
     var i;
     for (i = 0; i < list.length; i++) {
         if (list[i].domain == obj.domain &&
-            list[i].userAgent == obj.userAgent) {
+            list[i].userAgent == obj.userAgent &&
+            list[i].viewport == obj.viewport) {
             return true;
         }
     }

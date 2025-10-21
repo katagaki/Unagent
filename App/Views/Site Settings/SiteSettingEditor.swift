@@ -16,6 +16,7 @@ struct SiteSettingEditor: View {
 
     @Binding var domain: String
     @Binding var userAgent: String
+    @Binding var viewport: Viewport?
     @Binding var shouldSave: Bool
     
     var body: some View {
@@ -34,10 +35,25 @@ struct SiteSettingEditor: View {
                 }
                 UserAgentEditorSection(footerText: "SiteSettings.DomainName.Footer",
                                        userAgent: $userAgent)
+                Section {
+                    Picker("Viewport", selection: $viewport) {
+                        Text("Default").tag(Viewport?.none)
+                        ForEach(Viewport.allCases.filter { $0 != .none }, id: \.self) { viewportOption in
+                            Text(viewportOption.displayName).tag(Viewport?.some(viewportOption))
+                        }
+                    }
+                } header: {
+                    Text("Viewport")
+                } footer: {
+                    Text("SiteSettings.Viewport.Footer")
+                }
                 PresetsSection {
                     return userAgent
                 } onSelect: { selectedUserAgent in
                     userAgent = selectedUserAgent
+                } onSelectWithViewport: { selectedUserAgent, selectedViewport in
+                    userAgent = selectedUserAgent
+                    viewport = selectedViewport
                 }
             }
             .navigationTitle(mode == .new ? "ViewTitle.SiteSettings.New" : "ViewTitle.SiteSettings.Edit")
