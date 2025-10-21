@@ -155,96 +155,16 @@ struct SettingsView: View {
 
     func createNewPerSiteSetting() {
         if !isShowingNewSiteSettingView && newSiteSettingShouldSave {
-            var newSiteSettings: [SiteSetting] = []
-            newSiteSettings.append(contentsOf: perSiteSettings)
-            newSiteSettings.append(
-                SiteSetting(
-                    domain: newSiteSettingDomain,
-                    userAgent: newSiteSettingUserAgent,
-                    viewport: newSiteSettingViewport
-                )
-            )
-            updatePerSiteSettings(newSiteSettings)
-
-            newSiteSettingDomain = ""
-            newSiteSettingUserAgent = ""
-            newSiteSettingViewport = nil
-            newSiteSettingShouldSave = false
-        }
-    }
-
-    func editPerSiteSetting() {
-        if !isShowingEditSiteSettingView && editingSiteSettingShouldSave {
-            if let indexOfEditingSiteSetting = perSiteSettings.firstIndex(
-                where: {$0.domain == editingSiteSettingDomain}
-            ) {
-                var newSiteSettings: [SiteSetting] = []
-                newSiteSettings.append(contentsOf: perSiteSettings)
-
-                newSiteSettings[indexOfEditingSiteSetting] = SiteSetting(
-                    domain: editingSiteSettingDomain,
-                    userAgent: editingSiteSettingUserAgent,
-                    viewport: editingSiteSettingViewport
-                )
-                updatePerSiteSettings(newSiteSettings)
-
-                editingSiteSettingDomain = ""
-                editingSiteSettingUserAgent = ""
-                editingSiteSettingViewport = nil
-                editingSiteSettingShouldSave = false
+            // Check if a setting for this domain already exists
+            if perSiteSettings.contains(where: { $0.domain == newSiteSettingDomain }) {
+                // Domain already exists, don't add duplicate
+                newSiteSettingDomain = ""
+                newSiteSettingUserAgent = ""
+                newSiteSettingViewport = nil
+                newSiteSettingShouldSave = false
+                return
             }
-        }
-    }
-
-    func deletePerSiteSetting(_ siteSetting: SiteSetting) {
-        updatePerSiteSettings(
-            perSiteSettings.filter({
-                $0.domain != siteSetting.domain
-            })
-        )
-    }
-
-    func startEditingPerSiteSetting(_ siteSetting: SiteSetting) {
-        editingSiteSettingDomain = siteSetting.domain
-        editingSiteSettingUserAgent = siteSetting.userAgent
-        editingSiteSettingViewport = siteSetting.viewport
-        isShowingEditSiteSettingView = true
-    }
-
-    func updatePerSiteSettings(_ newSiteSettings: [SiteSetting]) {
-        if let jsonData = try? encoder.encode(newSiteSettings),
-           let jsonString = String(data: jsonData, encoding: .utf8) {
-            perSiteUserAgentData = jsonString
-            synchronizeDefaults()
-        }
-    }
-}
-
-                SiteSettingEditor(mode: .new,
-                                  domain: $newSiteSettingDomain,
-                                  userAgent: $newSiteSettingUserAgent,
-                                  viewport: $newSiteSettingViewport,
-                                  shouldSave: $newSiteSettingShouldSave)
-                .presentationDetents([.large, .medium])
-            }
-            .sheet(isPresented: $isShowingEditSiteSettingView) {
-                SiteSettingEditor(mode: .edit,
-                                  domain: $editingSiteSettingDomain,
-                                  userAgent: $editingSiteSettingUserAgent,
-                                  viewport: $editingSiteSettingViewport,
-                                  shouldSave: $editingSiteSettingShouldSave)
-                .presentationDetents([.large, .medium])
-            }
-        }
-    }
-
-    func synchronizeDefaults() {
-        defaults.set(true, forKey: "ShouldExtensionUpdate")
-        defaults.synchronize()
-    }
-
-    func createNewPerSiteSetting() {
-        if !isShowingNewSiteSettingView && newSiteSettingShouldSave {
+            
             var newSiteSettings: [SiteSetting] = []
             newSiteSettings.append(contentsOf: perSiteSettings)
             newSiteSettings.append(
