@@ -79,6 +79,12 @@ struct UserAgentsView: View {
                             return globalUserAgent
                         } onSelect: { newUserAgent in
                             globalUserAgent = newUserAgent
+                        } onSelectWithViewport: { newUserAgent, newViewport in
+                            globalUserAgent = newUserAgent
+                            if let newViewport = newViewport {
+                                globalViewportString = newViewport.rawValue
+                                synchronizeDefaults()
+                            }
                         }
                     } label: {
                         Text("Shared.SelectPreset")

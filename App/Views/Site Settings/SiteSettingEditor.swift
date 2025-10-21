@@ -40,12 +40,6 @@ struct SiteSettingEditor: View {
                         .font(.monospaced(.custom("", size: 14.0, relativeTo: .body))())
                         .frame(height: 120)
                         .scrollIndicators(.never)
-                    Picker("Viewport", selection: $viewport) {
-                        Text("Default").tag(Viewport?.none)
-                        ForEach(Viewport.allCases.filter { $0 != .none }, id: \.self) { viewportOption in
-                            Text(viewportOption.displayName).tag(Viewport?.some(viewportOption))
-                        }
-                    }
                     Menu {
                         PresetsSection {
                             return userAgent
@@ -74,6 +68,18 @@ struct SiteSettingEditor: View {
                     }
                 } footer: {
                     Text("SiteSettings.DomainName.Footer")
+                }
+                Section {
+                    Picker("Viewport", selection: $viewport) {
+                        Text("Default").tag(Viewport?.none)
+                        ForEach(Viewport.allCases.filter { $0 != .none }, id: \.self) { viewportOption in
+                            Text(viewportOption.displayName).tag(Viewport?.some(viewportOption))
+                        }
+                    }
+                } header: {
+                    Text("Viewport")
+                } footer: {
+                    Text("SiteSettings.Viewport.Footer")
                 }
             }
             .navigationTitle(mode == .new ? "ViewTitle.SiteSettings.New" : "ViewTitle.SiteSettings.Edit")
