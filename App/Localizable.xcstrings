@@ -1,6 +1,22 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Default" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルト"
+          }
+        }
+      }
+    },
     "GlobalSettings.GlobalUserAgent.Footer" : {
       "localizations" : {
         "en" : {
@@ -12,13 +28,29 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "このユーザーエージェントはすべてのWebサイトに適用されますが、Webサイトのユーザーエージェントが優先されます。"
+            "value" : "このユーザーエージェントはすべてのWebサイトに適用されます。"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Esse agente de usuário será utilizado em todos os sites, exceto se o site tiver outro agente configurado."
+          }
+        }
+      }
+    },
+    "GlobalSettings.GlobalViewport.Footer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The selected display size will be applied to all websites."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "選択された表示サイズはすべてのWebサイトに適用されます。"
           }
         }
       }
@@ -532,7 +564,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "このユーザーエージェントは、指定したドメインのページのみ適用されます。"
+            "value" : "このユーザーエージェントは指定したドメインのページのみ適用されます。"
           }
         },
         "pt-BR" : {
@@ -583,6 +615,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sem agente de usuário"
+          }
+        }
+      }
+    },
+    "SiteSettings.Viewport.Footer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The selected display size will only be applied to pages in the domain specified."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "選択された表示サイズは指定したドメインのページのみ適用されます。"
           }
         }
       }
@@ -693,6 +741,72 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agente de usuário por site"
+          }
+        }
+      }
+    },
+    "Viewport" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viewport"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示サイズ"
+          }
+        }
+      }
+    },
+    "Viewport.Desktop" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desktop"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デスクトップ"
+          }
+        }
+      }
+    },
+    "Viewport.Global" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global Display Size"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グローバル表示サイズ"
+          }
+        }
+      }
+    },
+    "Viewport.Mobile" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mobile"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モバイル"
           }
         }
       }

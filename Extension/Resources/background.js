@@ -5,14 +5,14 @@ const supportedResourceTypes = [
 
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let currentSchemaVersion = 7;
-    // Check whether schema version has increased
+
     browser.storage.local.get(["schemaVersion", "userAgent", "siteSettings"], (localStorage) => {
         let storedSchemaVersion = localStorage.schemaVersion;
         if (storedSchemaVersion == null || storedSchemaVersion < currentSchemaVersion) {
             console.log("Resetting all settings after schema version updated");
             resetAllSettings(currentSchemaVersion);
         }
-        // Ask native app whether extension should update
+
         console.log("Extension asking native app whether it should update");
         browser.runtime.sendNativeMessage({function: "shouldExtensionUpdate"}, function (response) {
             if (response["shouldExtensionUpdate"] === true) {

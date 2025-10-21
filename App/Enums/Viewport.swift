@@ -13,6 +13,6 @@ enum Viewport: String, Codable, CaseIterable {
     case none = ""
     
     var displayName: String {
-        return self.rawValue
+        return NSLocalizedString("Viewport.\(self.rawValue)", comment: "")
     }
 }

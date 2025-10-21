@@ -224,11 +224,6 @@ struct UserAgentsView: View {
             }
         }
     }
-                editingSiteSettingUserAgent = ""
-                editingSiteSettingShouldSave = false
-            }
-        }
-    }
 
     func deletePerSiteSetting(_ siteSetting: SiteSetting) {
         updatePerSiteSettings(
