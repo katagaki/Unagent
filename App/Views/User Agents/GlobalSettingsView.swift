@@ -42,7 +42,7 @@ struct GlobalSettingsView: View {
                         synchronizeDefaults()
                     }
                 ),
-                headerText: "Shared.UserAgent"
+                headerText: "UserAgent"
             )
             
             ViewportPickerSection(
