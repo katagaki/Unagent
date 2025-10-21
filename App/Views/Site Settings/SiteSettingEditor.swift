@@ -36,14 +36,12 @@ struct SiteSettingEditor: View {
                 UserAgentEditorSection(
                     userAgent: $userAgent,
                     viewport: $viewport,
-                    headerText: "Shared.UserAgent",
-                    footerText: "SiteSettings.DomainName.Footer"
+                    headerText: "UserAgent"
                 )
                 
                 ViewportPickerSection(
                     viewport: $viewport,
                     headerText: "Viewport",
-                    footerText: "SiteSettings.Viewport.Footer",
                     isOptional: true
                 )
             }

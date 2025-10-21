@@ -11,7 +11,6 @@ struct ViewportPickerSection: View {
     
     @Binding var viewport: Viewport?
     var headerText: String
-    var footerText: String
     var isOptional: Bool = false
     
     var body: some View {
@@ -25,9 +24,9 @@ struct ViewportPickerSection: View {
                 }
             } else {
                 Picker("Viewport", selection: Binding(
-                    get: { viewport ?? .none },
+                    get: { viewport ?? Viewport.none },
                     set: { newValue in
-                        viewport = newValue == .none ? nil : newValue
+                        viewport = newValue == Viewport.none ? nil : newValue
                     }
                 )) {
                     Text("Default").tag(Viewport.none)
@@ -37,9 +36,9 @@ struct ViewportPickerSection: View {
                 }
             }
         } header: {
-            Text(headerText)
+            Text(NSLocalizedString(headerText, comment: ""))
         } footer: {
-            Text(footerText)
+            Text(.aboutViewport)
         }
     }
 }

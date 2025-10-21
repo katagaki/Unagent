@@ -54,26 +54,24 @@ struct SettingsView: View {
                 UserAgentEditorSection(
                     userAgent: $globalUserAgent,
                     viewport: Binding(
-                        get: { globalViewport },
+                        get: { globalViewportString.isEmpty ? nil : Viewport(rawValue: globalViewportString) },
                         set: { newValue in
-                            globalViewport = newValue
+                            globalViewportString = newValue?.rawValue ?? ""
                             synchronizeDefaults()
                         }
                     ),
-                    headerText: "UserAgent.Global",
-                    footerText: "GlobalSettings.GlobalUserAgent.Footer"
+                    headerText: "UserAgent.Global"
                 )
                 
                 ViewportPickerSection(
                     viewport: Binding(
-                        get: { globalViewport },
+                        get: { globalViewportString.isEmpty ? nil : Viewport(rawValue: globalViewportString) },
                         set: { newValue in
-                            globalViewport = newValue
+                            globalViewportString = newValue?.rawValue ?? ""
                             synchronizeDefaults()
                         }
                     ),
-                    headerText: "Viewport.Global",
-                    footerText: "GlobalSettings.GlobalViewport.Footer"
+                    headerText: "Viewport.Global"
                 )
                 
                 Section {
@@ -229,3 +227,4 @@ struct SettingsView: View {
         }
     }
 }
+
