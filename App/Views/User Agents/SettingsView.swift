@@ -1,5 +1,5 @@
 //
-//  UserAgentsView.swift
+//  SettingsView.swift
 //  Unagent
 //
 //  Created by シン・ジャスティン on 2025/08/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserAgentsView: View {
+struct SettingsView: View {
 
     @AppStorage(wrappedValue: "", "UserAgent", store: defaults) var globalUserAgent: String
     @AppStorage(wrappedValue: "", "GlobalViewport", store: defaults) var globalViewportString: String
@@ -31,6 +31,9 @@ struct UserAgentsView: View {
             }
             return Viewport(rawValue: globalViewportString)
         }
+        set {
+            globalViewportString = newValue?.rawValue ?? ""
+        }
     }
 
     @State var isShowingNewSiteSettingView: Bool = false
@@ -48,62 +51,31 @@ struct UserAgentsView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    TextEditor(text: $globalUserAgent)
-                        .autocorrectionDisabled()
-                        .autocapitalization(.none)
-                        .font(
-                            .monospaced(
-                                .custom(
-                                    "", size: 14.0, relativeTo: .body
-                                )
-                            )()
-                        )
-                        .frame(height: 80)
-                        .scrollIndicators(.never)
-                    Picker("Viewport", selection: Binding(
-                        get: { globalViewport ?? .none },
+                UserAgentEditorSection(
+                    userAgent: $globalUserAgent,
+                    viewport: Binding(
+                        get: { globalViewport },
                         set: { newValue in
-                            globalViewportString = newValue.rawValue
+                            globalViewport = newValue
                             synchronizeDefaults()
                         }
-                    )) {
-                        Text("Default").tag(Viewport.none)
-                        ForEach(Viewport.allCases.filter { $0 != .none }, id: \.self) { viewportOption in
-                            Text(viewportOption.displayName).tag(viewportOption)
+                    ),
+                    headerText: "UserAgent.Global",
+                    footerText: "GlobalSettings.GlobalUserAgent.Footer"
+                )
+                
+                ViewportPickerSection(
+                    viewport: Binding(
+                        get: { globalViewport },
+                        set: { newValue in
+                            globalViewport = newValue
+                            synchronizeDefaults()
                         }
-                    }
-                    Menu {
-                        PresetsSection {
-                            return globalUserAgent
-                        } onSelect: { newUserAgent in
-                            globalUserAgent = newUserAgent
-                        } onSelectWithViewport: { newUserAgent, newViewport in
-                            globalUserAgent = newUserAgent
-                            if let newViewport = newViewport {
-                                globalViewportString = newViewport.rawValue
-                                synchronizeDefaults()
-                            }
-                        }
-                    } label: {
-                        Text("Shared.SelectPreset")
-                    }
-                } header: {
-                    HStack(alignment: .center) {
-                        Text("UserAgent.Global")
-                        Spacer()
-                        if UIPasteboard.general.hasStrings {
-                            Button("Shared.Paste") {
-                                if let pasteboardString = UIPasteboard.general.string {
-                                    globalUserAgent = pasteboardString
-                                }
-                            }
-                            .textCase(.none)
-                        }
-                    }
-                } footer: {
-                    Text("GlobalSettings.GlobalUserAgent.Footer")
-                }
+                    ),
+                    headerText: "Viewport.Global",
+                    footerText: "GlobalSettings.GlobalViewport.Footer"
+                )
+                
                 Section {
                     if perSiteSettings.isEmpty {
                         if #available(iOS 17.0, *) {
@@ -152,12 +124,102 @@ struct UserAgentsView: View {
                     }
                 }
             }
-            .navigationTitle("ViewTitle.UserAgents")
+            .navigationTitle("ViewTitle.Settings")
             .onChange(of: globalUserAgent, synchronizeDefaults)
             .onChange(of: isShowingNewSiteSettingView, createNewPerSiteSetting)
             .onChange(of: isShowingEditSiteSettingView, editPerSiteSetting)
             .scrollDismissesKeyboard(.immediately)
             .sheet(isPresented: $isShowingNewSiteSettingView) {
+                SiteSettingEditor(mode: .new,
+                                  domain: $newSiteSettingDomain,
+                                  userAgent: $newSiteSettingUserAgent,
+                                  viewport: $newSiteSettingViewport,
+                                  shouldSave: $newSiteSettingShouldSave)
+                .presentationDetents([.large, .medium])
+            }
+            .sheet(isPresented: $isShowingEditSiteSettingView) {
+                SiteSettingEditor(mode: .edit,
+                                  domain: $editingSiteSettingDomain,
+                                  userAgent: $editingSiteSettingUserAgent,
+                                  viewport: $editingSiteSettingViewport,
+                                  shouldSave: $editingSiteSettingShouldSave)
+                .presentationDetents([.large, .medium])
+            }
+        }
+    }
+
+    func synchronizeDefaults() {
+        defaults.set(true, forKey: "ShouldExtensionUpdate")
+        defaults.synchronize()
+    }
+
+    func createNewPerSiteSetting() {
+        if !isShowingNewSiteSettingView && newSiteSettingShouldSave {
+            var newSiteSettings: [SiteSetting] = []
+            newSiteSettings.append(contentsOf: perSiteSettings)
+            newSiteSettings.append(
+                SiteSetting(
+                    domain: newSiteSettingDomain,
+                    userAgent: newSiteSettingUserAgent,
+                    viewport: newSiteSettingViewport
+                )
+            )
+            updatePerSiteSettings(newSiteSettings)
+
+            newSiteSettingDomain = ""
+            newSiteSettingUserAgent = ""
+            newSiteSettingViewport = nil
+            newSiteSettingShouldSave = false
+        }
+    }
+
+    func editPerSiteSetting() {
+        if !isShowingEditSiteSettingView && editingSiteSettingShouldSave {
+            if let indexOfEditingSiteSetting = perSiteSettings.firstIndex(
+                where: {$0.domain == editingSiteSettingDomain}
+            ) {
+                var newSiteSettings: [SiteSetting] = []
+                newSiteSettings.append(contentsOf: perSiteSettings)
+
+                newSiteSettings[indexOfEditingSiteSetting] = SiteSetting(
+                    domain: editingSiteSettingDomain,
+                    userAgent: editingSiteSettingUserAgent,
+                    viewport: editingSiteSettingViewport
+                )
+                updatePerSiteSettings(newSiteSettings)
+
+                editingSiteSettingDomain = ""
+                editingSiteSettingUserAgent = ""
+                editingSiteSettingViewport = nil
+                editingSiteSettingShouldSave = false
+            }
+        }
+    }
+
+    func deletePerSiteSetting(_ siteSetting: SiteSetting) {
+        updatePerSiteSettings(
+            perSiteSettings.filter({
+                $0.domain != siteSetting.domain
+            })
+        )
+    }
+
+    func startEditingPerSiteSetting(_ siteSetting: SiteSetting) {
+        editingSiteSettingDomain = siteSetting.domain
+        editingSiteSettingUserAgent = siteSetting.userAgent
+        editingSiteSettingViewport = siteSetting.viewport
+        isShowingEditSiteSettingView = true
+    }
+
+    func updatePerSiteSettings(_ newSiteSettings: [SiteSetting]) {
+        if let jsonData = try? encoder.encode(newSiteSettings),
+           let jsonString = String(data: jsonData, encoding: .utf8) {
+            perSiteUserAgentData = jsonString
+            synchronizeDefaults()
+        }
+    }
+}
+
                 SiteSettingEditor(mode: .new,
                                   domain: $newSiteSettingDomain,
                                   userAgent: $newSiteSettingUserAgent,
