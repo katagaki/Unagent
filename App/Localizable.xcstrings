@@ -49,7 +49,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "選択された表示サイズはすべてのWebサイトに適用されます。"
           }
         }
@@ -629,7 +629,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "選択された表示サイズは指定したドメインのページのみ適用されます。"
           }
         }
