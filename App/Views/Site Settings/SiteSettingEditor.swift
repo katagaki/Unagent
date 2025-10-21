@@ -5,7 +5,6 @@
 //  Created by シンジャスティン on 2023/05/28.
 //
 
-import Komponents
 import SwiftUI
 
 struct SiteSettingEditor: View {
@@ -54,8 +53,7 @@ struct SiteSettingEditor: View {
                     }
                 } header: {
                     HStack(alignment: .center) {
-                        ListSectionHeader(text: "Shared.UserAgent")
-                            .font(.body)
+                        Text("Shared.UserAgent")
                         Spacer()
                         if UIPasteboard.general.hasStrings {
                             Button("Shared.Paste") {
