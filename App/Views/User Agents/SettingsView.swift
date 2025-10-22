@@ -29,7 +29,6 @@ struct SettingsView: View {
     @State var newSiteSettingUserAgent: String = ""
     @State var newSiteSettingViewport: Viewport? = nil
     @State var newSiteSettingShouldSave: Bool = false
-    @State var showDuplicateDomainError: Bool = false
 
     @State var isShowingEditSiteSettingView: Bool = false
     @State var editingSiteSettingDomain: String = ""
@@ -113,7 +112,11 @@ struct SettingsView: View {
                                   domain: $newSiteSettingDomain,
                                   userAgent: $newSiteSettingUserAgent,
                                   viewport: $newSiteSettingViewport,
-                                  shouldSave: $newSiteSettingShouldSave)
+                                  shouldSave: $newSiteSettingShouldSave,
+                                  onValidate: { domain in
+                                      // Return true if domain already exists (triggers error)
+                                      return perSiteSettings.contains(where: { $0.domain == domain })
+                                  })
                 .presentationDetents([.large, .medium])
             }
             .sheet(isPresented: $isShowingEditSiteSettingView) {
@@ -123,11 +126,6 @@ struct SettingsView: View {
                                   viewport: $editingSiteSettingViewport,
                                   shouldSave: $editingSiteSettingShouldSave)
                 .presentationDetents([.large, .medium])
-            }
-            .alert("Error.DuplicateDomain.Title", isPresented: $showDuplicateDomainError) {
-                Button("Shared.OK", role: .cancel) { }
-            } message: {
-                Text("Error.DuplicateDomain.Message")
             }
         }
     }
@@ -139,17 +137,6 @@ struct SettingsView: View {
 
     func createNewPerSiteSetting() {
         if !isShowingNewSiteSettingView && newSiteSettingShouldSave {
-            // Check if a setting for this domain already exists
-            if perSiteSettings.contains(where: { $0.domain == newSiteSettingDomain }) {
-                // Domain already exists, show error
-                showDuplicateDomainError = true
-                newSiteSettingDomain = ""
-                newSiteSettingUserAgent = ""
-                newSiteSettingViewport = nil
-                newSiteSettingShouldSave = false
-                return
-            }
-            
             var newSiteSettings: [SiteSetting] = []
             newSiteSettings.append(contentsOf: perSiteSettings)
             newSiteSettings.append(
