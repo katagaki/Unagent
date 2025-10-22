@@ -1,16 +1,16 @@
 //
-//  UserAgentsView.swift
+//  SettingsView.swift
 //  Unagent
 //
 //  Created by シン・ジャスティン on 2025/08/24.
 //
 
-import Komponents
 import SwiftUI
 
-struct UserAgentsView: View {
+struct SettingsView: View {
 
     @AppStorage(wrappedValue: "", "UserAgent", store: defaults) var globalUserAgent: String
+    @AppStorage(wrappedValue: "", "GlobalViewport", store: defaults) var globalViewportString: String
     @AppStorage(wrappedValue: "", "SiteSettings", store: defaults) var perSiteUserAgentData: String
 
     let decoder = JSONDecoder()
@@ -27,54 +27,33 @@ struct UserAgentsView: View {
     @State var isShowingNewSiteSettingView: Bool = false
     @State var newSiteSettingDomain: String = ""
     @State var newSiteSettingUserAgent: String = ""
+    @State var newSiteSettingViewport: Viewport? = nil
     @State var newSiteSettingShouldSave: Bool = false
 
     @State var isShowingEditSiteSettingView: Bool = false
     @State var editingSiteSettingDomain: String = ""
     @State var editingSiteSettingUserAgent: String = ""
+    @State var editingSiteSettingViewport: Viewport? = nil
     @State var editingSiteSettingShouldSave: Bool = false
 
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    TextEditor(text: $globalUserAgent)
-                        .autocorrectionDisabled()
-                        .autocapitalization(.none)
-                        .font(
-                            .monospaced(
-                                .custom(
-                                    "", size: 14.0, relativeTo: .body
-                                )
-                            )()
+                    NavigationLink {
+                        GlobalSettingsView(
+                            globalUserAgent: $globalUserAgent,
+                            globalViewportString: $globalViewportString,
+                            synchronizeDefaults: synchronizeDefaults
                         )
-                        .frame(height: 80)
-                        .scrollIndicators(.never)
-                    Menu {
-                        PresetsSection {
-                            return globalUserAgent
-                        } onSelect: { newUserAgent in
-                            globalUserAgent = newUserAgent
-                        }
                     } label: {
-                        Text("Shared.SelectPreset")
-                    }
-                } header: {
-                    HStack(alignment: .center) {
-                        Text("UserAgent.Global")
-                        Spacer()
-                        if UIPasteboard.general.hasStrings {
-                            Button("Shared.Paste") {
-                                if let pasteboardString = UIPasteboard.general.string {
-                                    globalUserAgent = pasteboardString
-                                }
-                            }
-                            .textCase(.none)
+                        HStack {
+                            Label("ViewTitle.GlobalSettings", systemImage: "globe")
+                            Spacer()
                         }
                     }
-                } footer: {
-                    Text("GlobalSettings.GlobalUserAgent.Footer")
                 }
+                
                 Section {
                     if perSiteSettings.isEmpty {
                         if #available(iOS 17.0, *) {
@@ -123,23 +102,33 @@ struct UserAgentsView: View {
                     }
                 }
             }
-            .navigationTitle("ViewTitle.UserAgents")
+            .navigationTitle("ViewTitle.Settings")
             .onChange(of: globalUserAgent, synchronizeDefaults)
             .onChange(of: isShowingNewSiteSettingView, createNewPerSiteSetting)
             .onChange(of: isShowingEditSiteSettingView, editPerSiteSetting)
             .scrollDismissesKeyboard(.immediately)
             .sheet(isPresented: $isShowingNewSiteSettingView) {
-                SiteSettingEditor(mode: .new,
-                                  domain: $newSiteSettingDomain,
-                                  userAgent: $newSiteSettingUserAgent,
-                                  shouldSave: $newSiteSettingShouldSave)
+                SiteSettingEditor(
+                    mode: .new,
+                    domain: $newSiteSettingDomain,
+                    userAgent: $newSiteSettingUserAgent,
+                    viewport: $newSiteSettingViewport,
+                    shouldSave: $newSiteSettingShouldSave,
+                    onValidate: { domain in
+                        // Return true if domain already exists (triggers error)
+                        return perSiteSettings.contains(where: { $0.domain == domain })
+                    }
+                )
                 .presentationDetents([.large, .medium])
             }
             .sheet(isPresented: $isShowingEditSiteSettingView) {
-                SiteSettingEditor(mode: .edit,
-                                  domain: $editingSiteSettingDomain,
-                                  userAgent: $editingSiteSettingUserAgent,
-                                  shouldSave: $editingSiteSettingShouldSave)
+                SiteSettingEditor(
+                    mode: .edit,
+                    domain: $editingSiteSettingDomain,
+                    userAgent: $editingSiteSettingUserAgent,
+                    viewport: $editingSiteSettingViewport,
+                    shouldSave: $editingSiteSettingShouldSave
+                )
                 .presentationDetents([.large, .medium])
             }
         }
@@ -157,13 +146,15 @@ struct UserAgentsView: View {
             newSiteSettings.append(
                 SiteSetting(
                     domain: newSiteSettingDomain,
-                    userAgent: newSiteSettingUserAgent
+                    userAgent: newSiteSettingUserAgent,
+                    viewport: newSiteSettingViewport
                 )
             )
             updatePerSiteSettings(newSiteSettings)
 
             newSiteSettingDomain = ""
             newSiteSettingUserAgent = ""
+            newSiteSettingViewport = nil
             newSiteSettingShouldSave = false
         }
     }
@@ -178,12 +169,14 @@ struct UserAgentsView: View {
 
                 newSiteSettings[indexOfEditingSiteSetting] = SiteSetting(
                     domain: editingSiteSettingDomain,
-                    userAgent: editingSiteSettingUserAgent
+                    userAgent: editingSiteSettingUserAgent,
+                    viewport: editingSiteSettingViewport
                 )
                 updatePerSiteSettings(newSiteSettings)
 
                 editingSiteSettingDomain = ""
                 editingSiteSettingUserAgent = ""
+                editingSiteSettingViewport = nil
                 editingSiteSettingShouldSave = false
             }
         }
@@ -200,6 +193,7 @@ struct UserAgentsView: View {
     func startEditingPerSiteSetting(_ siteSetting: SiteSetting) {
         editingSiteSettingDomain = siteSetting.domain
         editingSiteSettingUserAgent = siteSetting.userAgent
+        editingSiteSettingViewport = siteSetting.viewport
         isShowingEditSiteSettingView = true
     }
 
@@ -211,3 +205,4 @@ struct UserAgentsView: View {
         }
     }
 }
+

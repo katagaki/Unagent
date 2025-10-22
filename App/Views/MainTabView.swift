@@ -16,8 +16,8 @@ struct MainTabView: View {
 
     var body: some View {
         TabView {
-            Tab("Tab.UserAgents", systemImage: "globe") {
-                UserAgentsView()
+            Tab("Tab.Settings", systemImage: "gearshape") {
+                SettingsView()
             }
             Tab("Tab.SetUp", systemImage: "checklist") {
                 SetUpView()

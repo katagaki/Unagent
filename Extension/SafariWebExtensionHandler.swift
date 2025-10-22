@@ -46,6 +46,9 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 if let currentUserAgent = defaults.string(forKey: "UserAgent") {
                     responseContent.updateValue(currentUserAgent, forKey: "userAgent")
                 }
+                if let globalViewport = defaults.string(forKey: "GlobalViewport") {
+                    responseContent.updateValue(globalViewport, forKey: "globalViewport")
+                }
                 if let siteSettings = defaults.string(forKey: "SiteSettings") {
                     responseContent.updateValue(siteSettings.replacingOccurrences(of: "\\", with: ""), forKey: "siteSettings")
                 }
@@ -58,6 +61,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             case "forceExtensionReset":
                 debugPrint("Extension was just told to reset all rules")
                 defaults.removeObject(forKey: "UserAgent")
+                defaults.removeObject(forKey: "GlobalViewport")
                 defaults.removeObject(forKey: "SiteSettings")
 
             default: break

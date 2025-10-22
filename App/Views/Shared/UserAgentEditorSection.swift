@@ -2,16 +2,16 @@
 //  UserAgentEditorSection.swift
 //  Unagent
 //
-//  Created by シン・ジャスティン on 2024/05/31.
+//  Created by Copilot on 2025/10/21.
 //
 
-import Komponents
 import SwiftUI
 
 struct UserAgentEditorSection: View {
-
-    var footerText: LocalizedStringKey
+    
     @Binding var userAgent: String
+    @Binding var viewport: Viewport?
+    var showPasteButton: Bool = true
 
     var body: some View {
         Section {
@@ -21,12 +21,23 @@ struct UserAgentEditorSection: View {
                 .font(.monospaced(.custom("", size: 14.0, relativeTo: .body))())
                 .frame(height: 120)
                 .scrollIndicators(.never)
+            Menu {
+                PresetsSection {
+                    return userAgent
+                } onSelect: { selectedUserAgent in
+                    userAgent = selectedUserAgent
+                } onSelectWithViewport: { selectedUserAgent, selectedViewport in
+                    userAgent = selectedUserAgent
+                    viewport = selectedViewport
+                }
+            } label: {
+                Text("Shared.SelectPreset")
+            }
         } header: {
             HStack(alignment: .center) {
-                ListSectionHeader(text: "Shared.UserAgent")
-                    .font(.body)
+                Text("UserAgent")
                 Spacer()
-                if UIPasteboard.general.hasStrings {
+                if showPasteButton && UIPasteboard.general.hasStrings {
                     Button("Shared.Paste") {
                         if let pasteboardString = UIPasteboard.general.string {
                             userAgent = pasteboardString
@@ -36,7 +47,7 @@ struct UserAgentEditorSection: View {
                 }
             }
         } footer: {
-            Text(footerText)
+            Text("About.UserAgent")
         }
     }
 }

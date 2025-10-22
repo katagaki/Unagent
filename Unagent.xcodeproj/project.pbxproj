@@ -204,6 +204,8 @@
 				Base,
 				ja,
 				"pt-BR",
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = E4B1B2CF29F4C51C00827556;
 			minimizedProjectReferenceProxies = 1;
@@ -415,7 +417,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.2;
+				MARKETING_VERSION = 1.8;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -452,7 +454,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.2;
+				MARKETING_VERSION = 1.8;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -493,7 +495,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.2;
+				MARKETING_VERSION = 1.8;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -535,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.2;
+				MARKETING_VERSION = 1.8;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,

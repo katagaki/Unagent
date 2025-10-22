@@ -11,4 +11,5 @@ struct Preset: Codable {
     var userAgent: String
     var source: String?
     var sources: [String]?
+    var viewport: Viewport?
 }
