@@ -108,23 +108,27 @@ struct SettingsView: View {
             .onChange(of: isShowingEditSiteSettingView, editPerSiteSetting)
             .scrollDismissesKeyboard(.immediately)
             .sheet(isPresented: $isShowingNewSiteSettingView) {
-                SiteSettingEditor(mode: .new,
-                                  domain: $newSiteSettingDomain,
-                                  userAgent: $newSiteSettingUserAgent,
-                                  viewport: $newSiteSettingViewport,
-                                  shouldSave: $newSiteSettingShouldSave,
-                                  onValidate: { domain in
-                                      // Return true if domain already exists (triggers error)
-                                      return perSiteSettings.contains(where: { $0.domain == domain })
-                                  })
+                SiteSettingEditor(
+                    mode: .new,
+                    domain: $newSiteSettingDomain,
+                    userAgent: $newSiteSettingUserAgent,
+                    viewport: $newSiteSettingViewport,
+                    shouldSave: $newSiteSettingShouldSave,
+                    onValidate: { domain in
+                        // Return true if domain already exists (triggers error)
+                        return perSiteSettings.contains(where: { $0.domain == domain })
+                    }
+                )
                 .presentationDetents([.large, .medium])
             }
             .sheet(isPresented: $isShowingEditSiteSettingView) {
-                SiteSettingEditor(mode: .edit,
-                                  domain: $editingSiteSettingDomain,
-                                  userAgent: $editingSiteSettingUserAgent,
-                                  viewport: $editingSiteSettingViewport,
-                                  shouldSave: $editingSiteSettingShouldSave)
+                SiteSettingEditor(
+                    mode: .edit,
+                    domain: $editingSiteSettingDomain,
+                    userAgent: $editingSiteSettingUserAgent,
+                    viewport: $editingSiteSettingViewport,
+                    shouldSave: $editingSiteSettingShouldSave
+                )
                 .presentationDetents([.large, .medium])
             }
         }

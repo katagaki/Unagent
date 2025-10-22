@@ -10,7 +10,6 @@ import SwiftUI
 struct ViewportPickerSection: View {
     
     @Binding var viewport: Viewport?
-    var headerText: String
     var isOptional: Bool = false
     
     var body: some View {
@@ -36,7 +35,7 @@ struct ViewportPickerSection: View {
                 }
             }
         } header: {
-            Text(NSLocalizedString(headerText, comment: ""))
+            Text("Viewport")
         } footer: {
             Text("About.Viewport")
         }

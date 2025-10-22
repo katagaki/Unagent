@@ -38,13 +38,11 @@ struct SiteSettingEditor: View {
                 
                 UserAgentEditorSection(
                     userAgent: $userAgent,
-                    viewport: $viewport,
-                    headerText: "UserAgent"
+                    viewport: $viewport
                 )
                 
                 ViewportPickerSection(
                     viewport: $viewport,
-                    headerText: "Viewport",
                     isOptional: true
                 )
             }

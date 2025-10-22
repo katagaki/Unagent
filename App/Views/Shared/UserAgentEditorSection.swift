@@ -12,7 +12,6 @@ struct UserAgentEditorSection: View {
     @Binding var userAgent: String
     @Binding var viewport: Viewport?
     var showPasteButton: Bool = true
-    var headerText: String
 
     var body: some View {
         Section {
@@ -36,7 +35,7 @@ struct UserAgentEditorSection: View {
             }
         } header: {
             HStack(alignment: .center) {
-                Text(NSLocalizedString(headerText, comment: ""))
+                Text("UserAgent")
                 Spacer()
                 if showPasteButton && UIPasteboard.general.hasStrings {
                     Button("Shared.Paste") {

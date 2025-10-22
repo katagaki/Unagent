@@ -41,8 +41,7 @@ struct GlobalSettingsView: View {
                         globalViewportString = newValue?.rawValue ?? ""
                         synchronizeDefaults()
                     }
-                ),
-                headerText: "UserAgent"
+                )
             )
             
             ViewportPickerSection(
@@ -52,8 +51,7 @@ struct GlobalSettingsView: View {
                         globalViewportString = newValue?.rawValue ?? ""
                         synchronizeDefaults()
                     }
-                ),
-                headerText: "Viewport"
+                )
             )
         }
         .navigationTitle("ViewTitle.GlobalSettings")
