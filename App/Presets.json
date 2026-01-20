@@ -27,9 +27,9 @@
         "viewport": "Desktop"
     },
     {
-        "name": "Microsoft Edge 141 (iOS)",
+        "name": "Microsoft Edge 144 (iOS)",
         "imageName": "Edgeium",
-        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) EdgiOS/141.0.3537.99 Version/18.0 Mobile/15E148 Safari/604.1",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) EdgiOS/144 Version/16.0 Mobile/15E148 Safari/604.1",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge",
             "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-mobile-stable-channel",
