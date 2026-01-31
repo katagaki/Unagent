@@ -46,8 +46,8 @@
 /* Begin PBXFileReference section */
 		7B35EC312E7BDBAC00015120 /* Unagent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unagent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B35EC322E7BDBAC00015120 /* Unagent Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Unagent Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E43AEB762A21B83F0057ED0E /* BingMeUp (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BingMeUp (iOS).entitlements"; sourceTree = "<group>"; };
-		E43AEB772A21B8730057ED0E /* BingMeUp Extension (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BingMeUp Extension (iOS).entitlements"; sourceTree = "<group>"; };
+		E43AEB762A21B83F0057ED0E /* Unagent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Unagent.entitlements"; sourceTree = "<group>"; };
+		E43AEB772A21B8730057ED0E /* Unagent Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Unagent Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -118,8 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				E45DF2D02E21E60F0010814B /* App */,
-				E43AEB762A21B83F0057ED0E /* BingMeUp (iOS).entitlements */,
-				E43AEB772A21B8730057ED0E /* BingMeUp Extension (iOS).entitlements */,
+				E43AEB762A21B83F0057ED0E /* Unagent.entitlements */,
+				E43AEB772A21B8730057ED0E /* Unagent Extension.entitlements */,
 				E45DF2A92E21E6000010814B /* Extension */,
 				7B35EC312E7BDBAC00015120 /* Unagent.app */,
 				7B35EC322E7BDBAC00015120 /* Unagent Extension.appex */,
@@ -402,7 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "BingMeUp Extension (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Unagent Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
@@ -417,7 +417,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.1;
+				MARKETING_VERSION = 1.8.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -439,7 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "BingMeUp Extension (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Unagent Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
@@ -454,7 +454,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.1;
+				MARKETING_VERSION = 1.8.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -477,7 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "BingMeUp (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Unagent.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
@@ -495,7 +495,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.1;
+				MARKETING_VERSION = 1.8.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -519,7 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "BingMeUp (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Unagent.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
@@ -537,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.1;
+				MARKETING_VERSION = 1.8.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
