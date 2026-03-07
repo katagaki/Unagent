@@ -10,12 +10,16 @@ struct PresetsView: View {
     @State var presetStore = PresetStore()
     @State var isShowingNewPreset: Bool = false
 
+    var displayedBuiltInPresets: [Preset] {
+        presetStore.builtInPresets.filter { !$0.userAgent.isEmpty }
+    }
+
     var body: some View {
         NavigationStack {
             List {
-                if !presetStore.builtInPresets.isEmpty {
+                if !displayedBuiltInPresets.isEmpty {
                     Section {
-                        ForEach(presetStore.builtInPresets) { preset in
+                        ForEach(displayedBuiltInPresets) { preset in
                             NavigationLink {
                                 PresetDetailView(preset: preset, presetStore: presetStore)
                             } label: {
