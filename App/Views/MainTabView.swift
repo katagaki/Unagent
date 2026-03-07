@@ -14,15 +14,20 @@ struct MainTabView: View {
     @AppStorage(wrappedValue: false, "ReviewPrompted", store: .standard) var hasReviewBeenPrompted: Bool
     @AppStorage(wrappedValue: 0, "LaunchCount", store: .standard) var launchCount: Int
 
+    @State var selectedTab: String = "Settings"
+
     var body: some View {
-        TabView {
-            Tab("Tab.Settings", systemImage: "gearshape") {
-                SettingsView()
-            }
-            Tab("Tab.SetUp", systemImage: "checklist") {
+        TabView(selection: $selectedTab) {
+            Tab("Tab.SetUp", systemImage: "checklist", value: "SetUp") {
                 SetUpView()
             }
-            Tab("Tab.More", systemImage: "ellipsis") {
+            Tab("Tab.Settings", systemImage: "gearshape", value: "Settings") {
+                SettingsView()
+            }
+            Tab("Tab.Presets", systemImage: "star", value: "Presets") {
+                PresetsView()
+            }
+            Tab("Tab.More", systemImage: "ellipsis", value: "More") {
                 MoreView()
             }
         }

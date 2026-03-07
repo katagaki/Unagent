@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserAgentEditorSection: View {
-    
+
     @Binding var userAgent: String
     @Binding var viewport: Viewport?
     var showPasteButton: Bool = true

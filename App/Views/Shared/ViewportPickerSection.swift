@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ViewportPickerSection: View {
-    
+
     @Binding var viewport: Viewport?
     var isOptional: Bool = false
-    
+
     var body: some View {
         Section {
             if isOptional {

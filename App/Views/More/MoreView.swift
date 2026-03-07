@@ -9,12 +9,14 @@ import Komponents
 import SwiftUI
 
 struct MoreView: View {
-    
+
     @State var viewPath: [ViewPath] = []
 
     var body: some View {
         NavigationStack(path: $viewPath) {
             MoreList(repoName: "katagaki/Unagent", viewPath: ViewPath.moreAttributions) { }
+            .scrollContentBackground(.hidden)
+            .gradientBackground()
             .navigationDestination(for: ViewPath.self) { viewPath in
                 switch viewPath {
                     case .moreAttributions: LicensesView(licenses: [

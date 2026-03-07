@@ -46,6 +46,8 @@ struct SetUpView: View {
                         .font(.body)
                 }
             }
+            .scrollContentBackground(.hidden)
+            .gradientBackground()
             .navigationTitle("ViewTitle.SetUp")
         }
     }

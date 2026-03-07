@@ -9,28 +9,23 @@ import Komponents
 import SwiftUI
 
 struct PresetsSection: View {
-    
+
     var presets: [Preset]
     var currentUserAgent: () -> String
-    var onSelect: (String) -> ()
-    var onSelectWithViewport: ((String, Viewport?) -> ())?
+    var onSelect: (String) -> Void
+    var onSelectWithViewport: ((String, Viewport?) -> Void)?
 
-    init(currentUserAgent: @escaping () -> String, onSelect: @escaping (String) -> Void, onSelectWithViewport: ((String, Viewport?) -> ())? = nil) {
-        if let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           let presets = try? JSONDecoder().decode([Preset].self, from: data) {
-            self.presets = presets
-        } else {
-            self.presets = []
-        }
+    init(currentUserAgent: @escaping () -> String, onSelect: @escaping (String) -> Void, onSelectWithViewport: ((String, Viewport?) -> Void)? = nil) {
+        let store = PresetStore()
+        self.presets = store.visibleBuiltInPresets + store.customPresets
         self.currentUserAgent = currentUserAgent
         self.onSelect = onSelect
         self.onSelectWithViewport = onSelectWithViewport
     }
-    
+
     var body: some View {
         Section {
-            ForEach(presets, id: \.name) { preset in
+            ForEach(presets) { preset in
                 Button {
                     var userAgent: String = preset.userAgent
                     let os = ProcessInfo().operatingSystemVersion
@@ -51,7 +46,13 @@ struct PresetsSection: View {
                     }
                 } label: {
                     HStack(spacing: 8.0) {
-                        Image(preset.imageName)
+                        if UIImage(named: preset.imageName) != nil {
+                            Image(preset.imageName)
+                        } else {
+                            Image(systemName: preset.imageName)
+                                .frame(width: 24, height: 24)
+                                .foregroundStyle(.secondary)
+                        }
                         Text(preset.name)
                         Spacer()
                         if currentUserAgent() == preset.userAgent {

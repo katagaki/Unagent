@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct GlobalSettingsView: View {
-    
+
     @Binding var globalUserAgent: String
     @Binding var globalViewportString: String
     var synchronizeDefaults: () -> Void
-    
+
     var globalViewport: Viewport? {
         get {
             if globalViewportString.isEmpty {
@@ -24,7 +24,7 @@ struct GlobalSettingsView: View {
             globalViewportString = newValue?.rawValue ?? ""
         }
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -32,7 +32,7 @@ struct GlobalSettingsView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
-            
+
             UserAgentEditorSection(
                 userAgent: $globalUserAgent,
                 viewport: Binding(
@@ -43,7 +43,7 @@ struct GlobalSettingsView: View {
                     }
                 )
             )
-            
+
             ViewportPickerSection(
                 viewport: Binding(
                     get: { globalViewport },
@@ -54,6 +54,8 @@ struct GlobalSettingsView: View {
                 )
             )
         }
+        .scrollContentBackground(.hidden)
+        .gradientBackground()
         .navigationTitle("ViewTitle.GlobalSettings")
         .navigationBarTitleDisplayMode(.inline)
     }
