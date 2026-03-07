@@ -49,32 +49,52 @@ struct SiteSettingEditor: View {
             .navigationTitle(mode == .new ? "ViewTitle.SiteSettings.New" : "ViewTitle.SiteSettings.Edit")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Shared.Cancel", role: .cancel) {
-                        shouldSave = false
-                        dismiss()
+                ToolbarItem(placement: .cancellationAction) {
+                    if #available(iOS 26.0, *) {
+                        Button(role: .cancel) {
+                            shouldSave = false
+                            dismiss()
+                        }
+                    } else {
+                        Button("Shared.Cancel", role: .cancel) {
+                            shouldSave = false
+                            dismiss()
+                        }
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        // Validate before saving (for new mode only)
-                        if mode == .new, let validator = onValidate {
-                            if validator(domain) {
-                                showDuplicateError = true
-                                return
+                ToolbarItem(placement: .confirmationAction) {
+                    if #available(iOS 26.0, *) {
+                        Button(role: .confirm) {
+                            if mode == .new, let validator = onValidate {
+                                if validator(domain) {
+                                    showDuplicateError = true
+                                    return
+                                }
+                            }
+                            shouldSave = true
+                            dismiss()
+                        }
+                        .disabled(domain == "" || userAgent == "")
+                    } else {
+                        Button {
+                            if mode == .new, let validator = onValidate {
+                                if validator(domain) {
+                                    showDuplicateError = true
+                                    return
+                                }
+                            }
+                            shouldSave = true
+                            dismiss()
+                        } label: {
+                            switch mode {
+                            case .new:
+                                Text("Shared.Add")
+                            case .edit:
+                                Text("Shared.Save")
                             }
                         }
-                        shouldSave = true
-                        dismiss()
-                    } label: {
-                        switch mode {
-                        case .new:
-                            Text("Shared.Add")
-                        case .edit:
-                            Text("Shared.Save")
-                        }
+                        .disabled(domain == "" || userAgent == "")
                     }
-                    .disabled(domain == "" || userAgent == "")
                 }
             }
             .alert("Error.DuplicateDomain.Title", isPresented: $showDuplicateError) {

@@ -55,8 +55,6 @@ struct PresetsView: View {
                                     }
                                 }
                             }
-                        } header: {
-                            Text("Presets.Visible")
                         }
                     }
 
@@ -125,16 +123,6 @@ struct PresetsView: View {
                                         }
                                     }
                                     .tint(.accentColor)
-                                }
-                            }
-                        } header: {
-                            HStack {
-                                Text("Presets.Hidden")
-                                Spacer()
-                                Button("Presets.UnhideAll") {
-                                    withAnimation {
-                                        presetStore.unhideAllBuiltInPresets()
-                                    }
                                 }
                             }
                         }

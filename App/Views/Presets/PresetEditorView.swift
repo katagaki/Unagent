@@ -75,8 +75,6 @@ struct PresetEditorView: View {
                     Text("Presets.Detail.References")
                 }
             }
-            .scrollContentBackground(.hidden)
-            .gradientBackground()
             .navigationTitle(mode == .new ? "ViewTitle.Presets.New" : "ViewTitle.Presets.Edit")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
