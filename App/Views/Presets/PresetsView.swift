@@ -11,7 +11,7 @@ struct PresetsView: View {
     @State var isShowingNewPreset: Bool = false
 
     var displayedBuiltInPresets: [Preset] {
-        presetStore.builtInPresets.filter { !$0.userAgent.isEmpty }
+        presetStore.visibleBuiltInPresets.filter { !$0.userAgent.isEmpty }
     }
 
     var body: some View {
@@ -25,9 +25,46 @@ struct PresetsView: View {
                             } label: {
                                 PresetRowView(preset: preset)
                             }
+                            .swipeActions(edge: .trailing) {
+                                Button("Presets.Hide", role: .destructive) {
+                                    withAnimation {
+                                        presetStore.hideBuiltInPreset(preset)
+                                    }
+                                }
+                            }
                         }
                     } header: {
                         Text("Presets.BuiltIn")
+                    }
+                }
+
+                if !presetStore.hiddenPresetNames.isEmpty {
+                    Section {
+                        ForEach(Array(presetStore.hiddenPresetNames).sorted(), id: \.self) { name in
+                            HStack {
+                                Text(name)
+                                    .foregroundStyle(.secondary)
+                                Spacer()
+                            }
+                            .swipeActions(edge: .trailing) {
+                                Button("Presets.Unhide") {
+                                    withAnimation {
+                                        presetStore.unhideBuiltInPreset(name: name)
+                                    }
+                                }
+                                .tint(.accentColor)
+                            }
+                        }
+                    } header: {
+                        HStack {
+                            Text("Presets.Hidden")
+                            Spacer()
+                            Button("Presets.UnhideAll") {
+                                withAnimation {
+                                    presetStore.unhideAllBuiltInPresets()
+                                }
+                            }
+                        }
                     }
                 }
 

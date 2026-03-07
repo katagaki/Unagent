@@ -12,8 +12,12 @@ class PresetStore {
     private(set) var presets: [Preset] = []
 
     private let customPresetsKey = "CustomPresets"
+    private let hiddenPresetsKey = "HiddenBuiltInPresets"
+
+    private(set) var hiddenPresetNames: Set<String> = []
 
     init() {
+        loadHiddenPresets()
         loadPresets()
     }
 
@@ -103,5 +107,37 @@ class PresetStore {
             return [:]
         }
         return overrides
+    }
+
+    // MARK: - Hidden Built-In Presets
+
+    private func loadHiddenPresets() {
+        if let names = defaults.stringArray(forKey: hiddenPresetsKey) {
+            hiddenPresetNames = Set(names)
+        }
+    }
+
+    private func saveHiddenPresets() {
+        defaults.set(Array(hiddenPresetNames), forKey: hiddenPresetsKey)
+        defaults.synchronize()
+    }
+
+    func hideBuiltInPreset(_ preset: Preset) {
+        hiddenPresetNames.insert(preset.name)
+        saveHiddenPresets()
+    }
+
+    func unhideBuiltInPreset(name: String) {
+        hiddenPresetNames.remove(name)
+        saveHiddenPresets()
+    }
+
+    func unhideAllBuiltInPresets() {
+        hiddenPresetNames.removeAll()
+        saveHiddenPresets()
+    }
+
+    var visibleBuiltInPresets: [Preset] {
+        builtInPresets.filter { !hiddenPresetNames.contains($0.name) }
     }
 }
