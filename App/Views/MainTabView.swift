@@ -22,6 +22,9 @@ struct MainTabView: View {
             Tab("Tab.SetUp", systemImage: "checklist") {
                 SetUpView()
             }
+            Tab("Tab.Presets", systemImage: "star") {
+                PresetsView()
+            }
             Tab("Tab.More", systemImage: "ellipsis") {
                 MoreView()
             }
