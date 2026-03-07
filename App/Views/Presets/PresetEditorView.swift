@@ -14,22 +14,11 @@ struct PresetEditorView: View {
     var editingPreset: Preset?
 
     @State private var name: String = ""
-    @State private var imageName: String = "globe"
+    @State private var imageName: String = "Safari"
     @State private var userAgent: String = ""
     @State private var source: String = ""
     @State private var viewport: Viewport? = nil
     @State private var isShowingIconPicker: Bool = false
-
-    private static let systemIcons: [String] = [
-        "globe", "network", "desktopcomputer", "laptopcomputer", "iphone",
-        "ipad", "applewatch", "tv", "gamecontroller", "headphones",
-        "antenna.radiowaves.left.and.right", "wifi", "bolt.fill", "shield.fill", "lock.fill",
-        "eye.fill", "star.fill", "heart.fill", "bookmark.fill", "tag.fill",
-        "flag.fill", "bell.fill", "paperplane.fill", "link", "doc.fill",
-        "folder.fill", "tray.fill", "archivebox.fill", "externaldrive.fill", "cpu",
-        "memorychip", "terminal.fill", "chevron.left.forwardslash.chevron.right", "hammer.fill", "wrench.fill",
-        "gearshape.fill", "slider.horizontal.3", "gauge.with.dots.needle.33percent", "speedometer", "cloud.fill"
-    ]
 
     var body: some View {
         NavigationView {
@@ -48,11 +37,10 @@ struct PresetEditorView: View {
                         HStack {
                             Text("Presets.Editor.Icon")
                             Spacer()
-                            Image(systemName: imageName)
+                            Image(imageName)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
-                                .foregroundStyle(.secondary)
                             Image(systemName: "chevron.right")
                                 .font(.caption)
                                 .foregroundStyle(.tertiary)
@@ -73,7 +61,7 @@ struct PresetEditorView: View {
                 } header: {
                     Text("UserAgent")
                 } footer: {
-                    Text("About.UserAgent")
+                    Text("About.UserAgent.Tokens")
                 }
 
                 ViewportPickerSection(viewport: $viewport)
@@ -90,19 +78,33 @@ struct PresetEditorView: View {
             .navigationTitle(mode == .new ? "ViewTitle.Presets.New" : "ViewTitle.Presets.Edit")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Shared.Cancel", role: .cancel) {
-                        dismiss()
+                ToolbarItem(placement: .cancellationAction) {
+                    if #available(iOS 26.0, *) {
+                        Button(role: .cancel) {
+                            dismiss()
+                        }
+                    } else {
+                        Button("Shared.Cancel", role: .cancel) {
+                            dismiss()
+                        }
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        savePreset()
-                        dismiss()
-                    } label: {
-                        Text(mode == .new ? "Shared.Add" : "Shared.Save")
+                ToolbarItem(placement: .confirmationAction) {
+                    if #available(iOS 26.0, *) {
+                        Button(role: .confirm) {
+                            savePreset()
+                            dismiss()
+                        }
+                        .disabled(name.isEmpty)
+                    } else {
+                        Button {
+                            savePreset()
+                            dismiss()
+                        } label: {
+                            Text(mode == .new ? "Shared.Add" : "Shared.Save")
+                        }
+                        .disabled(name.isEmpty)
                     }
-                    .disabled(name.isEmpty)
                 }
             }
             .sheet(isPresented: $isShowingIconPicker) {
@@ -151,26 +153,17 @@ struct IconPickerView: View {
 
     private let columns = Array(repeating: GridItem(.flexible()), count: 5)
 
-    private static let icons: [String] = [
-        "globe", "network", "desktopcomputer", "laptopcomputer", "iphone",
-        "ipad", "applewatch", "tv", "gamecontroller", "headphones",
-        "antenna.radiowaves.left.and.right", "wifi", "bolt.fill", "shield.fill", "lock.fill",
-        "eye.fill", "star.fill", "heart.fill", "bookmark.fill", "tag.fill",
-        "flag.fill", "bell.fill", "paperplane.fill", "link", "doc.fill",
-        "folder.fill", "tray.fill", "archivebox.fill", "externaldrive.fill", "cpu",
-        "memorychip", "terminal.fill", "chevron.left.forwardslash.chevron.right", "hammer.fill", "wrench.fill",
-        "gearshape.fill", "slider.horizontal.3", "gauge.with.dots.needle.33percent", "speedometer", "cloud.fill",
-        "person.fill", "person.2.fill", "hand.raised.fill", "magnifyingglass", "camera.fill",
-        "photo.fill", "video.fill", "music.note", "mic.fill", "location.fill",
-        "map.fill", "safari", "app.fill", "command", "option",
-        "power", "battery.100", "lightbulb.fill", "flame.fill", "drop.fill"
+    static let browserIcons: [String] = [
+        "Safari", "Chrome", "Edgeium", "EdgeHTML", "IE",
+        "Apple", "Google", "Bing", "OpenAI", "Claude",
+        "SonyPlaystation", "SonyPlaystation5", "Xbox"
     ]
 
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(Self.icons, id: \.self) { icon in
+                    ForEach(Self.browserIcons, id: \.self) { icon in
                         Button {
                             selectedIcon = icon
                             dismiss()
@@ -186,11 +179,10 @@ struct IconPickerView: View {
                                                     ? Color.accentColor
                                                     : Color.clear, lineWidth: 2)
                                     )
-                                Image(systemName: icon)
-                                    .font(.title2)
-                                    .foregroundStyle(selectedIcon == icon
-                                                     ? Color.accentColor
-                                                     : .primary)
+                                Image(icon)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 32, height: 32)
                             }
                             .frame(height: 60)
                         }

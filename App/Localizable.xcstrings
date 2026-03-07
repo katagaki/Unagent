@@ -3679,6 +3679,64 @@
           }
         }
       }
+    },
+    "About.UserAgent.Tokens": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use %OS_MAJOR%, %OS_MINOR%, and %OS_PATCH% as placeholders for the device’s current OS version components."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%OS_MAJOR%、%OS_MINOR%、%OS_PATCH% をデバイスの現在のOSバージョンのプレースホルダーとして使用できます。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use %OS_MAJOR%, %OS_MINOR% e %OS_PATCH% como marcadores para os componentes da versão atual do sistema operacional do dispositivo."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用 %OS_MAJOR%、%OS_MINOR% 和 %OS_PATCH% 作为设备当前操作系统版本组件的占位符。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用 %OS_MAJOR%、%OS_MINOR% 和 %OS_PATCH% 作為裝置目前作業系統版本組件的佔位符。"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwenden Sie %OS_MAJOR%, %OS_MINOR% und %OS_PATCH% als Platzhalter für die aktuelle Betriebssystemversion des Geräts."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use %OS_MAJOR%, %OS_MINOR% y %OS_PATCH% como marcadores para los componentes de la versión actual del sistema operativo del dispositivo."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilisez %OS_MAJOR%, %OS_MINOR% et %OS_PATCH% comme marqueurs pour les composants de la version actuelle du système d’exploitation de l’appareil."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa %OS_MAJOR%, %OS_MINOR% e %OS_PATCH% come segnaposto per i componenti della versione attuale del sistema operativo del dispositivo."
+          }
+        }
+      }
     }
   },
   "version": "1.0"
