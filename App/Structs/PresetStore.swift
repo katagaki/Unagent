@@ -13,6 +13,7 @@ class PresetStore {
 
     private let customPresetsKey = "CustomPresets"
     private let hiddenPresetsKey = "HiddenBuiltInPresets"
+    private let hiddenPresetsInitializedKey = "HiddenBuiltInPresetsInitialized"
 
     private(set) var hiddenPresetNames: Set<String> = []
 
@@ -111,9 +112,31 @@ class PresetStore {
 
     // MARK: - Hidden Built-In Presets
 
+    private static let defaultVisiblePresetNames: Set<String> = [
+        "Default (Don't Change)",
+        "Safari (iOS)",
+        "Safari (macOS)",
+        "Microsoft Edge 144 (iOS)",
+        "Microsoft Edge 144 (macOS)",
+        "Google Chrome 145 (iOS)",
+        "Google Chrome 144 (macOS)"
+    ]
+
     private func loadHiddenPresets() {
-        if let names = defaults.stringArray(forKey: hiddenPresetsKey) {
-            hiddenPresetNames = Set(names)
+        if defaults.bool(forKey: hiddenPresetsInitializedKey) {
+            if let names = defaults.stringArray(forKey: hiddenPresetsKey) {
+                hiddenPresetNames = Set(names)
+            }
+        } else {
+            // First launch: hide all built-in presets except Safari, Edge, and Chrome for iOS/macOS
+            if let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
+               let data = try? Data(contentsOf: url),
+               let builtIn = try? JSONDecoder().decode([Preset].self, from: data) {
+                let allNames = Set(builtIn.map(\.name))
+                hiddenPresetNames = allNames.subtracting(Self.defaultVisiblePresetNames)
+            }
+            defaults.set(true, forKey: hiddenPresetsInitializedKey)
+            saveHiddenPresets()
         }
     }
 
