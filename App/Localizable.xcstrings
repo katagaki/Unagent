@@ -1,4207 +1,4208 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "About.UserAgent": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This user agent will be communicated to websites. Websites may not opt to use this as an identifier for your browser."
+  "sourceLanguage" : "en",
+  "strings" : {
+    "About.UserAgent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieser User-Agent wird an Websites übermittelt. Websites können diesen möglicherweise nicht als Kennung für Ihren Browser verwenden."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "このユーザーエージェントはウェブサイトに送信されます。ウェブサイトはこれをブラウザの識別子として使用しない場合があります。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This user agent will be communicated to websites. Websites may not opt to use this as an identifier for your browser."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Este agente de usuário será comunicado aos sites. Os sites podem optar por não usar isso como identificador do seu navegador."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este agente de usuario se comunicará a los sitios web. Los sitios web pueden optar por no usarlo como identificador de su navegador."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "此用户代理将传达给网站。网站可能不会选择将其用作浏览器的标识符。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cet agent utilisateur sera communiqué aux sites web. Les sites web peuvent choisir de ne pas l’utiliser comme identifiant de votre navigateur."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "此使用者代理將傳達給網站。網站可能不會選擇將其用作瀏覽器的識別碼。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questo user agent verrà comunicato ai siti web. I siti web potrebbero non utilizzarlo come identificatore del browser."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dieser User-Agent wird an Websites übermittelt. Websites können diesen möglicherweise nicht als Kennung für Ihren Browser verwenden."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このユーザーエージェントはウェブサイトに送信されます。ウェブサイトはこれをブラウザの識別子として使用しない場合があります。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Este agente de usuario se comunicará a los sitios web. Los sitios web pueden optar por no usarlo como identificador de su navegador."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este agente de usuário será comunicado aos sites. Os sites podem optar por não usar isso como identificador do seu navegador."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cet agent utilisateur sera communiqué aux sites web. Les sites web peuvent choisir de ne pas l’utiliser comme identifiant de votre navigateur."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此用户代理将传达给网站。网站可能不会选择将其用作浏览器的标识符。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Questo user agent verrà comunicato ai siti web. I siti web potrebbero non utilizzarlo come identificatore del browser."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此使用者代理將傳達給網站。網站可能不會選擇將其用作瀏覽器的識別碼。"
           }
         }
       }
     },
-    "About.Viewport": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Setting the viewport will change the size of a website displayed in your browser."
+    "About.UserAgent.Tokens" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden Sie %OS_MAJOR%, %OS_MINOR% und %OS_PATCH% als Platzhalter für die aktuelle Betriebssystemversion des Geräts."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ビューポートを設定すると、ブラウザに表示されるウェブサイトのサイズが変更されます。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use %OS_MAJOR%, %OS_MINOR%, and %OS_PATCH% as placeholders for the device’s current OS version components."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Definir a janela de visualização alterará o tamanho de um site exibido no seu navegador."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use %OS_MAJOR%, %OS_MINOR% y %OS_PATCH% como marcadores para los componentes de la versión actual del sistema operativo del dispositivo."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "设置视口将改变浏览器中显示的网站大小。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisez %OS_MAJOR%, %OS_MINOR% et %OS_PATCH% comme marqueurs pour les composants de la version actuelle du système d’exploitation de l’appareil."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定視口將改變瀏覽器中顯示的網站大小。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa %OS_MAJOR%, %OS_MINOR% e %OS_PATCH% come segnaposto per i componenti della versione attuale del sistema operativo del dispositivo."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Das Festlegen des Viewports ändert die Größe einer Website, die in Ihrem Browser angezeigt wird."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%OS_MAJOR%、%OS_MINOR%、%OS_PATCH% をデバイスの現在のOSバージョンのプレースホルダーとして使用できます。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurar la ventana gráfica cambiará el tamaño de un sitio web mostrado en su navegador."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use %OS_MAJOR%, %OS_MINOR% e %OS_PATCH% como marcadores para os componentes da versão atual do sistema operacional do dispositivo."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Le réglage de la fenêtre d’affichage modifiera la taille d’un site web affiché dans votre navigateur."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用 %OS_MAJOR%、%OS_MINOR% 和 %OS_PATCH% 作为设备当前操作系统版本组件的占位符。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "L’impostazione del viewport cambierà la dimensione di un sito web visualizzato nel browser."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用 %OS_MAJOR%、%OS_MINOR% 和 %OS_PATCH% 作為裝置目前作業系統版本組件的佔位符。"
           }
         }
       }
     },
-    "Default": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Default"
+    "About.Viewport" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Festlegen des Viewports ändert die Größe einer Website, die in Ihrem Browser angezeigt wird."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "デフォルト"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setting the viewport will change the size of a website displayed in your browser."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Padrão"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurar la ventana gráfica cambiará el tamaño de un sitio web mostrado en su navegador."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "默认"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le réglage de la fenêtre d’affichage modifiera la taille d’un site web affiché dans votre navigateur."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "預設"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’impostazione del viewport cambierà la dimensione di un sito web visualizzato nel browser."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Standard"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ビューポートを設定すると、ブラウザに表示されるウェブサイトのサイズが変更されます。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predeterminado"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir a janela de visualização alterará o tamanho de um site exibido no seu navegador."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Par défaut"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置视口将改变浏览器中显示的网站大小。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predefinito"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定視口將改變瀏覽器中顯示的網站大小。"
           }
         }
       }
     },
-    "Error.DuplicateDomain.Message": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A setting for this domain already exists. Please edit the existing setting instead."
+    "Default" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "このドメインの設定は既に存在します。代わりに既存の設定を編集してください。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Uma configuração para este domínio já existe. Edite a configuração existente."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predeterminado"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "此域名的设置已存在。请编辑现有设置。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par défaut"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "此網域的設定已存在。請編輯現有設定。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinito"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eine Einstellung für diese Domain existiert bereits. Bitte bearbeiten Sie stattdessen die vorhandene Einstellung."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルト"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ya existe una configuración para este dominio. Edite la configuración existente."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padrão"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Un réglage pour ce domaine existe déjà. Veuillez modifier le réglage existant."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "默认"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Esiste già un’impostazione per questo dominio. Modifica l’impostazione esistente."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設"
           }
         }
       }
     },
-    "Error.DuplicateDomain.Title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Duplicate Domain"
+    "Error.DuplicateDomain.Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine Einstellung für diese Domain existiert bereits. Bitte bearbeiten Sie stattdessen die vorhandene Einstellung."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "重複したドメイン"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A setting for this domain already exists. Please edit the existing setting instead."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Domínio Duplicado"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ya existe una configuración para este dominio. Edite la configuración existente."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "重复域名"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un réglage pour ce domaine existe déjà. Veuillez modifier le réglage existant."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "重複網域"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esiste già un’impostazione per questo dominio. Modifica l’impostazione esistente."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Doppelte Domain"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このドメインの設定は既に存在します。代わりに既存の設定を編集してください。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dominio Duplicado"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma configuração para este domínio já existe. Edite a configuração existente."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Domaine en double"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此域名的设置已存在。请编辑现有设置。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dominio Duplicato"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此網域的設定已存在。請編輯現有設定。"
           }
         }
       }
     },
-    "GlobalSettings.Description": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "These settings will be applied to all websites, except when a per-site setting is configured for a specific domain."
+    "Error.DuplicateDomain.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doppelte Domain"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "これらの設定は、特定のドメインにサイト別設定が構成されている場合を除き、すべてのウェブサイトに適用されます。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duplicate Domain"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Essas configurações serão aplicadas a todos os sites, exceto quando uma configuração por site for definida para um domínio específico."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dominio Duplicado"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "这些设置将应用于所有网站，除非为特定域配置了每个网站的设置。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domaine en double"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "這些設定將套用於所有網站，除非為特定網域設定了每個網站的設定。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dominio Duplicato"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Diese Einstellungen werden auf alle Websites angewendet, es sei denn, eine seitenspezifische Einstellung ist für eine bestimmte Domain konfiguriert."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重複したドメイン"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Estas configuraciones se aplicarán a todos los sitios web, excepto cuando se configure una configuración por sitio para un dominio específico."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domínio Duplicado"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ces réglages seront appliqués à tous les sites web, sauf lorsqu’un réglage par site est configuré pour un domaine spécifique."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重复域名"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Queste impostazioni verranno applicate a tutti i siti web, tranne quando è configurata un’impostazione per sito per un dominio specifico."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重複網域"
           }
         }
       }
     },
-    "More.General": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
+    "GlobalSettings.Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Einstellungen werden auf alle Websites angewendet, es sei denn, eine seitenspezifische Einstellung ist für eine bestimmte Domain konfiguriert."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "一般"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "These settings will be applied to all websites, except when a per-site setting is configured for a specific domain."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geral"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estas configuraciones se aplicarán a todos los sitios web, excepto cuando se configure una configuración por sitio para un dominio específico."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "通用"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ces réglages seront appliqués à tous les sites web, sauf lorsqu’un réglage par site est configuré pour un domaine spécifique."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "通用"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queste impostazioni verranno applicate a tutti i siti web, tranne quando è configurata un’impostazione per sito per un dominio specifico."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Allgemein"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "これらの設定は、特定のドメインにサイト別設定が構成されている場合を除き、すべてのウェブサイトに適用されます。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essas configurações serão aplicadas a todos os sites, exceto quando uma configuração por site for definida para um domínio específico."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Général"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这些设置将应用于所有网站，除非为特定域配置了每个网站的设置。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Generale"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "這些設定將套用於所有網站，除非為特定網域設定了每個網站的設定。"
           }
         }
       }
     },
-    "SetUp.OpenSafari": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Safari"
+    "More.General" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allgemein"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "「Safari」アプリに移動"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abrir o Safari"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "打开 Safari"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Général"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "開啟 Safari"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generale"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Safari öffnen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一般"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abrir Safari"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geral"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ouvrir Safari"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通用"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apri Safari"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通用"
           }
         }
       }
     },
-    "SetUp.OpenSettings": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Settings"
+    "Presets.BuiltIn" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Integrierte Voreinstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "「設定」アプリに移動"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Built-in Presets"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abrir os Ajustes"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preajustes Integrados"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "打开设置"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préréglages intégrés"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "開啟設定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preimpostazioni Integrate"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Einstellungen öffnen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "組み込みプリセット"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abrir Ajustes"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinições Integradas"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ouvrir les Réglages"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内置预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apri Impostazioni"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "內建預設值"
           }
         }
       }
     },
-    "SetUp.Step1": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enable the Unagent extension in Safari Extension settings."
+    "Presets.Custom" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eigene Voreinstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Safariの機能拡張設定でUnagent機能拡張を有効にします。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom Presets"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ative a extensão Unagent nas configurações de extensões do Safari."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preajustes Personalizados"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在 Safari 扩展设置中启用 Unagent 扩展。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préréglages personnalisés"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在 Safari 擴充功能設定中啟用 Unagent 擴充功能。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preimpostazioni Personalizzate"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aktivieren Sie die Unagent-Erweiterung in den Safari-Erweiterungseinstellungen."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カスタムプリセット"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Active la extensión Unagent en los ajustes de extensiones de Safari."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinições Personalizadas"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Activez l’extension Unagent dans les réglages des extensions Safari."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自定义预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Attiva l’estensione Unagent nelle impostazioni delle estensioni di Safari."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自訂預設值"
           }
         }
       }
     },
-    "SetUp.Step1.iOS18+": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1. Open the Settings app.\n2. Scroll down and tap 'Apps'.\n3. Find and tap 'Safari'.\n4. Tap 'Extensions'.\n5. Tap 'Unagent'.\n6. Toggle Unagent on for the profiles you wish to use Unagent in."
+    "Presets.Custom.EmptyText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fügen Sie eine eigene Voreinstellung hinzu, indem Sie auf die „+“-Taste tippen."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "① 「設定」アプリを開きます。\n② 下にスクロールし、「アプリ」をタッチします。\n③ 「Safari」を探してタッチします。\n④ 「拡張機能」をタッチします。\n⑤ 「Unagent」をタッチします。\n⑥ Unagentを有効化するプロフィールをオンにします。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add a custom preset by tapping the '+' button."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1. Abra os Ajustes.\r\n2. Role para baixo e clique em 'Apps'.\n3. Role para baixo e clique em 'Safari'.\r\n4. Clique em 'Extensões'.\r\n5. Clique em 'Unagent'.\r\n6. Ative o Unagent para os perfis onde você deseja usar o Unagent."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añada un preajuste personalizado tocando el botón ‘+’."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在 iOS 18 及更高版本中，您可以在「設定」>「App」>「Safari」>「擴充功能」中找到此設定。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez un préréglage personnalisé en touchant le bouton « + »."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在 iOS 18 及更高版本中，您可以在「設定」>「App」>「Safari」>「擴充功能」中找到此設定。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi una preimpostazione personalizzata toccando il pulsante ‘+’."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1. Öffnen Sie die Einstellungen-App.\n2. Scrollen Sie nach unten und tippen Sie auf „Apps“.\n3. Suchen und tippen Sie auf „Safari“.\n4. Tippen Sie auf „Erweiterungen“.\n5. Tippen Sie auf „Unagent“.\n6. Aktivieren Sie Unagent für die Profile, in denen Sie Unagent verwenden möchten."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「＋」ボタンをタッチしてカスタムプリセットを追加してください。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1. Abra la app Ajustes.\n2. Desplácese hacia abajo y pulse ‘Apps’.\n3. Busque y pulse ‘Safari’.\n4. Pulse ‘Extensiones’.\n5. Pulse ‘Unagent’.\n6. Active Unagent para los perfiles en los que desee usarlo."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione uma predefinição personalizada clicando no botão '+'."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1. Ouvrez l’app Réglages.\n2. Faites défiler vers le bas et touchez « Apps ».\n3. Recherchez et touchez « Safari ».\n4. Touchez « Extensions ».\n5. Touchez « Unagent ».\n6. Activez Unagent pour les profils dans lesquels vous souhaitez l’utiliser."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "点击“+”按钮添加自定义预设。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1. Apri l’app Impostazioni.\n2. Scorri verso il basso e tocca \"App\".\n3. Trova e tocca \"Safari\".\n4. Tocca \"Estensioni\".\n5. Tocca \"Unagent\".\n6. Attiva Unagent per i profili in cui desideri utilizzarlo."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點擊「+」按鈕新增自訂預設值。"
           }
         }
       }
     },
-    "SetUp.Step1.Title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Turn Unagent On"
+    "Presets.Custom.EmptyTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine eigenen Voreinstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unagentを有効化"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Custom Presets"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ativar o Unagent"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin Preajustes Personalizados"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "启用扩展"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun préréglage personnalisé"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "啟用擴充功能"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna Preimpostazione Personalizzata"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unagent aktivieren"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カスタムプリセットなし"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Activar Unagent"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem Predefinições Personalizadas"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Activer Unagent"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无自定义预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Attiva Unagent"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有自訂預設值"
           }
         }
       }
     },
-    "SetUp.Step2": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "In Safari settings, enable all website access for Unagent."
+    "Presets.Detail.Default" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard (Nicht ändern)"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Safariの設定で、Unagentのすべてのウェブサイトへのアクセスを許可します。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default (Don't Change)"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nas configurações do Safari, ative o acesso a todos os sites para o Unagent."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predeterminado (No cambiar)"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在 Safari 设置中，为 Unagent 启用所有网站访问权限。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par défaut (Ne pas changer)"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在 Safari 設定中，為 Unagent 啟用所有網站存取權限。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinito (Non modificare)"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aktivieren Sie in den Safari-Einstellungen den Zugriff auf alle Websites für Unagent."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルト（変更なし）"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "En los ajustes de Safari, active el acceso a todos los sitios web para Unagent."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padrão (Não Alterar)"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dans les réglages de Safari, activez l’accès à tous les sites web pour Unagent."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "默认（不更改）"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nelle impostazioni di Safari, abilita l’accesso a tutti i siti web per Unagent."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設（不變更）"
           }
         }
       }
     },
-    "SetUp.Step2.Title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Give Unagent Access"
+    "Presets.Detail.Name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unagentに権限を付与"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dar permissões ao Unagent"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "授予权限"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "授予權限"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unagent Zugriff gewähren"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dar acceso a Unagent"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Accorder l’accès à Unagent"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名称"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Concedi accesso a Unagent"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名稱"
           }
         }
       }
     },
-    "Shared.Add": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add"
+    "Presets.Detail.References" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Referenzen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "追加"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "References"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicionar"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Referencias"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "添加"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Références"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新增"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riferimenti"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hinzufügen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "参考リンク"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Añadir"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Referências"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajouter"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "参考链接"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aggiungi"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "參考連結"
           }
         }
       }
     },
-    "Shared.Cancel": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
+    "Presets.Editor.Appearance" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erscheinungsbild"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "キャンセル"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancelar"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apariencia"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "取消"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparence"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "取消"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aspetto"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abbrechen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外観"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancelar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparência"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Annuler"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外观"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Annulla"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外觀"
           }
         }
       }
     },
-    "Shared.Delete": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
+    "Presets.Editor.Icon" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symbol"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "削除"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deletar"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icono"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "删除"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "刪除"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icona"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Löschen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコン"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ícone"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supprimer"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图标"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elimina"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "圖示"
           }
         }
       }
     },
-    "Shared.DomainName": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Domain Name"
+    "Presets.Editor.Name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name der Voreinstellung"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ドメイン名"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preset Name"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Domínio"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del Preajuste"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "域名"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom du préréglage"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "網域名稱"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome Preimpostazione"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Domainname"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセット名"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nombre de Dominio"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome da Predefinição"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nom de domaine"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预设名称"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nome Dominio"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設值名稱"
           }
         }
       }
     },
-    "Shared.Edit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Edit"
+    "Presets.Editor.SourceURL" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quell-URL"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "編集"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source URL"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Editar"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL de Origen"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "编辑"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL source"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "編輯"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL Sorgente"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bearbeiten"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ソースURL"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Editar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL de Origem"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Modifier"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "来源网址"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Modifica"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "來源網址"
           }
         }
       }
     },
-    "Shared.OK": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+    "Presets.Filter" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "确定"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtre"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "確定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フィルター"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "筛选"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "篩選"
           }
         }
       }
     },
-    "Shared.Paste": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Paste"
+    "Presets.Hidden" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgeblendet"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "貼り付け"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Colar"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocultos"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "粘贴"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masqués"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "貼上"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nascosti"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Einfügen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "非表示"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pegar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocultas"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Coller"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已隐藏"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Incolla"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已隱藏"
           }
         }
       }
     },
-    "Shared.Presets": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Presets"
+    "Presets.Hidden.EmptyText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Voreinstellungen sind derzeit sichtbar."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "プリセット"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All presets are currently visible."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predefinições"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos los preajustes son visibles actualmente."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tous les préréglages sont actuellement visibles."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutte le preimpostazioni sono attualmente visibili."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voreinstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのプリセットが表示されています。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preajustes"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas as predefinições estão visíveis no momento."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Préréglages"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有预设当前均可见。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preimpostazioni"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有預設值目前均為可見。"
           }
         }
       }
     },
-    "Shared.Save": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save"
+    "Presets.Hidden.EmptyTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine ausgeblendeten Voreinstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "保存"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Hidden Presets"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Salvar"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin Preajustes Ocultos"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "保存"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun préréglage masqué"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "儲存"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna Preimpostazione Nascosta"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sichern"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "非表示のプリセットなし"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Guardar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma Predefinição Oculta"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enregistrer"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有隐藏的预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Salva"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有隱藏的預設值"
           }
         }
       }
     },
-    "Shared.SelectPreset": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Select Preset"
+    "Presets.Hide" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausblenden"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "プリセットを選択"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hide"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Selecione Predefinição"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocultar"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "选择预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masquer"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "選擇預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nascondi"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voreinstellung wählen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "非表示"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Seleccionar Preajuste"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocultar"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sélectionner un préréglage"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Seleziona preimpostazione"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隱藏"
           }
         }
       }
     },
-    "Shared.Settings": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
+    "Presets.IconPicker.Title" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symbol wählen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose Icon"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurações"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir Icono"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "设置"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir une icône"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli Icona"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Einstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコンを選択"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajustes"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolher Ícone"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Réglages"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择图标"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impostazioni"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇圖示"
           }
         }
       }
     },
-    "SiteSettings.DomainName.Example": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enter the domain name without any ‘http’ at the front, or slashes at the back.\nExample: www.example.com"
+    "Presets.Unhide" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einblenden"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "「http」やスラッシュー記号なしのドメイン名を入力してください。\n例：www.example.co.jp"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Digite o nome do domínio sem ‘http’ no início e sem barras no final.\nExemplo: www.example.com"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "例如：www.example.com"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "例如：www.example.com"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geben Sie den Domainnamen ohne ‘http’ am Anfang oder Schrägstriche am Ende ein.\nBeispiel: www.example.com"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Introduzca el nombre de dominio sin ‘http’ al principio ni barras al final.\nEjemplo: www.example.com"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Entrez le nom de domaine sans « http » au début ni barre oblique à la fin.\nExemple : www.example.com"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Inserisci il nome di dominio senza ‘http’ all’inizio o barre alla fine.\nEsempio: www.example.com"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示"
           }
         }
       }
     },
-    "SiteSettings.DomainName.Footer": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This user agent will only apply to pages in the domain specified."
+    "Presets.UnhideAll" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle einblenden"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "このユーザーエージェントは指定したドメインのページのみ適用されます。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show All"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Esse agente de usuário será apenas aplicado à páginas deste domínio específico."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar Todo"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "此用户代理将仅应用于指定域中的页面。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout afficher"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "此使用者代理將僅套用於指定網域中的頁面。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra Tutto"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dieser User-Agent wird nur auf Seiten der angegebenen Domain angewendet."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて表示"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Este agente de usuario solo se aplicará a las páginas del dominio especificado."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar Tudo"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cet agent utilisateur ne s’appliquera qu’aux pages du domaine spécifié."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示全部"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Questo user agent si applicherà solo alle pagine del dominio specificato."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示全部"
           }
         }
       }
     },
-    "SiteSettings.EmptyText.Text": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add a user agent for a specific website by tapping the '+' icon on the toolbar."
+    "Presets.Visible" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sichtbar"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Webサイト専用のユーザーエージェントを追加するには、ツールバーの「＋」アイコンをタッチしてください。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visible"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicione um agente de usuário para um site específico clicando no botão '+'. "
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visibles"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "点击添加按钮开始添加每个网站的设置。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visibles"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "點擊新增按鈕開始新增每個網站的設定。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visibili"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fügen Sie einen User-Agent für eine bestimmte Website hinzu, indem Sie auf das „+“-Symbol in der Symbolleiste tippen."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Añada un agente de usuario para un sitio web específico tocando el icono ‘+’ en la barra de herramientas."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visíveis"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajoutez un agent utilisateur pour un site web spécifique en touchant l’icône « + » dans la barre d’outils."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可见"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aggiungi un user agent per un sito web specifico toccando l’icona ‘+’ nella barra degli strumenti."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可見"
           }
         }
       }
     },
-    "SiteSettings.EmptyText.Title": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No User Agents"
+    "SetUp.OpenSafari" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Safari öffnen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定なし"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Safari"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sem agente de usuário"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Safari"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "无每个网站的设置"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir Safari"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "沒有每個網站的設定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri Safari"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keine User-Agents"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「Safari」アプリに移動"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sin Agentes de Usuario"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir o Safari"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aucun agent utilisateur"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开 Safari"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nessun User Agent"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開啟 Safari"
           }
         }
       }
     },
-    "SiteSettings.Viewport.Footer": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The selected display size will only be applied to pages in the domain specified."
+    "SetUp.OpenSettings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen öffnen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "選択された表示サイズは指定したドメインのページのみ適用されます。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "O tamanho de exibição selecionado será aplicado apenas às páginas do domínio especificado."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所选显示尺寸仅应用于指定域中的页面。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir les Réglages"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所選顯示尺寸僅套用於指定網域中的頁面。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri Impostazioni"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Die ausgewählte Anzeigegröße wird nur auf Seiten der angegebenen Domain angewendet."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「設定」アプリに移動"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "El tamaño de visualización seleccionado solo se aplicará a las páginas del dominio especificado."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir os Ajustes"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La taille d’affichage sélectionnée ne sera appliquée qu’aux pages du domaine spécifié."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开设置"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La dimensione di visualizzazione selezionata verrà applicata solo alle pagine del dominio specificato."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開啟設定"
           }
         }
       }
     },
-    "Tab.More": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "More"
+    "SetUp.Step1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivieren Sie die Unagent-Erweiterung in den Safari-Erweiterungseinstellungen."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "その他"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable the Unagent extension in Safari Extension settings."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mais"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Active la extensión Unagent en los ajustes de extensiones de Safari."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "更多"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activez l’extension Unagent dans les réglages des extensions Safari."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "更多"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attiva l’estensione Unagent nelle impostazioni delle estensioni di Safari."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mehr"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Safariの機能拡張設定でUnagent機能拡張を有効にします。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Más"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ative a extensão Unagent nas configurações de extensões do Safari."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Plus"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Safari 扩展设置中启用 Unagent 扩展。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Altro"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Safari 擴充功能設定中啟用 Unagent 擴充功能。"
           }
         }
       }
     },
-    "Tab.Settings": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
+    "SetUp.Step1.iOS18+" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Öffnen Sie die Einstellungen-App.\n2. Scrollen Sie nach unten und tippen Sie auf „Apps“.\n3. Suchen und tippen Sie auf „Safari“.\n4. Tippen Sie auf „Erweiterungen“.\n5. Tippen Sie auf „Unagent“.\n6. Aktivieren Sie Unagent für die Profile, in denen Sie Unagent verwenden möchten."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Open the Settings app.\n2. Scroll down and tap 'Apps'.\n3. Find and tap 'Safari'.\n4. Tap 'Extensions'.\n5. Tap 'Unagent'.\n6. Toggle Unagent on for the profiles you wish to use Unagent in."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurações"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Abra la app Ajustes.\n2. Desplácese hacia abajo y pulse ‘Apps’.\n3. Busque y pulse ‘Safari’.\n4. Pulse ‘Extensiones’.\n5. Pulse ‘Unagent’.\n6. Active Unagent para los perfiles en los que desee usarlo."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "设置"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Ouvrez l’app Réglages.\n2. Faites défiler vers le bas et touchez « Apps ».\n3. Recherchez et touchez « Safari ».\n4. Touchez « Extensions ».\n5. Touchez « Unagent ».\n6. Activez Unagent pour les profils dans lesquels vous souhaitez l’utiliser."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Apri l’app Impostazioni.\n2. Scorri verso il basso e tocca \"App\".\n3. Trova e tocca \"Safari\".\n4. Tocca \"Estensioni\".\n5. Tocca \"Unagent\".\n6. Attiva Unagent per i profili in cui desideri utilizzarlo."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Einstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "① 「設定」アプリを開きます。\n② 下にスクロールし、「アプリ」をタッチします。\n③ 「Safari」を探してタッチします。\n④ 「拡張機能」をタッチします。\n⑤ 「Unagent」をタッチします。\n⑥ Unagentを有効化するプロフィールをオンにします。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajustes"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Abra os Ajustes.\r\n2. Role para baixo e clique em 'Apps'.\n3. Role para baixo e clique em 'Safari'.\r\n4. Clique em 'Extensões'.\r\n5. Clique em 'Unagent'.\r\n6. Ative o Unagent para os perfis onde você deseja usar o Unagent."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Réglages"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 iOS 18 及更高版本中，您可以在「設定」>「App」>「Safari」>「擴充功能」中找到此設定。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impostazioni"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 iOS 18 及更高版本中，您可以在「設定」>「App」>「Safari」>「擴充功能」中找到此設定。"
           }
         }
       }
     },
-    "Tab.SetUp": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Set Up"
+    "SetUp.Step1.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagent aktivieren"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "セットアップ"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn Unagent On"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Início"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activar Unagent"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "设置"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer Unagent"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attiva Unagent"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Einrichten"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagentを有効化"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ativar o Unagent"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configuration"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "启用扩展"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurazione"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "啟用擴充功能"
           }
         }
       }
     },
-    "UserAgent": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "User Agent"
+    "SetUp.Step2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivieren Sie in den Safari-Einstellungen den Zugriff auf alle Websites für Unagent."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ユーザーエージェント"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Safari settings, enable all website access for Unagent."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de Usuário"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En los ajustes de Safari, active el acceso a todos los sitios web para Unagent."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "用户代理"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dans les réglages de Safari, activez l’accès à tous les sites web pour Unagent."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "使用者代理"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nelle impostazioni di Safari, abilita l’accesso a tutti i siti web per Unagent."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "User-Agent"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Safariの設定で、Unagentのすべてのウェブサイトへのアクセスを許可します。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de Usuario"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nas configurações do Safari, ative o acesso a todos os sites para o Unagent."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agent utilisateur"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Safari 设置中，为 Unagent 启用所有网站访问权限。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "User Agent"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Safari 設定中，為 Unagent 啟用所有網站存取權限。"
           }
         }
       }
     },
-    "UserAgent.Global": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Global User Agent"
+    "SetUp.Step2.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagent Zugriff gewähren"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "グローバルユーザーエージェント"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Give Unagent Access"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de usuário global"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dar acceso a Unagent"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全局用户代理"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accorder l’accès à Unagent"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全域使用者代理"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concedi accesso a Unagent"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globaler User-Agent"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagentに権限を付与"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de Usuario Global"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dar permissões ao Unagent"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agent utilisateur global"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授予权限"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "User Agent Globale"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授予權限"
           }
         }
       }
     },
-    "UserAgent.PerSite": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Per Site User Agents"
+    "Shared.Add" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hinzufügen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Webサイトごと設定"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agente de usuário por site"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "每个网站的用户代理"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "每個網站的使用者代理"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "User-Agents pro Website"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agentes de Usuario por Sitio"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Agents utilisateur par site"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "User Agent per Sito"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新增"
           }
         }
       }
     },
-    "Viewport": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Viewport"
+    "Shared.Cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "表示サイズ"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tamanho de exibição"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "显示尺寸"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "顯示尺寸"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Viewport"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ventana gráfica"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fenêtre d’affichage"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Viewport"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
           }
         }
       }
     },
-    "Viewport.Desktop": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desktop"
+    "Shared.Delete" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "デスクトップ"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desktop"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "臺式電腦"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "臺式電腦"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desktop"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Escritorio"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deletar"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bureau"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desktop"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除"
           }
         }
       }
     },
-    "Viewport.Global": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Global Display Size"
+    "Shared.DomainName" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domainname"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "グローバル表示サイズ"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domain Name"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tamanho de exibição global"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de Dominio"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全局显示尺寸"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de domaine"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全域顯示尺寸"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome Dominio"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globale Anzeigegröße"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ドメイン名"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tamaño de Visualización Global"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domínio"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Taille d’affichage globale"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "域名"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dimensione Display Globale"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "網域名稱"
           }
         }
       }
     },
-    "Viewport.Mobile": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mobile"
+    "Shared.Done" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "モバイル"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Celular"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "手机"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminé"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "手機"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fine"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mobil"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Móvil"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concluído"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mobile"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mobile"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
           }
         }
       }
     },
-    "Viewport.Tablet": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tablet"
+    "Shared.Edit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bearbeiten"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "タブレット"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tablet"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "平板"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "平板"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tablet"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編集"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tableta"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tablette"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "编辑"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tablet"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編輯"
           }
         }
       }
     },
-    "ViewTitle.GlobalSettings": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Global Settings"
+    "Shared.OK" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "グローバル設定"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurações Globais"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全局设置"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全域設定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Globale Einstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajustes Globales"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Réglages globaux"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "确定"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impostazioni Globali"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確定"
           }
         }
       }
     },
-    "ViewTitle.Settings": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
+    "Shared.Paste" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einfügen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paste"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurações"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pegar"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "设置"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coller"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incolla"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Einstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貼り付け"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajustes"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colar"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Réglages"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粘贴"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impostazioni"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貼上"
           }
         }
       }
     },
-    "ViewTitle.SetUp": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Set Up Unagent"
+    "Shared.Presets" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voreinstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unagentを準備する"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presets"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurar o Unagent"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preajustes"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "準備使用 Unagent"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préréglages"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "準備使用 Unagent"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preimpostazioni"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unagent einrichten"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセット"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurar Unagent"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinições"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurer Unagent"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configura Unagent"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設值"
           }
         }
       }
     },
-    "ViewTitle.SiteSettings.Edit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Edit Site Setting"
+    "Shared.Save" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sichern"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "設定を編集"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Editar configuração para um site"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "编辑网站设置"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "編輯網站設定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Seiteneinstellung bearbeiten"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Editar Configuración del Sitio"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Modifier le réglage du site"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Modifica Impostazione Sito"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "儲存"
           }
         }
       }
     },
-    "Presets.BuiltIn": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Built-in Presets"
+    "Shared.SelectPreset" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voreinstellung wählen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "組み込みプリセット"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Preset"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predefinições Integradas"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleccionar Preajuste"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "内置预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionner un préréglage"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "內建預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleziona preimpostazione"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Integrierte Voreinstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセットを選択"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preajustes Integrados"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione Predefinição"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Préréglages intégrés"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preimpostazioni Integrate"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇預設值"
           }
         }
       }
     },
-    "Presets.Custom": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Custom Presets"
+    "Shared.Settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "カスタムプリセット"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predefinições Personalizadas"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "自定义预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "自訂預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eigene Voreinstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preajustes Personalizados"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Préréglages personnalisés"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preimpostazioni Personalizzate"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
           }
         }
       }
     },
-    "Presets.Custom.EmptyTitle": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No Custom Presets"
+    "SiteSettings.DomainName.Example" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geben Sie den Domainnamen ohne ‘http’ am Anfang oder Schrägstriche am Ende ein.\nBeispiel: www.example.com"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "カスタムプリセットなし"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the domain name without any ‘http’ at the front, or slashes at the back.\nExample: www.example.com"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sem Predefinições Personalizadas"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduzca el nombre de dominio sin ‘http’ al principio ni barras al final.\nEjemplo: www.example.com"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "无自定义预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez le nom de domaine sans « http » au début ni barre oblique à la fin.\nExemple : www.example.com"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "沒有自訂預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci il nome di dominio senza ‘http’ all’inizio o barre alla fine.\nEsempio: www.example.com"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keine eigenen Voreinstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「http」やスラッシュー記号なしのドメイン名を入力してください。\n例：www.example.co.jp"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sin Preajustes Personalizados"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digite o nome do domínio sem ‘http’ no início e sem barras no final.\nExemplo: www.example.com"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aucun préréglage personnalisé"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "例如：www.example.com"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nessuna Preimpostazione Personalizzata"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "例如：www.example.com"
           }
         }
       }
     },
-    "Presets.Custom.EmptyText": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add a custom preset by tapping the '+' button."
+    "SiteSettings.DomainName.Footer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieser User-Agent wird nur auf Seiten der angegebenen Domain angewendet."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "「＋」ボタンをタッチしてカスタムプリセットを追加してください。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This user agent will only apply to pages in the domain specified."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicione uma predefinição personalizada clicando no botão '+'."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este agente de usuario solo se aplicará a las páginas del dominio especificado."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "点击“+”按钮添加自定义预设。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cet agent utilisateur ne s’appliquera qu’aux pages du domaine spécifié."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "點擊「+」按鈕新增自訂預設值。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questo user agent si applicherà solo alle pagine del dominio specificato."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fügen Sie eine eigene Voreinstellung hinzu, indem Sie auf die „+“-Taste tippen."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このユーザーエージェントは指定したドメインのページのみ適用されます。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Añada un preajuste personalizado tocando el botón ‘+’."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse agente de usuário será apenas aplicado à páginas deste domínio específico."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajoutez un préréglage personnalisé en touchant le bouton « + »."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此用户代理将仅应用于指定域中的页面。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aggiungi una preimpostazione personalizzata toccando il pulsante ‘+’."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此使用者代理將僅套用於指定網域中的頁面。"
           }
         }
       }
     },
-    "Presets.Detail.Name": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Name"
+    "SiteSettings.EmptyText.Text" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fügen Sie einen User-Agent für eine bestimmte Website hinzu, indem Sie auf das „+“-Symbol in der Symbolleiste tippen."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "名前"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add a user agent for a specific website by tapping the '+' icon on the toolbar."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nome"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añada un agente de usuario para un sitio web específico tocando el icono ‘+’ en la barra de herramientas."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "名称"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez un agent utilisateur pour un site web spécifique en touchant l’icône « + » dans la barre d’outils."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "名稱"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi un user agent per un sito web specifico toccando l’icona ‘+’ nella barra degli strumenti."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Name"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Webサイト専用のユーザーエージェントを追加するには、ツールバーの「＋」アイコンをタッチしてください。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nombre"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione um agente de usuário para um site específico clicando no botão '+'. "
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nom"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "点击添加按钮开始添加每个网站的设置。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nome"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點擊新增按鈕開始新增每個網站的設定。"
           }
         }
       }
     },
-    "Presets.Detail.Default": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Default (Don't Change)"
+    "SiteSettings.EmptyText.Title" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine User-Agents"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "デフォルト（変更なし）"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No User Agents"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Padrão (Não Alterar)"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin Agentes de Usuario"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "默认（不更改）"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun agent utilisateur"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "預設（不變更）"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun User Agent"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Standard (Nicht ändern)"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定なし"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predeterminado (No cambiar)"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem agente de usuário"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Par défaut (Ne pas changer)"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无每个网站的设置"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predefinito (Non modificare)"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有每個網站的設定"
           }
         }
       }
     },
-    "Presets.Detail.References": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "References"
+    "SiteSettings.Viewport.Footer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die ausgewählte Anzeigegröße wird nur auf Seiten der angegebenen Domain angewendet."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "参考リンク"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The selected display size will only be applied to pages in the domain specified."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Referências"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El tamaño de visualización seleccionado solo se aplicará a las páginas del dominio especificado."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "参考链接"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La taille d’affichage sélectionnée ne sera appliquée qu’aux pages du domaine spécifié."
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "參考連結"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La dimensione di visualizzazione selezionata verrà applicata solo alle pagine del dominio specificato."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Referenzen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択された表示サイズは指定したドメインのページのみ適用されます。"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Referencias"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O tamanho de exibição selecionado será aplicado apenas às páginas do domínio especificado."
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Références"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所选显示尺寸仅应用于指定域中的页面。"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Riferimenti"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所選顯示尺寸僅套用於指定網域中的頁面。"
           }
         }
       }
     },
-    "Presets.Editor.Name": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preset Name"
+    "Tab.More" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "プリセット名"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nome da Predefinição"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "预设名称"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "預設值名稱"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Altro"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Name der Voreinstellung"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nombre del Preajuste"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nom du préréglage"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nome Preimpostazione"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多"
           }
         }
       }
     },
-    "Presets.Editor.Icon": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Icon"
+    "Tab.Presets" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voreinstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "アイコン"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presets"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ícone"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preajustes"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "图标"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préréglages"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "圖示"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preimpostazioni"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Symbol"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセット"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Icono"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinições"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Icône"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Icona"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設值"
           }
         }
       }
     },
-    "Presets.Editor.Appearance": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Appearance"
+    "Tab.Settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "外観"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aparência"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "外观"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "外觀"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Erscheinungsbild"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apariencia"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apparence"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aspetto"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
           }
         }
       }
     },
-    "Presets.Editor.SourceURL": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Source URL"
+    "Tab.SetUp" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einrichten"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ソースURL"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Up"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL de Origem"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurar"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "来源网址"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuration"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "來源網址"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurazione"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Quell-URL"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "セットアップ"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL de Origen"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Início"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL source"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "URL Sorgente"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
           }
         }
       }
     },
-    "Presets.IconPicker.Title": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose Icon"
+    "UserAgent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User-Agent"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "アイコンを選択"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User Agent"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Escolher Ícone"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de Usuario"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "选择图标"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agent utilisateur"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "選擇圖示"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User Agent"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Symbol wählen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザーエージェント"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elegir Icono"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de Usuário"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choisir une icône"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用户代理"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Scegli Icona"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用者代理"
           }
         }
       }
     },
-    "Shared.Done": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Done"
+    "UserAgent.Global" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Globaler User-Agent"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "完了"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global User Agent"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Concluído"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de Usuario Global"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "完成"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agent utilisateur global"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "完成"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User Agent Globale"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fertig"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グローバルユーザーエージェント"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Listo"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário global"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Terminé"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全局用户代理"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fine"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全域使用者代理"
           }
         }
       }
     },
-    "Tab.Presets": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Presets"
+    "UserAgent.PerSite" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User-Agents pro Website"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "プリセット"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per Site User Agents"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predefinições"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agentes de Usuario por Sitio"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agents utilisateur par site"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User Agent per Sito"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voreinstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Webサイトごと設定"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preajustes"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agente de usuário por site"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Préréglages"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每个网站的用户代理"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preimpostazioni"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每個網站的使用者代理"
           }
         }
       }
     },
-    "ViewTitle.Presets": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Presets"
+    "Viewport" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viewport"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "プリセット"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viewport"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Predefinições"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ventana gráfica"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fenêtre d’affichage"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viewport"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voreinstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示サイズ"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preajustes"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamanho de exibição"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Préréglages"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示尺寸"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preimpostazioni"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示尺寸"
           }
         }
       }
     },
-    "ViewTitle.Presets.New": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "New Preset"
+    "Viewport.Desktop" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desktop"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新規プリセット"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desktop"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nova Predefinição"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escritorio"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bureau"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desktop"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Neue Voreinstellung"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デスクトップ"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nuevo Preajuste"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desktop"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nouveau préréglage"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "臺式電腦"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nuova Preimpostazione"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "臺式電腦"
           }
         }
       }
     },
-    "ViewTitle.Presets.Edit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Edit Preset"
+    "Viewport.Global" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Globale Anzeigegröße"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "プリセットを編集"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global Display Size"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Editar Predefinição"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamaño de Visualización Global"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "编辑预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taille d’affichage globale"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "編輯預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimensione Display Globale"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voreinstellung bearbeiten"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グローバル表示サイズ"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Editar Preajuste"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamanho de exibição global"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Modifier le préréglage"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全局显示尺寸"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Modifica Preimpostazione"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全域顯示尺寸"
           }
         }
       }
     },
-    "ViewTitle.SiteSettings.New": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "New Site Setting"
+    "Viewport.Mobile" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mobil"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新規設定"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mobile"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nova configuração para um site"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Móvil"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新网站设置"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mobile"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新網站設定"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mobile"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Neue Seiteneinstellung"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モバイル"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nueva Configuración del Sitio"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Celular"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nouveau réglage de site"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手机"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nuova Impostazione Sito"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手機"
           }
         }
       }
     },
-    "About.UserAgent.Tokens": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Use %OS_MAJOR%, %OS_MINOR%, and %OS_PATCH% as placeholders for the device’s current OS version components."
+    "Viewport.Tablet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablet"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%OS_MAJOR%、%OS_MINOR%、%OS_PATCH% をデバイスの現在のOSバージョンのプレースホルダーとして使用できます。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablet"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Use %OS_MAJOR%, %OS_MINOR% e %OS_PATCH% como marcadores para os componentes da versão atual do sistema operacional do dispositivo."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tableta"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "使用 %OS_MAJOR%、%OS_MINOR% 和 %OS_PATCH% 作为设备当前操作系统版本组件的占位符。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablette"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "使用 %OS_MAJOR%、%OS_MINOR% 和 %OS_PATCH% 作為裝置目前作業系統版本組件的佔位符。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablet"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verwenden Sie %OS_MAJOR%, %OS_MINOR% und %OS_PATCH% als Platzhalter für die aktuelle Betriebssystemversion des Geräts."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タブレット"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Use %OS_MAJOR%, %OS_MINOR% y %OS_PATCH% como marcadores para los componentes de la versión actual del sistema operativo del dispositivo."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablet"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Utilisez %OS_MAJOR%, %OS_MINOR% et %OS_PATCH% comme marqueurs pour les composants de la version actuelle du système d’exploitation de l’appareil."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平板"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Usa %OS_MAJOR%, %OS_MINOR% e %OS_PATCH% come segnaposto per i componenti della versione attuale del sistema operativo del dispositivo."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平板"
           }
         }
       }
     },
-    "Presets.Hide": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hide"
+    "ViewTitle.GlobalSettings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Globale Einstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "非表示"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Global Settings"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ocultar"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes Globales"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "隐藏"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages globaux"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "隱藏"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni Globali"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ausblenden"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グローバル設定"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ocultar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações Globais"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Masquer"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全局设置"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nascondi"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全域設定"
           }
         }
       }
     },
-    "Presets.Unhide": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show"
+    "ViewTitle.Presets" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voreinstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "表示"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presets"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mostrar"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preajustes"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "显示"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préréglages"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "顯示"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preimpostazioni"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Einblenden"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセット"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mostrar"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinições"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Afficher"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mostra"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設值"
           }
         }
       }
     },
-    "Presets.Filter": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filter"
+    "ViewTitle.Presets.Edit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voreinstellung bearbeiten"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "フィルター"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Preset"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filtro"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Preajuste"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "筛选"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier le préréglage"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "篩選"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica Preimpostazione"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filter"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセットを編集"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filtro"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Predefinição"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filtre"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "编辑预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filtro"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編輯預設值"
           }
         }
       }
     },
-    "Presets.Hidden": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hidden"
+    "ViewTitle.Presets.New" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Voreinstellung"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "非表示"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Preset"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ocultas"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo Preajuste"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "已隐藏"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau préréglage"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "已隱藏"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuova Preimpostazione"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ausgeblendet"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規プリセット"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ocultos"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova Predefinição"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Masqués"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新预设"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nascosti"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新預設值"
           }
         }
       }
     },
-    "Presets.Hidden.EmptyTitle": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No Hidden Presets"
+    "ViewTitle.Settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "非表示のプリセットなし"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nenhuma Predefinição Oculta"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "没有隐藏的预设"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "沒有隱藏的預設值"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keine ausgeblendeten Voreinstellungen"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sin Preajustes Ocultos"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aucun préréglage masqué"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nessuna Preimpostazione Nascosta"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
           }
         }
       }
     },
-    "Presets.Hidden.EmptyText": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "All presets are currently visible."
+    "ViewTitle.SetUp" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagent einrichten"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "すべてのプリセットが表示されています。"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Up Unagent"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Todas as predefinições estão visíveis no momento."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurar Unagent"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所有预设当前均可见。"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurer Unagent"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所有預設值目前均為可見。"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configura Unagent"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alle Voreinstellungen sind derzeit sichtbar."
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unagentを準備する"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Todos los preajustes son visibles actualmente."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurar o Unagent"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tous les préréglages sont actuellement visibles."
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "準備使用 Unagent"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tutte le preimpostazioni sono attualmente visibili."
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "準備使用 Unagent"
           }
         }
       }
     },
-    "Presets.Visible": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Visible"
+    "ViewTitle.SiteSettings.Edit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seiteneinstellung bearbeiten"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "表示"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Site Setting"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Visíveis"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Configuración del Sitio"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "可见"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier le réglage du site"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "可見"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica Impostazione Sito"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sichtbar"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定を編集"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Visibles"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar configuração para um site"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Visibles"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "编辑网站设置"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Visibili"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編輯網站設定"
           }
         }
       }
     },
-    "Presets.UnhideAll": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show All"
+    "ViewTitle.SiteSettings.New" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Seiteneinstellung"
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "すべて表示"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Site Setting"
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mostrar Tudo"
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva Configuración del Sitio"
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "显示全部"
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau réglage de site"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "顯示全部"
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuova Impostazione Sito"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alle einblenden"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規設定"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mostrar Todo"
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova configuração para um site"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tout afficher"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新网站设置"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mostra Tutto"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新網站設定"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
