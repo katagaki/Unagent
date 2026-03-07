@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SiteSettingEditor: View {
-    
+
     @Environment(\.dismiss) var dismiss
 
     @State var mode: EditorMode
@@ -18,9 +18,9 @@ struct SiteSettingEditor: View {
     @Binding var viewport: Viewport?
     @Binding var shouldSave: Bool
     var onValidate: ((String) -> Bool)?
-    
+
     @State private var showDuplicateError: Bool = false
-    
+
     var body: some View {
         NavigationView {
             List {
@@ -35,19 +35,17 @@ struct SiteSettingEditor: View {
                 } footer: {
                     Text(verbatim: NSLocalizedString("SiteSettings.DomainName.Example", comment: ""))
                 }
-                
+
                 UserAgentEditorSection(
                     userAgent: $userAgent,
                     viewport: $viewport
                 )
-                
+
                 ViewportPickerSection(
                     viewport: $viewport,
                     isOptional: true
                 )
             }
-            .scrollContentBackground(.hidden)
-            .gradientBackground()
             .navigationTitle(mode == .new ? "ViewTitle.SiteSettings.New" : "ViewTitle.SiteSettings.Edit")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

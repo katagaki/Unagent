@@ -42,7 +42,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
             case "getSettings":
                 debugPrint("Extension just asked native app for site settings")
-                var responseContent: [String:String] = [:]
+                var responseContent: [String: String] = [:]
                 if let currentUserAgent = defaults.string(forKey: "UserAgent") {
                     responseContent.updateValue(currentUserAgent, forKey: "userAgent")
                 }

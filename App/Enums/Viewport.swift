@@ -12,7 +12,7 @@ enum Viewport: String, Codable, CaseIterable {
     case tablet = "Tablet"
     case mobile = "Mobile"
     case none = ""
-    
+
     var displayName: String {
         return NSLocalizedString("Viewport.\(self.rawValue)", comment: "")
     }

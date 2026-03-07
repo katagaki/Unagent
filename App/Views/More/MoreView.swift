@@ -9,7 +9,7 @@ import Komponents
 import SwiftUI
 
 struct MoreView: View {
-    
+
     @State var viewPath: [ViewPath] = []
 
     var body: some View {

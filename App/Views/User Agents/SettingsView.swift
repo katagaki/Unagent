@@ -27,13 +27,13 @@ struct SettingsView: View {
     @State var isShowingNewSiteSettingView: Bool = false
     @State var newSiteSettingDomain: String = ""
     @State var newSiteSettingUserAgent: String = ""
-    @State var newSiteSettingViewport: Viewport? = nil
+    @State var newSiteSettingViewport: Viewport?
     @State var newSiteSettingShouldSave: Bool = false
 
     @State var isShowingEditSiteSettingView: Bool = false
     @State var editingSiteSettingDomain: String = ""
     @State var editingSiteSettingUserAgent: String = ""
-    @State var editingSiteSettingViewport: Viewport? = nil
+    @State var editingSiteSettingViewport: Viewport?
     @State var editingSiteSettingShouldSave: Bool = false
 
     var body: some View {
@@ -53,7 +53,7 @@ struct SettingsView: View {
                         }
                     }
                 }
-                
+
                 Section {
                     if perSiteSettings.isEmpty {
                         if #available(iOS 17.0, *) {
@@ -207,4 +207,3 @@ struct SettingsView: View {
         }
     }
 }
-

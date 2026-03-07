@@ -12,10 +12,10 @@ struct PresetsSection: View {
 
     var presets: [Preset]
     var currentUserAgent: () -> String
-    var onSelect: (String) -> ()
-    var onSelectWithViewport: ((String, Viewport?) -> ())?
+    var onSelect: (String) -> Void
+    var onSelectWithViewport: ((String, Viewport?) -> Void)?
 
-    init(currentUserAgent: @escaping () -> String, onSelect: @escaping (String) -> Void, onSelectWithViewport: ((String, Viewport?) -> ())? = nil) {
+    init(currentUserAgent: @escaping () -> String, onSelect: @escaping (String) -> Void, onSelectWithViewport: ((String, Viewport?) -> Void)? = nil) {
         let store = PresetStore()
         self.presets = store.presets
         self.currentUserAgent = currentUserAgent

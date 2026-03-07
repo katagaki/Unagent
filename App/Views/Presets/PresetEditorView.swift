@@ -17,7 +17,7 @@ struct PresetEditorView: View {
     @State private var imageName: String = "Safari"
     @State private var userAgent: String = ""
     @State private var source: String = ""
-    @State private var viewport: Viewport? = nil
+    @State private var viewport: Viewport?
     @State private var isShowingIconPicker: Bool = false
 
     var body: some View {

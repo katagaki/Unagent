@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SiteSettingRow: View {
 
-    @State var favicon: UIImage? = nil
+    @State var favicon: UIImage?
     @State var isFirstFaviconFetchCompleted: Bool = false
     var title: String
     var subtitle: String
