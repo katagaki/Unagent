@@ -193,6 +193,7 @@ struct IconPickerView: View {
                 }
                 .padding()
             }
+            .scrollContentBackground(.hidden)
             .gradientBackground()
             .navigationTitle("Presets.IconPicker.Title")
             .navigationBarTitleDisplayMode(.inline)
