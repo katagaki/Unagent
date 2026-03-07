@@ -46,6 +46,8 @@ struct SiteSettingEditor: View {
                     isOptional: true
                 )
             }
+            .scrollContentBackground(.hidden)
+            .gradientBackground()
             .navigationTitle(mode == .new ? "ViewTitle.SiteSettings.New" : "ViewTitle.SiteSettings.Edit")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

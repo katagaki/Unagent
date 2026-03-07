@@ -100,6 +100,8 @@ struct PresetsView: View {
                     }
                 }
             }
+            .scrollContentBackground(.hidden)
+            .gradientBackground()
             .navigationTitle("ViewTitle.Presets")
             .sheet(isPresented: $isShowingNewPreset) {
                 PresetEditorView(mode: .new, presetStore: presetStore)

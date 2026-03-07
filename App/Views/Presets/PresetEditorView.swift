@@ -75,6 +75,8 @@ struct PresetEditorView: View {
                     Text("Presets.Detail.References")
                 }
             }
+            .scrollContentBackground(.hidden)
+            .gradientBackground()
             .navigationTitle(mode == .new ? "ViewTitle.Presets.New" : "ViewTitle.Presets.Edit")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -191,7 +193,7 @@ struct IconPickerView: View {
                 }
                 .padding()
             }
-            .background(Color(.systemGroupedBackground))
+            .gradientBackground()
             .navigationTitle("Presets.IconPicker.Title")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

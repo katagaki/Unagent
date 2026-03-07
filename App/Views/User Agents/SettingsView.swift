@@ -102,6 +102,8 @@ struct SettingsView: View {
                     }
                 }
             }
+            .scrollContentBackground(.hidden)
+            .gradientBackground()
             .navigationTitle("ViewTitle.Settings")
             .onChange(of: globalUserAgent, synchronizeDefaults)
             .onChange(of: isShowingNewSiteSettingView, createNewPerSiteSetting)

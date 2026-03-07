@@ -54,6 +54,8 @@ struct GlobalSettingsView: View {
                 )
             )
         }
+        .scrollContentBackground(.hidden)
+        .gradientBackground()
         .navigationTitle("ViewTitle.GlobalSettings")
         .navigationBarTitleDisplayMode(.inline)
     }

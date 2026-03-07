@@ -15,6 +15,8 @@ struct MoreView: View {
     var body: some View {
         NavigationStack(path: $viewPath) {
             MoreList(repoName: "katagaki/Unagent", viewPath: ViewPath.moreAttributions) { }
+            .scrollContentBackground(.hidden)
+            .gradientBackground()
             .navigationDestination(for: ViewPath.self) { viewPath in
                 switch viewPath {
                     case .moreAttributions: LicensesView(licenses: [

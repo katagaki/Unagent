@@ -61,6 +61,8 @@ struct PresetDetailView: View {
                 }
             }
         }
+        .scrollContentBackground(.hidden)
+        .gradientBackground()
         .navigationTitle(preset.name)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
