@@ -56,7 +56,7 @@ struct PresetsView: View {
                                 }
                             }
                         } header: {
-                            Text("Presets.BuiltIn")
+                            Text("Presets.Visible")
                         }
                     }
 
