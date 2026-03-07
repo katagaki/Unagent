@@ -17,7 +17,7 @@ struct PresetsSection: View {
 
     init(currentUserAgent: @escaping () -> String, onSelect: @escaping (String) -> Void, onSelectWithViewport: ((String, Viewport?) -> Void)? = nil) {
         let store = PresetStore()
-        self.presets = store.presets
+        self.presets = store.visibleBuiltInPresets + store.customPresets
         self.currentUserAgent = currentUserAgent
         self.onSelect = onSelect
         self.onSelectWithViewport = onSelectWithViewport
