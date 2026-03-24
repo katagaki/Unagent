@@ -8,6 +8,7 @@ import SwiftUI
 struct PresetsView: View {
 
     @State var presetStore = PresetStore()
+    @State var presetUpdater = PresetUpdater()
     @State var isShowingNewPreset: Bool = false
     @State var selectedTab: PresetTab = .visible
 
@@ -132,6 +133,45 @@ struct PresetsView: View {
             .scrollContentBackground(.hidden)
             .gradientBackground()
             .navigationTitle("ViewTitle.Presets")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        Task {
+                            await presetUpdater.checkForUpdates()
+                            presetStore.loadPresets()
+                        }
+                    } label: {
+                        if presetUpdater.isChecking {
+                            ProgressView()
+                        } else {
+                            Image(systemName: "arrow.triangle.2.circlepath")
+                        }
+                    }
+                    .disabled(presetUpdater.isChecking)
+                }
+            }
+            .alert(
+                "Presets.Update.Title",
+                isPresented: Binding(
+                    get: { presetUpdater.updateResult != nil },
+                    set: { if !$0 { presetUpdater.updateResult = nil } }
+                )
+            ) {
+                Button("Shared.OK", role: .cancel) {
+                    presetUpdater.updateResult = nil
+                }
+            } message: {
+                switch presetUpdater.updateResult {
+                case .updated(let count):
+                    Text("Presets.Update.Updated \(count)")
+                case .noUpdates:
+                    Text("Presets.Update.NoUpdates")
+                case .failed(let message):
+                    Text("Presets.Update.Failed \(message)")
+                case nil:
+                    EmptyView()
+                }
+            }
             .sheet(isPresented: $isShowingNewPreset) {
                 PresetEditorView(mode: .new, presetStore: presetStore)
             }

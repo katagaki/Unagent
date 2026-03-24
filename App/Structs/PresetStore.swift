@@ -25,10 +25,8 @@ class PresetStore {
     func loadPresets() {
         var allPresets: [Preset] = []
 
-        // Load built-in presets from JSON
-        if let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           var builtIn = try? JSONDecoder().decode([Preset].self, from: data) {
+        // Load built-in presets, preferring cached remote presets over bundled ones
+        if var builtIn = loadBuiltInPresets() {
             for i in builtIn.indices {
                 builtIn[i].isBuiltIn = true
             }
@@ -162,5 +160,32 @@ class PresetStore {
 
     var visibleBuiltInPresets: [Preset] {
         builtInPresets.filter { !hiddenPresetNames.contains($0.name) }
+    }
+
+    // MARK: - Remote Presets
+
+    private func loadBuiltInPresets() -> [Preset]? {
+        // Try cached remote presets first
+        if let remotePresets = PresetUpdater.loadCachedRemotePresets() {
+            // Merge: use remote presets as base, but keep any bundled presets
+            // that aren't in the remote set (backwards compatibility)
+            var merged = remotePresets
+            if let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
+               let data = try? Data(contentsOf: url),
+               let bundled = try? JSONDecoder().decode([Preset].self, from: data) {
+                let remoteNames = Set(remotePresets.map(\.name))
+                let extraBundled = bundled.filter { !remoteNames.contains($0.name) }
+                merged.append(contentsOf: extraBundled)
+            }
+            return merged
+        }
+
+        // Fall back to bundled presets
+        guard let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let bundled = try? JSONDecoder().decode([Preset].self, from: data) else {
+            return nil
+        }
+        return bundled
     }
 }
