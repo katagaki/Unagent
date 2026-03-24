@@ -162,30 +162,61 @@ class PresetStore {
         builtInPresets.filter { !hiddenPresetNames.contains($0.name) }
     }
 
-    // MARK: - Remote Presets
+    // MARK: - Remote Preset Updates
 
     private func loadBuiltInPresets() -> [Preset]? {
-        // Try cached remote presets first
-        if let remotePresets = PresetUpdater.loadCachedRemotePresets() {
-            // Merge: use remote presets as base, but keep any bundled presets
-            // that aren't in the remote set (backwards compatibility)
-            var merged = remotePresets
-            if let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
-               let data = try? Data(contentsOf: url),
-               let bundled = try? JSONDecoder().decode([Preset].self, from: data) {
-                let remoteNames = Set(remotePresets.map(\.name))
-                let extraBundled = bundled.filter { !remoteNames.contains($0.name) }
-                merged.append(contentsOf: extraBundled)
-            }
-            return merged
-        }
-
-        // Fall back to bundled presets
         guard let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
               let data = try? Data(contentsOf: url),
-              let bundled = try? JSONDecoder().decode([Preset].self, from: data) else {
+              var bundled = try? JSONDecoder().decode([Preset].self, from: data) else {
             return nil
         }
+
+        // Apply cached user agent updates from online sources
+        guard let updates = PresetUpdater.loadCachedUpdates() else {
+            return bundled
+        }
+
+        for i in bundled.indices {
+            if let updatedUA = updates[bundled[i].name] {
+                bundled[i].userAgent = updatedUA
+                // Update the version number in the preset name if it changed
+                bundled[i].name = updatedPresetName(
+                    currentName: bundled[i].name,
+                    userAgent: updatedUA
+                )
+            }
+        }
+
         return bundled
+    }
+
+    private func updatedPresetName(currentName: String, userAgent: String) -> String {
+        // Extract version from the user agent and update the name
+        // e.g. "Google Chrome 144 (macOS)" → "Google Chrome 132 (macOS)"
+        if currentName.contains("Chrome") && !currentName.contains("Google App") {
+            if let range = userAgent.range(of: #"Chrome/(\d+)"#, options: .regularExpression) {
+                let version = userAgent[range].replacingOccurrences(of: "Chrome/", with: "")
+                return currentName.replacingOccurrences(
+                    of: #"\d+"#, with: version, options: .regularExpression
+                )
+            }
+        }
+
+        if currentName.contains("Edge") && !currentName.contains("EdgeHTML") {
+            if let range = userAgent.range(of: #"Edg/(\d+)"#, options: .regularExpression) {
+                let version = userAgent[range].replacingOccurrences(of: "Edg/", with: "")
+                return currentName.replacingOccurrences(
+                    of: #"\d+"#, with: version, options: .regularExpression
+                )
+            }
+            if let range = userAgent.range(of: #"EdgA/(\d+)"#, options: .regularExpression) {
+                let version = userAgent[range].replacingOccurrences(of: "EdgA/", with: "")
+                return currentName.replacingOccurrences(
+                    of: #"\d+"#, with: version, options: .regularExpression
+                )
+            }
+        }
+
+        return currentName
     }
 }
