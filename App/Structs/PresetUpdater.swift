@@ -8,10 +8,11 @@ import Foundation
 @Observable
 class PresetUpdater {
 
-    // jnrbsn/user-agents: a well-known, independently maintained list
-    // of the latest user agent strings, auto-updated daily via GitHub Actions
+    // microlinkhq/top-user-agents: a well-known, independently maintained list
+    // of the most common user agent strings from real-world traffic data,
+    // updated weekly from 300M+ monthly requests
     private static let remoteUserAgentsURL = URL(
-        string: "https://jnrbsn.github.io/user-agents/user-agents.json"
+        string: "https://microlink.io/user-agents.json"
     )!
     private static let cachedUpdatesKey = "CachedUserAgentUpdates"
     private static let lastUpdateCheckKey = "LastPresetUpdateCheck"
