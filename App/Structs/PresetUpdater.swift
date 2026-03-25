@@ -34,20 +34,29 @@ class PresetUpdater {
               versionPattern: #"GSA/[0-9.]+"#, versionPrefix: "GSA/"),
     ]
 
-    // Android app mappings for Aptoide version lookups
-    private struct AndroidAppMapping {
-        let presetNamePrefix: String
-        let packageName: String
-        let versionPattern: String  // regex to match version in UA string
-        let versionPrefix: String   // prefix before version number (e.g. "Chrome/")
+    // berstend/chrome-versions: Chrome stable release versions per platform
+    private static let chromeVersionsURL = URL(
+        string: "https://cdn.jsdelivr.net/gh/berstend/chrome-versions/data/stable/all/version/latest.json"
+    )!
+
+    private struct ChromeVersionEntry: Codable {
+        let version: String
+        let milestone: Int
     }
 
-    private static let androidAppMappings: [AndroidAppMapping] = [
-        .init(presetNamePrefix: "Google Chrome", packageName: "com.android.chrome",
-              versionPattern: #"Chrome/[0-9.]+"#, versionPrefix: "Chrome/"),
-        .init(presetNamePrefix: "Microsoft Edge", packageName: "com.microsoft.emmx",
-              versionPattern: #"EdgA/[0-9.]+"#, versionPrefix: "EdgA/"),
+    private static let chromePlatformMappings: [(jsonKey: String, presetPlatform: String)] = [
+        ("mac", "(macOS)"),
+        ("android", "(Android)"),
     ]
+
+    // Microsoft Edge stable release notes page
+    private static let edgeReleaseNotesURL = URL(
+        string: "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel"
+    )!
+    // Edge mobile stable release notes page
+    private static let edgeMobileReleaseNotesURL = URL(
+        string: "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-mobile-stable-channel"
+    )!
 
     var isChecking: Bool = false
     var lastUpdateCheck: Date? {
@@ -88,11 +97,17 @@ class PresetUpdater {
         let iosPending = await computeIOSPendingUpdates()
         allPending.append(contentsOf: iosPending)
 
-        // Android updates from Aptoide versions
-        let androidPending = await computeAndroidPendingUpdates()
-        allPending.append(contentsOf: androidPending)
+        // Chrome stable release versions (macOS, Android)
+        let chromePending = await computeChromePendingUpdates()
+        allPending.append(contentsOf: chromePending)
 
-        pendingUpdates = allPending
+        // Edge stable release versions (macOS, Android, iOS)
+        let edgePending = await computeEdgePendingUpdates()
+        allPending.append(contentsOf: edgePending)
+
+        // Deduplicate by preset name (later sources take priority)
+        var seen: Set<String> = []
+        pendingUpdates = allPending.reversed().filter { seen.insert($0.presetName).inserted }.reversed()
         defaults.set(Date(), forKey: Self.lastUpdateCheckKey)
         defaults.synchronize()
 
@@ -114,8 +129,11 @@ class PresetUpdater {
         // iOS updates from App Store versions
         totalUpdated += await applyIOSUpdates()
 
-        // Android updates from Aptoide versions
-        totalUpdated += await applyAndroidUpdates()
+        // Chrome stable release versions (macOS, Android)
+        totalUpdated += await applyChromeUpdates()
+
+        // Edge stable release versions (macOS, Android, iOS)
+        totalUpdated += await applyEdgeUpdates()
 
         defaults.set(Date(), forKey: Self.lastUpdateCheckKey)
         defaults.synchronize()
@@ -189,53 +207,6 @@ class PresetUpdater {
         return app.version
     }
 
-    // MARK: - Aptoide Lookup
-
-    private struct AptoideResponse: Codable {
-        let data: AptoideData?
-    }
-
-    private struct AptoideData: Codable {
-        let file: AptoideFile?
-    }
-
-    private struct AptoideFile: Codable {
-        let vername: String
-    }
-
-    private func fetchAptoideVersion(packageName: String) async throws -> String {
-        let url = URL(string: "https://ws75.aptoide.com/api/7/app/getMeta?package_name=\(packageName)")!
-        let (data, response) = try await URLSession.shared.data(from: url)
-
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-            throw URLError(.badServerResponse)
-        }
-
-        let result = try JSONDecoder().decode(AptoideResponse.self, from: data)
-        guard let version = result.data?.file?.vername else {
-            throw URLError(.resourceUnavailable)
-        }
-        return version
-    }
-
-    /// Fetch all Android app versions concurrently, returning a map of packageName → version
-    private func fetchAllAptoideVersions() async -> [String: String] {
-        await withTaskGroup(of: (String, String?).self) { group in
-            for mapping in Self.androidAppMappings {
-                group.addTask {
-                    let version = try? await self.fetchAptoideVersion(packageName: mapping.packageName)
-                    return (mapping.packageName, version)
-                }
-            }
-            var versions: [String: String] = [:]
-            for await (packageName, version) in group {
-                if let version { versions[packageName] = version }
-            }
-            return versions
-        }
-    }
-
     /// Fetch all iOS app versions concurrently, returning a map of appStoreId → version
     private func fetchAllAppStoreVersions() async -> [String: String] {
         await withTaskGroup(of: (String, String?).self) { group in
@@ -251,6 +222,210 @@ class PresetUpdater {
             }
             return versions
         }
+    }
+
+    // MARK: - Chrome Versions Lookup
+
+    private func fetchChromeVersions() async throws -> [String: ChromeVersionEntry] {
+        let (data, response) = try await URLSession.shared.data(from: Self.chromeVersionsURL)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+
+        return try JSONDecoder().decode([String: ChromeVersionEntry].self, from: data)
+    }
+
+    // MARK: - Chrome Pending Updates
+
+    private func computeChromePendingUpdates() async -> [PendingPresetUpdate] {
+        guard let bundledPresets = loadBundledPresets(),
+              let chromeVersions = try? await fetchChromeVersions() else { return [] }
+        let cachedUpdates = Self.loadCachedUpdates() ?? [:]
+        var pending: [PendingPresetUpdate] = []
+
+        for (jsonKey, presetPlatform) in Self.chromePlatformMappings {
+            guard let entry = chromeVersions[jsonKey] else { continue }
+
+            for preset in bundledPresets where
+                preset.name.hasPrefix("Google Chrome") &&
+                preset.name.contains(presetPlatform) {
+
+                let currentUA = cachedUpdates[preset.name] ?? preset.userAgent
+                let updatedUA = currentUA.replacingOccurrences(
+                    of: #"Chrome/[0-9.]+"#,
+                    with: "Chrome/\(entry.version)",
+                    options: .regularExpression
+                )
+
+                guard currentUA != updatedUA else { continue }
+
+                let currentVersion = extractMobileVersion(
+                    from: currentUA, prefix: "Chrome/"
+                ) ?? "?"
+
+                pending.append(PendingPresetUpdate(
+                    presetName: preset.name,
+                    imageName: preset.imageName,
+                    currentVersion: currentVersion,
+                    updatedVersion: String(entry.milestone),
+                    updatedUserAgent: updatedUA
+                ))
+            }
+        }
+
+        return pending
+    }
+
+    private func applyChromeUpdates() async -> Int {
+        guard let bundledPresets = loadBundledPresets(),
+              let chromeVersions = try? await fetchChromeVersions() else { return 0 }
+        var updates: [String: String] = Self.loadCachedUpdates() ?? [:]
+        var changedCount = 0
+
+        for (jsonKey, presetPlatform) in Self.chromePlatformMappings {
+            guard let entry = chromeVersions[jsonKey] else { continue }
+
+            for preset in bundledPresets where
+                preset.name.hasPrefix("Google Chrome") &&
+                preset.name.contains(presetPlatform) {
+
+                let currentUA = updates[preset.name] ?? preset.userAgent
+                let updatedUA = currentUA.replacingOccurrences(
+                    of: #"Chrome/[0-9.]+"#,
+                    with: "Chrome/\(entry.version)",
+                    options: .regularExpression
+                )
+
+                if currentUA != updatedUA {
+                    updates[preset.name] = updatedUA
+                    changedCount += 1
+                }
+            }
+        }
+
+        saveCachedUpdates(updates)
+        return changedCount
+    }
+
+    // MARK: - Edge Version Scraping
+
+    /// Scrape the latest stable Edge version from Microsoft's release notes page.
+    /// Looks for the first h2 heading matching "Version X.X.X.X: ... (Stable)".
+    private func fetchEdgeVersion(from url: URL) async throws -> String {
+        let (data, response) = try await URLSession.shared.data(from: url)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200,
+              let html = String(data: data, encoding: .utf8) else {
+            throw URLError(.badServerResponse)
+        }
+
+        // Match: Version 146.0.3856.59: ... (Stable)
+        let pattern = #"Version\s+(\d+\.\d+\.\d+\.\d+):[^(]*\(Stable\)"#
+        guard let range = html.range(of: pattern, options: .regularExpression),
+              let versionRange = html[range].range(
+                  of: #"\d+\.\d+\.\d+\.\d+"#, options: .regularExpression
+              ) else {
+            throw URLError(.resourceUnavailable)
+        }
+
+        return String(html[versionRange])
+    }
+
+    /// Fetch Edge desktop and mobile versions concurrently
+    private func fetchEdgeVersions() async -> (desktop: String?, mobile: String?) {
+        async let desktopVersion = try? fetchEdgeVersion(from: Self.edgeReleaseNotesURL)
+        async let mobileVersion = try? fetchEdgeVersion(from: Self.edgeMobileReleaseNotesURL)
+        return await (desktopVersion, mobileVersion)
+    }
+
+    // MARK: - Edge Pending Updates
+
+    private func computeEdgePendingUpdates() async -> [PendingPresetUpdate] {
+        guard let bundledPresets = loadBundledPresets() else { return [] }
+        let cachedUpdates = Self.loadCachedUpdates() ?? [:]
+        let edgeVersions = await fetchEdgeVersions()
+        var pending: [PendingPresetUpdate] = []
+
+        let platforms: [(version: String?, platform: String, versionPattern: String, versionPrefix: String)] = [
+            (edgeVersions.desktop, "(macOS)", #"Edg/[0-9.]+"#, "Edg/"),
+            (edgeVersions.mobile, "(Android)", #"EdgA/[0-9.]+"#, "EdgA/"),
+            (edgeVersions.mobile, "(iOS)", #"EdgiOS/[0-9.]+"#, "EdgiOS/"),
+        ]
+
+        for (version, platform, versionPattern, versionPrefix) in platforms {
+            guard let version else { continue }
+
+            for preset in bundledPresets where
+                preset.name.hasPrefix("Microsoft Edge") &&
+                !preset.name.contains("EdgeHTML") &&
+                preset.name.contains(platform) {
+
+                let currentUA = cachedUpdates[preset.name] ?? preset.userAgent
+                let updatedUA = currentUA.replacingOccurrences(
+                    of: versionPattern,
+                    with: "\(versionPrefix)\(version)",
+                    options: .regularExpression
+                )
+
+                guard currentUA != updatedUA else { continue }
+
+                let currentVersion = extractMobileVersion(
+                    from: currentUA, prefix: versionPrefix
+                ) ?? "?"
+                let updatedVersion = version.components(separatedBy: ".").first ?? "?"
+
+                pending.append(PendingPresetUpdate(
+                    presetName: preset.name,
+                    imageName: preset.imageName,
+                    currentVersion: currentVersion,
+                    updatedVersion: updatedVersion,
+                    updatedUserAgent: updatedUA
+                ))
+            }
+        }
+
+        return pending
+    }
+
+    private func applyEdgeUpdates() async -> Int {
+        guard let bundledPresets = loadBundledPresets() else { return 0 }
+        var updates: [String: String] = Self.loadCachedUpdates() ?? [:]
+        let edgeVersions = await fetchEdgeVersions()
+        var changedCount = 0
+
+        let platforms: [(version: String?, platform: String, versionPattern: String, versionPrefix: String)] = [
+            (edgeVersions.desktop, "(macOS)", #"Edg/[0-9.]+"#, "Edg/"),
+            (edgeVersions.mobile, "(Android)", #"EdgA/[0-9.]+"#, "EdgA/"),
+            (edgeVersions.mobile, "(iOS)", #"EdgiOS/[0-9.]+"#, "EdgiOS/"),
+        ]
+
+        for (version, platform, versionPattern, versionPrefix) in platforms {
+            guard let version else { continue }
+
+            for preset in bundledPresets where
+                preset.name.hasPrefix("Microsoft Edge") &&
+                !preset.name.contains("EdgeHTML") &&
+                preset.name.contains(platform) {
+
+                let currentUA = updates[preset.name] ?? preset.userAgent
+                let updatedUA = currentUA.replacingOccurrences(
+                    of: versionPattern,
+                    with: "\(versionPrefix)\(version)",
+                    options: .regularExpression
+                )
+
+                if currentUA != updatedUA {
+                    updates[preset.name] = updatedUA
+                    changedCount += 1
+                }
+            }
+        }
+
+        saveCachedUpdates(updates)
+        return changedCount
     }
 
     // MARK: - iOS Pending Updates
@@ -307,79 +482,6 @@ class PresetUpdater {
             for preset in bundledPresets where
                 preset.name.hasPrefix(mapping.presetNamePrefix) &&
                 preset.name.contains("(iOS)") {
-
-                let currentUA = updates[preset.name] ?? preset.userAgent
-                let updatedUA = currentUA.replacingOccurrences(
-                    of: mapping.versionPattern,
-                    with: "\(mapping.versionPrefix)\(version)",
-                    options: .regularExpression
-                )
-
-                if currentUA != updatedUA {
-                    updates[preset.name] = updatedUA
-                    changedCount += 1
-                }
-            }
-        }
-
-        saveCachedUpdates(updates)
-        return changedCount
-    }
-
-    // MARK: - Android Pending Updates
-
-    private func computeAndroidPendingUpdates() async -> [PendingPresetUpdate] {
-        guard let bundledPresets = loadBundledPresets() else { return [] }
-        let cachedUpdates = Self.loadCachedUpdates() ?? [:]
-        let aptoideVersions = await fetchAllAptoideVersions()
-        var pending: [PendingPresetUpdate] = []
-
-        for mapping in Self.androidAppMappings {
-            guard let version = aptoideVersions[mapping.packageName] else { continue }
-
-            for preset in bundledPresets where
-                preset.name.hasPrefix(mapping.presetNamePrefix) &&
-                preset.name.contains("(Android)") {
-
-                let currentUA = cachedUpdates[preset.name] ?? preset.userAgent
-                let updatedUA = currentUA.replacingOccurrences(
-                    of: mapping.versionPattern,
-                    with: "\(mapping.versionPrefix)\(version)",
-                    options: .regularExpression
-                )
-
-                guard currentUA != updatedUA else { continue }
-
-                let currentVersion = extractMobileVersion(
-                    from: currentUA, prefix: mapping.versionPrefix
-                ) ?? "?"
-                let updatedVersion = version.components(separatedBy: ".").first ?? "?"
-
-                pending.append(PendingPresetUpdate(
-                    presetName: preset.name,
-                    imageName: preset.imageName,
-                    currentVersion: currentVersion,
-                    updatedVersion: updatedVersion,
-                    updatedUserAgent: updatedUA
-                ))
-            }
-        }
-
-        return pending
-    }
-
-    private func applyAndroidUpdates() async -> Int {
-        guard let bundledPresets = loadBundledPresets() else { return 0 }
-        var updates: [String: String] = Self.loadCachedUpdates() ?? [:]
-        let aptoideVersions = await fetchAllAptoideVersions()
-        var changedCount = 0
-
-        for mapping in Self.androidAppMappings {
-            guard let version = aptoideVersions[mapping.packageName] else { continue }
-
-            for preset in bundledPresets where
-                preset.name.hasPrefix(mapping.presetNamePrefix) &&
-                preset.name.contains("(Android)") {
 
                 let currentUA = updates[preset.name] ?? preset.userAgent
                 let updatedUA = currentUA.replacingOccurrences(
