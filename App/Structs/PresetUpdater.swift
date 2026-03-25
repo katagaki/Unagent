@@ -17,6 +17,38 @@ class PresetUpdater {
     private static let cachedUpdatesKey = "CachedUserAgentUpdates"
     private static let lastUpdateCheckKey = "LastPresetUpdateCheck"
 
+    // iOS app mappings for App Store version lookups
+    private struct iOSAppMapping {
+        let presetNamePrefix: String
+        let appStoreId: String
+        let versionPattern: String  // regex to match version in UA string
+        let versionPrefix: String   // prefix before version number (e.g. "CriOS/")
+    }
+
+    private static let iOSAppMappings: [iOSAppMapping] = [
+        .init(presetNamePrefix: "Google Chrome", appStoreId: "535886823",
+              versionPattern: #"CriOS/[0-9.]+"#, versionPrefix: "CriOS/"),
+        .init(presetNamePrefix: "Microsoft Edge", appStoreId: "1288723196",
+              versionPattern: #"EdgiOS/[0-9.]+"#, versionPrefix: "EdgiOS/"),
+        .init(presetNamePrefix: "Google App", appStoreId: "284815942",
+              versionPattern: #"GSA/[0-9.]+"#, versionPrefix: "GSA/"),
+    ]
+
+    // Android app mappings for Aptoide version lookups
+    private struct AndroidAppMapping {
+        let presetNamePrefix: String
+        let packageName: String
+        let versionPattern: String  // regex to match version in UA string
+        let versionPrefix: String   // prefix before version number (e.g. "Chrome/")
+    }
+
+    private static let androidAppMappings: [AndroidAppMapping] = [
+        .init(presetNamePrefix: "Google Chrome", packageName: "com.android.chrome",
+              versionPattern: #"Chrome/[0-9.]+"#, versionPrefix: "Chrome/"),
+        .init(presetNamePrefix: "Microsoft Edge", packageName: "com.microsoft.emmx",
+              versionPattern: #"EdgA/[0-9.]+"#, versionPrefix: "EdgA/"),
+    ]
+
     var isChecking: Bool = false
     var lastUpdateCheck: Date? {
         defaults.object(forKey: Self.lastUpdateCheckKey) as? Date
@@ -45,14 +77,24 @@ class PresetUpdater {
     func checkForUpdatesQuietly() async {
         isChecking = true
 
-        do {
-            let remoteUserAgents = try await fetchRemoteUserAgents()
-            pendingUpdates = computePendingUpdates(from: remoteUserAgents)
-            defaults.set(Date(), forKey: Self.lastUpdateCheckKey)
-            defaults.synchronize()
-        } catch {
-            // Silently fail on background check
+        var allPending: [PendingPresetUpdate] = []
+
+        // Desktop/Android updates from remote UA list
+        if let remoteUserAgents = try? await fetchRemoteUserAgents() {
+            allPending.append(contentsOf: computePendingUpdates(from: remoteUserAgents))
         }
+
+        // iOS updates from App Store versions
+        let iosPending = await computeIOSPendingUpdates()
+        allPending.append(contentsOf: iosPending)
+
+        // Android updates from Aptoide versions
+        let androidPending = await computeAndroidPendingUpdates()
+        allPending.append(contentsOf: androidPending)
+
+        pendingUpdates = allPending
+        defaults.set(Date(), forKey: Self.lastUpdateCheckKey)
+        defaults.synchronize()
 
         isChecking = false
     }
@@ -62,22 +104,28 @@ class PresetUpdater {
         isChecking = true
         updateResult = nil
 
-        do {
-            let remoteUserAgents = try await fetchRemoteUserAgents()
-            let updatedCount = applyRemoteUserAgents(remoteUserAgents)
+        var totalUpdated = 0
 
-            defaults.set(Date(), forKey: Self.lastUpdateCheckKey)
-            defaults.synchronize()
+        // Desktop/Android updates from remote UA list
+        if let remoteUserAgents = try? await fetchRemoteUserAgents() {
+            totalUpdated += applyRemoteUserAgents(remoteUserAgents)
+        }
 
-            pendingUpdates.removeAll()
+        // iOS updates from App Store versions
+        totalUpdated += await applyIOSUpdates()
 
-            if updatedCount > 0 {
-                updateResult = .updated(count: updatedCount)
-            } else {
-                updateResult = .noUpdates
-            }
-        } catch {
-            updateResult = .failed(error.localizedDescription)
+        // Android updates from Aptoide versions
+        totalUpdated += await applyAndroidUpdates()
+
+        defaults.set(Date(), forKey: Self.lastUpdateCheckKey)
+        defaults.synchronize()
+
+        pendingUpdates.removeAll()
+
+        if totalUpdated > 0 {
+            updateResult = .updated(count: totalUpdated)
+        } else {
+            updateResult = .noUpdates
         }
 
         isChecking = false
@@ -112,6 +160,254 @@ class PresetUpdater {
         }
 
         return try JSONDecoder().decode([String].self, from: data)
+    }
+
+    // MARK: - App Store Lookup
+
+    private struct iTunesLookupResponse: Codable {
+        let resultCount: Int
+        let results: [iTunesLookupResult]
+    }
+
+    private struct iTunesLookupResult: Codable {
+        let version: String
+    }
+
+    private func fetchAppStoreVersion(appId: String) async throws -> String {
+        let url = URL(string: "https://itunes.apple.com/lookup?id=\(appId)")!
+        let (data, response) = try await URLSession.shared.data(from: url)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+
+        let result = try JSONDecoder().decode(iTunesLookupResponse.self, from: data)
+        guard let app = result.results.first else {
+            throw URLError(.resourceUnavailable)
+        }
+        return app.version
+    }
+
+    // MARK: - Aptoide Lookup
+
+    private struct AptoideResponse: Codable {
+        let data: AptoideData?
+    }
+
+    private struct AptoideData: Codable {
+        let file: AptoideFile?
+    }
+
+    private struct AptoideFile: Codable {
+        let vername: String
+    }
+
+    private func fetchAptoideVersion(packageName: String) async throws -> String {
+        let url = URL(string: "https://ws75.aptoide.com/api/7/app/getMeta?package_name=\(packageName)")!
+        let (data, response) = try await URLSession.shared.data(from: url)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+
+        let result = try JSONDecoder().decode(AptoideResponse.self, from: data)
+        guard let version = result.data?.file?.vername else {
+            throw URLError(.resourceUnavailable)
+        }
+        return version
+    }
+
+    /// Fetch all Android app versions concurrently, returning a map of packageName → version
+    private func fetchAllAptoideVersions() async -> [String: String] {
+        await withTaskGroup(of: (String, String?).self) { group in
+            for mapping in Self.androidAppMappings {
+                group.addTask {
+                    let version = try? await self.fetchAptoideVersion(packageName: mapping.packageName)
+                    return (mapping.packageName, version)
+                }
+            }
+            var versions: [String: String] = [:]
+            for await (packageName, version) in group {
+                if let version { versions[packageName] = version }
+            }
+            return versions
+        }
+    }
+
+    /// Fetch all iOS app versions concurrently, returning a map of appStoreId → version
+    private func fetchAllAppStoreVersions() async -> [String: String] {
+        await withTaskGroup(of: (String, String?).self) { group in
+            for mapping in Self.iOSAppMappings {
+                group.addTask {
+                    let version = try? await self.fetchAppStoreVersion(appId: mapping.appStoreId)
+                    return (mapping.appStoreId, version)
+                }
+            }
+            var versions: [String: String] = [:]
+            for await (appId, version) in group {
+                if let version { versions[appId] = version }
+            }
+            return versions
+        }
+    }
+
+    // MARK: - iOS Pending Updates
+
+    private func computeIOSPendingUpdates() async -> [PendingPresetUpdate] {
+        guard let bundledPresets = loadBundledPresets() else { return [] }
+        let cachedUpdates = Self.loadCachedUpdates() ?? [:]
+        let appStoreVersions = await fetchAllAppStoreVersions()
+        var pending: [PendingPresetUpdate] = []
+
+        for mapping in Self.iOSAppMappings {
+            guard let version = appStoreVersions[mapping.appStoreId] else { continue }
+
+            for preset in bundledPresets where
+                preset.name.hasPrefix(mapping.presetNamePrefix) &&
+                preset.name.contains("(iOS)") {
+
+                let currentUA = cachedUpdates[preset.name] ?? preset.userAgent
+                let updatedUA = currentUA.replacingOccurrences(
+                    of: mapping.versionPattern,
+                    with: "\(mapping.versionPrefix)\(version)",
+                    options: .regularExpression
+                )
+
+                guard currentUA != updatedUA else { continue }
+
+                let currentVersion = extractMobileVersion(
+                    from: currentUA, prefix: mapping.versionPrefix
+                ) ?? "?"
+                let updatedVersion = version.components(separatedBy: ".").first ?? "?"
+
+                pending.append(PendingPresetUpdate(
+                    presetName: preset.name,
+                    imageName: preset.imageName,
+                    currentVersion: currentVersion,
+                    updatedVersion: updatedVersion,
+                    updatedUserAgent: updatedUA
+                ))
+            }
+        }
+
+        return pending
+    }
+
+    private func applyIOSUpdates() async -> Int {
+        guard let bundledPresets = loadBundledPresets() else { return 0 }
+        var updates: [String: String] = Self.loadCachedUpdates() ?? [:]
+        let appStoreVersions = await fetchAllAppStoreVersions()
+        var changedCount = 0
+
+        for mapping in Self.iOSAppMappings {
+            guard let version = appStoreVersions[mapping.appStoreId] else { continue }
+
+            for preset in bundledPresets where
+                preset.name.hasPrefix(mapping.presetNamePrefix) &&
+                preset.name.contains("(iOS)") {
+
+                let currentUA = updates[preset.name] ?? preset.userAgent
+                let updatedUA = currentUA.replacingOccurrences(
+                    of: mapping.versionPattern,
+                    with: "\(mapping.versionPrefix)\(version)",
+                    options: .regularExpression
+                )
+
+                if currentUA != updatedUA {
+                    updates[preset.name] = updatedUA
+                    changedCount += 1
+                }
+            }
+        }
+
+        saveCachedUpdates(updates)
+        return changedCount
+    }
+
+    // MARK: - Android Pending Updates
+
+    private func computeAndroidPendingUpdates() async -> [PendingPresetUpdate] {
+        guard let bundledPresets = loadBundledPresets() else { return [] }
+        let cachedUpdates = Self.loadCachedUpdates() ?? [:]
+        let aptoideVersions = await fetchAllAptoideVersions()
+        var pending: [PendingPresetUpdate] = []
+
+        for mapping in Self.androidAppMappings {
+            guard let version = aptoideVersions[mapping.packageName] else { continue }
+
+            for preset in bundledPresets where
+                preset.name.hasPrefix(mapping.presetNamePrefix) &&
+                preset.name.contains("(Android)") {
+
+                let currentUA = cachedUpdates[preset.name] ?? preset.userAgent
+                let updatedUA = currentUA.replacingOccurrences(
+                    of: mapping.versionPattern,
+                    with: "\(mapping.versionPrefix)\(version)",
+                    options: .regularExpression
+                )
+
+                guard currentUA != updatedUA else { continue }
+
+                let currentVersion = extractMobileVersion(
+                    from: currentUA, prefix: mapping.versionPrefix
+                ) ?? "?"
+                let updatedVersion = version.components(separatedBy: ".").first ?? "?"
+
+                pending.append(PendingPresetUpdate(
+                    presetName: preset.name,
+                    imageName: preset.imageName,
+                    currentVersion: currentVersion,
+                    updatedVersion: updatedVersion,
+                    updatedUserAgent: updatedUA
+                ))
+            }
+        }
+
+        return pending
+    }
+
+    private func applyAndroidUpdates() async -> Int {
+        guard let bundledPresets = loadBundledPresets() else { return 0 }
+        var updates: [String: String] = Self.loadCachedUpdates() ?? [:]
+        let aptoideVersions = await fetchAllAptoideVersions()
+        var changedCount = 0
+
+        for mapping in Self.androidAppMappings {
+            guard let version = aptoideVersions[mapping.packageName] else { continue }
+
+            for preset in bundledPresets where
+                preset.name.hasPrefix(mapping.presetNamePrefix) &&
+                preset.name.contains("(Android)") {
+
+                let currentUA = updates[preset.name] ?? preset.userAgent
+                let updatedUA = currentUA.replacingOccurrences(
+                    of: mapping.versionPattern,
+                    with: "\(mapping.versionPrefix)\(version)",
+                    options: .regularExpression
+                )
+
+                if currentUA != updatedUA {
+                    updates[preset.name] = updatedUA
+                    changedCount += 1
+                }
+            }
+        }
+
+        saveCachedUpdates(updates)
+        return changedCount
+    }
+
+    // MARK: - Version Extraction Helpers
+
+    private func extractMobileVersion(from userAgent: String, prefix: String) -> String? {
+        let escaped = NSRegularExpression.escapedPattern(for: prefix)
+        let pattern = "\(escaped)(\\d+)"
+        guard let range = userAgent.range(of: pattern, options: .regularExpression) else {
+            return nil
+        }
+        return String(userAgent[range].dropFirst(prefix.count))
     }
 
     // MARK: - Pending Updates Computation
