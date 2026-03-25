@@ -12,7 +12,7 @@ class PresetUpdater {
     // of the most common user agent strings from real-world traffic data,
     // updated weekly from 300M+ monthly requests
     private static let remoteUserAgentsURL = URL(
-        string: "https://microlink.io/user-agents.json"
+        string: "https://raw.githubusercontent.com/microlinkhq/top-user-agents/master/src/index.json"
     )!
     private static let cachedUpdatesKey = "CachedUserAgentUpdates"
     private static let lastUpdateCheckKey = "LastPresetUpdateCheck"
