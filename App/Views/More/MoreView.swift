@@ -57,6 +57,8 @@ struct MoreView: View {
                             defaults.set(newValue, forKey: "AutoRefreshEnabled")
                             defaults.set(true, forKey: "ShouldExtensionUpdate")
                         }
+                } header: {
+                    Text("More.General")
                 } footer: {
                     Text("More.AutoRefresh.Description")
                 }

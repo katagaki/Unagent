@@ -4680,6 +4680,34 @@
         }
       }
     },
+    "More.General": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "General"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一般"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通用"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一般"
+          }
+        }
+      }
+    },
     "More.AutoRefresh": {
       "localizations": {
         "en": {
@@ -4691,7 +4719,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Safariで自動更新"
+            "value": "Safariで自動リロード"
           }
         },
         "zh-Hans": {
@@ -4719,7 +4747,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "オンにすると、ユーザーエージェントの変更時にSafariで次にWebページを訪問した際に自動的に更新されます。オフの場合、ユーザーエージェントは2番目に訪問またはロードしたWebページから更新されます。"
+            "value": "オンにすると、ユーザーエージェントを変更した際にSafariで次に訪問するWebページが自動的にリロードされます。オフの場合、変更後2つ目に訪問するWebページから反映されます。"
           }
         },
         "zh-Hans": {
