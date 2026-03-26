@@ -4719,19 +4719,19 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "ユーザーエージェントルールを即時更新"
+            "value": "再読み込みでユーザーエージェントを更新"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "立即更新用户代理规则"
+            "value": "重新加载以更新用户代理"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "立即更新使用者代理規則"
+            "value": "重新載入以更新使用者代理"
           }
         }
       }
