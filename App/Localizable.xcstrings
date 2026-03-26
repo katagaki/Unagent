@@ -4631,6 +4631,24 @@
             "state": "translated",
             "value": "No Updates Available"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新はありません"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有可用更新"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "沒有可用更新"
+          }
         }
       }
     },
@@ -4640,6 +4658,24 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pull to refresh to check for updates."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プルして更新を確認します。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下拉刷新以检查更新。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下拉重新整理以檢查更新。"
           }
         }
       }
@@ -4651,6 +4687,24 @@
             "state": "translated",
             "value": "Auto-Refresh in Safari"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safariで自動更新"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在Safari中自动刷新"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在Safari中自動重新整理"
+          }
         }
       }
     },
@@ -4660,6 +4714,24 @@
           "stringUnit": {
             "state": "translated",
             "value": "When turned on, any user agent change will cause a refresh the next time you visit a webpage in Safari. When turned off, user agents will only be updated on the 2nd webpage you visit or load."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オンにすると、ユーザーエージェントの変更時にSafariで次にWebページを訪問した際に自動的に更新されます。オフの場合、ユーザーエージェントは2番目に訪問またはロードしたWebページから更新されます。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启后，任何用户代理更改都会在您下次访问Safari中的网页时自动刷新。关闭后，用户代理仅在您访问或加载的第2个网页时更新。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開啟後，任何使用者代理變更都會在您下次造訪Safari中的網頁時自動重新整理。關閉後，使用者代理僅在您造訪或載入的第2個網頁時更新。"
           }
         }
       }
