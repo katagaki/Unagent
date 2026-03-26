@@ -501,16 +501,46 @@
     },
     "More.PresetUpdates": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preset-Updates"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Preset Updates"
           }
         },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualizaciones de presets"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mises à jour des préréglages"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiornamenti preset"
+          }
+        },
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "プリセットの更新"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atualizações de presets"
           }
         },
         "zh-Hans": {
@@ -529,16 +559,46 @@
     },
     "More.PresetUpdates.UpdateAll": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle aktualisieren"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Update All"
           }
         },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualizar todo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tout mettre à jour"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiorna tutto"
+          }
+        },
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "すべて更新"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atualizar tudo"
           }
         },
         "zh-Hans": {
@@ -557,16 +617,46 @@
     },
     "More.PresetUpdates.VersionChange %@ %@": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %1$@ → %2$@"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Version %1$@ → %2$@"
           }
         },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versión %1$@ → %2$@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %1$@ → %2$@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versione %1$@ → %2$@"
+          }
+        },
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "バージョン %1$@ → %2$@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versão %1$@ → %2$@"
           }
         },
         "zh-Hans": {
@@ -4626,16 +4716,46 @@
     },
     "More.PresetUpdates.NoUpdates": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Updates verfügbar"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "No Updates Available"
           }
         },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay actualizaciones disponibles"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune mise à jour disponible"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun aggiornamento disponibile"
+          }
+        },
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "更新はありません"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma atualização disponível"
           }
         },
         "zh-Hans": {
@@ -4654,16 +4774,46 @@
     },
     "More.PresetUpdates.NoUpdates.Description": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zum Aktualisieren nach unten ziehen."
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Pull to refresh to check for updates."
           }
         },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desliza hacia abajo para buscar actualizaciones."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tirez pour actualiser et vérifier les mises à jour."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scorri verso il basso per controllare gli aggiornamenti."
+          }
+        },
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "プルして更新を確認します。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puxe para atualizar e verificar atualizações."
           }
         },
         "zh-Hans": {
@@ -4680,46 +4830,48 @@
         }
       }
     },
-    "More.General": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "一般"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "通用"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "一般"
-          }
-        }
-      }
-    },
     "More.AutoRefresh": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neu laden, um User-Agents zu aktualisieren"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Reload to Update User Agents"
           }
         },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recargar para actualizar agentes de usuario"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recharger pour mettre à jour les agents utilisateurs"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ricarica per aggiornare gli user agent"
+          }
+        },
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "再読み込みでユーザーエージェントを更新"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recarregar para atualizar agentes de usuário"
           }
         },
         "zh-Hans": {
@@ -4738,16 +4890,46 @@
     },
     "More.AutoRefresh.Description": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wenn aktiviert, wird beim nächsten Besuch einer Webseite in Safari nach einer User-Agent-Änderung die Seite automatisch neu geladen. Wenn deaktiviert, wird der User-Agent erst ab der 2. besuchten Webseite aktualisiert."
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "When turned on, any user agent change will cause a refresh the next time you visit a webpage in Safari. When turned off, user agents will only be updated on the 2nd webpage you visit or load."
           }
         },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando está activado, cualquier cambio de agente de usuario provocará una recarga la próxima vez que visites una página web en Safari. Cuando está desactivado, los agentes de usuario solo se actualizarán en la 2.ª página web que visites o cargues."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lorsque cette option est activée, tout changement d'agent utilisateur provoquera un rechargement lors de votre prochaine visite d'une page web dans Safari. Lorsqu'elle est désactivée, les agents utilisateurs ne seront mis à jour qu'à partir de la 2e page web visitée ou chargée."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quando attivo, qualsiasi modifica dello user agent causerà un ricaricamento alla prossima visita di una pagina web in Safari. Quando disattivo, gli user agent verranno aggiornati solo dalla 2ª pagina web visitata o caricata."
+          }
+        },
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "オンにすると、ユーザーエージェントを変更後Safariで次にWebページを訪問する際に一回再読み込みが発生します。オフの場合、変更後2つ目に訪問するWebページから反映されます。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quando ativado, qualquer alteração de agente de usuário causará um recarregamento na próxima vez que você visitar uma página web no Safari. Quando desativado, os agentes de usuário só serão atualizados na 2ª página web que você visitar ou carregar."
           }
         },
         "zh-Hans": {
