@@ -52,6 +52,10 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 if let siteSettings = defaults.string(forKey: "SiteSettings") {
                     responseContent.updateValue(siteSettings.replacingOccurrences(of: "\\", with: ""), forKey: "siteSettings")
                 }
+                responseContent.updateValue(
+                    defaults.bool(forKey: "AutoRefreshEnabled") ? "true" : "false",
+                    forKey: "autoRefreshEnabled"
+                )
                 response.userInfo = ["message": responseContent]
 
             case "hasExtensionUpdated":

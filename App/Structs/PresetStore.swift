@@ -25,10 +25,8 @@ class PresetStore {
     func loadPresets() {
         var allPresets: [Preset] = []
 
-        // Load built-in presets from JSON
-        if let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           var builtIn = try? JSONDecoder().decode([Preset].self, from: data) {
+        // Load built-in presets, preferring cached remote presets over bundled ones
+        if var builtIn = loadBuiltInPresets() {
             for i in builtIn.indices {
                 builtIn[i].isBuiltIn = true
             }
@@ -162,5 +160,97 @@ class PresetStore {
 
     var visibleBuiltInPresets: [Preset] {
         builtInPresets.filter { !hiddenPresetNames.contains($0.name) }
+    }
+
+    // MARK: - Remote Preset Updates
+
+    private func loadBuiltInPresets() -> [Preset]? {
+        guard let url = Bundle.main.url(forResource: "Presets", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              var bundled = try? JSONDecoder().decode([Preset].self, from: data) else {
+            return nil
+        }
+
+        // Apply cached user agent updates from online sources
+        guard let updates = PresetUpdater.loadCachedUpdates() else {
+            return bundled
+        }
+
+        for i in bundled.indices {
+            if let updatedUA = updates[bundled[i].name] {
+                bundled[i].userAgent = updatedUA
+                // Update the version number in the preset name if it changed
+                bundled[i].name = updatedPresetName(
+                    currentName: bundled[i].name,
+                    userAgent: updatedUA
+                )
+            }
+        }
+
+        return bundled
+    }
+
+    private func updatedPresetName(currentName: String, userAgent: String) -> String {
+        // Extract version from the user agent and update the name
+        // e.g. "Google Chrome 144 (macOS)" → "Google Chrome 132 (macOS)"
+
+        // iOS Chrome (CriOS) — check before desktop Chrome
+        if currentName.contains("Chrome") && currentName.contains("(iOS)") {
+            if let range = userAgent.range(of: #"CriOS/(\d+)"#, options: .regularExpression) {
+                let version = userAgent[range].replacingOccurrences(of: "CriOS/", with: "")
+                return currentName.replacingOccurrences(
+                    of: #"\d+"#, with: version, options: .regularExpression
+                )
+            }
+        }
+
+        // iOS Edge (EdgiOS) — check before desktop Edge
+        if currentName.contains("Edge") && !currentName.contains("EdgeHTML")
+            && currentName.contains("(iOS)") {
+            if let range = userAgent.range(of: #"EdgiOS/(\d+)"#, options: .regularExpression) {
+                let version = userAgent[range].replacingOccurrences(of: "EdgiOS/", with: "")
+                return currentName.replacingOccurrences(
+                    of: #"\d+"#, with: version, options: .regularExpression
+                )
+            }
+        }
+
+        // Google App (GSA)
+        if currentName.contains("Google App") {
+            if let range = userAgent.range(of: #"GSA/(\d+)"#, options: .regularExpression) {
+                let version = userAgent[range].replacingOccurrences(of: "GSA/", with: "")
+                return currentName.replacingOccurrences(
+                    of: #"\d+"#, with: version, options: .regularExpression
+                )
+            }
+        }
+
+        // Desktop/Android Chrome
+        if currentName.contains("Chrome") && !currentName.contains("Google App") {
+            if let range = userAgent.range(of: #"Chrome/(\d+)"#, options: .regularExpression) {
+                let version = userAgent[range].replacingOccurrences(of: "Chrome/", with: "")
+                return currentName.replacingOccurrences(
+                    of: #"\d+"#, with: version, options: .regularExpression
+                )
+            }
+        }
+
+        // Desktop/Android Edge
+        if currentName.contains("Edge") && !currentName.contains("EdgeHTML") {
+            if let range = userAgent.range(of: #"Edg/(\d+)"#, options: .regularExpression) {
+                let version = userAgent[range].replacingOccurrences(of: "Edg/", with: "")
+                return currentName.replacingOccurrences(
+                    of: #"\d+"#, with: version, options: .regularExpression
+                )
+            }
+            if let range = userAgent.range(of: #"EdgA/(\d+)"#, options: .regularExpression) {
+                let version = userAgent[range].replacingOccurrences(of: "EdgA/", with: "")
+                return currentName.replacingOccurrences(
+                    of: #"\d+"#, with: version, options: .regularExpression
+                )
+            }
+        }
+
+        return currentName
     }
 }

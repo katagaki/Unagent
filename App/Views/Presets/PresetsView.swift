@@ -7,7 +7,8 @@ import SwiftUI
 
 struct PresetsView: View {
 
-    @State var presetStore = PresetStore()
+    @Environment(PresetStore.self) var presetStore
+
     @State var isShowingNewPreset: Bool = false
     @State var selectedTab: PresetTab = .visible
 

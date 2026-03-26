@@ -5,77 +5,127 @@
 //  Created by シンジャスティン on 2023/08/23.
 //
 
-import Komponents
 import SwiftUI
 
 struct MoreView: View {
 
-    @State var viewPath: [ViewPath] = []
+    @Environment(PresetUpdater.self) var presetUpdater
+    @Environment(PresetStore.self) var presetStore
+
+    @State var isAutoRefreshEnabled: Bool = defaults.bool(forKey: "AutoRefreshEnabled")
 
     var body: some View {
-        NavigationStack(path: $viewPath) {
-            MoreList(repoName: "katagaki/Unagent", viewPath: ViewPath.moreAttributions) { }
-            .scrollContentBackground(.hidden)
-            .gradientBackground()
-            .navigationDestination(for: ViewPath.self) { viewPath in
-                switch viewPath {
-                    case .moreAttributions: LicensesView(licenses: [
-                        License(libraryName: "Translations", text:
-"""
-Translations in this app were kindly provided by the below contributors:
+        NavigationStack {
+            List {
+                Section {
+                    if presetUpdater.pendingUpdates.isEmpty {
+                        ContentUnavailableView(
+                            "More.PresetUpdates.NoUpdates",
+                            systemImage: "checkmark.circle",
+                            description: Text("More.PresetUpdates.NoUpdates.Description")
+                        )
+                    } else {
+                        ForEach(presetUpdater.pendingUpdates) { update in
+                            PresetUpdateRow(update: update) {
+                                withAnimation {
+                                    presetUpdater.applyUpdate(update)
+                                    presetStore.loadPresets()
+                                }
+                            }
+                        }
+                    }
+                } header: {
+                    HStack {
+                        Text("More.PresetUpdates")
+                        Spacer()
+                        if !presetUpdater.pendingUpdates.isEmpty {
+                            Button("More.PresetUpdates.UpdateAll") {
+                                withAnimation {
+                                    presetUpdater.applyAllPendingUpdates()
+                                    presetStore.loadPresets()
+                                }
+                            }
+                            .font(.subheadline)
+                        }
+                    }
+                }
 
-- Portugese (Brazil): Gabriel Garcia
+                Section {
+                    Toggle("More.AutoRefresh", isOn: $isAutoRefreshEnabled)
+                        .onChange(of: isAutoRefreshEnabled) { _, newValue in
+                            defaults.set(newValue, forKey: "AutoRefreshEnabled")
+                            defaults.set(true, forKey: "ShouldExtensionUpdate")
+                        }
+                } header: {
+                    Text("More.General")
+                } footer: {
+                    Text("More.AutoRefresh.Description")
+                }
 
-Thank you to every contributor who has contributed to the project!
-"""),
-                        License(libraryName: "FaviconFinder", text:
-"""
-Copyright (c) 2022 William Lumley <will@lumley.io>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-"""),
-                        License(libraryName: "SwiftSoup", text:
-"""
-MIT License
-
-Copyright (c) 2016 Nabil Chatbi
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-""")])
+                Section {
+                    Link(destination: URL(string: "https://github.com/katagaki/Unagent")!) {
+                        HStack {
+                            Text("More.SourceCode")
+                            Spacer()
+                            Text("katagaki/Unagent")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .tint(.primary)
+                    NavigationLink {
+                        AttributionsView()
+                    } label: {
+                        Text("More.Attribution")
+                    }
                 }
             }
+            .listStyle(.insetGrouped)
+            .listSectionSpacing(.compact)
+            .scrollContentBackground(.hidden)
+            .gradientBackground()
+            .navigationTitle("ViewTitle.More")
+            .refreshable {
+                await presetUpdater.checkForUpdatesQuietly()
+            }
         }
+    }
+}
+
+struct PresetUpdateRow: View {
+
+    let update: PresetUpdater.PendingPresetUpdate
+    let onUpdate: () -> Void
+
+    var body: some View {
+        HStack(spacing: 12) {
+            if UIImage(named: update.imageName) != nil {
+                Image(update.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+            } else {
+                Image(systemName: update.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 32, height: 32)
+                    .foregroundStyle(.secondary)
+            }
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(update.presetName)
+                Text("More.PresetUpdates.VersionChange \(update.currentVersion) \(update.updatedVersion)")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer()
+
+            Button("Shared.Update") {
+                onUpdate()
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.small)
+        }
+        .padding(.vertical, 4)
     }
 }

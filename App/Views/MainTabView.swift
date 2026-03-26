@@ -15,7 +15,8 @@ struct MainTabView: View {
     @AppStorage(wrappedValue: 0, "LaunchCount", store: .standard) var launchCount: Int
 
     @State var selectedTab: String = "Settings"
-
+    @State var presetStore = PresetStore()
+    @State var presetUpdater = PresetUpdater()
     var body: some View {
         TabView(selection: $selectedTab) {
             Tab("Tab.SetUp", systemImage: "checklist", value: "SetUp") {
@@ -30,13 +31,17 @@ struct MainTabView: View {
             Tab("Tab.More", systemImage: "ellipsis", value: "More") {
                 MoreView()
             }
+            .badge(presetUpdater.pendingUpdates.count)
         }
+        .environment(presetStore)
+        .environment(presetUpdater)
         .task {
             launchCount += 1
             if launchCount > 2 && !hasReviewBeenPrompted {
                 requestReview()
                 hasReviewBeenPrompted = true
             }
+            await presetUpdater.checkForUpdatesQuietly()
         }
     }
 }

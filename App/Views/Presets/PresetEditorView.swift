@@ -19,6 +19,7 @@ struct PresetEditorView: View {
     @State private var source: String = ""
     @State private var viewport: Viewport?
     @State private var isShowingIconPicker: Bool = false
+    @State private var safariURL: URL?
 
     var body: some View {
         NavigationView {
@@ -66,13 +67,34 @@ struct PresetEditorView: View {
 
                 ViewportPickerSection(viewport: $viewport)
 
-                Section {
-                    TextField("Presets.Editor.SourceURL", text: $source)
-                        .autocorrectionDisabled()
-                        .autocapitalization(.none)
-                        .keyboardType(.URL)
-                } header: {
-                    Text("Presets.Detail.References")
+                if let preset = editingPreset, !preset.allSources.isEmpty {
+                    Section {
+                        ForEach(Array(preset.allSources.enumerated()), id: \.offset) { index, urlString in
+                            Button {
+                                if let url = URL(string: urlString) {
+                                    safariURL = url
+                                }
+                            } label: {
+                                HStack {
+                                    Image(systemName: "safari")
+                                        .foregroundStyle(.accent)
+                                    Text("\(index + 1). \(URL(string: urlString)?.host ?? urlString)")
+                                        .font(.subheadline)
+                                }
+                            }
+                        }
+                    } header: {
+                        Text("Presets.Detail.References")
+                    }
+                } else {
+                    Section {
+                        TextField("Presets.Editor.SourceURL", text: $source)
+                            .autocorrectionDisabled()
+                            .autocapitalization(.none)
+                            .keyboardType(.URL)
+                    } header: {
+                        Text("Presets.Detail.References")
+                    }
                 }
             }
             .navigationTitle(mode == .new ? "ViewTitle.Presets.New" : "ViewTitle.Presets.Edit")
@@ -109,6 +131,10 @@ struct PresetEditorView: View {
             }
             .sheet(isPresented: $isShowingIconPicker) {
                 IconPickerView(selectedIcon: $imageName)
+            }
+            .sheet(item: $safariURL) { url in
+                SafariView(url: url)
+                    .ignoresSafeArea()
             }
             .onAppear {
                 if let preset = editingPreset {
