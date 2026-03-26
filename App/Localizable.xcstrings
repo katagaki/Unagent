@@ -4643,6 +4643,26 @@
           }
         }
       }
+    },
+    "More.AutoRefresh": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto-Refresh in Safari"
+          }
+        }
+      }
+    },
+    "More.AutoRefresh.Description": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When turned on, any user agent change will cause a refresh the next time you visit a webpage in Safari. When turned off, user agents will only be updated on the 2nd webpage you visit or load."
+          }
+        }
+      }
     }
   },
   "version": "1.0"

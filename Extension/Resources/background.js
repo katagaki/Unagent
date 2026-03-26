@@ -105,13 +105,16 @@ function updateSettings() {
                 hasConfigBeenUpdated = true;
             }
         }
-        // Reload tab if config was updated
+        // Reload tab if config was updated and auto-refresh is enabled
         if (hasConfigBeenUpdated) {
-            browser.tabs.getCurrent((tab) => {
-                setTimeout(() => {
-                    browser.tabs.reload(tab.id);
-                }, 500);
-            });
+            let autoRefreshEnabled = response["autoRefreshEnabled"] === "true";
+            if (autoRefreshEnabled) {
+                browser.tabs.getCurrent((tab) => {
+                    setTimeout(() => {
+                        browser.tabs.reload(tab.id);
+                    }, 500);
+                });
+            }
         }
     });
 }

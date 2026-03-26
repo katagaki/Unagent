@@ -12,6 +12,8 @@ struct MoreView: View {
     @Environment(PresetUpdater.self) var presetUpdater
     @Environment(PresetStore.self) var presetStore
 
+    @State var isAutoRefreshEnabled: Bool = defaults.bool(forKey: "AutoRefreshEnabled")
+
     var body: some View {
         NavigationStack {
             List {
@@ -47,6 +49,16 @@ struct MoreView: View {
                             .font(.subheadline)
                         }
                     }
+                }
+
+                Section {
+                    Toggle("More.AutoRefresh", isOn: $isAutoRefreshEnabled)
+                        .onChange(of: isAutoRefreshEnabled) { _, newValue in
+                            defaults.set(newValue, forKey: "AutoRefreshEnabled")
+                            defaults.set(true, forKey: "ShouldExtensionUpdate")
+                        }
+                } footer: {
+                    Text("More.AutoRefresh.Description")
                 }
 
                 Section {
