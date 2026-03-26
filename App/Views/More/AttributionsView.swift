@@ -35,14 +35,23 @@ private struct Dependency: Identifiable {
 
     static let all: [Dependency] = [
         Dependency(
-            id: "translations",
-            name: "Translations",
+            id: "itunes-lookup-api",
+            name: "Apple iTunes Lookup API",
             licenseText: """
-            Translations in this app were kindly provided by the below contributors:
+            Unagent uses data from the Apple iTunes Lookup API to update iOS app \
+            version numbers for Chrome, Edge, and Google App presets.
 
-            - Portugese (Brazil): Gabriel Garcia
+            For more information, visit https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/
+            """
+        ),
+        Dependency(
+            id: "chrome-versions",
+            name: "berstend/chrome-versions",
+            licenseText: """
+            Unagent uses data from berstend/chrome-versions to update Google Chrome \
+            version numbers for macOS and Android presets.
 
-            Thank you to every contributor who has contributed to the project!
+            For more information, visit https://github.com/nicedoc/chrome-versions
             """
         ),
         Dependency(
@@ -68,6 +77,16 @@ private struct Dependency: Identifiable {
             LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, \
             OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN \
             THE SOFTWARE.
+            """
+        ),
+        Dependency(
+            id: "edge-release-notes",
+            name: "Microsoft Edge Release Notes",
+            licenseText: """
+            Unagent uses data from Microsoft Edge release notes to update Microsoft \
+            Edge version numbers for macOS, Android, and iOS presets.
+
+            For more information, visit https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel
             """
         ),
         Dependency(
@@ -98,33 +117,14 @@ private struct Dependency: Identifiable {
             """
         ),
         Dependency(
-            id: "chrome-versions",
-            name: "berstend/chrome-versions",
+            id: "translations",
+            name: "Translations",
             licenseText: """
-            Unagent uses data from berstend/chrome-versions to update Google Chrome \
-            version numbers for macOS and Android presets.
+            Translations in this app were kindly provided by the below contributors:
 
-            For more information, visit https://github.com/nicedoc/chrome-versions
-            """
-        ),
-        Dependency(
-            id: "itunes-lookup-api",
-            name: "Apple iTunes Lookup API",
-            licenseText: """
-            Unagent uses data from the Apple iTunes Lookup API to update iOS app \
-            version numbers for Chrome, Edge, and Google App presets.
+            - Portugese (Brazil): Gabriel Garcia
 
-            For more information, visit https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/
-            """
-        ),
-        Dependency(
-            id: "edge-release-notes",
-            name: "Microsoft Edge Release Notes",
-            licenseText: """
-            Unagent uses data from Microsoft Edge release notes to update Microsoft \
-            Edge version numbers for macOS, Android, and iOS presets.
-
-            For more information, visit https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel
+            Thank you to every contributor who has contributed to the project!
             """
         ),
     ]
