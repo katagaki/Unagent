@@ -17,8 +17,6 @@ struct MainTabView: View {
     @State var selectedTab: String = "Settings"
     @State var presetStore = PresetStore()
     @State var presetUpdater = PresetUpdater()
-    @State var showUpdatePrompt: Bool = false
-
     var body: some View {
         TabView(selection: $selectedTab) {
             Tab("Tab.SetUp", systemImage: "checklist", value: "SetUp") {
@@ -44,21 +42,6 @@ struct MainTabView: View {
                 hasReviewBeenPrompted = true
             }
             await presetUpdater.checkForUpdatesQuietly()
-            if !presetUpdater.pendingUpdates.isEmpty {
-                showUpdatePrompt = true
-            }
-        }
-        .alert(
-            "Presets.Update.Title",
-            isPresented: $showUpdatePrompt
-        ) {
-            Button("Presets.Update.UpdateNow") {
-                presetUpdater.applyAllPendingUpdates()
-                presetStore.loadPresets()
-            }
-            Button("Presets.Update.Later", role: .cancel) { }
-        } message: {
-            Text("Presets.Update.Available \(presetUpdater.pendingUpdates.count)")
         }
     }
 }

@@ -651,9 +651,8 @@ class PresetUpdater {
             if match.platform == .macOS && name.contains("macos") { return true }
             if match.platform == .android && name.contains("android") { return true }
         case .safari:
-            guard name.contains("safari") && match.platform == .macOS
-                    && name.contains("macos") else { return false }
-            return true
+            // Safari version is tied to the OS version (uses %OS_MAJOR% tokens)
+            return false
         case .firefox:
             // App doesn't have Firefox presets currently, but support future additions
             guard name.contains("firefox") else { return false }
