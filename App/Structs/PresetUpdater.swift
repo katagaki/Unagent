@@ -8,12 +8,6 @@ import Foundation
 @Observable
 class PresetUpdater {
 
-    // microlinkhq/top-user-agents: a well-known, independently maintained list
-    // of the most common user agent strings from real-world traffic data,
-    // updated weekly from 300M+ monthly requests
-    private static let remoteUserAgentsURL = URL(
-        string: "https://raw.githubusercontent.com/microlinkhq/top-user-agents/master/src/index.json"
-    )!
     private static let cachedUpdatesKey = "CachedUserAgentUpdates"
     private static let lastUpdateCheckKey = "LastPresetUpdateCheck"
 
@@ -88,11 +82,6 @@ class PresetUpdater {
 
         var allPending: [PendingPresetUpdate] = []
 
-        // Desktop/Android updates from remote UA list
-        if let remoteUserAgents = try? await fetchRemoteUserAgents() {
-            allPending.append(contentsOf: computePendingUpdates(from: remoteUserAgents))
-        }
-
         // iOS updates from App Store versions
         let iosPending = await computeIOSPendingUpdates()
         allPending.append(contentsOf: iosPending)
@@ -120,11 +109,6 @@ class PresetUpdater {
         updateResult = nil
 
         var totalUpdated = 0
-
-        // Desktop/Android updates from remote UA list
-        if let remoteUserAgents = try? await fetchRemoteUserAgents() {
-            totalUpdated += applyRemoteUserAgents(remoteUserAgents)
-        }
 
         // iOS updates from App Store versions
         totalUpdated += await applyIOSUpdates()
@@ -165,19 +149,6 @@ class PresetUpdater {
         updates[update.presetName] = update.updatedUserAgent
         saveCachedUpdates(updates)
         pendingUpdates.removeAll { $0.id == update.id }
-    }
-
-    // MARK: - Networking
-
-    private func fetchRemoteUserAgents() async throws -> [String] {
-        let (data, response) = try await URLSession.shared.data(from: Self.remoteUserAgentsURL)
-
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-            throw URLError(.badServerResponse)
-        }
-
-        return try JSONDecoder().decode([String].self, from: data)
     }
 
     // MARK: - App Store Lookup
@@ -510,181 +481,6 @@ class PresetUpdater {
             return nil
         }
         return String(userAgent[range].dropFirst(prefix.count))
-    }
-
-    // MARK: - Pending Updates Computation
-
-    private func computePendingUpdates(from remoteUserAgents: [String]) -> [PendingPresetUpdate] {
-        guard let bundledPresets = loadBundledPresets() else { return [] }
-        let cachedUpdates = Self.loadCachedUpdates() ?? [:]
-        var pending: [PendingPresetUpdate] = []
-        var seenPresets: Set<String> = []
-
-        for userAgent in remoteUserAgents {
-            guard let match = identifyBrowser(from: userAgent) else { continue }
-
-            for preset in bundledPresets {
-                guard shouldUpdate(preset: preset, with: match),
-                      !seenPresets.contains(preset.name) else { continue }
-
-                let currentUA = cachedUpdates[preset.name] ?? preset.userAgent
-                if currentUA != userAgent {
-                    let currentVersion = extractVersion(
-                        from: currentUA, for: match.browser
-                    ) ?? "?"
-                    let updatedVersion = extractVersion(
-                        from: userAgent, for: match.browser
-                    ) ?? "?"
-
-                    pending.append(PendingPresetUpdate(
-                        presetName: preset.name,
-                        imageName: preset.imageName,
-                        currentVersion: currentVersion,
-                        updatedVersion: updatedVersion,
-                        updatedUserAgent: userAgent
-                    ))
-                    seenPresets.insert(preset.name)
-                }
-            }
-        }
-
-        return pending
-    }
-
-    // MARK: - Parsing & Matching
-
-    private func applyRemoteUserAgents(_ remoteUserAgents: [String]) -> Int {
-        guard let bundledPresets = loadBundledPresets() else { return 0 }
-
-        var updates: [String: String] = Self.loadCachedUpdates() ?? [:]
-        var changedCount = 0
-
-        for userAgent in remoteUserAgents {
-            guard let match = identifyBrowser(from: userAgent) else { continue }
-
-            for preset in bundledPresets {
-                guard shouldUpdate(preset: preset, with: match) else { continue }
-
-                let currentUA = updates[preset.name] ?? preset.userAgent
-                if currentUA != userAgent {
-                    updates[preset.name] = userAgent
-                    changedCount += 1
-                }
-            }
-        }
-
-        saveCachedUpdates(updates)
-
-        return changedCount
-    }
-
-    private struct BrowserMatch {
-        let browser: Browser
-        let platform: Platform
-        let version: String
-
-        enum Browser: String {
-            case chrome, edge, safari, firefox
-        }
-
-        enum Platform: String {
-            case macOS, windows, linux, android
-        }
-    }
-
-    private func identifyBrowser(from userAgent: String) -> BrowserMatch? {
-        let platform: BrowserMatch.Platform
-        if userAgent.contains("Macintosh") {
-            platform = .macOS
-        } else if userAgent.contains("Windows") {
-            platform = .windows
-        } else if userAgent.contains("Android") {
-            platform = .android
-        } else if userAgent.contains("Linux") {
-            platform = .linux
-        } else {
-            return nil
-        }
-
-        // Edge must be checked before Chrome (Edge UA contains "Chrome")
-        if let range = userAgent.range(of: #"Edg/(\d+)"#, options: .regularExpression) {
-            let versionStr = userAgent[range].replacingOccurrences(of: "Edg/", with: "")
-            return BrowserMatch(browser: .edge, platform: platform, version: versionStr)
-        }
-
-        if userAgent.contains("Firefox/") {
-            if let range = userAgent.range(of: #"Firefox/(\d+)"#, options: .regularExpression) {
-                let versionStr = userAgent[range].replacingOccurrences(of: "Firefox/", with: "")
-                return BrowserMatch(browser: .firefox, platform: platform, version: versionStr)
-            }
-        }
-
-        if userAgent.contains("Chrome/") && !userAgent.contains("Edg") {
-            if let range = userAgent.range(of: #"Chrome/(\d+)"#, options: .regularExpression) {
-                let versionStr = userAgent[range].replacingOccurrences(of: "Chrome/", with: "")
-                return BrowserMatch(browser: .chrome, platform: platform, version: versionStr)
-            }
-        }
-
-        if userAgent.contains("Safari/") && userAgent.contains("Version/")
-            && !userAgent.contains("Chrome") && !userAgent.contains("Edg") {
-            if let range = userAgent.range(of: #"Version/(\d+)"#, options: .regularExpression) {
-                let versionStr = userAgent[range].replacingOccurrences(of: "Version/", with: "")
-                return BrowserMatch(browser: .safari, platform: platform, version: versionStr)
-            }
-        }
-
-        return nil
-    }
-
-    private func shouldUpdate(preset: Preset, with match: BrowserMatch) -> Bool {
-        let name = preset.name.lowercased()
-
-        switch match.browser {
-        case .chrome:
-            guard name.contains("chrome") else { return false }
-            // Only update macOS and Android desktop variants (iOS uses OS version tokens)
-            if match.platform == .macOS && name.contains("macos") { return true }
-            if match.platform == .android && name.contains("android") { return true }
-        case .edge:
-            guard name.contains("edge") && !name.contains("edgehtml") else { return false }
-            if match.platform == .macOS && name.contains("macos") { return true }
-            if match.platform == .android && name.contains("android") { return true }
-        case .safari:
-            // Safari version is tied to the OS version (uses %OS_MAJOR% tokens)
-            return false
-        case .firefox:
-            // App doesn't have Firefox presets currently, but support future additions
-            guard name.contains("firefox") else { return false }
-            if match.platform == .macOS && name.contains("macos") { return true }
-        }
-
-        return false
-    }
-
-    private func extractVersion(from userAgent: String, for browser: BrowserMatch.Browser) -> String? {
-        switch browser {
-        case .chrome:
-            if let range = userAgent.range(of: #"Chrome/(\d+)"#, options: .regularExpression) {
-                return String(userAgent[range].dropFirst("Chrome/".count))
-            }
-        case .edge:
-            if let range = userAgent.range(of: #"Edg/(\d+)"#, options: .regularExpression) {
-                return String(userAgent[range].dropFirst("Edg/".count))
-            }
-            if let range = userAgent.range(of: #"EdgA/(\d+)"#, options: .regularExpression) {
-                return String(userAgent[range].dropFirst("EdgA/".count))
-            }
-        case .safari:
-            if let range = userAgent.range(of: #"Version/(\d+)"#, options: .regularExpression) {
-                return String(userAgent[range].dropFirst("Version/".count))
-            }
-        case .firefox:
-            if let range = userAgent.range(of: #"Firefox/(\d+)"#, options: .regularExpression) {
-                return String(userAgent[range].dropFirst("Firefox/".count))
-            }
-        }
-        return nil
     }
 
     // MARK: - Helpers

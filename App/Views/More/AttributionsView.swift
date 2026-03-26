@@ -98,16 +98,6 @@ private struct Dependency: Identifiable {
             """
         ),
         Dependency(
-            id: "top-user-agents",
-            name: "microlinkhq/top-user-agents",
-            licenseText: """
-            Unagent uses data from microlinkhq/top-user-agents to update user agent \
-            strings for macOS browser presets.
-
-            For more information, visit https://github.com/microlinkhq/top-user-agents
-            """
-        ),
-        Dependency(
             id: "chrome-versions",
             name: "berstend/chrome-versions",
             licenseText: """
