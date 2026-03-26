@@ -42,19 +42,17 @@ struct PresetDetailView: View {
 
             if !preset.allSources.isEmpty {
                 Section("Presets.Detail.References") {
-                    ForEach(preset.allSources, id: \.self) { urlString in
+                    ForEach(Array(preset.allSources.enumerated()), id: \.offset) { index, urlString in
                         Button {
                             if let url = URL(string: urlString) {
                                 safariURL = url
                             }
                         } label: {
                             HStack {
-                                Text(urlString)
-                                    .font(.subheadline)
-                                    .lineLimit(2)
-                                Spacer()
                                 Image(systemName: "safari")
-                                    .foregroundStyle(.secondary)
+                                    .foregroundStyle(.accent)
+                                Text("\(index + 1). \(URL(string: urlString)?.host ?? urlString)")
+                                    .font(.subheadline)
                             }
                         }
                     }
