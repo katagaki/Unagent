@@ -4713,25 +4713,25 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Auto-Refresh in Safari"
+            "value": "Update User Agent Rules Immediately"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Safariで自動リロード"
+            "value": "ユーザーエージェントルールを即時更新"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "在Safari中自动刷新"
+            "value": "立即更新用户代理规则"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "在Safari中自動重新整理"
+            "value": "立即更新使用者代理規則"
           }
         }
       }
