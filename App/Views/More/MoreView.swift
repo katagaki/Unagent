@@ -24,7 +24,6 @@ struct MoreView: View {
                             systemImage: "checkmark.circle",
                             description: Text("More.PresetUpdates.NoUpdates.Description")
                         )
-                        .listRowBackground(Color.clear)
                     } else {
                         ForEach(presetUpdater.pendingUpdates) { update in
                             PresetUpdateRow(update: update) {
