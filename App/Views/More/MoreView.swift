@@ -15,8 +15,15 @@ struct MoreView: View {
     var body: some View {
         NavigationStack {
             List {
-                if !presetUpdater.pendingUpdates.isEmpty {
-                    Section {
+                Section {
+                    if presetUpdater.pendingUpdates.isEmpty {
+                        ContentUnavailableView(
+                            "More.PresetUpdates.NoUpdates",
+                            systemImage: "checkmark.circle",
+                            description: Text("More.PresetUpdates.NoUpdates.Description")
+                        )
+                        .listRowBackground(Color.clear)
+                    } else {
                         ForEach(presetUpdater.pendingUpdates) { update in
                             PresetUpdateRow(update: update) {
                                 withAnimation {
@@ -25,10 +32,12 @@ struct MoreView: View {
                                 }
                             }
                         }
-                    } header: {
-                        HStack {
-                            Text("More.PresetUpdates")
-                            Spacer()
+                    }
+                } header: {
+                    HStack {
+                        Text("More.PresetUpdates")
+                        Spacer()
+                        if !presetUpdater.pendingUpdates.isEmpty {
                             Button("More.PresetUpdates.UpdateAll") {
                                 withAnimation {
                                     presetUpdater.applyAllPendingUpdates()
@@ -62,6 +71,9 @@ struct MoreView: View {
             .scrollContentBackground(.hidden)
             .gradientBackground()
             .navigationTitle("ViewTitle.More")
+            .refreshable {
+                await presetUpdater.checkForUpdatesQuietly()
+            }
         }
     }
 }
