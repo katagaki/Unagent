@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
 
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
     @AppStorage(wrappedValue: "", "UserAgent", store: defaults) var globalUserAgent: String
     @AppStorage(wrappedValue: "", "GlobalViewport", store: defaults) var globalViewportString: String
     @AppStorage(wrappedValue: "", "SiteSettings", store: defaults) var perSiteUserAgentData: String
@@ -89,6 +91,13 @@ struct SettingsView: View {
                                     startEditingPerSiteSetting(siteSetting)
                                 }
                                 .tint(.blue)
+                            }
+                            .contextMenu {
+                                if horizontalSizeClass == .regular {
+                                    Button("Shared.Delete", role: .destructive) {
+                                        deletePerSiteSetting(siteSetting)
+                                    }
+                                }
                             }
                         }
                     }
