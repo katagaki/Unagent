@@ -114,7 +114,7 @@ struct PresetsView: View {
                                             .frame(width: 20, height: 20)
                                             .foregroundStyle(.secondary)
                                     }
-                                    Text(preset.name)
+                                    Text(preset.displayName)
                                         .foregroundStyle(.secondary)
                                 }
                                 .swipeActions(edge: .trailing) {
@@ -158,9 +158,9 @@ struct PresetRowView: View {
                     .foregroundStyle(.secondary)
             }
             VStack(alignment: .leading, spacing: 2) {
-                Text(preset.name)
-                if !preset.userAgent.isEmpty {
-                    Text(preset.userAgent)
+                Text(preset.displayName)
+                if let viewport = preset.viewport, viewport != .none {
+                    Text(viewport.displayName)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)

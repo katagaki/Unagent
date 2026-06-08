@@ -1,0 +1,53 @@
+{
+  "extensionDescription": {
+    "message": "修改向任何網站回報的使用者代理"
+  },
+  "scopeSite": {
+    "message": "此網站"
+  },
+  "scopeGlobal": {
+    "message": "所有網站"
+  },
+  "searchPlaceholder": {
+    "message": "搜尋"
+  },
+  "troubleshooting": {
+    "message": "疑難排解"
+  },
+  "troubleBody": {
+    "message": "如果您在更新規則時遇到問題，請選擇下方按鈕從頭開始。"
+  },
+  "resetButton": {
+    "message": "重設所有規則"
+  },
+  "resetWarning": {
+    "message": "警告：這也會刪除App中所有的全域規則與每個網站的規則。"
+  },
+  "resetSuccess": {
+    "message": "規則已重設。請關閉並重新開啟 Unagent App 以重新設定規則。"
+  },
+  "defaultName": {
+    "message": "預設（不變更）"
+  },
+  "subtitleDefault": {
+    "message": "使用網站原本的使用者代理"
+  },
+  "subtitleMobile": {
+    "message": "手機"
+  },
+  "subtitleTablet": {
+    "message": "平板"
+  },
+  "subtitleDesktop": {
+    "message": "臺式電腦"
+  },
+  "subtitleUserAgent": {
+    "message": "使用者代理"
+  },
+  "emptyState": {
+    "message": "沒有符合的使用者代理。"
+  },
+  "sectionPresets": {
+    "message": "預設值"
+  }
+}

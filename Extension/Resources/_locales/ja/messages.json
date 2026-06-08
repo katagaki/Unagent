@@ -1,0 +1,53 @@
+{
+  "extensionDescription": {
+    "message": "任意のWebサイトに報告されるユーザーエージェントを変更します"
+  },
+  "scopeSite": {
+    "message": "このサイト"
+  },
+  "scopeGlobal": {
+    "message": "すべてのサイト"
+  },
+  "searchPlaceholder": {
+    "message": "検索"
+  },
+  "troubleshooting": {
+    "message": "トラブルシューティング"
+  },
+  "troubleBody": {
+    "message": "ルールの更新に問題がある場合は、下のボタンを選択して最初からやり直してください。"
+  },
+  "resetButton": {
+    "message": "すべてのルールをリセット"
+  },
+  "resetWarning": {
+    "message": "警告：これにより、アプリ内のすべてのグローバルルールとサイトごとのルールも削除されます。"
+  },
+  "resetSuccess": {
+    "message": "ルールがリセットされました。Unagentアプリを一度閉じてから再度開き、ルールを設定し直してください。"
+  },
+  "defaultName": {
+    "message": "デフォルト（変更なし）"
+  },
+  "subtitleDefault": {
+    "message": "Webサイト本来のユーザーエージェントを使用"
+  },
+  "subtitleMobile": {
+    "message": "モバイル"
+  },
+  "subtitleTablet": {
+    "message": "タブレット"
+  },
+  "subtitleDesktop": {
+    "message": "デスクトップ"
+  },
+  "subtitleUserAgent": {
+    "message": "ユーザーエージェント"
+  },
+  "emptyState": {
+    "message": "一致するユーザーエージェントがありません。"
+  },
+  "sectionPresets": {
+    "message": "プリセット"
+  }
+}

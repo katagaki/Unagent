@@ -1,0 +1,53 @@
+{
+  "extensionDescription": {
+    "message": "修改向任何网站报告的用户代理"
+  },
+  "scopeSite": {
+    "message": "此网站"
+  },
+  "scopeGlobal": {
+    "message": "所有网站"
+  },
+  "searchPlaceholder": {
+    "message": "搜索"
+  },
+  "troubleshooting": {
+    "message": "故障排除"
+  },
+  "troubleBody": {
+    "message": "如果您在更新规则时遇到问题，请选择下方按钮从头开始。"
+  },
+  "resetButton": {
+    "message": "重置所有规则"
+  },
+  "resetWarning": {
+    "message": "警告：这也将删除应用中的所有全局规则和每个网站的规则。"
+  },
+  "resetSuccess": {
+    "message": "规则已重置。请关闭并重新打开 Unagent 应用以重新设置规则。"
+  },
+  "defaultName": {
+    "message": "默认（不更改）"
+  },
+  "subtitleDefault": {
+    "message": "使用网站正常的用户代理"
+  },
+  "subtitleMobile": {
+    "message": "手机"
+  },
+  "subtitleTablet": {
+    "message": "平板"
+  },
+  "subtitleDesktop": {
+    "message": "臺式電腦"
+  },
+  "subtitleUserAgent": {
+    "message": "用户代理"
+  },
+  "emptyState": {
+    "message": "没有匹配的用户代理。"
+  },
+  "sectionPresets": {
+    "message": "预设"
+  }
+}

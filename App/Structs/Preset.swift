@@ -56,4 +56,10 @@ struct Preset: Codable, Identifiable {
         }
         return result
     }
+
+    var displayName: String {
+        userAgent.isEmpty
+            ? NSLocalizedString("Presets.Detail.Default", comment: "")
+            : name
+    }
 }

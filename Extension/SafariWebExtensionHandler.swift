@@ -58,6 +58,31 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 )
                 response.userInfo = ["message": responseContent]
 
+            case "getPresets":
+                debugPrint("Extension just asked native app for presets")
+                var responseContent: [String: String] = [:]
+                if let presets = defaults.string(forKey: "ExtensionPresets") {
+                    responseContent.updateValue(presets, forKey: "presets")
+                }
+                response.userInfo = ["message": responseContent]
+
+            case "saveSettings":
+                debugPrint("Extension just asked native app to save settings")
+                // Write-back from the popup so the app's UI (which reads these
+                // keys via @AppStorage) reflects changes made in the extension.
+                // The extension already applied its own rules, so we do NOT set
+                // ShouldExtensionUpdate (that would trigger a redundant re-pull).
+                if let userAgent = message["userAgent"] {
+                    defaults.set(userAgent, forKey: "UserAgent")
+                }
+                if let globalViewport = message["globalViewport"] {
+                    defaults.set(globalViewport, forKey: "GlobalViewport")
+                }
+                if let siteSettings = message["siteSettings"] {
+                    defaults.set(siteSettings, forKey: "SiteSettings")
+                }
+                defaults.synchronize()
+
             case "hasExtensionUpdated":
                 debugPrint("Extension just told native app it was updated")
                 defaults.set(false, forKey: "ShouldExtensionUpdate")

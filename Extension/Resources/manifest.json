@@ -2,6 +2,7 @@
     "manifest_version": 3,
     "name": "Unagent",
     "version": "1.10",
+    "default_locale": "en",
     "icons": {
         "128": "128.png"
     },
@@ -24,7 +25,7 @@
     "action": {
         "default_popup": "popup.html"
     },
-    "description": "Modify the user agent reported to any website",
+    "description": "__MSG_extensionDescription__",
     "permissions": [
         "declarativeNetRequestWithHostAccess",
         "nativeMessaging",

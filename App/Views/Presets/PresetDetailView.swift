@@ -20,7 +20,7 @@ struct PresetDetailView: View {
                     Text("Presets.Detail.Name")
                         .foregroundStyle(.secondary)
                     Spacer()
-                    Text(preset.name)
+                    Text(preset.displayName)
                 }
                 if let viewport = preset.viewport, viewport != .none {
                     HStack {
@@ -61,7 +61,7 @@ struct PresetDetailView: View {
         }
         .scrollContentBackground(.hidden)
         .gradientBackground()
-        .navigationTitle(preset.name)
+        .navigationTitle(preset.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

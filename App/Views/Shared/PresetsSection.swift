@@ -53,7 +53,7 @@ struct PresetsSection: View {
                                 .frame(width: 24, height: 24)
                                 .foregroundStyle(.secondary)
                         }
-                        Text(preset.name)
+                        Text(preset.displayName)
                         Spacer()
                         if currentUserAgent() == preset.userAgent {
                             Image(systemName: "checkmark.circle.fill")

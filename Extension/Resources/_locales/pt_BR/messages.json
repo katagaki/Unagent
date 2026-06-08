@@ -1,0 +1,53 @@
+{
+  "extensionDescription": {
+    "message": "Modifique o agente de usuário informado a qualquer site"
+  },
+  "scopeSite": {
+    "message": "Este Site"
+  },
+  "scopeGlobal": {
+    "message": "Todos os Sites"
+  },
+  "searchPlaceholder": {
+    "message": "Buscar"
+  },
+  "troubleshooting": {
+    "message": "Solução de Problemas"
+  },
+  "troubleBody": {
+    "message": "Se você estiver com problemas para atualizar suas regras, selecione o botão abaixo para começar do zero."
+  },
+  "resetButton": {
+    "message": "Redefinir Todas as Regras"
+  },
+  "resetWarning": {
+    "message": "AVISO: Isso também excluirá todas as regras globais e por site no aplicativo."
+  },
+  "resetSuccess": {
+    "message": "As regras foram redefinidas. Feche e reabra o aplicativo Unagent para configurar suas regras novamente."
+  },
+  "defaultName": {
+    "message": "Padrão (Não Alterar)"
+  },
+  "subtitleDefault": {
+    "message": "Usar o agente de usuário normal do site"
+  },
+  "subtitleMobile": {
+    "message": "Celular"
+  },
+  "subtitleTablet": {
+    "message": "Tablet"
+  },
+  "subtitleDesktop": {
+    "message": "Desktop"
+  },
+  "subtitleUserAgent": {
+    "message": "Agente de usuário"
+  },
+  "emptyState": {
+    "message": "Nenhum agente de usuário correspondente."
+  },
+  "sectionPresets": {
+    "message": "Predefinições"
+  }
+}

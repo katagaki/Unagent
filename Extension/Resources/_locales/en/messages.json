@@ -1,0 +1,53 @@
+{
+  "extensionDescription": {
+    "message": "Modify the user agent reported to any website"
+  },
+  "scopeSite": {
+    "message": "This Site"
+  },
+  "scopeGlobal": {
+    "message": "All Sites"
+  },
+  "searchPlaceholder": {
+    "message": "Search"
+  },
+  "troubleshooting": {
+    "message": "Troubleshooting"
+  },
+  "troubleBody": {
+    "message": "If you are facing problems updating your rules, select the button below to start from scratch."
+  },
+  "resetButton": {
+    "message": "Reset All Rules"
+  },
+  "resetWarning": {
+    "message": "WARNING: This will delete all global and per-site rules in the app as well."
+  },
+  "resetSuccess": {
+    "message": "Rules have been reset. Close and re-open the Unagent app to set up your rules again."
+  },
+  "defaultName": {
+    "message": "Default (Don't Change)"
+  },
+  "subtitleDefault": {
+    "message": "Use the website’s normal user agent"
+  },
+  "subtitleMobile": {
+    "message": "Mobile"
+  },
+  "subtitleTablet": {
+    "message": "Tablet"
+  },
+  "subtitleDesktop": {
+    "message": "Desktop"
+  },
+  "subtitleUserAgent": {
+    "message": "User agent"
+  },
+  "emptyState": {
+    "message": "No matching user agents."
+  },
+  "sectionPresets": {
+    "message": "Presets"
+  }
+}

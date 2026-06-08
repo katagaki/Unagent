@@ -1,72 +1,415 @@
-html {
-    font: -apple-system-body;
-}
-
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: white;
-    }
-
-    * {
-        color: black;
-    }
-
-    button {
-        background-color: rgb(0, 122, 255);
-    }
-
-    p.success {
-        background-color: rgb(229, 229, 234);
-    }
+:root {
+    --bg-top: #eef0f4;
+    --bg-bottom: #e3e6ec;
+    --card: rgba(255, 255, 255, 0.74);
+    --card-active: rgba(0, 0, 0, 0.06);
+    --label: #000000;
+    --secondary-label: rgba(60, 60, 67, 0.6);
+    --tertiary-label: rgba(60, 60, 67, 0.3);
+    --separator: rgba(60, 60, 67, 0.22);
+    --accent: #007aff;
+    --destructive: #ff3b30;
+    --glass: rgba(255, 255, 255, 0.55);
+    --glass-strong: rgba(255, 255, 255, 0.8);
+    --track: rgba(120, 120, 128, 0.12);
+    --highlight: rgba(255, 255, 255, 0.7);
+    --shadow: rgba(0, 0, 0, 0.12);
 }
 
 @media (prefers-color-scheme: dark) {
+    :root {
+        --bg-top: #1a1a1c;
+        --bg-bottom: #0a0a0b;
+        --card: rgba(44, 44, 46, 0.66);
+        --card-active: rgba(255, 255, 255, 0.08);
+        --label: #ffffff;
+        --secondary-label: rgba(235, 235, 245, 0.6);
+        --tertiary-label: rgba(235, 235, 245, 0.3);
+        --separator: rgba(84, 84, 88, 0.5);
+        --accent: #0a84ff;
+        --destructive: #ff453a;
+        --glass: rgba(60, 60, 64, 0.5);
+        --glass-strong: rgba(70, 70, 74, 0.7);
+        --track: rgba(120, 120, 128, 0.28);
+        --highlight: rgba(255, 255, 255, 0.14);
+        --shadow: rgba(0, 0, 0, 0.5);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    /* Tell Safari the popup supports both appearances so it themes its own
+       native sheet chrome (the title bar + Done button) to match the system. */
+    color-scheme: light dark;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    width: 320px;
+    margin: 0;
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+    background-attachment: fixed;
+    color: var(--label);
+    display: flex;
+    flex-direction: column;
+    max-height: 540px;
+}
+
+/* On iOS the extension popup is a full-width sheet, so fill it.
+   macOS keeps the fixed-size popover above. */
+@media (pointer: coarse) {
     body {
-        background-color: black;
-    }
-
-    * {
-        color: white;
-    }
-
-    button {
-        background-color: rgb(10, 132, 255);
-    }
-
-    p.success {
-        background-color: rgb(44, 44, 46);
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        max-height: none;
     }
 }
 
-h1 {
-    font-size: 1.5rem;
-    margin-top: 6px !important;
-    margin-bottom: 6px !important;
+/* ---------- Header ---------- */
+
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 16px 20px 12px;
+    background: linear-gradient(180deg,
+        color-mix(in srgb, var(--bg-top) 82%, transparent) 0%,
+        color-mix(in srgb, var(--bg-top) 60%, transparent) 100%);
+    backdrop-filter: saturate(180%) blur(24px);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    border-bottom: 0.5px solid var(--separator);
 }
 
-p {
-    font-size: 1rem;
-    margin-top: 6px !important;
-    margin-bottom: 6px !important;
+/* Segmented control — glass capsule with a floating thumb */
+
+.segmented {
+    display: flex;
+    gap: 2px;
+    padding: 3px;
+    background-color: var(--track);
+    border-radius: 999px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 0.5px 0 var(--highlight);
 }
 
-button {
-    color: white;
-    font-size: 1rem;
+.segment {
+    flex: 1;
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--label);
+    font-family: inherit;
+    font-size: 0.8125rem;
     font-weight: 500;
-    border: unset;
-    border-radius: 99px;
-    padding: 8px 12px 8px 12px;
-    margin-top: 6px !important;
-    margin-bottom: 6px !important;
+    padding: 7px 8px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.22s ease, box-shadow 0.22s ease, opacity 0.2s ease;
 }
 
-p.warning {
-    color: gray !important;
-    font-size: 0.75rem;
+.segment.selected {
+    background-color: var(--glass-strong);
+    font-weight: 600;
+    box-shadow: 0 2px 6px var(--shadow), inset 0 0.5px 0 var(--highlight);
 }
 
-p.success {
+.segment:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* Search field — glass capsule */
+
+.search-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--glass);
+    border-radius: 999px;
+    padding: 0 12px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 0.5px 0 var(--highlight);
+}
+
+.search-icon {
+    width: 15px;
+    height: 15px;
+    fill: var(--secondary-label);
+    flex-shrink: 0;
+}
+
+.search-field input {
+    flex: 1;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--label);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    padding: 8px 8px;
+    outline: none;
+    min-width: 0;
+}
+
+.search-field input::placeholder {
+    color: var(--secondary-label);
+}
+
+.search-field input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* ---------- Preset list ---------- */
+
+.preset-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 20px 6px;
+}
+
+.section-header {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--label);
+    margin: 16px 6px 7px;
+}
+
+.section-header:first-child {
+    margin-top: 2px;
+}
+
+.card {
+    background-color: var(--card);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: saturate(160%) blur(18px);
+    -webkit-backdrop-filter: saturate(160%) blur(18px);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--label);
+    font-family: inherit;
+    text-align: left;
+    padding: 9px 14px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.15s ease;
+}
+
+.row:active {
+    background-color: var(--card-active);
+}
+
+.row + .row::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 56px;
+    right: 0;
+    height: 0.5px;
+    background-color: var(--separator);
+}
+
+.row .icon {
+    width: 30px;
+    height: 30px;
     border-radius: 8px;
-    padding: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.row .icon.icon-img {
+    background: transparent;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+.row .text {
+    flex: 1;
+    min-width: 0;
+}
+
+.row .name {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.row .subtitle {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--secondary-label);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+}
+
+.row .check {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    fill: var(--accent);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.row.active .check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.row.active .name {
+    font-weight: 600;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--secondary-label);
+    font-size: 0.875rem;
+    padding: 32px 16px;
+}
+
+/* ---------- Footer ---------- */
+
+.app-footer {
+    padding: 10px 24px 16px;
+    border-top: 0.5px solid var(--separator);
+}
+
+.trouble-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--accent);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 6px 2px;
+    cursor: pointer;
+}
+
+/* Pure-CSS chevron: a corner of two borders, rotated. Points up when
+   collapsed, flips down toward the panel when the section is expanded. */
+.chevron {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    border-radius: 1px;
+    transform: rotate(-135deg);
+    transition: transform 0.25s ease;
+}
+
+.trouble-toggle.expanded .chevron {
+    transform: rotate(45deg);
+}
+
+/* Animated expand/collapse: the grid row interpolates from 0fr to the
+   content's natural height, while the inner clips its overflow. */
+.trouble {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.trouble.expanded {
+    grid-template-rows: 1fr;
+}
+
+.trouble-inner {
+    overflow: hidden;
+    min-height: 0;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* Top spacing lives on the content (not the inner's padding) so the grid
+   row can collapse fully to 0 instead of leaving a sliver. */
+.trouble-inner > :first-child {
+    margin-top: 8px;
+}
+
+.trouble.expanded .trouble-inner {
+    opacity: 1;
+}
+
+.trouble p {
+    font-size: 0.8125rem;
+    color: var(--secondary-label);
+    margin: 0 0 10px;
+}
+
+.trouble p.warning {
+    color: var(--tertiary-label);
+    font-size: 0.6875rem;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.destructive-button {
+    appearance: none;
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    background-color: var(--destructive);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: 0 1px 6px var(--shadow), inset 0 0.5px 0 rgba(255, 255, 255, 0.25);
+}
+
+.destructive-button:active {
+    opacity: 0.7;
+}
+
+.destructive-button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.success {
+    background-color: var(--glass);
+    border-radius: 14px;
+    padding: 12px;
+    font-size: 0.8125rem;
+    color: var(--label);
+    margin: 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 0.5px 0 var(--highlight);
 }

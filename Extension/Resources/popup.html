@@ -1,13 +1,42 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Unagent</title>
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <h1>Troubleshooting</h1>
-    <p>If you are facing problems updating your rules, select the button below to start from scratch.</p>
-    <button id="btnResetRules">Reset All Rules</button>
-    <p class="warning">WARNING: This will delete all global and per-site rules in the app as well.</p>
+    <header class="app-header">
+        <div class="segmented" id="scopeControl">
+            <button type="button" class="segment selected" data-scope="site" data-i18n="scopeSite">This Site</button>
+            <button type="button" class="segment" data-scope="global" data-i18n="scopeGlobal">All Sites</button>
+        </div>
+        <div class="search-field">
+            <svg class="search-icon" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M6.5 1a5.5 5.5 0 0 1 4.38 8.82l3.4 3.4a.75.75 0 0 1-1.06 1.06l-3.4-3.4A5.5 5.5 0 1 1 6.5 1zm0 1.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+            </svg>
+            <input id="searchInput" type="search" placeholder="Search" data-i18n-placeholder="searchPlaceholder" autocomplete="off" autocapitalize="off" spellcheck="false">
+        </div>
+    </header>
+
+    <main id="presetList" class="preset-list" aria-busy="true"></main>
+
+    <footer class="app-footer">
+        <button type="button" id="btnToggleTrouble" class="trouble-toggle" aria-expanded="false">
+            <span data-i18n="troubleshooting">Troubleshooting</span>
+            <span class="chevron" aria-hidden="true"></span>
+        </button>
+        <div id="troubleSection" class="trouble">
+            <div class="trouble-inner">
+                <p data-i18n="troubleBody">If you are facing problems updating your rules, select the button below to start from scratch.</p>
+                <button type="button" id="btnResetRules" class="destructive-button" data-i18n="resetButton">Reset All Rules</button>
+                <p class="warning" data-i18n="resetWarning">WARNING: This will delete all global and per-site rules in the app as well.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="popup.js"></script>
 </body>
 </html>

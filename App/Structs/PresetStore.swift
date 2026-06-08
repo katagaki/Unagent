@@ -44,6 +44,7 @@ class PresetStore {
         }
 
         presets = allPresets
+        syncToExtension()
     }
 
     var builtInPresets: [Preset] {
@@ -86,6 +87,7 @@ class PresetStore {
             defaults.set(jsonString, forKey: customPresetsKey)
             defaults.synchronize()
         }
+        syncToExtension()
     }
 
     private func saveBuiltInOverrides(_ preset: Preset) {
@@ -97,6 +99,7 @@ class PresetStore {
             defaults.set(jsonString, forKey: "BuiltInPresetOverrides")
             defaults.synchronize()
         }
+        syncToExtension()
     }
 
     private func loadBuiltInOverrides() -> [String: Preset] {
@@ -141,6 +144,7 @@ class PresetStore {
     private func saveHiddenPresets() {
         defaults.set(Array(hiddenPresetNames), forKey: hiddenPresetsKey)
         defaults.synchronize()
+        syncToExtension()
     }
 
     func hideBuiltInPreset(_ preset: Preset) {
@@ -252,5 +256,40 @@ class PresetStore {
         }
 
         return currentName
+    }
+
+    // MARK: - Extension Sync
+
+    func syncToExtension() {
+        let exported = presetsForExtension()
+        if let data = try? JSONSerialization.data(withJSONObject: exported),
+           let jsonString = String(data: data, encoding: .utf8) {
+            defaults.set(jsonString, forKey: "ExtensionPresets")
+            defaults.synchronize()
+        }
+    }
+
+    private func presetsForExtension() -> [[String: String]] {
+        let os = ProcessInfo().operatingSystemVersion
+        let replaceTokens: [String: String] = [
+            "%OS_MAJOR%": String(os.majorVersion),
+            "%OS_MINOR%": String(os.minorVersion),
+            "%OS_PATCH%": String(os.patchVersion)
+        ]
+        return (visibleBuiltInPresets + customPresets).map { preset in
+            var userAgent = preset.userAgent
+            for (token, replacement) in replaceTokens {
+                userAgent = userAgent.replacingOccurrences(of: token, with: replacement)
+            }
+            var entry: [String: String] = [
+                "name": preset.name,
+                "imageName": preset.imageName,
+                "userAgent": userAgent
+            ]
+            if let viewport = preset.viewport, viewport != .none {
+                entry["viewport"] = viewport.rawValue
+            }
+            return entry
+        }
     }
 }
