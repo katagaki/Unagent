@@ -123,9 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				E45DF2D02E21E60F0010814B /* App */,
+				E45DF2A92E21E6000010814B /* Extension */,
 				E43AEB762A21B83F0057ED0E /* Unagent.entitlements */,
 				E43AEB772A21B8730057ED0E /* Unagent Extension.entitlements */,
-				E45DF2A92E21E6000010814B /* Extension */,
 				7B35EC312E7BDBAC00015120 /* Unagent.app */,
 				7B35EC322E7BDBAC00015120 /* Unagent Extension.appex */,
 				7B35EC782E7BDBF800015120 /* Frameworks */,
