@@ -247,6 +247,10 @@ body {
     object-fit: contain;
 }
 
+.row .icon.icon-rounded {
+    border-radius: 22.5%;
+}
+
 .row .text {
     flex: 1;
     min-width: 0;

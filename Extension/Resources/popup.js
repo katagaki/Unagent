@@ -86,20 +86,49 @@ function monogram(preset) {
     return match ? match[0].toUpperCase() : "?";
 }
 
-// Built-in browser icons bundled from the app's asset catalog (same artwork).
-// Custom presets that use SF Symbol names fall back to a monogram tile.
-const ICON_NAMES = new Set([
-    "Apple", "Bing", "Chrome", "Claude", "EdgeHTML", "Edgeium", "Google",
-    "IE", "OpenAI", "Safari", "SonyPlaystation", "SonyPlaystation5", "Xbox"
-]);
+// Browser-engine icons referenced remotely (same source as the app's bundled
+// copies), so custom presets show them in the popup instead of a monogram.
+const REMOTE_ICONS = {
+    "WebKit": "https://commons.wikimedia.org/wiki/Special:FilePath/WebKit_logo.svg?width=512",
+    "Chromium": "https://commons.wikimedia.org/wiki/Special:FilePath/Chromium_Logo.svg?width=512",
+    "Gecko": "https://commons.wikimedia.org/wiki/Special:FilePath/Mozillagecko-logo.svg?width=512",
+    "IE": "https://commons.wikimedia.org/wiki/Special:FilePath/Internet_Explorer_10%2B11_logo.svg?width=512",
+    "Ladybird": "https://commons.wikimedia.org/wiki/Special:FilePath/Ladybird_icon_png.png?width=512"
+};
+
+// App Store, Play Store, and Apple (apple-touch) icons are square artwork
+// cropped to a rounded rect; other logos/favicons render flat.
+function shouldRound(url) {
+    return url.includes("mzstatic.com")
+        || url.includes("play-lh.googleusercontent.com")
+        || url.includes("apple.com");
+}
+
+// A remote image, rounded only for store app icons.
+function remoteIconHtml(preset, url) {
+    const rounded = shouldRound(url) ? " icon-rounded" : "";
+    return `<img class="icon icon-img${rounded}" src="${escapeHtml(url)}" alt="" loading="lazy">`;
+}
 
 function iconHtml(preset, isDefault) {
-    // The default ("Don't Change") row uses the Safari icon.
-    const imageName = isDefault ? "Safari" : preset.imageName;
-    if (imageName && ICON_NAMES.has(imageName)) {
-        const url = browser.runtime.getURL(imageName + ".png");
-        return `<img class="icon icon-img" src="${escapeHtml(url)}" alt="" loading="lazy">`;
+    // The default ("Don't Change") row uses a circle-slash glyph.
+    if (isDefault) {
+        return `<span class="icon" style="background:transparent">`
+            + `<svg viewBox="0 0 24 24" fill="none" stroke="var(--secondary-label)" `
+            + `stroke-width="1.8" stroke-linecap="round" style="width:22px;height:22px" aria-hidden="true">`
+            + `<circle cx="12" cy="12" r="9"></circle>`
+            + `<line x1="6.5" y1="17.5" x2="17.5" y2="6.5"></line>`
+            + `</svg></span>`;
     }
+    // Remote store icon.
+    if (preset.iconURL) {
+        return remoteIconHtml(preset, preset.iconURL);
+    }
+    // Browser-engine icon (custom presets), referenced remotely.
+    if (REMOTE_ICONS[preset.imageName]) {
+        return remoteIconHtml(preset, REMOTE_ICONS[preset.imageName]);
+    }
+    // No remote icon: monogram tile.
     return `<span class="icon" style="background:${colorFor(preset)}">${escapeHtml(monogram(preset))}</span>`;
 }
 

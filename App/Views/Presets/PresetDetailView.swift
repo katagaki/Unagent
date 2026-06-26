@@ -16,20 +16,21 @@ struct PresetDetailView: View {
     var body: some View {
         List {
             Section {
-                HStack {
-                    Text("Presets.Detail.Name")
-                        .foregroundStyle(.secondary)
-                    Spacer()
+                VStack(spacing: 6.0) {
+                    PresetIconView(preset: preset, size: 64.0)
                     Text(preset.displayName)
-                }
-                if let viewport = preset.viewport, viewport != .none {
-                    HStack {
-                        Text("Viewport")
-                            .foregroundStyle(.secondary)
-                        Spacer()
+                        .font(.title3.weight(.semibold))
+                        .multilineTextAlignment(.center)
+                    if let viewport = preset.viewport, viewport != .none {
                         Text(viewport.displayName)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
                     }
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12.0)
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets())
             }
 
             Section("UserAgent") {
@@ -59,11 +60,15 @@ struct PresetDetailView: View {
                 }
             }
         }
+        .contentMargins(.top, 0.0, for: .scrollContent)
         .scrollContentBackground(.hidden)
         .gradientBackground()
         .navigationTitle(preset.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .principal) {
+                Spacer()
+            }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Shared.Edit") {
                     isShowingEditor = true

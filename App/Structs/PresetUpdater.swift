@@ -26,6 +26,15 @@ class PresetUpdater {
               versionPattern: #"EdgiOS/[0-9.]+"#, versionPrefix: "EdgiOS/"),
         .init(presetNamePrefix: "Google App", appStoreId: "284815942",
               versionPattern: #"GSA/[0-9.]+"#, versionPrefix: "GSA/"),
+        // In-app browsers — track each app's App Store version
+        .init(presetNamePrefix: "Facebook", appStoreId: "284882215",
+              versionPattern: #"FBAV/[0-9.]+"#, versionPrefix: "FBAV/"),
+        .init(presetNamePrefix: "Instagram", appStoreId: "389801252",
+              versionPattern: #"Instagram [0-9.]+"#, versionPrefix: "Instagram "),
+        .init(presetNamePrefix: "X", appStoreId: "333903271",
+              versionPattern: #"Twitter for iPhone/[0-9.]+"#, versionPrefix: "Twitter for iPhone/"),
+        .init(presetNamePrefix: "TikTok", appStoreId: "835599320",
+              versionPattern: #"musical_ly_[0-9.]+"#, versionPrefix: "musical_ly_"),
     ]
 
     // berstend/chrome-versions: Chrome stable release versions per platform

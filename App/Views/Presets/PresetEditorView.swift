@@ -3,6 +3,7 @@
 //  Unagent
 //
 
+import PhotosUI
 import SwiftUI
 
 struct PresetEditorView: View {
@@ -14,12 +15,21 @@ struct PresetEditorView: View {
     var editingPreset: Preset?
 
     @State private var name: String = ""
-    @State private var imageName: String = "Safari"
+    @State private var imageName: String = "WebKit"
     @State private var userAgent: String = ""
     @State private var source: String = ""
     @State private var viewport: Viewport?
-    @State private var isShowingIconPicker: Bool = false
     @State private var safariURL: URL?
+    @State private var photoItem: PhotosPickerItem?
+
+    // Browser engines offered for custom presets (display name → icon asset).
+    static let engineOptions: [(name: String, imageName: String)] = [
+        ("WebKit", "WebKit"),
+        ("Blink", "Chromium"),
+        ("Gecko", "Gecko"),
+        ("Trident", "IE"),
+        ("Ladybird", "Ladybird")
+    ]
 
     var body: some View {
         NavigationView {
@@ -32,22 +42,33 @@ struct PresetEditorView: View {
                 }
 
                 Section {
-                    Button {
-                        isShowingIconPicker = true
+                    Menu {
+                        Picker("Presets.Editor.Icon", selection: $imageName) {
+                            ForEach(Self.engineOptions, id: \.imageName) { option in
+                                Label(option.name, image: option.imageName)
+                                    .tag(option.imageName)
+                            }
+                        }
                     } label: {
-                        HStack {
+                        HStack(spacing: 8.0) {
                             Text("Presets.Editor.Icon")
                             Spacer()
                             Image(imageName)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 24, height: 24)
-                            Image(systemName: "chevron.right")
+                                .frame(width: 24.0, height: 24.0)
+                            Text(Self.engineOptions.first { $0.imageName == imageName }?.name ?? "")
+                                .foregroundStyle(.secondary)
+                            Image(systemName: "chevron.up.chevron.down")
                                 .font(.caption)
                                 .foregroundStyle(.tertiary)
                         }
                     }
                     .buttonStyle(.plain)
+
+                    PhotosPicker(selection: $photoItem, matching: .images) {
+                        Label("Presets.Editor.ChoosePhoto", systemImage: "photo")
+                    }
                 } header: {
                     Text("Presets.Editor.Appearance")
                 }
@@ -129,12 +150,19 @@ struct PresetEditorView: View {
                     }
                 }
             }
-            .sheet(isPresented: $isShowingIconPicker) {
-                IconPickerView(selectedIcon: $imageName)
-            }
             .sheet(item: $safariURL) { url in
                 SafariView(url: url)
                     .ignoresSafeArea()
+            }
+            .onChange(of: photoItem) {
+                guard let photoItem else { return }
+                Task {
+                    if let data = try? await photoItem.loadTransferable(type: Data.self),
+                       let image = UIImage(data: data),
+                       let filename = CustomIconStore.save(image) {
+                        imageName = filename
+                    }
+                }
             }
             .onAppear {
                 if let preset = editingPreset {
@@ -153,6 +181,8 @@ struct PresetEditorView: View {
             var updated = existing
             updated.name = name
             updated.imageName = imageName
+            // A picked custom icon should win over any remote store icon.
+            if CustomIconStore.isCustomIcon(imageName) { updated.iconURL = nil }
             updated.userAgent = userAgent
             updated.source = source.isEmpty ? nil : source
             updated.sources = nil
@@ -168,66 +198,6 @@ struct PresetEditorView: View {
                 isBuiltIn: false
             )
             presetStore.addPreset(newPreset)
-        }
-    }
-}
-
-struct IconPickerView: View {
-
-    @Environment(\.dismiss) var dismiss
-    @Binding var selectedIcon: String
-
-    private let columns = Array(repeating: GridItem(.flexible()), count: 5)
-
-    static let browserIcons: [String] = [
-        "Safari", "Chrome", "Edgeium", "EdgeHTML", "IE",
-        "Apple", "Google", "Bing", "OpenAI", "Claude",
-        "SonyPlaystation", "SonyPlaystation5", "Xbox"
-    ]
-
-    var body: some View {
-        NavigationView {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(Self.browserIcons, id: \.self) { icon in
-                        Button {
-                            selectedIcon = icon
-                            dismiss()
-                        } label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 12)
-                                    .fill(selectedIcon == icon
-                                          ? Color.accentColor.opacity(0.2)
-                                          : Color(.secondarySystemGroupedBackground))
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .stroke(selectedIcon == icon
-                                                    ? Color.accentColor
-                                                    : Color.clear, lineWidth: 2)
-                                    )
-                                Image(icon)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 32, height: 32)
-                            }
-                            .frame(height: 60)
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }
-                .padding()
-            }
-            .scrollContentBackground(.hidden)
-            .gradientBackground()
-            .navigationTitle("Presets.IconPicker.Title")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Shared.Done") {
-                        dismiss()
-                    }
-                }
-            }
         }
     }
 }

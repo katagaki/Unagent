@@ -46,13 +46,7 @@ struct PresetsSection: View {
                     }
                 } label: {
                     HStack(spacing: 8.0) {
-                        if UIImage(named: preset.imageName) != nil {
-                            Image(preset.imageName)
-                        } else {
-                            Image(systemName: preset.imageName)
-                                .frame(width: 24, height: 24)
-                                .foregroundStyle(.secondary)
-                        }
+                        PresetIconView(preset: preset)
                         Text(preset.displayName)
                         Spacer()
                         if currentUserAgent() == preset.userAgent {

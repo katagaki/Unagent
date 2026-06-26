@@ -117,10 +117,10 @@ class PresetStore {
         "Default (Don't Change)",
         "Safari (iOS)",
         "Safari (macOS)",
-        "Microsoft Edge 144 (iOS)",
-        "Microsoft Edge 144 (macOS)",
-        "Google Chrome 145 (iOS)",
-        "Google Chrome 144 (macOS)"
+        "Microsoft Edge (iOS)",
+        "Microsoft Edge (macOS)",
+        "Google Chrome (iOS)",
+        "Google Chrome (macOS)"
     ]
 
     private func loadHiddenPresets() {
@@ -180,82 +180,14 @@ class PresetStore {
             return bundled
         }
 
+        // Preset names are stable (no version numbers); only the user agent is updated.
         for i in bundled.indices {
             if let updatedUA = updates[bundled[i].name] {
                 bundled[i].userAgent = updatedUA
-                // Update the version number in the preset name if it changed
-                bundled[i].name = updatedPresetName(
-                    currentName: bundled[i].name,
-                    userAgent: updatedUA
-                )
             }
         }
 
         return bundled
-    }
-
-    private func updatedPresetName(currentName: String, userAgent: String) -> String {
-        // Extract version from the user agent and update the name
-        // e.g. "Google Chrome 144 (macOS)" → "Google Chrome 132 (macOS)"
-
-        // iOS Chrome (CriOS) — check before desktop Chrome
-        if currentName.contains("Chrome") && currentName.contains("(iOS)") {
-            if let range = userAgent.range(of: #"CriOS/(\d+)"#, options: .regularExpression) {
-                let version = userAgent[range].replacingOccurrences(of: "CriOS/", with: "")
-                return currentName.replacingOccurrences(
-                    of: #"\d+"#, with: version, options: .regularExpression
-                )
-            }
-        }
-
-        // iOS Edge (EdgiOS) — check before desktop Edge
-        if currentName.contains("Edge") && !currentName.contains("EdgeHTML")
-            && currentName.contains("(iOS)") {
-            if let range = userAgent.range(of: #"EdgiOS/(\d+)"#, options: .regularExpression) {
-                let version = userAgent[range].replacingOccurrences(of: "EdgiOS/", with: "")
-                return currentName.replacingOccurrences(
-                    of: #"\d+"#, with: version, options: .regularExpression
-                )
-            }
-        }
-
-        // Google App (GSA)
-        if currentName.contains("Google App") {
-            if let range = userAgent.range(of: #"GSA/(\d+)"#, options: .regularExpression) {
-                let version = userAgent[range].replacingOccurrences(of: "GSA/", with: "")
-                return currentName.replacingOccurrences(
-                    of: #"\d+"#, with: version, options: .regularExpression
-                )
-            }
-        }
-
-        // Desktop/Android Chrome
-        if currentName.contains("Chrome") && !currentName.contains("Google App") {
-            if let range = userAgent.range(of: #"Chrome/(\d+)"#, options: .regularExpression) {
-                let version = userAgent[range].replacingOccurrences(of: "Chrome/", with: "")
-                return currentName.replacingOccurrences(
-                    of: #"\d+"#, with: version, options: .regularExpression
-                )
-            }
-        }
-
-        // Desktop/Android Edge
-        if currentName.contains("Edge") && !currentName.contains("EdgeHTML") {
-            if let range = userAgent.range(of: #"Edg/(\d+)"#, options: .regularExpression) {
-                let version = userAgent[range].replacingOccurrences(of: "Edg/", with: "")
-                return currentName.replacingOccurrences(
-                    of: #"\d+"#, with: version, options: .regularExpression
-                )
-            }
-            if let range = userAgent.range(of: #"EdgA/(\d+)"#, options: .regularExpression) {
-                let version = userAgent[range].replacingOccurrences(of: "EdgA/", with: "")
-                return currentName.replacingOccurrences(
-                    of: #"\d+"#, with: version, options: .regularExpression
-                )
-            }
-        }
-
-        return currentName
     }
 
     // MARK: - Extension Sync
@@ -283,9 +215,14 @@ class PresetStore {
             }
             var entry: [String: String] = [
                 "name": preset.name,
-                "imageName": preset.imageName,
                 "userAgent": userAgent
             ]
+            if !preset.imageName.isEmpty {
+                entry["imageName"] = preset.imageName
+            }
+            if let iconURL = preset.iconURL, !iconURL.isEmpty {
+                entry["iconURL"] = iconURL
+            }
             if let viewport = preset.viewport, viewport != .none {
                 entry["viewport"] = viewport.rawValue
             }

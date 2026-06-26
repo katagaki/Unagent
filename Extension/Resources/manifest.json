@@ -34,6 +34,9 @@
     "host_permissions": [
         "*://*/*"
     ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' data: https:;"
+    },
     "declarative_net_request": {
         "rule_resources": []
     }

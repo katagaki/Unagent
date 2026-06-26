@@ -1,34 +1,37 @@
 [
     {
         "name": "Default (Don't Change)",
-        "imageName": "Safari",
         "userAgent": "",
         "source": ""
     },
     {
         "name": "Safari (iOS)",
-        "imageName": "Safari",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/4c/cb/234ccbb4-e65a-bb94-f877-3d230743e9e3/safari-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
         "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%.%OS_MINOR% Mobile/15E148 Safari/604.1",
         "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios",
         "viewport": "Mobile"
     },
     {
         "name": "Safari (iPadOS)",
-        "imageName": "Safari",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/4c/cb/234ccbb4-e65a-bb94-f877-3d230743e9e3/safari-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
         "userAgent": "Mozilla/5.0 (iPad; CPU OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%.%OS_MINOR% Mobile/15E148 Safari/604.1",
         "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios",
         "viewport": "Tablet"
     },
     {
         "name": "Safari (macOS)",
-        "imageName": "Safari",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/4c/cb/234ccbb4-e65a-bb94-f877-3d230743e9e3/safari-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%.%OS_MINOR% Safari/605.1.15",
         "source": "",
         "viewport": "Desktop"
     },
     {
-        "name": "Microsoft Edge 149 (iOS)",
-        "imageName": "Edgeium",
+        "name": "Microsoft Edge (iOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/82/3c/59823c6e-9e71-51a6-78be-39d14d021d83/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
+        "category": "browsers",
         "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%.%OS_MINOR% EdgiOS/149.4022.80 Mobile/15E148 Safari/605.1.15",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge",
@@ -38,8 +41,20 @@
         "viewport": "Mobile"
     },
     {
-        "name": "Microsoft Edge 149 (macOS)",
-        "imageName": "Edgeium",
+        "name": "Microsoft Edge (Windows)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/82/3c/59823c6e-9e71-51a6-78be-39d14d021d83/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.4022.96",
+        "sources": [
+            "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge",
+            "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel"
+        ],
+        "viewport": "Desktop"
+    },
+    {
+        "name": "Microsoft Edge (macOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/82/3c/59823c6e-9e71-51a6-78be-39d14d021d83/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
+        "category": "browsers",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.4022.96",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge",
@@ -48,8 +63,9 @@
         "viewport": "Desktop"
     },
     {
-        "name": "Microsoft Edge 149 (Android)",
-        "imageName": "Edgeium",
+        "name": "Microsoft Edge (Android)",
+        "iconURL": "https://play-lh.googleusercontent.com/4Z1Nt1I9HUDevt5VJ7BmgpqSTUpsC0Ei1K-IiXSmkH5Dzorz_isDzq4qdpb75RA1SfOV7v6csav-atWBur1wJQM",
+        "category": "browsers",
         "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Mobile Safari/537.36 EdgA/149.0.0.0",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/edge",
@@ -58,8 +74,9 @@
         "viewport": "Mobile"
     },
     {
-        "name": "Google Chrome 150 (iOS)",
-        "imageName": "Chrome",
+        "name": "Google Chrome (iOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/24/fb/23/24fb2330-fa37-0a94-3424-909a93fc9151/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
         "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/150.0.7871.51 Mobile/15E148 Safari/604.1",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/ios",
@@ -69,15 +86,41 @@
         "viewport": "Mobile"
     },
     {
-        "name": "Google Chrome 149 (macOS)",
-        "imageName": "Chrome",
+        "name": "Google Chrome (Windows)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/24/fb/23/24fb2330-fa37-0a94-3424-909a93fc9151/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome",
+        "viewport": "Desktop"
+    },
+    {
+        "name": "Google Chrome (macOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/24/fb/23/24fb2330-fa37-0a94-3424-909a93fc9151/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
         "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome",
         "viewport": "Desktop"
     },
     {
-        "name": "Google Chrome 149 (Android)",
-        "imageName": "Chrome",
+        "name": "Google Chrome (Linux)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/24/fb/23/24fb2330-fa37-0a94-3424-909a93fc9151/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome",
+        "viewport": "Desktop"
+    },
+    {
+        "name": "Google Chrome (ChromeOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/24/fb/23/24fb2330-fa37-0a94-3424-909a93fc9151/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome",
+        "viewport": "Desktop"
+    },
+    {
+        "name": "Google Chrome (Android)",
+        "iconURL": "https://play-lh.googleusercontent.com/gbkzfC3R1fXcGR4Uag1uRSN_123Tpo_KxhVZFLFCatmthFuO1bzPczUomFtxI42YYEQMJeAaZuIFVrTF58gZYg",
+        "category": "browsers",
         "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Mobile Safari/537.36",
         "sources": [
             "https://www.whatismybrowser.com/guides/the-latest-user-agent/chrome",
@@ -86,111 +129,359 @@
         "viewport": "Mobile"
     },
     {
-        "name": "Google App 423 (iOS)",
-        "imageName": "Google",
+        "name": "Mozilla Firefox (Windows)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/d7/e6/ded7e69f-1c90-48a5-4a5e-35be9d666540/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:152.0) Gecko/20100101 Firefox/152.0",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/firefox",
+        "viewport": "Desktop"
+    },
+    {
+        "name": "Mozilla Firefox (macOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/d7/e6/ded7e69f-1c90-48a5-4a5e-35be9d666540/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:152.0) Gecko/20100101 Firefox/152.0",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/firefox",
+        "viewport": "Desktop"
+    },
+    {
+        "name": "Mozilla Firefox (Linux)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/d7/e6/ded7e69f-1c90-48a5-4a5e-35be9d666540/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:152.0) Gecko/20100101 Firefox/152.0",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/firefox",
+        "viewport": "Desktop"
+    },
+    {
+        "name": "Mozilla Firefox (Android)",
+        "iconURL": "https://play-lh.googleusercontent.com/jQAmlGUkuJGc4TjZs2OEUeB5Gy3dCpKCWqfgVmab5NvM_43oed2qhVhrlEajccjJV6VkDFCEXws_6t6StKKLTY4",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (Android 16; Mobile; rv:152.0) Gecko/152.0 Firefox/152.0",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/firefox",
+        "viewport": "Mobile"
+    },
+    {
+        "name": "Mozilla Firefox (iOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/d7/e6/ded7e69f-1c90-48a5-4a5e-35be9d666540/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/152.0 Mobile/15E148 Safari/605.1.15",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/firefox",
+        "viewport": "Mobile"
+    },
+    {
+        "name": "Samsung Internet (Android)",
+        "iconURL": "https://play-lh.googleusercontent.com/mOALIZAY5JGaI1txlkeVvluM3QTRGmTbjGZcmrjqYdlz2f7asSPko05A5xCHZ_uczulElA_kOJq2rfjgoCyN",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (Linux; Android 16; SM-S938B) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/30.0 Chrome/140.0.0.0 Mobile Safari/537.36",
+        "source": "https://developer.samsung.com/internet/user-agent-string-format.html",
+        "viewport": "Mobile"
+    },
+    {
+        "name": "Opera (Windows)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cb/47/1b/cb471b4d-b358-45af-d857-55c0c0ce177f/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 OPR/132.0.0.0",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/opera",
+        "viewport": "Desktop"
+    },
+    {
+        "name": "Opera (macOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cb/47/1b/cb471b4d-b358-45af-d857-55c0c0ce177f/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/512x512bb.jpg",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 OPR/132.0.0.0",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/opera",
+        "viewport": "Desktop"
+    },
+    {
+        "name": "Opera (Android)",
+        "iconURL": "https://play-lh.googleusercontent.com/OXMuirawEpDqYwFE5FPutnvLfvCEceARGBtAzjNjiga6wJ1S2YVQAnBHEwL6RedR8PVV7Uy3Q4kZ5-m9LlALaA",
+        "category": "browsers",
+        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Mobile Safari/537.36 OPR/90.0.0.0",
+        "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/opera",
+        "viewport": "Mobile"
+    },
+    {
+        "name": "Facebook (iOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/18/01/32/18013282-d004-b680-4fdf-e8743f570bce/Icon-Production-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "apps",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 [FBAN/FBIOS;FBAV/503.0.0.0.0;FBBV/700000000;FBDV/iPhone17,2;FBMD/iPhone;FBSN/iOS;FBSV/%OS_MAJOR%.%OS_MINOR%;FBSS/3;FBID/phone;FBLC/en_US;FBOP/5]",
+        "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/facebook-app/",
+        "viewport": "Mobile"
+    },
+    {
+        "name": "Instagram (iOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0d/3e/91/0d3e915f-ec89-78f6-b2a7-f8e0b0c8bc80/Prod-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "apps",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 360.0.0.0.0 (iPhone17,2; iOS %OS_MAJOR%_%OS_MINOR%; en_US; en-US; scale=3.00; 1320x2868; 700000000)",
+        "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/instagram-app/",
+        "viewport": "Mobile"
+    },
+    {
+        "name": "X (iOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/4c/4c/7f4c4c38-63cd-aa0d-f97e-99a47bd2ff27/ProductionAppIcon-0-0-1x_U007emarketing-0-8-0-0-0-85-220.png/512x512bb.jpg",
+        "category": "apps",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Twitter for iPhone/12.0",
+        "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/twitter-app/",
+        "viewport": "Mobile"
+    },
+    {
+        "name": "TikTok (iOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7c/51/a5/7c51a528-3204-0598-d629-2d23004a5160/TikTok_AppIcon26-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+        "category": "apps",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 musical_ly_38.0.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/US",
+        "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/tiktok/",
+        "viewport": "Mobile"
+    },
+    {
+        "name": "Google App (iOS)",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/eb/33/c3eb33ac-b8d4-a804-d198-6b29b331de0b/SuperG_ios26-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-0-85-220.png/512x512bb.jpg",
+        "category": "apps",
         "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/423.5.920392540 Mobile/15E148 Safari/604.1",
         "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/google-search-app/",
         "viewport": "Mobile"
     },
     {
         "name": "Googlebot",
-        "imageName": "Google",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/eb/33/c3eb33ac-b8d4-a804-d198-6b29b331de0b/SuperG_ios26-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-0-85-220.png/512x512bb.jpg",
+        "category": "searchEngines",
         "userAgent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
         "source": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
     },
     {
+        "name": "GoogleOther",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/eb/33/c3eb33ac-b8d4-a804-d198-6b29b331de0b/SuperG_ios26-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-0-85-220.png/512x512bb.jpg",
+        "category": "searchEngines",
+        "userAgent": "Mozilla/5.0 (compatible; GoogleOther)",
+        "source": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+    },
+    {
+        "name": "Google-InspectionTool",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/eb/33/c3eb33ac-b8d4-a804-d198-6b29b331de0b/SuperG_ios26-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-0-85-220.png/512x512bb.jpg",
+        "category": "searchEngines",
+        "userAgent": "Mozilla/5.0 (compatible; Google-InspectionTool/1.0)",
+        "source": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+    },
+    {
         "name": "Google-Extended",
-        "imageName": "Google",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/eb/33/c3eb33ac-b8d4-a804-d198-6b29b331de0b/SuperG_ios26-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-0-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 (compatible; Google-Extended/1.0)",
         "source": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
     },
     {
         "name": "Bingbot",
-        "imageName": "Bing",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e9/1b/23/e91b23f2-487f-ce40-322a-71258d1ca0eb/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.png/512x512bb.jpg",
+        "category": "searchEngines",
         "userAgent": "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)",
         "source": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0"
     },
     {
         "name": "OpenAI SearchBot",
-        "imageName": "OpenAI",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/59/ed/2259edf9-6bd5-a17a-c035-074aac0954d2/AppIcon-0-0-1x_U007epad-0-0-0-1-0-P3-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 (compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)",
         "source": "https://platform.openai.com/docs/bots"
     },
     {
         "name": "ChatGPT User",
-        "imageName": "OpenAI",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/59/ed/2259edf9-6bd5-a17a-c035-074aac0954d2/AppIcon-0-0-1x_U007epad-0-0-0-1-0-P3-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
         "source": "https://platform.openai.com/docs/bots"
     },
     {
         "name": "OpenAI GPTBot",
-        "imageName": "OpenAI",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/59/ed/2259edf9-6bd5-a17a-c035-074aac0954d2/AppIcon-0-0-1x_U007epad-0-0-0-1-0-P3-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot",
         "source": "https://platform.openai.com/docs/bots"
     },
     {
         "name": "ClaudeBot",
-        "imageName": "Claude",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/77/ba/5077ba2f-7c32-6f5d-f6e4-126f1c741a98/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 (compatible; ClaudeBot/1.0)",
         "source": "https://darkvisitors.com/agents/claudebot"
     },
     {
+        "name": "Claude-User",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/77/ba/5077ba2f-7c32-6f5d-f6e4-126f1c741a98/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
+        "userAgent": "Mozilla/5.0 (compatible; Claude-User/1.0)",
+        "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    {
+        "name": "Claude-SearchBot",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/77/ba/5077ba2f-7c32-6f5d-f6e4-126f1c741a98/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
+        "userAgent": "Mozilla/5.0 (compatible; Claude-SearchBot/1.0)",
+        "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    {
+        "name": "PerplexityBot",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/17/26/76/17267668-d13f-a758-f748-d4dd887ec3e8/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-85-220-0.png/512x512bb.jpg",
+        "category": "aiCrawlers",
+        "userAgent": "Mozilla/5.0 (compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)",
+        "source": "https://docs.perplexity.ai/guides/bots"
+    },
+    {
+        "name": "Perplexity-User",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/17/26/76/17267668-d13f-a758-f748-d4dd887ec3e8/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-85-220-0.png/512x512bb.jpg",
+        "category": "aiCrawlers",
+        "userAgent": "Mozilla/5.0 (compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)",
+        "source": "https://docs.perplexity.ai/guides/bots"
+    },
+    {
+        "name": "Amazonbot",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/77/6f/ab/776fabf0-b237-a350-3372-f7ee1250e493/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-0-85-220.png/512x512bb.jpg",
+        "category": "searchEngines",
+        "userAgent": "Mozilla/5.0 (compatible; Amazonbot/0.1; +https://developer.amazon.com/support/amazonbot)",
+        "source": "https://developer.amazon.com/amazonbot"
+    },
+    {
+        "name": "Bytespider",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7c/51/a5/7c51a528-3204-0598-d629-2d23004a5160/TikTok_AppIcon26-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
+        "userAgent": "Mozilla/5.0 (compatible; Bytespider; spider-feedback@bytedance.com)",
+        "source": "https://knownagents.com/agents"
+    },
+    {
+        "name": "Meta-ExternalAgent",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/95/41/80/954180ed-9d76-0006-84ff-15a0df8388ab/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-0-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
+        "userAgent": "meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)",
+        "source": "https://developers.facebook.com/docs/sharing/webmasters/crawler"
+    },
+    {
+        "name": "CCBot (Common Crawl)",
+        "iconURL": "https://cdn.prod.website-files.com/6479b8d98bf5dcb4a69c4f31/648962c357c8113a871e3378_Common_Crawl_Rev3_LPX_Logo%20Gradient%20BG.png",
+        "category": "aiCrawlers",
+        "userAgent": "CCBot/2.0 (https://commoncrawl.org/faq/)",
+        "source": "https://commoncrawl.org/ccbot"
+    },
+    {
+        "name": "MistralAI-User",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7a/39/e5/7a39e51e-0e8c-8597-a75d-04703303a9b5/chat-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
+        "category": "aiCrawlers",
+        "userAgent": "MistralAI-User/1.0",
+        "source": "https://docs.mistral.ai/robots"
+    },
+    {
+        "name": "DuckDuckBot",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/bc/c2/d9bcc242-db33-f273-4787-2bee35a5ac49/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-0-85-220.png/512x512bb.jpg",
+        "category": "searchEngines",
+        "userAgent": "Mozilla/5.0 (compatible; DuckDuckBot/1.1; +http://duckduckgo.com/duckduckbot.html)",
+        "source": "https://duckduckgo.com/duckduckbot"
+    },
+    {
+        "name": "YandexBot",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ba/de/73/bade7308-ae25-5210-7ff5-e2637246e25f/Icon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+        "category": "searchEngines",
+        "userAgent": "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)",
+        "source": "https://yandex.com/bots"
+    },
+    {
+        "name": "Baiduspider",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/60/b0/95/60b0955d-d443-d739-8dae-9dcf783a2280/AppIcon-0-0-1x_U007epad-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "searchEngines",
+        "userAgent": "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)",
+        "source": "https://www.baidu.com/search/spider.html"
+    },
+    {
         "name": "Applebot (iOS)",
-        "imageName": "Apple",
+        "iconURL": "https://www.apple.com/apple-touch-icon.png",
+        "category": "searchEngines",
         "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS %OS_MAJOR%_%OS_MINOR%_%OS_PATCH% like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%_0 Mobile/15E148 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
         "source": "https://support.apple.com/en-us/119829"
     },
     {
         "name": "Applebot (macOS)",
-        "imageName": "Apple",
+        "iconURL": "https://www.apple.com/apple-touch-icon.png",
+        "category": "searchEngines",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/%OS_MAJOR%_0 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
         "source": "https://support.apple.com/en-us/119829"
     },
     {
         "name": "Applebot-Extended",
-        "imageName": "Apple",
+        "iconURL": "https://www.apple.com/apple-touch-icon.png",
+        "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 (compatible; Applebot-Extended/1.0)",
         "source": "https://support.apple.com/en-us/119829"
     },
     {
         "name": "Playstation 5",
-        "imageName": "SonyPlaystation5",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/59/06/3c590693-fa87-346f-83b7-f5ec848ba22d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+        "category": "consoles",
         "userAgent": "Mozilla/5.0 (PlayStation; PlayStation 5/12.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15 libhttp/12.60 (PlayStation 5)",
         "source": "https://explore.whatismybrowser.com/useragents/explore/operating_platform/playstation-5/"
     },
     {
         "name": "Playstation 4",
-        "imageName": "SonyPlaystation",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/59/06/3c590693-fa87-346f-83b7-f5ec848ba22d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+        "category": "consoles",
         "userAgent": "Mozilla/5.0 (PlayStation; PlayStation 4/13.04) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
         "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/playstation-4-browser/"
     },
     {
         "name": "Playstation Portable",
-        "imageName": "SonyPlaystation",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/59/06/3c590693-fa87-346f-83b7-f5ec848ba22d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+        "category": "consoles",
         "userAgent": "Mozilla/5.0 (PSP (PlayStation Portable); 6.37)",
         "source": "https://botsvsbrowsers.org/category/67/index.html"
     },
     {
         "name": "Xbox",
-        "imageName": "Xbox",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/70/db/b9/70dbb910-6ae7-a599-fe84-48eb3aac54d6/AppIcon-1x_U007epad-0-1-85-220-0.png/512x512bb.jpg",
+        "category": "consoles",
         "userAgent": "Mozilla/5.0 (Linux; Android 12.1; XBOX Build/NHG47K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.158 Safari/537.36",
         "source": "https://explore.whatismybrowser.com/useragents/explore/operating_platform/xbox/"
     },
     {
-        "name": "Microsoft Edge 18 (EdgeHTML)",
-        "imageName": "EdgeHTML",
+        "name": "Nintendo Switch",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e5/0c/06/e50c06bb-5b0e-4932-2e8f-db375ded6759/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+        "category": "consoles",
+        "userAgent": "Mozilla/5.0 (Nintendo Switch; WifiWebAuthApplet) AppleWebKit/609.4 (KHTML, like Gecko) NF/6.0.2.23.6 NintendoBrowser/5.1.0.23304",
+        "source": "https://explore.whatismybrowser.com/useragents/explore/operating_platform/nintendo-switch/"
+    },
+    {
+        "name": "Samsung Smart TV (Tizen)",
+        "iconURL": "https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/pwa/icon/pwa_icon_192x192.png",
+        "category": "devices",
+        "userAgent": "Mozilla/5.0 (SMART-TV; LINUX; Tizen 8.0) AppleWebKit/537.36 (KHTML, like Gecko) 110.0.5481.154/8.0 TV Safari/537.36",
+        "source": "https://developer.samsung.com/smarttv/develop/guides/fundamentals/retrieving-platform-information.html"
+    },
+    {
+        "name": "LG Smart TV (webOS)",
+        "iconURL": "https://icons.duckduckgo.com/ip3/lg.com.ico",
+        "category": "devices",
+        "userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.215 Safari/537.36 WebAppManager",
+        "source": "https://webostv.developer.lge.com/develop/specifications/web-engine"
+    },
+    {
+        "name": "Amazon Kindle",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/77/6f/ab/776fabf0-b237-a350-3372-f7ee1250e493/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-0-85-220.png/512x512bb.jpg",
+        "category": "devices",
+        "userAgent": "Mozilla/5.0 (X11; U; Linux armv7l like Android; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Version/5.0 Safari/533.2+ Kindle/3.0+",
+        "source": "https://explore.whatismybrowser.com/useragents/explore/software_name/kindle-browser/"
+    },
+    {
+        "name": "Microsoft Edge (EdgeHTML)",
+        "iconURL": "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_Edge_logo_%282015%E2%80%932019%29.svg?width=512",
+        "category": "legacy",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763",
         "source": "https://learn.microsoft.com/en-us/microsoft-edge/web-platform/user-agent-guidance"
     },
     {
         "name": "Internet Explorer 11",
-        "imageName": "IE",
+        "iconURL": "https://commons.wikimedia.org/wiki/Special:FilePath/Internet_Explorer_10%2B11_logo.svg?width=512",
+        "category": "legacy",
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko",
         "source": "https://www.whatismybrowser.com/guides/the-latest-user-agent/internet-explorer"
     },
     {
         "name": "Internet Explorer 6",
-        "imageName": "IE",
+        "iconURL": "https://commons.wikimedia.org/wiki/Special:FilePath/Internet_Explorer_10%2B11_logo.svg?width=512",
+        "category": "legacy",
         "userAgent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)",
         "source": "https://www.useragentstring.com/pages/Internet%20Explorer/"
     }
