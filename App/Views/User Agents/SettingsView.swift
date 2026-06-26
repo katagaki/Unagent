@@ -39,109 +39,103 @@ struct SettingsView: View {
     @State var editingSiteSettingShouldSave: Bool = false
 
     var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    NavigationLink {
-                        GlobalSettingsView(
-                            globalUserAgent: $globalUserAgent,
-                            globalViewportString: $globalViewportString,
-                            synchronizeDefaults: synchronizeDefaults
-                        )
-                    } label: {
-                        HStack {
-                            Label("ViewTitle.GlobalSettings", systemImage: "globe")
-                            Spacer()
-                        }
+        Group {
+            Section {
+                NavigationLink {
+                    GlobalSettingsView(
+                        globalUserAgent: $globalUserAgent,
+                        globalViewportString: $globalViewportString,
+                        synchronizeDefaults: synchronizeDefaults
+                    )
+                } label: {
+                    HStack {
+                        Label("ViewTitle.GlobalSettings", systemImage: "globe")
+                        Spacer()
                     }
                 }
+            }
 
-                Section {
-                    if perSiteSettings.isEmpty {
-                        if #available(iOS 17.0, *) {
-                            ContentUnavailableView(
-                                "SiteSettings.EmptyText.Title",
-                                systemImage: "plus.square.on.square",
-                                description: Text("SiteSettings.EmptyText.Text")
-                            )
-                        } else {
-                            Text("SiteSettings.EmptyText.Text")
-                                .foregroundStyle(.secondary)
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .multilineTextAlignment(.center)
-                                .padding()
-                        }
+            Section {
+                if perSiteSettings.isEmpty {
+                    if #available(iOS 17.0, *) {
+                        ContentUnavailableView(
+                            "SiteSettings.EmptyText.Title",
+                            systemImage: "plus.square.on.square",
+                            description: Text("SiteSettings.EmptyText.Text")
+                        )
                     } else {
-                        ForEach(perSiteSettings, id: \.domain) { siteSetting in
-                            Button {
-                                startEditingPerSiteSetting(siteSetting)
-                            } label: {
-                                SiteSettingRow(
-                                    title: siteSetting.domain,
-                                    subtitle: siteSetting.userAgent
-                                )
+                        Text("SiteSettings.EmptyText.Text")
+                            .foregroundStyle(.secondary)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                    }
+                } else {
+                    ForEach(perSiteSettings, id: \.domain) { siteSetting in
+                        Button {
+                            startEditingPerSiteSetting(siteSetting)
+                        } label: {
+                            SiteSettingRow(
+                                title: siteSetting.domain,
+                                subtitle: siteSetting.userAgent
+                            )
+                        }
+                        .swipeActions {
+                            Button("Shared.Delete") {
+                                deletePerSiteSetting(siteSetting)
                             }
-                            .swipeActions {
-                                Button("Shared.Delete") {
+                            .tint(.red)
+                            Button("Shared.Edit") {
+                                startEditingPerSiteSetting(siteSetting)
+                            }
+                            .tint(.blue)
+                        }
+                        .contextMenu {
+                            if horizontalSizeClass == .regular {
+                                Button("Shared.Delete", role: .destructive) {
                                     deletePerSiteSetting(siteSetting)
                                 }
-                                .tint(.red)
-                                Button("Shared.Edit") {
-                                    startEditingPerSiteSetting(siteSetting)
-                                }
-                                .tint(.blue)
                             }
-                            .contextMenu {
-                                if horizontalSizeClass == .regular {
-                                    Button("Shared.Delete", role: .destructive) {
-                                        deletePerSiteSetting(siteSetting)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                } header: {
-                    HStack(alignment: .center) {
-                        Text("UserAgent.PerSite")
-                        Spacer()
-                        Button("Shared.Add", systemImage: "plus") {
-                            isShowingNewSiteSettingView = true
                         }
                     }
                 }
-            }
-            .scrollContentBackground(.hidden)
-            .gradientBackground()
-            .navigationTitle("ViewTitle.Settings")
-            .onChange(of: globalUserAgent, synchronizeDefaults)
-            .onChange(of: isShowingNewSiteSettingView, createNewPerSiteSetting)
-            .onChange(of: isShowingEditSiteSettingView, editPerSiteSetting)
-            .scrollDismissesKeyboard(.immediately)
-            .sheet(isPresented: $isShowingNewSiteSettingView) {
-                SiteSettingEditor(
-                    mode: .new,
-                    domain: $newSiteSettingDomain,
-                    userAgent: $newSiteSettingUserAgent,
-                    viewport: $newSiteSettingViewport,
-                    shouldSave: $newSiteSettingShouldSave,
-                    onValidate: { domain in
-                        // Return true if domain already exists (triggers error)
-                        return perSiteSettings.contains(where: { $0.domain == domain })
+            } header: {
+                HStack(alignment: .center) {
+                    Text("UserAgent.PerSite")
+                    Spacer()
+                    Button("Shared.Add", systemImage: "plus") {
+                        isShowingNewSiteSettingView = true
                     }
-                )
-                .presentationDetents([.large, .medium])
+                }
             }
-            .sheet(isPresented: $isShowingEditSiteSettingView) {
-                SiteSettingEditor(
-                    mode: .edit,
-                    domain: $editingSiteSettingDomain,
-                    userAgent: $editingSiteSettingUserAgent,
-                    viewport: $editingSiteSettingViewport,
-                    shouldSave: $editingSiteSettingShouldSave
-                )
-                .presentationDetents([.large, .medium])
-            }
+        }
+        .onChange(of: globalUserAgent, synchronizeDefaults)
+        .onChange(of: isShowingNewSiteSettingView, createNewPerSiteSetting)
+        .onChange(of: isShowingEditSiteSettingView, editPerSiteSetting)
+        .sheet(isPresented: $isShowingNewSiteSettingView) {
+            SiteSettingEditor(
+                mode: .new,
+                domain: $newSiteSettingDomain,
+                userAgent: $newSiteSettingUserAgent,
+                viewport: $newSiteSettingViewport,
+                shouldSave: $newSiteSettingShouldSave,
+                onValidate: { domain in
+                    // Return true if domain already exists (triggers error)
+                    return perSiteSettings.contains(where: { $0.domain == domain })
+                }
+            )
+            .presentationDetents([.large, .medium])
+        }
+        .sheet(isPresented: $isShowingEditSiteSettingView) {
+            SiteSettingEditor(
+                mode: .edit,
+                domain: $editingSiteSettingDomain,
+                userAgent: $editingSiteSettingUserAgent,
+                viewport: $editingSiteSettingViewport,
+                shouldSave: $editingSiteSettingShouldSave
+            )
+            .presentationDetents([.large, .medium])
         }
     }
 

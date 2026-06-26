@@ -43,94 +43,88 @@ struct PresetsView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            List {
-                if let defaultPreset {
-                    Section {
-                        NavigationLink {
-                            PresetDetailView(preset: defaultPreset, presetStore: presetStore)
-                        } label: {
-                            PresetRowView(preset: defaultPreset)
-                        }
-                    }
-                }
-
-                ForEach(PresetCategory.allCases) { category in
-                    let items = builtInPresets(in: category)
-                    if !items.isEmpty {
-                        Section {
-                            Button {
-                                withAnimation { toggleExpansion(category) }
-                            } label: {
-                                HStack {
-                                    Text(category.displayName)
-                                        .fontWeight(.semibold)
-                                    Spacer()
-                                    Image(systemName: "chevron.right")
-                                        .font(.caption.weight(.semibold))
-                                        .foregroundStyle(.secondary)
-                                        .rotationEffect(.degrees(expandedCategories.contains(category) ? 90 : 0))
-                                }
-                                .contentShape(Rectangle())
-                            }
-                            .buttonStyle(.plain)
-
-                            if expandedCategories.contains(category) {
-                                ForEach(items) { preset in
-                                    presetRow(preset)
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if !uncategorizedBuiltIns.isEmpty {
-                    Section {
-                        ForEach(uncategorizedBuiltIns) { preset in
-                            presetRow(preset)
-                        }
-                    }
-                }
-
+        Group {
+            if let defaultPreset {
                 Section {
-                    if presetStore.customPresets.isEmpty {
-                        ContentUnavailableView(
-                            "Presets.Custom.EmptyTitle",
-                            systemImage: "star.slash",
-                            description: Text("Presets.Custom.EmptyText")
-                        )
-                    } else {
-                        ForEach(presetStore.customPresets) { preset in
-                            NavigationLink {
-                                PresetDetailView(preset: preset, presetStore: presetStore)
-                            } label: {
-                                PresetRowView(preset: preset)
-                            }
-                        }
-                        .onDelete { indexSet in
-                            let custom = presetStore.customPresets
-                            for index in indexSet {
-                                presetStore.deletePreset(custom[index])
-                            }
-                        }
+                    NavigationLink {
+                        PresetDetailView(preset: defaultPreset, presetStore: presetStore)
+                    } label: {
+                        PresetRowView(preset: defaultPreset)
                     }
-                } header: {
-                    HStack(alignment: .center) {
-                        Text("Presets.Custom")
-                        Spacer()
-                        Button("Shared.Add", systemImage: "plus") {
-                            isShowingNewPreset = true
+                }
+            }
+
+            ForEach(PresetCategory.allCases) { category in
+                let items = builtInPresets(in: category)
+                if !items.isEmpty {
+                    Section {
+                        Button {
+                            withAnimation { toggleExpansion(category) }
+                        } label: {
+                            HStack {
+                                Text(category.displayName)
+                                    .fontWeight(.semibold)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                                    .rotationEffect(.degrees(expandedCategories.contains(category) ? 90 : 0))
+                            }
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+
+                        if expandedCategories.contains(category) {
+                            ForEach(items) { preset in
+                                presetRow(preset)
+                            }
                         }
                     }
                 }
             }
-            .listSectionSpacing(.compact)
-            .scrollContentBackground(.hidden)
-            .gradientBackground()
-            .navigationTitle("ViewTitle.Presets")
-            .sheet(isPresented: $isShowingNewPreset) {
-                PresetEditorView(mode: .new, presetStore: presetStore)
+
+            if !uncategorizedBuiltIns.isEmpty {
+                Section {
+                    ForEach(uncategorizedBuiltIns) { preset in
+                        presetRow(preset)
+                    }
+                }
             }
+
+            Section {
+                if presetStore.customPresets.isEmpty {
+                    ContentUnavailableView(
+                        "Presets.Custom.EmptyTitle",
+                        systemImage: "star.slash",
+                        description: Text("Presets.Custom.EmptyText")
+                    )
+                } else {
+                    ForEach(presetStore.customPresets) { preset in
+                        NavigationLink {
+                            PresetDetailView(preset: preset, presetStore: presetStore)
+                        } label: {
+                            PresetRowView(preset: preset)
+                        }
+                    }
+                    .onDelete { indexSet in
+                        let custom = presetStore.customPresets
+                        for index in indexSet {
+                            presetStore.deletePreset(custom[index])
+                        }
+                    }
+                }
+            } header: {
+                HStack(alignment: .center) {
+                    Text("Presets.Custom")
+                    Spacer()
+                    Button("Shared.Add", systemImage: "plus") {
+                        isShowingNewPreset = true
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $isShowingNewPreset) {
+            PresetEditorView(mode: .new, presetStore: presetStore)
         }
     }
 
