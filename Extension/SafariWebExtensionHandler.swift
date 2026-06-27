@@ -1,10 +1,3 @@
-//
-//  SafariWebExtensionHandler.swift
-//  Shared (Extension)
-//
-//  Created by シンジャスティン on 2023/04/23.
-//
-
 import SafariServices
 import os.log
 
@@ -16,8 +9,16 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
     // WARNING: This will break if the extension bundle ID does not follow the format
     //       <bundleID>.Extension
 
+    // Activation heartbeat keys (read by the main app's onboarding to confirm setup).
+    private static let enabledLastSeenKey = "ExtensionEnabledLastSeen"
+    private static let websiteAccessLastSeenKey = "ExtensionWebsiteAccessLastSeen"
+
     func beginRequest(with context: NSExtensionContext) {
         let response = NSExtensionItem()
+
+        // This handler can only run when the extension is enabled and executing,
+        // so every invocation is proof the extension is turned on.
+        defaults.set(Date().timeIntervalSince1970, forKey: Self.enabledLastSeenKey)
         /*
          Contents of context.inputItems:
          [<NSExtensionItem> - userInfo: {
@@ -83,6 +84,19 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
                 }
                 defaults.synchronize()
 
+            case "reportEnabled":
+                // Sent from the background script on Safari launch / extension
+                // enable. The enabled timestamp is already written at the top of
+                // beginRequest; this case is here for clarity and logging.
+                debugPrint("Extension reported it is enabled")
+
+            case "reportActivation":
+                // Sent from the background script, which only runs when the content
+                // script fires on a page — i.e. the extension is enabled AND has been
+                // granted website access. The app uses this to confirm setup is done.
+                debugPrint("Extension reported it is active on a page")
+                defaults.set(Date().timeIntervalSince1970, forKey: Self.websiteAccessLastSeenKey)
+
             case "hasExtensionUpdated":
                 debugPrint("Extension just told native app it was updated")
                 defaults.set(false, forKey: "ShouldExtensionUpdate")
@@ -96,6 +110,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             default: break
             }
         }
+        defaults.synchronize()
         debugPrint("Extension is going to be told:\n\(response)")
         context.completeRequest(returningItems: [response], completionHandler: nil)
     }

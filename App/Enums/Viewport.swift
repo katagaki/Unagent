@@ -1,10 +1,3 @@
-//
-//  Viewport.swift
-//  Unagent
-//
-//  Created by Copilot on 2025/10/21.
-//
-
 import Foundation
 
 enum Viewport: String, Codable, CaseIterable {
@@ -17,7 +10,6 @@ enum Viewport: String, Codable, CaseIterable {
         return NSLocalizedString("Viewport.\(self.rawValue)", comment: "")
     }
 
-    /// SF Symbol shown beside a preset's name, or nil when no viewport applies.
     var iconName: String? {
         switch self {
         case .desktop: "desktopcomputer"

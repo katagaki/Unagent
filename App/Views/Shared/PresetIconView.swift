@@ -1,13 +1,3 @@
-//
-//  PresetIconView.swift
-//  Unagent
-//
-//  Renders a preset's icon. Prefers a remotely fetched store icon
-//  (iconURL, cached in memory for the session), falling back to a
-//  bundled asset, then an SF Symbol, then nothing — keeping row
-//  alignment via a reserved frame.
-//
-
 import SwiftUI
 
 struct PresetIconView: View {
@@ -16,8 +6,6 @@ struct PresetIconView: View {
 
     @State private var loadedImage: UIImage?
 
-    /// App Store, Play Store, and Apple (apple-touch) icons are square artwork
-    /// cropped to a rounded rect (app-tile look); other logos/favicons stay flat.
     private var shouldRound: Bool {
         guard let iconURL = preset.iconURL else { return false }
         return iconURL.contains("mzstatic.com")
@@ -25,7 +13,6 @@ struct PresetIconView: View {
             || iconURL.contains("apple.com")
     }
 
-    /// The image source: a remote store icon, or a saved custom-icon file.
     private var sourceURL: URL? {
         if let iconURL = preset.iconURL, !iconURL.isEmpty, let url = URL(string: iconURL) {
             return url

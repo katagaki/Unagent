@@ -1,8 +1,3 @@
-//
-//  PresetEditorView.swift
-//  Unagent
-//
-
 import PhotosUI
 import SwiftUI
 
@@ -17,9 +12,7 @@ struct PresetEditorView: View {
     @State private var name: String = ""
     @State private var imageName: String = "WebKit"
     @State private var userAgent: String = ""
-    @State private var source: String = ""
     @State private var viewport: Viewport?
-    @State private var safariURL: URL?
     @State private var photoItem: PhotosPickerItem?
 
     // Browser engines offered for custom presets (display name → icon asset).
@@ -87,36 +80,6 @@ struct PresetEditorView: View {
                 }
 
                 ViewportPickerSection(viewport: $viewport)
-
-                if let preset = editingPreset, !preset.allSources.isEmpty {
-                    Section {
-                        ForEach(Array(preset.allSources.enumerated()), id: \.offset) { index, urlString in
-                            Button {
-                                if let url = URL(string: urlString) {
-                                    safariURL = url
-                                }
-                            } label: {
-                                HStack {
-                                    Image(systemName: "safari")
-                                        .foregroundStyle(.accent)
-                                    Text("\(index + 1). \(URL(string: urlString)?.host ?? urlString)")
-                                        .font(.subheadline)
-                                }
-                            }
-                        }
-                    } header: {
-                        Text("Presets.Detail.References")
-                    }
-                } else {
-                    Section {
-                        TextField("Presets.Editor.SourceURL", text: $source)
-                            .autocorrectionDisabled()
-                            .autocapitalization(.none)
-                            .keyboardType(.URL)
-                    } header: {
-                        Text("Presets.Detail.References")
-                    }
-                }
             }
             .navigationTitle(mode == .new ? "ViewTitle.Presets.New" : "ViewTitle.Presets.Edit")
             .navigationBarTitleDisplayMode(.inline)
@@ -150,10 +113,6 @@ struct PresetEditorView: View {
                     }
                 }
             }
-            .sheet(item: $safariURL) { url in
-                SafariView(url: url)
-                    .ignoresSafeArea()
-            }
             .onChange(of: photoItem) {
                 guard let photoItem else { return }
                 Task {
@@ -169,7 +128,6 @@ struct PresetEditorView: View {
                     name = preset.name
                     imageName = preset.imageName
                     userAgent = preset.userAgent
-                    source = preset.allSources.first ?? ""
                     viewport = preset.viewport
                 }
             }
@@ -184,8 +142,6 @@ struct PresetEditorView: View {
             // A picked custom icon should win over any remote store icon.
             if CustomIconStore.isCustomIcon(imageName) { updated.iconURL = nil }
             updated.userAgent = userAgent
-            updated.source = source.isEmpty ? nil : source
-            updated.sources = nil
             updated.viewport = viewport
             presetStore.updatePreset(updated)
         } else {
@@ -193,7 +149,6 @@ struct PresetEditorView: View {
                 name: name,
                 imageName: imageName,
                 userAgent: userAgent,
-                source: source.isEmpty ? nil : source,
                 viewport: viewport,
                 isBuiltIn: false
             )

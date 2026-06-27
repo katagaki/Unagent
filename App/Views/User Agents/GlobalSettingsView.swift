@@ -1,10 +1,3 @@
-//
-//  GlobalSettingsView.swift
-//  Unagent
-//
-//  Created by Copilot on 2025/10/21.
-//
-
 import SwiftUI
 
 struct GlobalSettingsView: View {
@@ -14,15 +7,10 @@ struct GlobalSettingsView: View {
     var synchronizeDefaults: () -> Void
 
     var globalViewport: Viewport? {
-        get {
-            if globalViewportString.isEmpty {
-                return nil
-            }
-            return Viewport(rawValue: globalViewportString)
+        if globalViewportString.isEmpty {
+            return nil
         }
-        set {
-            globalViewportString = newValue?.rawValue ?? ""
-        }
+        return Viewport(rawValue: globalViewportString)
     }
 
     var body: some View {

@@ -1,8 +1,3 @@
-//
-//  GradientBackground.swift
-//  Unagent
-//
-
 import SwiftUI
 
 struct GradientBackground: ViewModifier {

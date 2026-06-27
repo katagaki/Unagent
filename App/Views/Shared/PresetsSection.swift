@@ -1,10 +1,3 @@
-//
-//  PresetsSection.swift
-//  Unagent
-//
-//  Created by シン on 2024/03/08.
-//
-
 import Komponents
 import SwiftUI
 

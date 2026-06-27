@@ -1,10 +1,3 @@
-//
-//  Preset.swift
-//  Unagent
-//
-//  Created by シンジャスティン on 2023/05/28.
-//
-
 import Foundation
 
 struct Preset: Codable, Identifiable {

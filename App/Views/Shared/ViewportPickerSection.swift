@@ -1,10 +1,3 @@
-//
-//  ViewportPickerSection.swift
-//  Unagent
-//
-//  Created by Copilot on 2025/10/21.
-//
-
 import SwiftUI
 
 struct ViewportPickerSection: View {

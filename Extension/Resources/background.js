@@ -3,8 +3,25 @@ const supportedResourceTypes = [
     "font", "xmlhttprequest", "ping", "media", "websocket", "other"
 ];
 
+// Report to the native app as soon as the extension runs in Safari, before any
+// page is visited and regardless of website-access permission. onInstalled fires
+// when the extension is installed, enabled, or updated; onStartup fires when
+// Safari launches with the extension enabled. This lets the app's onboarding mark
+// "extension enabled" from just opening Safari, instead of waiting for a page
+// load with website access (which the content-script path requires).
+function reportEnabled() {
+    browser.runtime.sendNativeMessage({function: "reportEnabled"}, null);
+}
+browser.runtime.onInstalled.addListener(reportEnabled);
+browser.runtime.onStartup.addListener(reportEnabled);
+
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let currentSchemaVersion = 7;
+
+    // This listener is triggered by the content script, which only runs once the
+    // user has granted website access. Tell the native app so the main app's
+    // onboarding can confirm the extension is fully set up.
+    browser.runtime.sendNativeMessage({function: "reportActivation"}, null);
 
     browser.storage.local.get(["schemaVersion", "userAgent", "siteSettings"], (localStorage) => {
         let storedSchemaVersion = localStorage.schemaVersion;
@@ -18,7 +35,6 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
             if (response["shouldExtensionUpdate"] === true) {
                 console.log("Extension updating settings from app");
                 updateSettings();
-                // Tell native app extension was updated
                 console.log("Extension telling native app settings were updated");
                 browser.runtime.sendNativeMessage({function: "hasExtensionUpdated"}, null)
             } else {
@@ -43,7 +59,6 @@ function resetAllSettings(currentSchemaVersion) {
 function updateSettings() {
     browser.runtime.sendNativeMessage({function: "getSettings"}, function (response) {
         var hasConfigBeenUpdated = false;
-        // Check and set global user agent
         let currentUserAgent = localStorage.userAgent;
         if (currentUserAgent != null) {
             if ("userAgent" in response) {
@@ -58,7 +73,6 @@ function updateSettings() {
                 hasConfigBeenUpdated = true;
             }
         }
-        // Check and set global viewport
         let currentGlobalViewport = localStorage.globalViewport;
         if (currentGlobalViewport != null) {
             if ("globalViewport" in response) {
@@ -73,25 +87,21 @@ function updateSettings() {
                 hasConfigBeenUpdated = true;
             }
         }
-        // Check and set site settings
         let currentSiteSettings = localStorage.siteSettings;
         if (currentSiteSettings != null) {
             if ("siteSettings" in response) {
                 var siteSettingsFromNativeApp = JSON.parse(response["siteSettings"]);
                 var siteSettingsRequiresUpdate = false;
-                // Check for new site settings
                 currentSiteSettings.forEach((currentSiteSetting) => {
                     if (!containsSiteSetting(currentSiteSetting, siteSettingsFromNativeApp)) {
                         siteSettingsRequiresUpdate = true;
                     }
                 });
-                // Check for deleted site settings
                 siteSettingsFromNativeApp.forEach((siteSettingFromNativeApp) => {
                     if (!containsSiteSetting(siteSettingFromNativeApp, currentSiteSettings)) {
                         siteSettingsRequiresUpdate = true;
                     }
                 });
-                // Update the entire site settings object if anything requires an update
                 if (siteSettingsRequiresUpdate) {
                     if (currentSiteSettings != JSON.parse(response["siteSettings"])) {
                         setSiteSettings(JSON.parse(response["siteSettings"]));
@@ -105,7 +115,6 @@ function updateSettings() {
                 hasConfigBeenUpdated = true;
             }
         }
-        // Reload tab if config was updated and auto-refresh is enabled
         if (hasConfigBeenUpdated) {
             let autoRefreshEnabled = response["autoRefreshEnabled"] === "true";
             if (autoRefreshEnabled) {
@@ -121,7 +130,6 @@ function updateSettings() {
 
 function setUserAgent(userAgent) {
     if (userAgent != "") {
-        // Set the global user agent
         let rule = {
             id: 9999,
             priority: 1,
@@ -145,7 +153,6 @@ function setUserAgent(userAgent) {
             addRules: [rule]
         });
     } else {
-        // Remove global user agent
         browser.declarativeNetRequest.updateDynamicRules({
             removeRuleIds: [9999]
         });
@@ -159,7 +166,6 @@ function setGlobalViewport(viewport) {
 
 function setSiteSettings(siteSettings) {
     var ruleId = 1;
-    // Remove all rules except 9999
     browser.declarativeNetRequest.getDynamicRules((rules) => {
         rules.forEach((rule) => {
             if (rule.id != 9999) {
@@ -168,7 +174,6 @@ function setSiteSettings(siteSettings) {
                 });
             }
         });
-        // Create new rules per site setting
         for (const siteSetting of siteSettings) {
             let rule = {
                 id: ruleId,
@@ -191,8 +196,7 @@ function setSiteSettings(siteSettings) {
             browser.declarativeNetRequest.updateDynamicRules({
                 addRules: [rule]
             });
-            
-            // Set viewport if specified
+
             if (siteSetting.viewport) {
                 setViewportForDomain(siteSetting.domain, siteSetting.viewport);
             }
@@ -204,13 +208,6 @@ function setSiteSettings(siteSettings) {
 }
 
 function setViewportForDomain(domain, viewport) {
-    // Inject a content script to change the viewport meta tag
-    // This will be handled by the content script when it detects the domain
-    let viewportSettings = {
-        domain: domain,
-        viewport: viewport
-    };
-    
     browser.storage.local.get(["viewportSettings"], (result) => {
         let allViewportSettings = result.viewportSettings || {};
         allViewportSettings[domain] = viewport;

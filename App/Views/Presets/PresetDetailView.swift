@@ -1,17 +1,28 @@
-//
-//  PresetDetailView.swift
-//  Unagent
-//
-
 import SafariServices
 import SwiftUI
 
 struct PresetDetailView: View {
 
+    @Environment(PresetUpdater.self) var presetUpdater
+
     @State var preset: Preset
     var presetStore: PresetStore
     @State var isShowingEditor: Bool = false
     @State var safariURL: URL?
+
+    // The pending update for this preset, if any.
+    private var pendingUpdate: PresetUpdater.PendingPresetUpdate? {
+        presetUpdater.pendingUpdates.first { $0.presetName == preset.name }
+    }
+
+    private func applyPendingUpdate(_ update: PresetUpdater.PendingPresetUpdate) {
+        presetUpdater.applyUpdate(update)
+        presetStore.loadPresets()
+        // Built-in presets are reloaded with fresh ids, so re-bind by name.
+        if let updated = presetStore.presets.first(where: { $0.name == preset.name }) {
+            preset = updated
+        }
+    }
 
     var body: some View {
         List {
@@ -31,6 +42,46 @@ struct PresetDetailView: View {
                 .padding(.vertical, 12.0)
                 .listRowBackground(Color.clear)
                 .listRowInsets(EdgeInsets())
+            }
+
+            if preset.isBuiltIn {
+                Section {
+                    Toggle("Presets.Detail.Show", isOn: Binding(
+                        get: { !presetStore.hiddenPresetNames.contains(preset.name) },
+                        set: { shouldShow in
+                            withAnimation(.smooth.speed(2)) {
+                                if shouldShow {
+                                    presetStore.unhideBuiltInPreset(name: preset.name)
+                                } else {
+                                    presetStore.hideBuiltInPreset(preset)
+                                }
+                            }
+                        }
+                    ))
+                }
+            }
+
+            if let pendingUpdate {
+                Section("Presets.Detail.UpdateAvailable") {
+                    HStack(spacing: 12.0) {
+                        Image(systemName: "arrow.up.circle.fill")
+                            .font(.title2)
+                            .foregroundStyle(.tint)
+                        VStack(alignment: .leading, spacing: 2.0) {
+                            Text(preset.displayName)
+                            Text("More.PresetUpdates.VersionChange \(pendingUpdate.currentVersion) \(pendingUpdate.updatedVersion)")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        Button("Shared.Update") {
+                            withAnimation(.smooth.speed(2)) { applyPendingUpdate(pendingUpdate) }
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .controlSize(.small)
+                    }
+                    .padding(.vertical, 2.0)
+                }
             }
 
             Section("UserAgent") {
@@ -80,7 +131,6 @@ struct PresetDetailView: View {
         }
         .onChange(of: isShowingEditor) {
             if !isShowingEditor {
-                // Refresh the preset from the store after editing
                 if let updated = presetStore.presets.first(where: { $0.id == preset.id }) {
                     preset = updated
                 }

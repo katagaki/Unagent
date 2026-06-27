@@ -1,11 +1,3 @@
-//
-//  PresetCategory.swift
-//  Unagent
-//
-//  Grouping for built-in presets. The raw value matches the "category"
-//  key in Presets.json; allCases defines the display order of sections.
-//
-
 import Foundation
 
 enum PresetCategory: String, CaseIterable, Identifiable {
@@ -33,7 +25,6 @@ enum PresetCategory: String, CaseIterable, Identifiable {
 }
 
 extension Preset {
-    /// The strongly-typed category for this preset, if it maps to a known one.
     var resolvedCategory: PresetCategory? {
         guard let category else { return nil }
         return PresetCategory(rawValue: category)

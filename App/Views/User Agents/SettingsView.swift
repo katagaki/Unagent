@@ -1,15 +1,6 @@
-//
-//  SettingsView.swift
-//  Unagent
-//
-//  Created by シン・ジャスティン on 2025/08/24.
-//
-
 import SwiftUI
 
 struct SettingsView: View {
-
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     @AppStorage(wrappedValue: "", "UserAgent", store: defaults) var globalUserAgent: String
     @AppStorage(wrappedValue: "", "GlobalViewport", store: defaults) var globalViewportString: String
@@ -26,7 +17,7 @@ struct SettingsView: View {
         return siteSettings
     }
 
-    @State var isShowingNewSiteSettingView: Bool = false
+    @Binding var isShowingNewSiteSettingView: Bool
     @State var newSiteSettingDomain: String = ""
     @State var newSiteSettingUserAgent: String = ""
     @State var newSiteSettingViewport: Viewport?
@@ -40,39 +31,30 @@ struct SettingsView: View {
 
     var body: some View {
         Group {
-            Section {
-                NavigationLink {
+            GroupedSection {
+                GroupedNavigationRow {
                     GlobalSettingsView(
                         globalUserAgent: $globalUserAgent,
                         globalViewportString: $globalViewportString,
                         synchronizeDefaults: synchronizeDefaults
                     )
                 } label: {
-                    HStack {
-                        Label("ViewTitle.GlobalSettings", systemImage: "globe")
-                        Spacer()
-                    }
+                    Label("ViewTitle.GlobalSettings", systemImage: "globe")
                 }
             }
 
-            Section {
+            GroupedSection {
                 if perSiteSettings.isEmpty {
-                    if #available(iOS 17.0, *) {
-                        ContentUnavailableView(
-                            "SiteSettings.EmptyText.Title",
-                            systemImage: "plus.square.on.square",
-                            description: Text("SiteSettings.EmptyText.Text")
-                        )
-                    } else {
-                        Text("SiteSettings.EmptyText.Text")
-                            .foregroundStyle(.secondary)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .multilineTextAlignment(.center)
-                            .padding()
-                    }
+                    ContentUnavailableView(
+                        "SiteSettings.EmptyText.Title",
+                        systemImage: "plus.square.on.square",
+                        description: Text("SiteSettings.EmptyText.Text")
+                    )
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8.0)
                 } else {
-                    ForEach(perSiteSettings, id: \.domain) { siteSetting in
+                    ForEach(Array(perSiteSettings.enumerated()), id: \.element.domain) { index, siteSetting in
+                        if index > 0 { GroupedDivider() }
                         Button {
                             startEditingPerSiteSetting(siteSetting)
                         } label: {
@@ -80,34 +62,22 @@ struct SettingsView: View {
                                 title: siteSetting.domain,
                                 subtitle: siteSetting.userAgent
                             )
+                            .groupedRowPadding()
+                            .contentShape(Rectangle())
                         }
-                        .swipeActions {
-                            Button("Shared.Delete") {
-                                deletePerSiteSetting(siteSetting)
-                            }
-                            .tint(.red)
+                        .buttonStyle(.plain)
+                        .contextMenu {
                             Button("Shared.Edit") {
                                 startEditingPerSiteSetting(siteSetting)
                             }
-                            .tint(.blue)
-                        }
-                        .contextMenu {
-                            if horizontalSizeClass == .regular {
-                                Button("Shared.Delete", role: .destructive) {
-                                    deletePerSiteSetting(siteSetting)
-                                }
+                            Button("Shared.Delete", role: .destructive) {
+                                deletePerSiteSetting(siteSetting)
                             }
                         }
                     }
                 }
             } header: {
-                HStack(alignment: .center) {
-                    Text("UserAgent.PerSite")
-                    Spacer()
-                    Button("Shared.Add", systemImage: "plus") {
-                        isShowingNewSiteSettingView = true
-                    }
-                }
+                Text("UserAgent.PerSite")
             }
         }
         .onChange(of: globalUserAgent, synchronizeDefaults)

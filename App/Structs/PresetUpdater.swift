@@ -1,8 +1,3 @@
-//
-//  PresetUpdater.swift
-//  Unagent
-//
-
 import Foundation
 
 @Observable
@@ -85,21 +80,17 @@ class PresetUpdater {
 
     // MARK: - Public API
 
-    /// Check for updates silently on app launch — populates pendingUpdates without applying
     func checkForUpdatesQuietly() async {
         isChecking = true
 
         var allPending: [PendingPresetUpdate] = []
 
-        // iOS updates from App Store versions
         let iosPending = await computeIOSPendingUpdates()
         allPending.append(contentsOf: iosPending)
 
-        // Chrome stable release versions (macOS, Android)
         let chromePending = await computeChromePendingUpdates()
         allPending.append(contentsOf: chromePending)
 
-        // Edge stable release versions (macOS, Android, iOS)
         let edgePending = await computeEdgePendingUpdates()
         allPending.append(contentsOf: edgePending)
 
@@ -112,20 +103,14 @@ class PresetUpdater {
         isChecking = false
     }
 
-    /// Check for updates and apply immediately (manual refresh from Presets tab)
     func checkForUpdates() async {
         isChecking = true
         updateResult = nil
 
         var totalUpdated = 0
 
-        // iOS updates from App Store versions
         totalUpdated += await applyIOSUpdates()
-
-        // Chrome stable release versions (macOS, Android)
         totalUpdated += await applyChromeUpdates()
-
-        // Edge stable release versions (macOS, Android, iOS)
         totalUpdated += await applyEdgeUpdates()
 
         defaults.set(Date(), forKey: Self.lastUpdateCheckKey)
@@ -142,7 +127,6 @@ class PresetUpdater {
         isChecking = false
     }
 
-    /// Apply all pending updates to the cache
     func applyAllPendingUpdates() {
         var updates: [String: String] = Self.loadCachedUpdates() ?? [:]
         for pending in pendingUpdates {
@@ -152,7 +136,6 @@ class PresetUpdater {
         pendingUpdates.removeAll()
     }
 
-    /// Apply a single pending update to the cache
     func applyUpdate(_ update: PendingPresetUpdate) {
         var updates: [String: String] = Self.loadCachedUpdates() ?? [:]
         updates[update.presetName] = update.updatedUserAgent
@@ -187,7 +170,6 @@ class PresetUpdater {
         return app.version
     }
 
-    /// Fetch all iOS app versions concurrently, returning a map of appStoreId → version
     private func fetchAllAppStoreVersions() async -> [String: String] {
         await withTaskGroup(of: (String, String?).self) { group in
             for mapping in Self.iOSAppMappings {
@@ -291,8 +273,6 @@ class PresetUpdater {
 
     // MARK: - Edge Version Scraping
 
-    /// Scrape the latest stable Edge version from Microsoft's release notes page.
-    /// Looks for the first h2 heading matching "Version X.X.X.X: ... (Stable)".
     private func fetchEdgeVersion(from url: URL) async throws -> String {
         let (data, response) = try await URLSession.shared.data(from: url)
 
@@ -314,7 +294,6 @@ class PresetUpdater {
         return String(html[versionRange])
     }
 
-    /// Fetch Edge desktop and mobile versions concurrently
     private func fetchEdgeVersions() async -> (desktop: String?, mobile: String?) {
         async let desktopVersion = try? fetchEdgeVersion(from: Self.edgeReleaseNotesURL)
         async let mobileVersion = try? fetchEdgeVersion(from: Self.edgeMobileReleaseNotesURL)

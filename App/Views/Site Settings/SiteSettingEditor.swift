@@ -1,10 +1,3 @@
-//
-//  SiteSettingEditor.swift
-//  Unagent
-//
-//  Created by シンジャスティン on 2023/05/28.
-//
-
 import SwiftUI
 
 struct SiteSettingEditor: View {

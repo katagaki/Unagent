@@ -1,8 +1,3 @@
-//
-//  AttributionsView.swift
-//  Unagent
-//
-
 import SwiftUI
 
 struct AttributionsView: View {

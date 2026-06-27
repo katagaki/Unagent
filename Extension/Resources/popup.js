@@ -1,10 +1,3 @@
-//
-//  popup.js
-//  Unagent
-//
-//  Created by シン・ジャスティン on 2024/12/27.
-//
-
 const GLOBAL_RULE_ID = 9999;
 const SUPPORTED_RESOURCE_TYPES = [
     "main_frame", "sub_frame", "stylesheet", "script", "image",

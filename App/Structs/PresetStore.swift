@@ -1,8 +1,3 @@
-//
-//  PresetStore.swift
-//  Unagent
-//
-
 import Foundation
 import SwiftUI
 
@@ -33,7 +28,6 @@ class PresetStore {
             allPresets.append(contentsOf: builtIn)
         }
 
-        // Load custom presets from UserDefaults
         if let jsonString = defaults.string(forKey: customPresetsKey),
            let jsonData = jsonString.data(using: .utf8),
            var custom = try? JSONDecoder().decode([Preset].self, from: jsonData) {
@@ -91,7 +85,6 @@ class PresetStore {
     }
 
     private func saveBuiltInOverrides(_ preset: Preset) {
-        // For built-in presets, we save edits to a separate overrides store
         var overrides = loadBuiltInOverrides()
         overrides[preset.id.uuidString] = preset
         if let data = try? JSONEncoder().encode(overrides),
@@ -175,7 +168,6 @@ class PresetStore {
             return nil
         }
 
-        // Apply cached user agent updates from online sources
         guard let updates = PresetUpdater.loadCachedUpdates() else {
             return bundled
         }
