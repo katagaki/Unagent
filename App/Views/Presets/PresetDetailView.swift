@@ -79,6 +79,7 @@ struct PresetDetailView: View {
                         }
                         .buttonStyle(.borderedProminent)
                         .controlSize(.small)
+                        .fontWeight(.bold)
                     }
                     .padding(.vertical, 2.0)
                 }
