@@ -231,7 +231,7 @@ class PresetUpdater {
                     presetName: preset.name,
                     imageName: preset.imageName,
                     currentVersion: currentVersion,
-                    updatedVersion: String(entry.milestone),
+                    updatedVersion: entry.version,
                     updatedUserAgent: updatedUA
                 ))
             }
@@ -334,7 +334,7 @@ class PresetUpdater {
                 let currentVersion = extractMobileVersion(
                     from: currentUA, prefix: versionPrefix
                 ) ?? "?"
-                let updatedVersion = version.components(separatedBy: ".").first ?? "?"
+                let updatedVersion = version
 
                 pending.append(PendingPresetUpdate(
                     presetName: preset.name,
@@ -414,7 +414,7 @@ class PresetUpdater {
                 let currentVersion = extractMobileVersion(
                     from: currentUA, prefix: mapping.versionPrefix
                 ) ?? "?"
-                let updatedVersion = version.components(separatedBy: ".").first ?? "?"
+                let updatedVersion = version
 
                 pending.append(PendingPresetUpdate(
                     presetName: preset.name,
@@ -464,7 +464,7 @@ class PresetUpdater {
 
     private func extractMobileVersion(from userAgent: String, prefix: String) -> String? {
         let escaped = NSRegularExpression.escapedPattern(for: prefix)
-        let pattern = "\(escaped)(\\d+)"
+        let pattern = "\(escaped)(\\d+(?:\\.\\d+)*)"
         guard let range = userAgent.range(of: pattern, options: .regularExpression) else {
             return nil
         }

@@ -248,20 +248,6 @@
         "source": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
     },
     {
-        "name": "GoogleOther",
-        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/eb/33/c3eb33ac-b8d4-a804-d198-6b29b331de0b/SuperG_ios26-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-0-85-220.png/512x512bb.jpg",
-        "category": "searchEngines",
-        "userAgent": "Mozilla/5.0 (compatible; GoogleOther)",
-        "source": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
-    },
-    {
-        "name": "Google-InspectionTool",
-        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/eb/33/c3eb33ac-b8d4-a804-d198-6b29b331de0b/SuperG_ios26-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-0-85-220.png/512x512bb.jpg",
-        "category": "searchEngines",
-        "userAgent": "Mozilla/5.0 (compatible; Google-InspectionTool/1.0)",
-        "source": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
-    },
-    {
         "name": "Google-Extended",
         "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/eb/33/c3eb33ac-b8d4-a804-d198-6b29b331de0b/SuperG_ios26-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-0-85-220.png/512x512bb.jpg",
         "category": "aiCrawlers",

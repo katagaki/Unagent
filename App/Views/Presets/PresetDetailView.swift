@@ -29,6 +29,7 @@ struct PresetDetailView: View {
             Section {
                 VStack(spacing: 6.0) {
                     PresetIconView(preset: preset, size: 64.0)
+                        .shadow(color: .black.opacity(0.15), radius: 6.0, y: 2.0)
                     Text(preset.displayName)
                         .font(.title3.weight(.semibold))
                         .multilineTextAlignment(.center)
@@ -64,9 +65,6 @@ struct PresetDetailView: View {
             if let pendingUpdate {
                 Section("Presets.Detail.UpdateAvailable") {
                     HStack(spacing: 12.0) {
-                        Image(systemName: "arrow.up.circle.fill")
-                            .font(.title2)
-                            .foregroundStyle(.tint)
                         VStack(alignment: .leading, spacing: 2.0) {
                             Text(preset.displayName)
                             Text("More.PresetUpdates.VersionChange \(pendingUpdate.currentVersion) \(pendingUpdate.updatedVersion)")
