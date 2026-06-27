@@ -248,7 +248,7 @@
         "source": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
     },
     {
-        "name": "Google-Extended",
+        "name": "Google",
         "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c3/eb/33/c3eb33ac-b8d4-a804-d198-6b29b331de0b/SuperG_ios26-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-0-85-220.png/512x512bb.jpg",
         "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 (compatible; Google-Extended/1.0)",
@@ -290,14 +290,14 @@
         "source": "https://darkvisitors.com/agents/claudebot"
     },
     {
-        "name": "Claude-User",
+        "name": "Claude User",
         "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/77/ba/5077ba2f-7c32-6f5d-f6e4-126f1c741a98/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
         "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 (compatible; Claude-User/1.0)",
         "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
     },
     {
-        "name": "Claude-SearchBot",
+        "name": "Claude SearchBot",
         "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/77/ba/5077ba2f-7c32-6f5d-f6e4-126f1c741a98/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
         "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 (compatible; Claude-SearchBot/1.0)",
@@ -311,7 +311,7 @@
         "source": "https://docs.perplexity.ai/guides/bots"
     },
     {
-        "name": "Perplexity-User",
+        "name": "Perplexity User",
         "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/17/26/76/17267668-d13f-a758-f748-d4dd887ec3e8/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-85-220-0.png/512x512bb.jpg",
         "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 (compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)",
@@ -332,21 +332,21 @@
         "source": "https://knownagents.com/agents"
     },
     {
-        "name": "Meta-ExternalAgent",
+        "name": "Meta AI",
         "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/95/41/80/954180ed-9d76-0006-84ff-15a0df8388ab/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-0-85-220.png/512x512bb.jpg",
         "category": "aiCrawlers",
         "userAgent": "meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)",
         "source": "https://developers.facebook.com/docs/sharing/webmasters/crawler"
     },
     {
-        "name": "CCBot (Common Crawl)",
+        "name": "CCBot",
         "iconURL": "https://cdn.prod.website-files.com/6479b8d98bf5dcb4a69c4f31/648962c357c8113a871e3378_Common_Crawl_Rev3_LPX_Logo%20Gradient%20BG.png",
         "category": "aiCrawlers",
         "userAgent": "CCBot/2.0 (https://commoncrawl.org/faq/)",
         "source": "https://commoncrawl.org/ccbot"
     },
     {
-        "name": "MistralAI-User",
+        "name": "MistralAI User",
         "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7a/39/e5/7a39e51e-0e8c-8597-a75d-04703303a9b5/chat-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
         "category": "aiCrawlers",
         "userAgent": "MistralAI-User/1.0",
@@ -388,7 +388,7 @@
         "source": "https://support.apple.com/en-us/119829"
     },
     {
-        "name": "Applebot-Extended",
+        "name": "Applebot",
         "iconURL": "https://www.apple.com/apple-touch-icon.png",
         "category": "aiCrawlers",
         "userAgent": "Mozilla/5.0 (compatible; Applebot-Extended/1.0)",
