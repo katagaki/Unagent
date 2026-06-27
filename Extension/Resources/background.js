@@ -15,6 +15,34 @@ function reportEnabled() {
 browser.runtime.onInstalled.addListener(reportEnabled);
 browser.runtime.onStartup.addListener(reportEnabled);
 
+// Register ua-override.js in the MAIN world. Safari exposes world:"MAIN" only via
+// scripting.registerContentScripts, not the manifest content_scripts "world" key.
+async function registerUserAgentOverride() {
+    try {
+        const existing = await browser.scripting.getRegisteredContentScripts({
+            ids: ["unagent-ua-override"]
+        });
+        if (existing.length > 0) {
+            return;
+        }
+        await browser.scripting.registerContentScripts([{
+            id: "unagent-ua-override",
+            js: ["ua-override.js"],
+            // "*://*/*" not "<all_urls>": must stay within granted host_permissions.
+            matches: ["*://*/*"],
+            runAt: "document_start",
+            allFrames: true,
+            world: "MAIN"
+        }]);
+    } catch (error) {
+        console.error("Failed to register user-agent override content script", error);
+    }
+}
+browser.runtime.onInstalled.addListener(registerUserAgentOverride);
+browser.runtime.onStartup.addListener(registerUserAgentOverride);
+// Top-level call covers service-worker wakes, when neither event fires.
+registerUserAgentOverride();
+
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let currentSchemaVersion = 7;
 
@@ -57,9 +85,12 @@ function resetAllSettings(currentSchemaVersion) {
 }
 
 function updateSettings() {
+    // Read current state from storage.local (a bare global `localStorage` doesn't
+    // exist in the MV3 background context and threw here before any setting applied).
+    browser.storage.local.get(["userAgent", "globalViewport", "siteSettings"], function (stored) {
     browser.runtime.sendNativeMessage({function: "getSettings"}, function (response) {
         var hasConfigBeenUpdated = false;
-        let currentUserAgent = localStorage.userAgent;
+        let currentUserAgent = stored.userAgent;
         if (currentUserAgent != null) {
             if ("userAgent" in response) {
                 if (currentUserAgent != response["userAgent"]) {
@@ -73,7 +104,7 @@ function updateSettings() {
                 hasConfigBeenUpdated = true;
             }
         }
-        let currentGlobalViewport = localStorage.globalViewport;
+        let currentGlobalViewport = stored.globalViewport;
         if (currentGlobalViewport != null) {
             if ("globalViewport" in response) {
                 if (currentGlobalViewport != response["globalViewport"]) {
@@ -87,7 +118,7 @@ function updateSettings() {
                 hasConfigBeenUpdated = true;
             }
         }
-        let currentSiteSettings = localStorage.siteSettings;
+        let currentSiteSettings = stored.siteSettings;
         if (currentSiteSettings != null) {
             if ("siteSettings" in response) {
                 var siteSettingsFromNativeApp = JSON.parse(response["siteSettings"]);
@@ -125,6 +156,7 @@ function updateSettings() {
                 });
             }
         }
+    });
     });
 }
 

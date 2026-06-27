@@ -20,6 +20,16 @@
             "matches": [
                 "<all_urls>"
             ]
+        },
+        {
+            "js": [
+                "ua-state.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_start",
+            "all_frames": true
         }
     ],
     "action": {
@@ -29,6 +39,7 @@
     "permissions": [
         "declarativeNetRequestWithHostAccess",
         "nativeMessaging",
+        "scripting",
         "storage"
     ],
     "host_permissions": [
