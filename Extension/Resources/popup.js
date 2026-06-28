@@ -4,8 +4,7 @@ const SUPPORTED_RESOURCE_TYPES = [
     "font", "xmlhttprequest", "ping", "media", "websocket", "other"
 ];
 
-// Localized string lookup. browser.i18n is always present in the extension;
-// the fallback keeps things sane in non-extension contexts (e.g. previews).
+// Localized string lookup, with a fallback for non-extension contexts (e.g. previews).
 function t(key, ...substitutions) {
     if (typeof browser !== "undefined" && browser.i18n && browser.i18n.getMessage) {
         const message = browser.i18n.getMessage(key, substitutions.length ? substitutions : undefined);
@@ -45,9 +44,8 @@ const state = {
 
 // ---------- User-agent token resolution ----------
 
-// Presets store tokens like %OS_MAJOR% that the native app fills in from the
-// device OS version. The popup resolves them from the real device user agent so
-// the value sent to sites is realistic even when applied without the app.
+// Presets store %OS_*% tokens the native app normally fills in; resolve them from
+// the device user agent so values are realistic when applied without the app.
 function deviceOSVersion() {
     const match = navigator.userAgent.match(/(?:iPhone OS|CPU OS) (\d+)_(\d+)(?:_(\d+))?/);
     if (match) {
@@ -80,8 +78,7 @@ function monogram(preset) {
     return match ? match[0].toUpperCase() : "?";
 }
 
-// Browser-engine icons referenced remotely (same source as the app's bundled
-// copies), so custom presets show them in the popup instead of a monogram.
+// Browser-engine icons referenced remotely, so custom presets show them instead of a monogram.
 const REMOTE_ICONS = {
     "WebKit": "https://commons.wikimedia.org/wiki/Special:FilePath/WebKit_logo.svg?width=512",
     "Chromium": "https://commons.wikimedia.org/wiki/Special:FilePath/Chromium_Logo.svg?width=512",
@@ -90,8 +87,7 @@ const REMOTE_ICONS = {
     "Ladybird": "https://commons.wikimedia.org/wiki/Special:FilePath/Ladybird_icon_png.png?width=512"
 };
 
-// App Store, Play Store, and Apple (apple-touch) icons are square artwork
-// cropped to a rounded rect; other logos/favicons render flat.
+// Store/Apple icons are square artwork cropped to a rounded rect; other logos render flat.
 function shouldRound(url) {
     return url.includes("mzstatic.com")
         || url.includes("play-lh.googleusercontent.com")
@@ -292,8 +288,7 @@ async function setGlobalEmulation(emulation) {
 }
 
 async function upsertSiteSetting(domain, userAgent, viewport, emulation) {
-    // Rebuild the per-site list, then regenerate every per-site rule (ids 1..N),
-    // matching how background.js maps siteSettings to dynamic rules.
+    // Rebuild the per-site list and regenerate every per-site rule (ids 1..N).
     let settings = state.siteSettings.filter((s) => s.domain !== domain);
     if (userAgent !== "") {
         settings.push({ domain, userAgent, viewport: viewport || null, emulation: emulation || null });
@@ -330,8 +325,7 @@ async function upsertSiteSetting(domain, userAgent, viewport, emulation) {
     await browser.storage.local.set({ viewportSettings });
 }
 
-// Write the change back to the app's shared settings so the main app's UI
-// (bound to these keys via @AppStorage) reflects what was set in the popup.
+// Write back to the app's shared settings so its @AppStorage-bound UI reflects the change.
 async function persistToApp() {
     try {
         if (state.scope === "global") {
@@ -459,13 +453,14 @@ function normalizePresets(list) {
 }
 
 async function loadPresets() {
-    // Prefer the live list from the app (reflects online version updates,
-    // custom presets, and hidden/visible choices); fall back to the bundle.
+    // Prefer the live list from the app; fall back to the bundled set.
     try {
         const response = await browser.runtime.sendNativeMessage({ function: "getPresets" });
         if (response && response.presets) {
             const parsed = JSON.parse(response.presets);
-            if (Array.isArray(parsed) && parsed.length > 0) {
+            // Honor any valid array, including an empty one (user cleared all presets);
+            // fall through to the bundle only when unsynced or malformed.
+            if (Array.isArray(parsed)) {
                 state.presets = normalizePresets(parsed);
                 return;
             }
@@ -489,8 +484,7 @@ async function init() {
     render();
 }
 
-// iPhone uses a full-width sheet; iPad/macOS keep the fixed popover (see
-// popup.css). Only iPhone reports "iPhone" in the popup's genuine Safari UA.
+// iPhone uses a full-width sheet; iPad/macOS keep the fixed popover (see popup.css).
 if (/iPhone|iPod/.test(navigator.userAgent)) {
     document.documentElement.classList.add("is-iphone");
 }

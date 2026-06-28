@@ -3,20 +3,15 @@ const supportedResourceTypes = [
     "font", "xmlhttprequest", "ping", "media", "websocket", "other"
 ];
 
-// Report to the native app as soon as the extension runs in Safari, before any
-// page is visited and regardless of website-access permission. onInstalled fires
-// when the extension is installed, enabled, or updated; onStartup fires when
-// Safari launches with the extension enabled. This lets the app's onboarding mark
-// "extension enabled" from just opening Safari, instead of waiting for a page
-// load with website access (which the content-script path requires).
+// Report to the native app on install/enable/update and on Safari launch, so
+// onboarding can mark "extension enabled" without waiting for a page load.
 function reportEnabled() {
     browser.runtime.sendNativeMessage({function: "reportEnabled"}, null);
 }
 browser.runtime.onInstalled.addListener(reportEnabled);
 browser.runtime.onStartup.addListener(reportEnabled);
 
-// Register the MAIN-world scripts (Safari exposes world:"MAIN" only via
-// scripting.registerContentScripts). ua-override.js runs first, then browser-emulation.js.
+// Register MAIN-world scripts (Safari exposes world:"MAIN" only via registerContentScripts).
 async function registerUserAgentOverride() {
     const script = {
         id: "unagent-ua-override",
@@ -32,8 +27,7 @@ async function registerUserAgentOverride() {
             ids: ["unagent-ua-override"]
         });
         if (existing.length > 0) {
-            // Update in place so upgrades from a build that registered only
-            // ua-override.js pick up browser-emulation.js.
+            // Update in place so upgrades pick up newly added scripts.
             await browser.scripting.updateContentScripts([script]);
             return;
         }
@@ -50,9 +44,8 @@ registerUserAgentOverride();
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let currentSchemaVersion = 7;
 
-    // This listener is triggered by the content script, which only runs once the
-    // user has granted website access. Tell the native app so the main app's
-    // onboarding can confirm the extension is fully set up.
+    // Content script runs only after website access is granted; tell the app so
+    // onboarding can confirm full setup.
     browser.runtime.sendNativeMessage({function: "reportActivation"}, null);
 
     browser.storage.local.get(["schemaVersion", "userAgent", "siteSettings"], (localStorage) => {
@@ -66,9 +59,12 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
         browser.runtime.sendNativeMessage({function: "shouldExtensionUpdate"}, function (response) {
             if (response["shouldExtensionUpdate"] === true) {
                 console.log("Extension updating settings from app");
-                updateSettings();
-                console.log("Extension telling native app settings were updated");
-                browser.runtime.sendNativeMessage({function: "hasExtensionUpdated"}, null)
+                // Ack only after updateSettings() finishes; acking early let a suspended
+                // service worker drop the update with the flag already cleared.
+                updateSettings(function () {
+                    console.log("Extension telling native app settings were updated");
+                    browser.runtime.sendNativeMessage({function: "hasExtensionUpdated"}, null);
+                });
             } else {
                 console.log("Extension will not update settings from app")
             }
@@ -88,9 +84,8 @@ function resetAllSettings(currentSchemaVersion) {
     browser.storage.local.set({schemaVersion: currentSchemaVersion});
 }
 
-function updateSettings() {
-    // Read current state from storage.local (a bare global `localStorage` doesn't
-    // exist in the MV3 background context and threw here before any setting applied).
+function updateSettings(onComplete) {
+    // Read from storage.local (no global localStorage in the MV3 background context).
     browser.storage.local.get(["userAgent", "globalViewport", "globalEmulation", "siteSettings"], function (stored) {
     browser.runtime.sendNativeMessage({function: "getSettings"}, function (response) {
         var hasConfigBeenUpdated = false;
@@ -173,6 +168,9 @@ function updateSettings() {
                     }, 500);
                 });
             }
+        }
+        if (typeof onComplete === "function") {
+            onComplete();
         }
     });
     });
