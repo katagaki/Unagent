@@ -50,7 +50,7 @@ html {
 }
 
 body {
-    width: 320px;
+    width: 360px;
     margin: 0;
     background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
     background-attachment: fixed;
@@ -60,15 +60,14 @@ body {
     max-height: 540px;
 }
 
-/* On iOS the extension popup is a full-width sheet, so fill it.
-   macOS keeps the fixed-size popover above. */
-@media (pointer: coarse) {
-    body {
-        width: 100%;
-        height: 100vh;
-        height: 100dvh;
-        max-height: none;
-    }
+/* iPhone uses a full-width sheet; iPad and macOS keep the fixed width above (a
+   percentage collapses the auto-sized popover to a thin strip). popup.js tags
+   the iPhone case — CSS can't tell it from iPad (both pointer: coarse). */
+html.is-iphone body {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
 }
 
 /* ---------- Header ---------- */

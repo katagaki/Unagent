@@ -4,13 +4,35 @@ struct GlobalSettingsView: View {
 
     @Binding var globalUserAgent: String
     @Binding var globalViewportString: String
+    @Binding var globalEmulationString: String
     var synchronizeDefaults: () -> Void
 
     var globalViewport: Viewport? {
-        if globalViewportString.isEmpty {
-            return nil
-        }
-        return Viewport(rawValue: globalViewportString)
+        globalViewportString.isEmpty ? nil : Viewport(rawValue: globalViewportString)
+    }
+
+    var globalEmulation: Emulation? {
+        globalEmulationString.isEmpty ? nil : Emulation(rawValue: globalEmulationString)
+    }
+
+    private var viewportBinding: Binding<Viewport?> {
+        Binding(
+            get: { globalViewport },
+            set: { newValue in
+                globalViewportString = newValue?.rawValue ?? ""
+                synchronizeDefaults()
+            }
+        )
+    }
+
+    private var emulationBinding: Binding<Emulation?> {
+        Binding(
+            get: { globalEmulation },
+            set: { newValue in
+                globalEmulationString = newValue?.rawValue ?? ""
+                synchronizeDefaults()
+            }
+        )
     }
 
     var body: some View {
@@ -23,24 +45,13 @@ struct GlobalSettingsView: View {
 
             UserAgentEditorSection(
                 userAgent: $globalUserAgent,
-                viewport: Binding(
-                    get: { globalViewport },
-                    set: { newValue in
-                        globalViewportString = newValue?.rawValue ?? ""
-                        synchronizeDefaults()
-                    }
-                )
+                viewport: viewportBinding,
+                emulation: emulationBinding
             )
 
-            ViewportPickerSection(
-                viewport: Binding(
-                    get: { globalViewport },
-                    set: { newValue in
-                        globalViewportString = newValue?.rawValue ?? ""
-                        synchronizeDefaults()
-                    }
-                )
-            )
+            ViewportPickerSection(viewport: viewportBinding)
+
+            EmulationPickerSection(emulation: emulationBinding, isOptional: true)
         }
         .scrollContentBackground(.hidden)
         .gradientBackground()

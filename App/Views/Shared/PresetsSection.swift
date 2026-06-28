@@ -6,9 +6,9 @@ struct PresetsSection: View {
     var presets: [Preset]
     var currentUserAgent: () -> String
     var onSelect: (String) -> Void
-    var onSelectWithViewport: ((String, Viewport?) -> Void)?
+    var onSelectWithViewport: ((String, Viewport?, Emulation?) -> Void)?
 
-    init(currentUserAgent: @escaping () -> String, onSelect: @escaping (String) -> Void, onSelectWithViewport: ((String, Viewport?) -> Void)? = nil) {
+    init(currentUserAgent: @escaping () -> String, onSelect: @escaping (String) -> Void, onSelectWithViewport: ((String, Viewport?, Emulation?) -> Void)? = nil) {
         let store = PresetStore()
         self.presets = store.visibleBuiltInPresets + store.customPresets
         self.currentUserAgent = currentUserAgent
@@ -33,7 +33,7 @@ struct PresetsSection: View {
                         }
                     }
                     if let onSelectWithViewport = onSelectWithViewport {
-                        onSelectWithViewport(userAgent, preset.viewport)
+                        onSelectWithViewport(userAgent, preset.viewport, preset.emulation)
                     } else {
                         onSelect(userAgent)
                     }

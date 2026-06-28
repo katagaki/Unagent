@@ -4,6 +4,7 @@ struct UserAgentEditorSection: View {
 
     @Binding var userAgent: String
     @Binding var viewport: Viewport?
+    @Binding var emulation: Emulation?
     var showPasteButton: Bool = true
 
     var body: some View {
@@ -19,9 +20,10 @@ struct UserAgentEditorSection: View {
                     return userAgent
                 } onSelect: { selectedUserAgent in
                     userAgent = selectedUserAgent
-                } onSelectWithViewport: { selectedUserAgent, selectedViewport in
+                } onSelectWithViewport: { selectedUserAgent, selectedViewport, selectedEmulation in
                     userAgent = selectedUserAgent
                     viewport = selectedViewport
+                    emulation = selectedEmulation
                 }
             } label: {
                 Text("Shared.SelectPreset")

@@ -38,7 +38,8 @@ const state = {
     presets: [],
     userAgent: "",          // active global user agent
     globalViewport: null,
-    siteSettings: [],       // [{ domain, userAgent, viewport }]
+    globalEmulation: "",    // active global emulation ("" = auto-detect)
+    siteSettings: [],       // [{ domain, userAgent, viewport, emulation }]
     filter: ""
 };
 
@@ -238,13 +239,16 @@ async function applyPreset(preset) {
 
     const userAgent = resolveTokens(preset.userAgent);
     const viewport = preset.viewport || null;
+    // "" (built-in presets have no emulation field) => the extension auto-detects.
+    const emulation = userAgent === "" ? "" : (preset.emulation || "");
 
     try {
         if (state.scope === "global") {
             await setGlobalUserAgent(userAgent);
             await setGlobalViewport(userAgent === "" ? null : viewport);
+            await setGlobalEmulation(emulation);
         } else {
-            await upsertSiteSetting(state.domain, userAgent, userAgent === "" ? null : viewport);
+            await upsertSiteSetting(state.domain, userAgent, userAgent === "" ? null : viewport, emulation);
         }
         await persistToApp();
         render();
@@ -282,12 +286,17 @@ async function setGlobalViewport(viewport) {
     await browser.storage.local.set({ globalViewport: viewport || "" });
 }
 
-async function upsertSiteSetting(domain, userAgent, viewport) {
+async function setGlobalEmulation(emulation) {
+    state.globalEmulation = emulation || "";
+    await browser.storage.local.set({ globalEmulation: state.globalEmulation });
+}
+
+async function upsertSiteSetting(domain, userAgent, viewport, emulation) {
     // Rebuild the per-site list, then regenerate every per-site rule (ids 1..N),
     // matching how background.js maps siteSettings to dynamic rules.
     let settings = state.siteSettings.filter((s) => s.domain !== domain);
     if (userAgent !== "") {
-        settings.push({ domain, userAgent, viewport: viewport || null });
+        settings.push({ domain, userAgent, viewport: viewport || null, emulation: emulation || null });
     }
 
     const existing = await browser.declarativeNetRequest.getDynamicRules();
@@ -329,7 +338,8 @@ async function persistToApp() {
             await browser.runtime.sendNativeMessage({
                 function: "saveSettings",
                 userAgent: state.userAgent,
-                globalViewport: state.globalViewport || ""
+                globalViewport: state.globalViewport || "",
+                globalEmulation: state.globalEmulation || ""
             });
         } else {
             await browser.runtime.sendNativeMessage({
@@ -432,9 +442,10 @@ async function loadActiveTab() {
 }
 
 async function loadSettings() {
-    const stored = await browser.storage.local.get(["userAgent", "globalViewport", "siteSettings"]);
+    const stored = await browser.storage.local.get(["userAgent", "globalViewport", "globalEmulation", "siteSettings"]);
     state.userAgent = stored.userAgent || "";
     state.globalViewport = stored.globalViewport || null;
+    state.globalEmulation = stored.globalEmulation || "";
     state.siteSettings = Array.isArray(stored.siteSettings) ? stored.siteSettings : [];
 }
 
@@ -476,6 +487,12 @@ async function init() {
 
     renderScope();
     render();
+}
+
+// iPhone uses a full-width sheet; iPad/macOS keep the fixed popover (see
+// popup.css). Only iPhone reports "iPhone" in the popup's genuine Safari UA.
+if (/iPhone|iPod/.test(navigator.userAgent)) {
+    document.documentElement.classList.add("is-iphone");
 }
 
 init();

@@ -13,6 +13,7 @@ struct PresetEditorView: View {
     @State private var imageName: String = "WebKit"
     @State private var userAgent: String = ""
     @State private var viewport: Viewport?
+    @State private var emulation: Emulation? = Emulation.off
     @State private var photoItem: PhotosPickerItem?
 
     // Browser engines offered for custom presets (display name → icon asset).
@@ -80,6 +81,8 @@ struct PresetEditorView: View {
                 }
 
                 ViewportPickerSection(viewport: $viewport)
+
+                EmulationPickerSection(emulation: $emulation)
             }
             .navigationTitle(mode == .new ? "ViewTitle.Presets.New" : "ViewTitle.Presets.Edit")
             .navigationBarTitleDisplayMode(.inline)
@@ -129,6 +132,7 @@ struct PresetEditorView: View {
                     imageName = preset.imageName
                     userAgent = preset.userAgent
                     viewport = preset.viewport
+                    emulation = preset.emulation ?? Emulation.off
                 }
             }
         }
@@ -143,6 +147,7 @@ struct PresetEditorView: View {
             if CustomIconStore.isCustomIcon(imageName) { updated.iconURL = nil }
             updated.userAgent = userAgent
             updated.viewport = viewport
+            updated.emulation = emulation
             presetStore.updatePreset(updated)
         } else {
             let newPreset = Preset(
@@ -150,6 +155,7 @@ struct PresetEditorView: View {
                 imageName: imageName,
                 userAgent: userAgent,
                 viewport: viewport,
+                emulation: emulation,
                 isBuiltIn: false
             )
             presetStore.addPreset(newPreset)

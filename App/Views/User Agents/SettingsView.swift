@@ -4,6 +4,7 @@ struct SettingsView: View {
 
     @AppStorage(wrappedValue: "", "UserAgent", store: defaults) var globalUserAgent: String
     @AppStorage(wrappedValue: "", "GlobalViewport", store: defaults) var globalViewportString: String
+    @AppStorage(wrappedValue: "", "GlobalEmulation", store: defaults) var globalEmulationString: String
     @AppStorage(wrappedValue: "", "SiteSettings", store: defaults) var perSiteUserAgentData: String
 
     let decoder = JSONDecoder()
@@ -21,12 +22,14 @@ struct SettingsView: View {
     @State var newSiteSettingDomain: String = ""
     @State var newSiteSettingUserAgent: String = ""
     @State var newSiteSettingViewport: Viewport?
+    @State var newSiteSettingEmulation: Emulation?
     @State var newSiteSettingShouldSave: Bool = false
 
     @State var isShowingEditSiteSettingView: Bool = false
     @State var editingSiteSettingDomain: String = ""
     @State var editingSiteSettingUserAgent: String = ""
     @State var editingSiteSettingViewport: Viewport?
+    @State var editingSiteSettingEmulation: Emulation?
     @State var editingSiteSettingShouldSave: Bool = false
 
     var body: some View {
@@ -36,6 +39,7 @@ struct SettingsView: View {
                     GlobalSettingsView(
                         globalUserAgent: $globalUserAgent,
                         globalViewportString: $globalViewportString,
+                        globalEmulationString: $globalEmulationString,
                         synchronizeDefaults: synchronizeDefaults
                     )
                 } label: {
@@ -89,6 +93,7 @@ struct SettingsView: View {
                 domain: $newSiteSettingDomain,
                 userAgent: $newSiteSettingUserAgent,
                 viewport: $newSiteSettingViewport,
+                emulation: $newSiteSettingEmulation,
                 shouldSave: $newSiteSettingShouldSave,
                 onValidate: { domain in
                     // Return true if domain already exists (triggers error)
@@ -103,6 +108,7 @@ struct SettingsView: View {
                 domain: $editingSiteSettingDomain,
                 userAgent: $editingSiteSettingUserAgent,
                 viewport: $editingSiteSettingViewport,
+                emulation: $editingSiteSettingEmulation,
                 shouldSave: $editingSiteSettingShouldSave
             )
             .presentationDetents([.large, .medium])
@@ -122,7 +128,8 @@ struct SettingsView: View {
                 SiteSetting(
                     domain: newSiteSettingDomain,
                     userAgent: newSiteSettingUserAgent,
-                    viewport: newSiteSettingViewport
+                    viewport: newSiteSettingViewport,
+                    emulation: newSiteSettingEmulation
                 )
             )
             updatePerSiteSettings(newSiteSettings)
@@ -130,6 +137,7 @@ struct SettingsView: View {
             newSiteSettingDomain = ""
             newSiteSettingUserAgent = ""
             newSiteSettingViewport = nil
+            newSiteSettingEmulation = nil
             newSiteSettingShouldSave = false
         }
     }
@@ -145,13 +153,15 @@ struct SettingsView: View {
                 newSiteSettings[indexOfEditingSiteSetting] = SiteSetting(
                     domain: editingSiteSettingDomain,
                     userAgent: editingSiteSettingUserAgent,
-                    viewport: editingSiteSettingViewport
+                    viewport: editingSiteSettingViewport,
+                    emulation: editingSiteSettingEmulation
                 )
                 updatePerSiteSettings(newSiteSettings)
 
                 editingSiteSettingDomain = ""
                 editingSiteSettingUserAgent = ""
                 editingSiteSettingViewport = nil
+                editingSiteSettingEmulation = nil
                 editingSiteSettingShouldSave = false
             }
         }
@@ -169,6 +179,7 @@ struct SettingsView: View {
         editingSiteSettingDomain = siteSetting.domain
         editingSiteSettingUserAgent = siteSetting.userAgent
         editingSiteSettingViewport = siteSetting.viewport
+        editingSiteSettingEmulation = siteSetting.emulation
         isShowingEditSiteSettingView = true
     }
 

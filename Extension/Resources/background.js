@@ -15,25 +15,29 @@ function reportEnabled() {
 browser.runtime.onInstalled.addListener(reportEnabled);
 browser.runtime.onStartup.addListener(reportEnabled);
 
-// Register ua-override.js in the MAIN world. Safari exposes world:"MAIN" only via
-// scripting.registerContentScripts, not the manifest content_scripts "world" key.
+// Register the MAIN-world scripts (Safari exposes world:"MAIN" only via
+// scripting.registerContentScripts). ua-override.js runs first, then browser-emulation.js.
 async function registerUserAgentOverride() {
+    const script = {
+        id: "unagent-ua-override",
+        js: ["ua-override.js", "browser-emulation.js"],
+        // "*://*/*" not "<all_urls>": must stay within granted host_permissions.
+        matches: ["*://*/*"],
+        runAt: "document_start",
+        allFrames: true,
+        world: "MAIN"
+    };
     try {
         const existing = await browser.scripting.getRegisteredContentScripts({
             ids: ["unagent-ua-override"]
         });
         if (existing.length > 0) {
+            // Update in place so upgrades from a build that registered only
+            // ua-override.js pick up browser-emulation.js.
+            await browser.scripting.updateContentScripts([script]);
             return;
         }
-        await browser.scripting.registerContentScripts([{
-            id: "unagent-ua-override",
-            js: ["ua-override.js"],
-            // "*://*/*" not "<all_urls>": must stay within granted host_permissions.
-            matches: ["*://*/*"],
-            runAt: "document_start",
-            allFrames: true,
-            world: "MAIN"
-        }]);
+        await browser.scripting.registerContentScripts([script]);
     } catch (error) {
         console.error("Failed to register user-agent override content script", error);
     }
@@ -87,7 +91,7 @@ function resetAllSettings(currentSchemaVersion) {
 function updateSettings() {
     // Read current state from storage.local (a bare global `localStorage` doesn't
     // exist in the MV3 background context and threw here before any setting applied).
-    browser.storage.local.get(["userAgent", "globalViewport", "siteSettings"], function (stored) {
+    browser.storage.local.get(["userAgent", "globalViewport", "globalEmulation", "siteSettings"], function (stored) {
     browser.runtime.sendNativeMessage({function: "getSettings"}, function (response) {
         var hasConfigBeenUpdated = false;
         let currentUserAgent = stored.userAgent;
@@ -115,6 +119,20 @@ function updateSettings() {
         } else {
             if ("globalViewport" in response) {
                 setGlobalViewport(response["globalViewport"]);
+                hasConfigBeenUpdated = true;
+            }
+        }
+        let currentGlobalEmulation = stored.globalEmulation;
+        if (currentGlobalEmulation != null) {
+            if ("globalEmulation" in response) {
+                if (currentGlobalEmulation != response["globalEmulation"]) {
+                    setGlobalEmulation(response["globalEmulation"]);
+                    hasConfigBeenUpdated = true;
+                }
+            }
+        } else {
+            if ("globalEmulation" in response) {
+                setGlobalEmulation(response["globalEmulation"]);
                 hasConfigBeenUpdated = true;
             }
         }
@@ -194,6 +212,10 @@ function setUserAgent(userAgent) {
 
 function setGlobalViewport(viewport) {
     browser.storage.local.set({globalViewport: viewport});
+}
+
+function setGlobalEmulation(emulation) {
+    browser.storage.local.set({globalEmulation: emulation});
 }
 
 function setSiteSettings(siteSettings) {

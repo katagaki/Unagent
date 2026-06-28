@@ -9,6 +9,7 @@ struct SiteSettingEditor: View {
     @Binding var domain: String
     @Binding var userAgent: String
     @Binding var viewport: Viewport?
+    @Binding var emulation: Emulation?
     @Binding var shouldSave: Bool
     var onValidate: ((String) -> Bool)?
 
@@ -31,11 +32,17 @@ struct SiteSettingEditor: View {
 
                 UserAgentEditorSection(
                     userAgent: $userAgent,
-                    viewport: $viewport
+                    viewport: $viewport,
+                    emulation: $emulation
                 )
 
                 ViewportPickerSection(
                     viewport: $viewport,
+                    isOptional: true
+                )
+
+                EmulationPickerSection(
+                    emulation: $emulation,
                     isOptional: true
                 )
             }

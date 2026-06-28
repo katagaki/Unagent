@@ -10,11 +10,13 @@ struct Preset: Codable, Identifiable {
     var source: String?
     var sources: [String]?
     var viewport: Viewport?
+    var emulation: Emulation?
     var isBuiltIn: Bool
 
     init(id: UUID = UUID(), name: String, imageName: String = "", iconURL: String? = nil,
          category: String? = nil, userAgent: String, source: String? = nil,
-         sources: [String]? = nil, viewport: Viewport? = nil, isBuiltIn: Bool = false) {
+         sources: [String]? = nil, viewport: Viewport? = nil, emulation: Emulation? = nil,
+         isBuiltIn: Bool = false) {
         self.id = id
         self.name = name
         self.imageName = imageName
@@ -24,11 +26,12 @@ struct Preset: Codable, Identifiable {
         self.source = source
         self.sources = sources
         self.viewport = viewport
+        self.emulation = emulation
         self.isBuiltIn = isBuiltIn
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, name, imageName, iconURL, category, userAgent, source, sources, viewport, isBuiltIn
+        case id, name, imageName, iconURL, category, userAgent, source, sources, viewport, emulation, isBuiltIn
     }
 
     init(from decoder: Decoder) throws {
@@ -42,6 +45,7 @@ struct Preset: Codable, Identifiable {
         self.source = try container.decodeIfPresent(String.self, forKey: .source)
         self.sources = try container.decodeIfPresent([String].self, forKey: .sources)
         self.viewport = try container.decodeIfPresent(Viewport.self, forKey: .viewport)
+        self.emulation = try container.decodeIfPresent(Emulation.self, forKey: .emulation)
         self.isBuiltIn = (try? container.decode(Bool.self, forKey: .isBuiltIn)) ?? true
     }
 
