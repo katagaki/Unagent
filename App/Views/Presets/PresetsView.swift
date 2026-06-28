@@ -1,7 +1,5 @@
 import SwiftUI
 
-// A page in the presets carousel: a built-in category, the catch-all bucket for
-// built-ins with an unknown category, or the user's custom presets.
 enum PresetSegment: Hashable, Identifiable {
     case category(PresetCategory)
     case uncategorized
@@ -28,61 +26,23 @@ struct PresetsView: View {
         let items = presetStore.builtInPresets.filter {
             !$0.userAgent.isEmpty && $0.resolvedCategory == category
         }
-        return sortedByPlatform(items)
+        return sortedAlphabetically(items)
     }
 
-    // Keep brands grouped in their original order, and within each brand order the
-    // platform variants iOS/iPadOS → macOS → Android → Windows → Linux/others.
-    private func sortedByPlatform(_ presets: [Preset]) -> [Preset] {
-        var brandOrder: [String: Int] = [:]
-        for preset in presets where brandOrder[brandKey(preset.name)] == nil {
-            brandOrder[brandKey(preset.name)] = brandOrder.count
-        }
-        return presets.enumerated().sorted { lhs, rhs in
-            let lBrand = brandOrder[brandKey(lhs.element.name)] ?? 0
-            let rBrand = brandOrder[brandKey(rhs.element.name)] ?? 0
-            if lBrand != rBrand { return lBrand < rBrand }
-            let lPlatform = platformRank(lhs.element.name)
-            let rPlatform = platformRank(rhs.element.name)
-            if lPlatform != rPlatform { return lPlatform < rPlatform }
-            return lhs.offset < rhs.offset // stable for anything still equal
-        }.map(\.element)
-    }
-
-    private func platformRank(_ name: String) -> Int {
-        switch lastParenthetical(name)?.lowercased() {
-        case "ios": return 0
-        case "ipados": return 1
-        case "macos": return 2
-        case "android": return 3
-        case "windows": return 4
-        case "linux": return 5
-        default: return 6
+    private func sortedAlphabetically(_ presets: [Preset]) -> [Preset] {
+        presets.sorted {
+            $0.displayName.localizedStandardCompare($1.displayName) == .orderedAscending
         }
     }
 
-    // The brand is the name without its trailing platform qualifier,
-    // e.g. "Google Chrome (iOS)" → "Google Chrome".
-    private func brandKey(_ name: String) -> String {
-        guard let separator = name.range(of: " (", options: .backwards) else { return name }
-        return String(name[..<separator.lowerBound])
-    }
-
-    private func lastParenthetical(_ name: String) -> String? {
-        guard let close = name.lastIndex(of: ")"),
-              let open = name[..<close].lastIndex(of: "(") else { return nil }
-        return String(name[name.index(after: open)..<close])
-    }
-
-    // Defensive: any built-in that carries an unknown/missing category is still shown.
     private var uncategorizedBuiltIns: [Preset] {
-        presetStore.builtInPresets.filter {
-            !$0.userAgent.isEmpty && $0.resolvedCategory == nil
-        }
+        sortedAlphabetically(
+            presetStore.builtInPresets.filter {
+                !$0.userAgent.isEmpty && $0.resolvedCategory == nil
+            }
+        )
     }
 
-    // The segments that actually have content, in display order. Custom is
-    // always offered so the user has somewhere to add their own presets.
     private var availableSegments: [PresetSegment] {
         var segments: [PresetSegment] = PresetCategory.allCases
             .filter { !builtInPresets(in: $0).isEmpty }
@@ -98,7 +58,7 @@ struct PresetsView: View {
         switch segment {
         case .category(let category): builtInPresets(in: category)
         case .uncategorized: uncategorizedBuiltIns
-        case .custom: presetStore.customPresets
+        case .custom: sortedAlphabetically(presetStore.customPresets)
         }
     }
 
@@ -110,8 +70,6 @@ struct PresetsView: View {
         }
     }
 
-    // How many presets in a segment have a pending user-agent update — drives
-    // the red badge on the carousel capsule.
     private func pendingCount(in segment: PresetSegment) -> Int {
         let names = Set(presetUpdater.pendingUpdates.map(\.presetName))
         return presets(in: segment).filter { names.contains($0.name) }.count
@@ -132,16 +90,11 @@ struct PresetsView: View {
     }
 
     var body: some View {
-        Group {
-            VStack(alignment: .leading, spacing: GroupedMetrics.headerSpacing) {
-                Text("Shared.Presets")
-                    .font(.body.weight(.semibold))
-                    // Align with the other section headers and the capsule labels
-                    // (capsule text sits at carousel inset + capsule padding).
-                    .padding(.horizontal, GroupedMetrics.headerInset)
-                carousel
-            }
-
+        VStack(alignment: .leading, spacing: GroupedMetrics.headerSpacing) {
+            Text("Shared.Presets")
+                .font(.body.weight(.semibold))
+                .padding(.horizontal, GroupedMetrics.headerInset)
+            carousel
             GroupedSection(showsBackground: !isSelectedSegmentEmpty) {
                 segmentContent
             }
@@ -150,7 +103,6 @@ struct PresetsView: View {
             PresetEditorView(mode: .new, presetStore: presetStore)
         }
         .onAppear {
-            // Keep the selection valid if categories appeared/disappeared.
             if !availableSegments.contains(selectedSegment),
                let first = availableSegments.first {
                 selectedSegment = first
@@ -173,14 +125,10 @@ struct PresetsView: View {
                     }
                 }
             }
-            // Inset so the first/last capsule line up with the cards, while the
-            // scrollable area still runs edge to edge.
             .padding(.horizontal, GroupedMetrics.horizontalInset)
         }
     }
 
-    // The custom segment is the only one that can be empty (built-in categories
-    // are only listed when populated).
     private var isSelectedSegmentEmpty: Bool {
         selectedSegment == .custom && presetStore.customPresets.isEmpty
     }
@@ -191,14 +139,15 @@ struct PresetsView: View {
     private var segmentContent: some View {
         switch selectedSegment {
         case .custom:
-            if presetStore.customPresets.isEmpty {
+            let customPresets = presets(in: .custom)
+            if customPresets.isEmpty {
                 ContentUnavailableView(
                     "Presets.Custom.EmptyTitle",
                     systemImage: "star.slash",
                     description: Text("Presets.Custom.EmptyText")
                 )
             } else {
-                ForEach(Array(presetStore.customPresets.enumerated()), id: \.element.id) { index, preset in
+                ForEach(Array(customPresets.enumerated()), id: \.element.id) { index, preset in
                     if index > 0 { GroupedDivider() }
                     GroupedNavigationRow {
                         PresetDetailView(preset: preset, presetStore: presetStore)
@@ -260,7 +209,7 @@ struct PresetCategoryCapsule: View {
             HStack(spacing: 6.0) {
                 Text(title)
                     .font(.body)
-                    .fontWeight(isSelected ? .semibold : .regular)
+                    .fontWeight(.semibold)
                     .foregroundStyle(isSelected ? Color.white : Color.primary)
                 if badgeCount > 0 {
                     Text(String(badgeCount))
@@ -289,7 +238,7 @@ struct PresetRowView: View {
     var preset: Preset
 
     var body: some View {
-        HStack(spacing: 8.0) {
+        HStack(spacing: 12.0) {
             PresetIconView(preset: preset)
             Text(preset.displayName)
                 .lineLimit(1)

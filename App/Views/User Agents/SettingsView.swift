@@ -65,7 +65,7 @@ struct SettingsView: View {
                             .groupedRowPadding()
                             .contentShape(Rectangle())
                         }
-                        .buttonStyle(.plain)
+                        .buttonStyle(GroupedRowButtonStyle())
                         .contextMenu {
                             Button("Shared.Edit") {
                                 startEditingPerSiteSetting(siteSetting)

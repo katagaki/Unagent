@@ -1,22 +1,22 @@
 import SwiftUI
 
-// Shared metrics so every grouped element lines up.
 enum GroupedMetrics {
     static let horizontalInset: CGFloat = 16.0
     static let rowHorizontalPadding: CGFloat = 16.0
     static let rowVerticalPadding: CGFloat = 11.0
-    // Minimum height for a row so text-only rows match the standard touch target.
-    static let minRowHeight: CGFloat = 44.0
-    // Gap between a section header and its content — kept identical everywhere.
-    // Matches the standard inset-grouped header-to-content spacing.
+    static var minRowHeight: CGFloat {
+        if #available(iOS 26.0, *) {
+            50.0
+        } else {
+            44.0
+        }
+    }
     static let headerSpacing: CGFloat = 8.0
-    // Headers/footers align with the leading edge of row content (card inset +
-    // row padding), not the card background edge.
     static let headerInset: CGFloat = horizontalInset + rowHorizontalPadding
 
     static var cornerRadius: CGFloat {
         if #available(iOS 26.0, *) {
-            20.0
+            minRowHeight / 2.0
         } else {
             10.0
         }
@@ -45,8 +45,6 @@ struct GroupedSection<Header: View, Footer: View, Content: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: GroupedMetrics.headerSpacing) {
             if !(Header.self == EmptyView.self) {
-                // Header titles: primary colour (the default), body font, semibold.
-                // Buttons inside a header keep their own accent tint.
                 header
                     .font(.body.weight(.semibold))
                     .padding(.horizontal, GroupedMetrics.headerInset)
@@ -80,6 +78,14 @@ struct GroupedDivider: View {
     }
 }
 
+struct GroupedRowButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .background(configuration.isPressed ? Color(uiColor: .systemGray4) : Color.clear)
+            .animation(.smooth.speed(2), value: configuration.isPressed)
+    }
+}
+
 struct GroupedNavigationRow<Destination: View, Label: View, Accessory: View>: View {
 
     private let destination: () -> Destination
@@ -109,7 +115,7 @@ struct GroupedNavigationRow<Destination: View, Label: View, Accessory: View>: Vi
             .groupedRowPadding()
             .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(GroupedRowButtonStyle())
     }
 }
 
