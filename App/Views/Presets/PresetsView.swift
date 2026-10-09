@@ -151,6 +151,9 @@ struct PresetsView: View {
                     if index > 0 { GroupedDivider() }
                     GroupedNavigationRow {
                         PresetDetailView(preset: preset, presetStore: presetStore)
+                .id(preset.id)
+                            // Fresh @State per preset when the split view's detail column is reused.
+                            .id(preset.id)
                     } label: {
                         PresetRowView(preset: preset)
                     } accessory: {
@@ -177,6 +180,7 @@ struct PresetsView: View {
         let hidden = isHidden(preset)
         GroupedNavigationRow {
             PresetDetailView(preset: preset, presetStore: presetStore)
+                .id(preset.id)
         } label: {
             PresetRowView(preset: preset)
                 .opacity(hidden ? 0.4 : 1.0)

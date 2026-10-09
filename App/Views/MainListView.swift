@@ -8,6 +8,7 @@ struct MainListView: View {
     @AppStorage(wrappedValue: 0, "LaunchCount", store: .standard) var launchCount: Int
 
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     @State var presetStore = PresetStore()
     @State var presetUpdater = PresetUpdater()
@@ -32,7 +33,9 @@ struct MainListView: View {
     @State private var backupErrorMessage: String?
 
     var body: some View {
-        NavigationStack {
+        // Collapses to a single stack on compact widths; on wider screens,
+        // detail views open in a second column beside the list.
+        NavigationSplitView {
             ScrollView {
                 VStack(spacing: 24.0) {
                     if !monitor.isFullySetUp {
@@ -45,7 +48,7 @@ struct MainListView: View {
             }
             .contentMargins(.top, 0, for: .scrollContent)
             .scrollDismissesKeyboard(.immediately)
-            .gradientBackground()
+            .gradientBackground(isTinted: horizontalSizeClass == .regular)
             .navigationTitle("Unagent")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -160,7 +163,13 @@ struct MainListView: View {
             .refreshable {
                 await presetUpdater.checkForUpdatesQuietly()
             }
+            .navigationSplitViewColumnWidth(min: 320.0, ideal: 375.0, max: 420.0)
+        } detail: {
+            ContentUnavailableView("Shared.NoSelection", systemImage: "sidebar.left")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .gradientBackground()
         }
+        .navigationSplitViewStyle(.balanced)
         .environment(presetStore)
         .environment(presetUpdater)
         .task {
